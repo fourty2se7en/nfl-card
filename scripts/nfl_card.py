@@ -199,10 +199,84 @@ TEAMNAME = {
  'NYJ':'Jets','PHI':'Eagles','PIT':'Steelers','SEA':'Seahawks','SF':'49ers','TB':'Buccaneers',
  'TEN':'Titans','WAS':'Commanders'}
 
+# Different sources abbreviate teams differently — LAR vs LA, WSH vs WAS, JAC vs
+# JAX, plus legacy codes like OAK and SD. A notes key that does not match a game
+# would otherwise vanish with no warning, so every reasonable spelling is mapped
+# to the canonical code and anything still unmatched is reported on the card.
+TEAM_ALIAS = {}
+_ALIASES = {
+ 'ARI':['ARI','ARZ','AZ','ARIZONA','CARDINALS','ARIZONA CARDINALS'],
+ 'ATL':['ATL','ATLANTA','FALCONS','ATLANTA FALCONS'],
+ 'BAL':['BAL','BLT','BALTIMORE','RAVENS','BALTIMORE RAVENS'],
+ 'BUF':['BUF','BUFFALO','BILLS','BUFFALO BILLS'],
+ 'CAR':['CAR','CAROLINA','PANTHERS','CAROLINA PANTHERS'],
+ 'CHI':['CHI','CHICAGO','BEARS','CHICAGO BEARS'],
+ 'CIN':['CIN','CINCINNATI','BENGALS','CINCINNATI BENGALS'],
+ 'CLE':['CLE','CLV','CLEVELAND','BROWNS','CLEVELAND BROWNS'],
+ 'DAL':['DAL','DALLAS','COWBOYS','DALLAS COWBOYS'],
+ 'DEN':['DEN','DENVER','BRONCOS','DENVER BRONCOS'],
+ 'DET':['DET','DETROIT','LIONS','DETROIT LIONS'],
+ 'GB':['GB','GNB','GBP','GREEN BAY','PACKERS','GREEN BAY PACKERS'],
+ 'HOU':['HOU','HST','HOUSTON','TEXANS','HOUSTON TEXANS'],
+ 'IND':['IND','INDIANAPOLIS','COLTS','INDIANAPOLIS COLTS'],
+ 'JAX':['JAX','JAC','JACKSONVILLE','JAGUARS','JACKSONVILLE JAGUARS'],
+ 'KC':['KC','KAN','KCC','KANSAS CITY','CHIEFS','KANSAS CITY CHIEFS'],
+ 'LA':['LA','LAR','RAM','RAMS','LOS ANGELES RAMS','STL','ST LOUIS RAMS'],
+ 'LAC':['LAC','SD','SDG','CHARGERS','LOS ANGELES CHARGERS','SAN DIEGO CHARGERS'],
+ 'LV':['LV','LVR','OAK','RAI','RAIDERS','LAS VEGAS','LAS VEGAS RAIDERS','OAKLAND RAIDERS'],
+ 'MIA':['MIA','MIAMI','DOLPHINS','MIAMI DOLPHINS'],
+ 'MIN':['MIN','MINNESOTA','VIKINGS','MINNESOTA VIKINGS'],
+ 'NE':['NE','NWE','NEP','NEW ENGLAND','PATRIOTS','NEW ENGLAND PATRIOTS'],
+ 'NO':['NO','NOR','NOS','NEW ORLEANS','SAINTS','NEW ORLEANS SAINTS'],
+ 'NYG':['NYG','NEW YORK GIANTS','GIANTS'],
+ 'NYJ':['NYJ','NEW YORK JETS','JETS'],
+ 'PHI':['PHI','PHILADELPHIA','EAGLES','PHILADELPHIA EAGLES'],
+ 'PIT':['PIT','PITTSBURGH','STEELERS','PITTSBURGH STEELERS'],
+ 'SEA':['SEA','SEATTLE','SEAHAWKS','SEATTLE SEAHAWKS'],
+ 'SF':['SF','SFO','SAN FRANCISCO','49ERS','NINERS','SAN FRANCISCO 49ERS'],
+ 'TB':['TB','TAM','TBB','TAMPA BAY','BUCCANEERS','BUCS','TAMPA BAY BUCCANEERS'],
+ 'TEN':['TEN','TENNESSEE','TITANS','TENNESSEE TITANS'],
+ 'WAS':['WAS','WSH','WFT','WASHINGTON','COMMANDERS','WASHINGTON COMMANDERS'],
+}
+for _canon, _alist in _ALIASES.items():
+    for _a in _alist:
+        TEAM_ALIAS[_a.upper().replace(".", "").replace("-", " ").strip()] = _canon
+
+def canon_team(t):
+    if t is None: return None
+    k = str(t).upper().replace(".", "").replace("-", " ").strip()
+    return TEAM_ALIAS.get(k, TEAM_ALIAS.get(k.replace(" ", ""), None))
+
+def canon_key(k):
+    """Normalise a notes key to AWAY@HOME using canonical codes.
+    Accepts @, vs, at and various separators."""
+    raw = str(k).upper()
+    for sep in ["@", " VS ", " V ", " AT ", "VS.", "--", "_"]:
+        if sep in raw:
+            parts = raw.split(sep, 1); break
+    else:
+        return None
+    a, b = (canon_team(parts[0]), canon_team(parts[1]))
+    return f"{a}@{b}" if a and b else None
+
 NOTES = {}
 if A.notes:
     if os.path.exists(P(A.notes)):
-        try: NOTES = json.load(open(P(A.notes)))
+        try:
+            _raw = json.load(open(P(A.notes)))
+            NOTES = {}
+            _unmatched = []
+            for _k, _v in _raw.items():
+                if _k.startswith("_"): continue
+                _c = canon_key(_k)
+                if _c: NOTES[_c] = _v
+                else: _unmatched.append(_k)
+            if _unmatched:
+                issue("WARN", f"{len(_unmatched)} note(s) could not be matched to a game",
+                      "These entries were researched but will not appear on any card, because "
+                      f"the team names did not resolve: {', '.join(_unmatched[:6])}.",
+                      "Key each game as AWAY@HOME. Most spellings are accepted automatically; "
+                      "check for typos or a team that is not playing this week.", tab="card")
         except Exception as e:
             issue("WARN", f"Could not read {A.notes}",
                   "Game notes will show only automated data such as injuries, weather and rest.",
