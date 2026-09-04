@@ -1,0 +1,15 @@
+{
+  "_README": "EXAMPLE FILE - placeholder content, not real news. Ask Claude to research the slate and generate a real notes.json. All keys optional; key each game as AWAY@HOME.",
+  "NE@SEA": {
+    "returning": ["EXAMPLE - WR Smith, first game back from ACL tear (torn Oct 2025)"],
+    "trades": ["EXAMPLE - Acquired OT Brown from Cleveland on Tuesday"],
+    "coaching": ["EXAMPLE - New OC calling plays for the first time"],
+    "suspensions": ["EXAMPLE - CB Davis serving final game of 2-game suspension"],
+    "birthdays": ["EXAMPLE - RB Allen turns 26 on gameday"],
+    "movement": ["EXAMPLE - Opened SEA -2.5, now -3.5 after Wednesday injury report"],
+    "experts": [
+      {"name": "EXAMPLE - J. Smith (Action Network)", "record": "31-24 ATS", "pick": "SEA -3.5"},
+      {"name": "EXAMPLE - CBS Sports consensus", "record": "5 of 8 experts", "pick": "Under 44.5"}
+    ]
+  }
+}
