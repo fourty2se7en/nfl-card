@@ -1,0 +1,123 @@
+# Build the NFL card and publish it to GitHub Pages.
+#
+# TIMES ARE UTC. Phoenix does not observe daylight saving, so Phoenix is
+# UTC-7 all year and these offsets never shift.
+#
+# NFL games are spread across the week: Thursday night, Sunday afternoon and
+# evening, Monday night, plus Saturdays late in the season and Wednesday or
+# Friday on holiday weeks. Hence three schedules:
+#
+#   TUESDAY REBUILD  New week's lines have posted and Monday night is final.
+#                    The only run that rebuilds power ratings from scratch.
+#   MORNING REFRESH  Daily. Picks up injury designations, weather as forecasts
+#                    firm, and line movement. Daily rather than named days so
+#                    odd game days are covered without a list of exceptions.
+#   NIGHT GRADE      Daily, late. Final scores land in nflverse after games
+#                    end and the card grades itself from them.
+#
+# GitHub drops scheduled runs under load and start times drift. Nothing here
+# depends on a precise minute: refresh and grade are idempotent, so a missed
+# run costs nothing. Odd minutes avoid the congested top of the hour.
+
+name: nfl-card
+
+on:
+  schedule:
+    - cron: "23 16 * * 2"
+    - cron: "17 15 * * *"
+    - cron: "41 07 * * *"
+  workflow_dispatch:
+    inputs:
+      week:
+        description: "Week number. Blank = next upcoming week."
+        required: false
+      rebuild:
+        description: "Rebuild ratings even on a refresh run (true/false)"
+        required: false
+        default: "false"
+
+concurrency:
+  group: nfl-card
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      # Ratings take minutes. Rebuild Tuesday or on demand; other runs reuse
+      # the committed CSVs and finish in about a minute.
+      - name: Decide whether to rebuild ratings
+        id: mode
+        run: |
+          DOW="$(date -u +%u)"
+          HOUR="$(date -u +%H)"
+          REBUILD=false
+          if [ "${{ github.event.inputs.rebuild }}" = "true" ]; then REBUILD=true; fi
+          if [ "$DOW" = "2" ] && [ "$HOUR" = "16" ]; then REBUILD=true; fi
+          if [ ! -f scripts/power_ratings.csv ]; then REBUILD=true; fi
+          echo "rebuild=$REBUILD" >> "$GITHUB_OUTPUT"
+
+      - name: Rebuild power ratings
+        if: steps.mode.outputs.rebuild == 'true'
+        working-directory: scripts
+        run: |
+          python3 build_ratings.py
+          python3 elo.py
+
+      - name: Build the card
+        working-directory: scripts
+        run: |
+          if [ -n "${{ github.event.inputs.week }}" ]; then
+            python3 nfl_card.py --week "${{ github.event.inputs.week }}"
+          else
+            python3 nfl_card.py
+          fi
+
+      # Newest card becomes the front page; every week is kept alongside it.
+      - name: Assemble the site
+        run: |
+          mkdir -p site
+          LATEST="$(ls -t scripts/Week*-Card.html | head -1)"
+          cp "$LATEST" site/index.html
+          cp scripts/Week*-Card.html site/ 2>/dev/null || true
+          cp scripts/ledger_week*.csv site/ 2>/dev/null || true
+          echo "published $LATEST"
+
+      - name: Commit the card and ledgers
+        run: |
+          git config user.name  "nfl-card-bot"
+          git config user.email "nfl-card-bot@users.noreply.github.com"
+          git add -A site scripts || true
+          git diff --staged --quiet || git commit -m "card: $(date -u +%Y-%m-%dT%H:%MZ)"
+          git pull --rebase --autostash || true
+          git push || true
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
