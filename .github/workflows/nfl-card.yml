@@ -84,9 +84,9 @@ jobs:
         working-directory: scripts
         run: |
           if [ -n "${{ github.event.inputs.week }}" ]; then
-            python3 nfl_card.py --week "${{ github.event.inputs.week }}"
+            python3 nfl_card.py --week "${{ github.event.inputs.week }}" --notes notes.json
           else
-            python3 nfl_card.py
+            python3 nfl_card.py --notes notes.json
           fi
 
       # Newest card becomes the front page; every week is kept alongside it.
