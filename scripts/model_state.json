@@ -1,0 +1,67 @@
+{
+  "_readme": [
+    "Every number this card runs on. The scripts read it; nothing is typed twice.",
+    "model_state.py carries a fallback copy of all of it, so a broken or missing",
+    "file cannot cost a card. When it falls back, the card says so.",
+    "",
+    "WHAT IS MEASURED AND WHAT IS CHOSEN:",
+    "nothing here is measured. This card has no backtest yet, so every value under",
+    "'grading' is a decision somebody made, not a finding. The college card's",
+    "equivalent file separates the two and caps its grades by what its backtest",
+    "supports. Until 'backtest' below is filled in, the letters on this card are",
+    "claims no record stands behind, and that is worth knowing when reading them.",
+    "",
+    "KNOWN GAP, ratings.seasons:",
+    "the fit sees 2025 only. That is right today, because the 2026 season has not",
+    "been played and last season regressed toward the mean is exactly what a prior",
+    "is. It stops being right the moment Week 1 is final: with no current season in",
+    "the list, a December card would still be rating teams on 2025 football. The",
+    "college model solves this with a half-life on the current season and a carry",
+    "weight on the prior one. Fixing it here is one edit to this list plus a carry",
+    "weight, and it is the next change due.",
+    "",
+    "The staleness check in nfl_card.py cannot catch that. It compares the",
+    "modification time of power_ratings.csv, and the Tuesday rebuild rewrites that",
+    "file every week, so it stays permanently fresh while the data underneath is a",
+    "season old. A check that cannot fail is not a check."
+  ],
+  "schema": 1,
+  "ratings": {
+    "seasons": [
+      2025
+    ],
+    "half_life": 8.0,
+    "off_regress": 0.35,
+    "def_regress": 0.45,
+    "plays_per_game": 63.0,
+    "ridge_alpha": 25.0,
+    "early_down_weight": 1.5,
+    "epa_weight": 0.6,
+    "composite": {
+      "pass_off": 0.4,
+      "pass_def": 0.25,
+      "rush_off": 0.12,
+      "rush_def": 0.08
+    }
+  },
+  "grading": {
+    "win_points": 70.0,
+    "value_points": 30.0,
+    "p_floor": 0.4,
+    "p_ceil": 0.6,
+    "value_ceil": 8.0,
+    "grade_a": 70.0,
+    "grade_b": 55.0,
+    "grade_c": 40.0,
+    "gate_a": 2.0,
+    "gate_b": 1.0,
+    "gate_d": 0.5
+  },
+  "backtest": {
+    "run_utc": "",
+    "window": "",
+    "record": {},
+    "record_notes": {},
+    "headline": {}
+  }
+}
