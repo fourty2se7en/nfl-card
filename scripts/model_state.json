@@ -45,7 +45,8 @@
       "pass_def": 0.25,
       "rush_off": 0.12,
       "rush_def": 0.08
-    }
+    },
+    "in_season_k": 10
   },
   "preseason": {
     "mode": "market",
@@ -67,10 +68,176 @@
     "gate_d": 0.5
   },
   "backtest": {
-    "run_utc": "",
-    "window": "",
-    "record": {},
-    "record_notes": {},
-    "headline": {}
+    "run_utc": "2026-09-08 02:05",
+    "window": "2013-2025 regular season, 3,407 games, walk-forward against the closing line",
+    "record": {
+      "spread_any": [
+        1657,
+        1665
+      ],
+      "spread_3": [
+        460,
+        477
+      ],
+      "spread_6": [
+        150,
+        149
+      ],
+      "spread_10": [
+        26,
+        26
+      ],
+      "total_any": [
+        1704,
+        1672
+      ],
+      "total_3": [
+        521,
+        523
+      ],
+      "total_6": [
+        282,
+        269
+      ],
+      "spread_wk1_4": [
+        418,
+        386
+      ],
+      "spread_wk10": [
+        780,
+        835
+      ],
+      "spread_div": [
+        592,
+        628
+      ],
+      "ml_2": [
+        1207,
+        1627
+      ],
+      "ml_5": [
+        832,
+        1217
+      ],
+      "ml_10": [
+        398,
+        654
+      ],
+      "price_consistency": [
+        172,
+        181
+      ]
+    },
+    "record_notes": {
+      "spread_any": "our number against the closing spread, any disagreement",
+      "spread_3": "disagreement of 3 to 6 points",
+      "spread_6": "disagreement of 6 to 10 points",
+      "spread_10": "disagreement of 10 points or more",
+      "spread_wk1_4": "weeks 1 to 4, when the preseason number carries most weight",
+      "spread_wk10": "week 10 onward",
+      "spread_div": "divisional games",
+      "total_any": "our total against the closing total, any disagreement",
+      "ml_5": "moneyline, 5 or more points of probability over the price",
+      "price_consistency": "consensus moneyline against the consensus spread; needs per-book prices to mean anything"
+    },
+    "headline": {
+      "margin_mae": 10.422,
+      "market_margin_mae": 9.937,
+      "total_mae": 11.06,
+      "market_total_mae": 10.504,
+      "blend_k": 10,
+      "blend_grid": {
+        "0": {
+          "mae": 11.49602750841725,
+          "gain": -0.538653472577511,
+          "t": -3.844230798693406
+        },
+        "2": {
+          "mae": 10.76815790808799,
+          "gain": 0.1892161277517505,
+          "t": 1.7658334720231965
+        },
+        "4": {
+          "mae": 10.551501060906208,
+          "gain": 0.4058729749335329,
+          "t": 4.475365824971431
+        },
+        "6": {
+          "mae": 10.462915876770285,
+          "gain": 0.4944581590694542,
+          "t": 6.222770650181804
+        },
+        "8": {
+          "mae": 10.428726738700819,
+          "gain": 0.5286472971389188,
+          "t": 7.440964316232255
+        },
+        "10": {
+          "mae": 10.422169342247962,
+          "gain": 0.5352046935917791,
+          "t": 8.322803608123465
+        },
+        "12": {
+          "mae": 10.427687148720992,
+          "gain": 0.5296868871187472,
+          "t": 9.013205666452262
+        },
+        "14": {
+          "mae": 10.439454163219082,
+          "gain": 0.5179198726206574,
+          "t": 9.565881514631206
+        },
+        "16": {
+          "mae": 10.454729846608007,
+          "gain": 0.5026441892317333,
+          "t": 10.009296281677907
+        },
+        "20": {
+          "mae": 10.489291288876121,
+          "gain": 0.46808274696361885,
+          "t": 10.669244704508301
+        },
+        "30": {
+          "mae": 10.567654278088204,
+          "gain": 0.3897197577515358,
+          "t": 11.689790520634618
+        },
+        "None": {
+          "mae": 10.95737403583974,
+          "gain": 0.0,
+          "t": 0.0
+        }
+      }
+    },
+    "tier": {
+      "spread_any": "AVOID",
+      "spread_3": "AVOID",
+      "spread_6": "PASS",
+      "spread_10": "PASS",
+      "total_any": "AVOID",
+      "total_3": "PASS",
+      "total_6": "PASS",
+      "spread_wk1_4": "PASS",
+      "spread_wk10": "AVOID",
+      "spread_div": "AVOID",
+      "ml_2": "AVOID",
+      "ml_5": "AVOID",
+      "ml_10": "AVOID",
+      "price_consistency": "PASS"
+    },
+    "calibration": {
+      "spread": {
+        "intercept": -0.0227,
+        "slope": -0.0331,
+        "slope_se": 0.0767,
+        "n": 3322
+      },
+      "total": {
+        "intercept": -0.0242,
+        "slope": 0.0249,
+        "slope_se": 0.0859,
+        "n": 3376
+      }
+    }
   }
 }
