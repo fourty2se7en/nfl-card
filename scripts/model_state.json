@@ -85,7 +85,7 @@
     }
   },
   "backtest": {
-    "run_utc": "2026-09-08T03:05:07Z",
+    "run_utc": "2026-09-08T03:25:01Z",
     "window": "2013-2025 regular season, 3,407 games, walk-forward against real closing lines",
     "record": {
       "model_gap_early": [
