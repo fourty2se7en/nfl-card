@@ -1,0 +1,76 @@
+{
+  "_readme": [
+    "Every number this card runs on. The scripts read it; nothing is typed twice.",
+    "model_state.py carries a fallback copy of all of it, so a broken or missing",
+    "file cannot cost a card. When it falls back, the card says so.",
+    "",
+    "WHAT IS MEASURED AND WHAT IS CHOSEN:",
+    "the preseason conversion is measured, on 352 team-seasons. Nothing under",
+    "'grading' is. This card has no backtest yet, so every grading value is a",
+    "decision somebody made, not a finding, and the letters on the card are claims",
+    "no record stands behind. The college card grades on the same scheme and had to",
+    "cap it, because run unchanged there it graded most of a slate A on a strategy",
+    "that backtested below break-even. Filling in 'backtest' below is the next work.",
+    "",
+    "WHERE TEAMS START:",
+    "preseason.mode is 'market', so a team's Week 1 rating is the sportsbook season",
+    "win total in preseason_2026.csv, converted to points. Set it to 'last_season'",
+    "to go back to last year's play-by-play regressed toward the mean.",
+    "",
+    "STILL TO DO, ratings.seasons:",
+    "the play-by-play fit still sees 2025 only, so once 2026 games are played there",
+    "is nothing that lets them into the ratings. How fast results should take over",
+    "from the preseason number is a number that has to be measured, not picked, and",
+    "that needs the backtest. Until then the card sits on the market's preseason view.",
+    "",
+    "The staleness check in nfl_card.py cannot catch that. It compares the",
+    "modification time of power_ratings.csv, and the Tuesday rebuild rewrites that",
+    "file every week, so it stays permanently fresh while the data underneath is a",
+    "season old. A check that cannot fail is not a check."
+  ],
+  "schema": 1,
+  "ratings": {
+    "seasons": [
+      2025
+    ],
+    "half_life": 8.0,
+    "off_regress": 0.35,
+    "def_regress": 0.45,
+    "plays_per_game": 63.0,
+    "ridge_alpha": 25.0,
+    "early_down_weight": 1.5,
+    "epa_weight": 0.6,
+    "composite": {
+      "pass_off": 0.4,
+      "pass_def": 0.25,
+      "rush_off": 0.12,
+      "rush_def": 0.08
+    }
+  },
+  "preseason": {
+    "mode": "market",
+    "wins_at_average": 8.471,
+    "points_per_win": 2.056,
+    "file": "preseason_2026.csv"
+  },
+  "grading": {
+    "win_points": 70.0,
+    "value_points": 30.0,
+    "p_floor": 0.4,
+    "p_ceil": 0.6,
+    "value_ceil": 8.0,
+    "grade_a": 70.0,
+    "grade_b": 55.0,
+    "grade_c": 40.0,
+    "gate_a": 2.0,
+    "gate_b": 1.0,
+    "gate_d": 0.5
+  },
+  "backtest": {
+    "run_utc": "",
+    "window": "",
+    "record": {},
+    "record_notes": {},
+    "headline": {}
+  }
+}
