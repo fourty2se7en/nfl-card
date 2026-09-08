@@ -1,0 +1,59 @@
+# Backtest. Manual only, never on a schedule.
+#
+# The answer goes to the run's Summary page as well as the log, so it can be
+# read on a phone without expanding steps.
+#
+# It commits scripts/model_state.json, which is where the strategy records, the
+# calibration and the in-season blend constant live. nfl_card.py reads them. If
+# they were copied out of this output by hand the card could be grading on a
+# record this run had already superseded, and nothing anywhere would say so.
+# Re-run this workflow and the next card build grades on the new numbers.
+#
+# No API key. Everything it needs comes from nflverse, which is public.
+
+name: nfl-backtest
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+
+      - name: Run the backtest
+        working-directory: scripts
+        run: |
+          set -o pipefail
+          echo "## Backtest results" >> "$GITHUB_STEP_SUMMARY"
+          echo "~~~text" >> "$GITHUB_STEP_SUMMARY"
+          python3 -u nfl_backtest.py | tee -a "$GITHUB_STEP_SUMMARY"
+          echo "~~~" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit the new record
+        run: |
+          # One path, on its own line, and it always exists in the repo. Passing
+          # git a path that is not there makes git add fail and stage NOTHING,
+          # while the run still reports green. See 4.3c.
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add scripts/model_state.json
+          if git diff --cached --quiet; then
+            echo "model_state.json unchanged, nothing to commit"
+            echo "The record did not change." >> "$GITHUB_STEP_SUMMARY"
+          else
+            git commit -m "backtest: update model_state.json record"
+            # A scheduled card run may have pushed while this was running.
+            git push || (git pull --rebase && git push)
+            echo "Committed the new record. The next card build grades on it." >> "$GITHUB_STEP_SUMMARY"
+          fi
