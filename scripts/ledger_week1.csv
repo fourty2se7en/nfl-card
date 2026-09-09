@@ -3,10 +3,10 @@ week,date,day,game,market,pick,our_num,market_num,gap,tier,result,win_pct,opened
 1,2026-09-09,Wednesday,NE@SEA,Moneyline,NE,43.4,39.6,3.8,C,,43.4,43.4,D
 1,2026-09-09,Wednesday,NE@SEA,Total,OVER 44.5,46.1,44.5,1.6,D,,56.4,45.9,A
 1,2026-09-10,Thursday,SF@LA,Spread,SF +3.5,2.1,3.5,-1.4,D,,,2.1,B
-1,2026-09-10,Thursday,SF@LA,Moneyline,SF,44.6,35.5,9.1,C,,44.6,44.6,C
+1,2026-09-10,Thursday,SF@LA,Moneyline,SF,44.6,36.3,8.3,C,,44.6,44.6,C
 1,2026-09-10,Thursday,SF@LA,Total,OVER 48.5,57.0,48.5,8.5,D,,78.7,54.9,A
 1,2026-09-13,Sunday,CHI@CAR,Spread,CAR +3.0,-2.6,-3.0,0.4,D,,,-2.6,C
-1,2026-09-13,Sunday,CHI@CAR,Moneyline,CAR,42.5,40.0,2.5,C,,42.5,43.1,D
+1,2026-09-13,Sunday,CHI@CAR,Moneyline,CAR,42.5,40.7,1.8,C,,42.5,43.1,D
 1,2026-09-13,Sunday,CHI@CAR,Total,OVER 46.5,48.6,46.5,2.1,D,,57.4,47.9,D
 1,2026-09-13,Sunday,TB@CIN,Spread,CIN -3.5,3.6,3.5,0.1,D,,,3.6,D
 1,2026-09-13,Sunday,TB@CIN,Moneyline,TB,40.3,35.5,4.8,C,,40.3,40.3,D
