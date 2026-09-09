@@ -1,0 +1,1833 @@
+"""
+nfl_card.py — NFL slate card + ledger on one page with a view toggle.
+
+Usage:
+    python3 nfl_card.py                     # next upcoming week
+    python3 nfl_card.py --week 6
+    python3 nfl_card.py --game "KC @ BUF"
+    python3 nfl_card.py --notes notes.json  # attach researched news / expert picks
+
+notes.json (all keys optional), keyed by "AWAY@HOME":
+{
+  "KC@BUF": {
+     "returning":  ["WR Jones - ACL, first game back"],
+     "trades":     ["Acquired OT Brown from CLE on Tuesday"],
+     "coaching":   ["OC Miller fired Monday; QB coach calling plays"],
+     "suspensions":["CB Davis - 2 games, 1 remaining"],
+     "birthdays":  ["RB Allen turns 26 on gameday"],
+     "movement":   ["Opened KC -2.5, now -4 on Buffalo OL news"],
+     "experts":    [{"name":"J. Smith (Action Network)","record":"31-24 ATS","pick":"KC -4"}],
+     "log":        {"qb_out":"home","starters_out":3,"confidence":"reported"}
+  }
+}
+
+"log" is the odd one out: an object, not a list, and it is NOT rendered on the
+page. It is recorded to newslog.csv so that a season from now the question
+"does the researched news add anything the model does not already have" can be
+answered from a file rather than from memory.
+"""
+import os, sys, json, argparse, datetime as dt
+import numpy as np, pandas as pd
+from scipy.stats import norm
+import nflreadpy as nfl
+import warnings; warnings.filterwarnings("ignore")
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import model_state as MS
+import nfl_picks as PK
+BASE = os.environ.get("NFL_DIR") or os.path.dirname(os.path.abspath(__file__))
+P = lambda f: os.path.join(BASE, f)
+
+ISSUES = []
+def issue(lvl, what, why, fix, tab="card"):
+    ISSUES.append(dict(lvl=lvl, what=what, why=why, fix=fix, tab=tab)); print(f"  [{lvl}] {what}")
+
+ap = argparse.ArgumentParser()
+ap.add_argument("--week", type=int, default=None)
+ap.add_argument("--season", type=int, default=2026)
+ap.add_argument("--game", type=str, default=None)
+ap.add_argument("--notes", type=str, default=None)
+ap.add_argument("--no-weather", action="store_true")
+A = ap.parse_args()
+SEASON = A.season
+
+MEASURED = {"spread": 48.8, "total": 50.5, "ml_roi": -12.7, "be": 52.4}
+# Public repo URLs only. No token is ever embedded — a token in a public page
+# is readable by anyone who views it.
+REPO = os.environ.get("NFL_REPO", "fourty2se7en/nfl-card")
+WORKFLOW = os.environ.get("NFL_WORKFLOW", "nfl-card.yml")
+# Every simulation constant now comes from model_state.json, where nfl_backtest.py
+# also reads them. They were literals here and in the backtest, which is 4.3h: one
+# number in two files and nothing failing when a copy drifts.
+SD_BASE = float(MS.SIM["margin_sd"])
+N_SIMS = int(MS.SIM["sims"])
+RATING_SE = float(MS.SIM["line_sd"])    # uncertainty in our own line, in points
+TOTAL_SE = float(MS.SIM["total_line_sd"])
+TOTAL_SD = float(MS.SIM["total_sd"])
+TOT_BUMP_AT, TOT_BUMP_BY = [float(x) for x in MS.SIM["total_bump"]]
+WIND_BUMP_AT, WIND_BUMP_BY = [float(x) for x in MS.SIM["wind_bump"]]
+RNG = np.random.default_rng(20260904)
+HFA = {'SEA':2.2,'KC':2.2,'DEN':2.2,'BUF':2.2,'NO':2.0,'GB':2.0,'BAL':2.0,'PIT':2.0,
+       'LA':1.0,'LAC':0.8,'JAX':1.0,'LV':0.8,'ATL':1.2}
+DEF_HFA, AVG_PTS = 1.5, 22.4
+LL = {'ARI':(33.528,-112.263),'ATL':(33.755,-84.401),'BAL':(39.278,-76.623),'BUF':(42.774,-78.787),
+ 'CAR':(35.226,-80.853),'CHI':(41.863,-87.617),'CIN':(39.095,-84.516),'CLE':(41.506,-81.699),
+ 'DAL':(32.748,-97.093),'DEN':(39.744,-105.020),'DET':(42.340,-83.046),'GB':(44.501,-88.062),
+ 'HOU':(29.685,-95.411),'IND':(39.760,-86.164),'JAX':(30.324,-81.637),'KC':(39.049,-94.484),
+ 'LA':(33.953,-118.339),'LAC':(33.953,-118.339),'LV':(36.091,-115.184),'MIA':(25.958,-80.239),
+ 'MIN':(44.974,-93.258),'NE':(42.091,-71.264),'NO':(29.951,-90.081),'NYG':(40.814,-74.074),
+ 'NYJ':(40.814,-74.074),'PHI':(39.901,-75.168),'PIT':(40.447,-80.016),'SEA':(47.595,-122.332),
+ 'SF':(37.403,-121.970),'TB':(27.976,-82.503),'TEN':(36.166,-86.771),'WAS':(38.908,-76.864)}
+amp = lambda o: 100/(o+100) if o > 0 else abs(o)/(abs(o)+100)
+
+TEAMCOLOR = {
+ 'ARI':'#97233F','ATL':'#A71930','BAL':'#241773','BUF':'#00338D','CAR':'#0085CA','CHI':'#0B162A',
+ 'CIN':'#FB4F14','CLE':'#E75B00','DAL':'#041E42','DEN':'#FB4F14','DET':'#0076B6','GB':'#203731',
+ 'HOU':'#03202F','IND':'#002C5F','JAX':'#006778','KC':'#E31837','LA':'#003594','LAC':'#0080C6',
+ 'LV':'#333333','MIA':'#008E97','MIN':'#4F2683','NE':'#002244','NO':'#9F8958','NYG':'#0B2265',
+ 'NYJ':'#125740','PHI':'#004C54','PIT':'#B8901A','SEA':'#0C5C86','SF':'#AA0000','TB':'#D50A0A',
+ 'TEN':'#0C2340','WAS':'#5A1414'}
+
+# secondary/alternate colors — used in dark mode where the primary is too dark to glow
+TEAMCOLOR2 = {
+ 'ARI':'#FFB612','ATL':'#A71930','BAL':'#9E7C0C','BUF':'#C60C30','CAR':'#0085CA','CHI':'#C83803',
+ 'CIN':'#FB4F14','CLE':'#FF3C00','DAL':'#0B4C9E','DEN':'#FB4F14','DET':'#0076B6','GB':'#FFB612',
+ 'HOU':'#A71930','IND':'#0B63B8','JAX':'#D7A22A','KC':'#FFB81C','LA':'#FFA300','LAC':'#FFC20E',
+ 'LV':'#A5ACAF','MIA':'#00C4CF','MIN':'#FFC62F','NE':'#C60C30','NO':'#D3BC8D','NYG':'#A71930',
+ 'NYJ':'#1E9E6A','PHI':'#00A19B','PIT':'#FFB612','SEA':'#69BE28','SF':'#C9A860','TB':'#FF7900',
+ 'TEN':'#4B92DB','WAS':'#B33A4E'}
+
+def _rgb(hexc):
+    h = hexc.lstrip('#'); return tuple(int(h[i:i+2],16) for i in (0,2,4))
+
+def _lum(rgb):
+    """WCAG relative luminance."""
+    def ch(c):
+        c = c/255.0
+        return c/12.92 if c <= 0.03928 else ((c+0.055)/1.055)**2.4
+    r_,g_,b_ = (ch(v) for v in rgb)
+    return 0.2126*r_ + 0.7152*g_ + 0.0722*b_
+
+def _blend(rgb, amt):
+    return tuple(int(v + (255-v)*amt) for v in rgb)
+
+def _for_bg(hexc, target_lum, lighten=True):
+    """Lift (or darken) a color until it reads clearly against the background."""
+    rgb = _rgb(hexc)
+    for i in range(21):
+        amt = i/20.0
+        cand = _blend(rgb, amt) if lighten else tuple(int(v*(1-amt)) for v in rgb)
+        if (_lum(cand) >= target_lum) if lighten else (_lum(cand) <= target_lum):
+            return '#%02X%02X%02X' % cand
+    return '#%02X%02X%02X' % (_blend(rgb, 1.0) if lighten else (0,0,0))
+
+import colorsys as _cs
+def _set_light(hexc, L, min_sat=0.45, min_lum=None):
+    """Move a color to a target lightness in HSL, keeping its hue.
+    Near-greyscale colors stay grey. Optionally raise L until a luminance floor is met."""
+    r_,g_,b_ = (v/255 for v in _rgb(hexc))
+    h_, l0, s0 = _cs.rgb_to_hls(r_, g_, b_)
+    s_ = s0 if s0 < 0.12 else max(s0, min_sat)      # keep greys grey
+    def mk(LL):
+        r2,g2,b2 = _cs.hls_to_rgb(h_, LL, s_)
+        return (int(r2*255), int(g2*255), int(b2*255))
+    rgb = mk(L)
+    if min_lum is not None:
+        LL = L
+        while _lum(rgb) < min_lum and LL < 0.92:
+            LL += 0.02; rgb = mk(LL)
+    return '#%02X%02X%02X' % rgb
+
+def _neon(hexc, L=0.60, sat=0.88, min_lum=0.30):
+    """Vivid dark-mode treatment: keep the hue, push saturation, set a bright lightness.
+    Greys stay grey. Matches the glow of naturally bright colors like Denver orange."""
+    r_,g_,b_ = (v/255 for v in _rgb(hexc))
+    h_, l0, s0 = _cs.rgb_to_hls(r_, g_, b_)
+    s_ = s0 if s0 < 0.12 else max(s0, sat)
+    def mk(LL):
+        r2,g2,b2 = _cs.hls_to_rgb(h_, LL, s_)
+        return (int(r2*255), int(g2*255), int(b2*255))
+    rgb = mk(L); LL = L
+    while _lum(rgb) < min_lum and LL < 0.90:
+        LL += 0.02; rgb = mk(LL)
+    return '#%02X%02X%02X' % rgb
+
+def _sat(hexc):
+    r_,g_,b_ = (v/255 for v in _rgb(hexc))
+    return _cs.rgb_to_hls(r_,g_,b_)[2]
+
+def _vivid(hexc, L, sat=0.90):
+    """Set lightness and push saturation, keeping hue. Greys stay grey."""
+    r_,g_,b_ = (v/255 for v in _rgb(hexc))
+    h_, l0, s0 = _cs.rgb_to_hls(r_, g_, b_)
+    s_ = s0 if s0 < 0.12 else max(s0, sat)
+    r2,g2,b2 = _cs.hls_to_rgb(h_, L, s_)
+    return '#%02X%02X%02X' % (int(r2*255), int(g2*255), int(b2*255))
+
+def _pick(team, L, min_lum=None, max_lum=None):
+    """Choose whichever of the two team colors renders most vividly at this lightness.
+    The two modes are picked independently — a team can use its primary on one
+    background and its secondary on the other."""
+    # primary first — it is the team's identity. Secondary only if the primary
+    # cannot be made readable at this lightness on this background.
+    cands = [TEAMCOLOR[team], TEAMCOLOR2.get(team, TEAMCOLOR[team])]
+    best = None
+    for c in cands:
+        v = _vivid(c, L)
+        if min_lum is not None and _lum(_rgb(v)) < min_lum: continue
+        if max_lum is not None and _lum(_rgb(v)) > max_lum: continue
+        best = v; break
+    if best is None:
+        # neither color cleared the bar — walk the primary's lightness until it does
+        best, LL = _vivid(cands[0], L), L
+        if min_lum is not None:
+            while _lum(_rgb(best)) < min_lum and LL < 0.90:
+                LL += 0.02; best = _vivid(cands[0], LL)
+        if max_lum is not None:
+            while _lum(_rgb(best)) > max_lum and LL > 0.14:
+                LL -= 0.02; best = _vivid(cands[0], LL)
+    return best
+
+# Thresholds come from contrast ratio against the actual panel color, not raw
+# luminance — red is inherently low-luminance and a flat floor rejects it unfairly.
+# A team name no longer sits only on a panel. Now that a pick is a tinted chip,
+# the same name can land on any of the grade shades, and a green team on the
+# green A shade is exactly the "same colours together" that makes a page
+# unreadable. So the bar is set against the WORST background a name can ever sit
+# on, measured from the hex values in the stylesheet below rather than guessed.
+# Light theme: dark text on a light ground, so the darkest chip is the hard case
+# (--spbg, luminance 0.822). Dark theme: light text on a dark ground, so the
+# lightest chip is (--cbg, 0.026). Both are tighter than a panel alone required.
+_BG_LIGHT_WORST = 0.8222                   # --spbg, the darkest light-theme chip
+_BG_DARK_WORST  = 0.0255                   # --cbg, the lightest dark-theme chip
+_CONTRAST  = 4.5                           # WCAG AA for normal text
+_MIN_DARK  = _CONTRAST*(_BG_DARK_WORST+0.05) - 0.05
+_MAX_LIGHT = (_BG_LIGHT_WORST+0.05)/_CONTRAST - 0.05
+
+# Each mode picks independently: primary first, secondary only if it cannot be read.
+TEAMCOLOR_DARK  = {k: _pick(k, 0.63, min_lum=_MIN_DARK)  for k in TEAMCOLOR}
+TEAMCOLOR_LIGHT = {k: _pick(k, 0.36, max_lum=_MAX_LIGHT) for k in TEAMCOLOR}
+
+DIV = {
+ 'BUF':'AFC East','MIA':'AFC East','NE':'AFC East','NYJ':'AFC East',
+ 'BAL':'AFC North','CIN':'AFC North','CLE':'AFC North','PIT':'AFC North',
+ 'HOU':'AFC South','IND':'AFC South','JAX':'AFC South','TEN':'AFC South',
+ 'DEN':'AFC West','KC':'AFC West','LAC':'AFC West','LV':'AFC West',
+ 'DAL':'NFC East','NYG':'NFC East','PHI':'NFC East','WAS':'NFC East',
+ 'CHI':'NFC North','DET':'NFC North','GB':'NFC North','MIN':'NFC North',
+ 'ATL':'NFC South','CAR':'NFC South','NO':'NFC South','TB':'NFC South',
+ 'ARI':'NFC West','LA':'NFC West','SEA':'NFC West','SF':'NFC West'}
+TEAMNAME = {
+ 'ARI':'Cardinals','ATL':'Falcons','BAL':'Ravens','BUF':'Bills','CAR':'Panthers','CHI':'Bears',
+ 'CIN':'Bengals','CLE':'Browns','DAL':'Cowboys','DEN':'Broncos','DET':'Lions','GB':'Packers',
+ 'HOU':'Texans','IND':'Colts','JAX':'Jaguars','KC':'Chiefs','LA':'Rams','LAC':'Chargers',
+ 'LV':'Raiders','MIA':'Dolphins','MIN':'Vikings','NE':'Patriots','NO':'Saints','NYG':'Giants',
+ 'NYJ':'Jets','PHI':'Eagles','PIT':'Steelers','SEA':'Seahawks','SF':'49ers','TB':'Buccaneers',
+ 'TEN':'Titans','WAS':'Commanders'}
+
+# Different sources abbreviate teams differently — LAR vs LA, WSH vs WAS, JAC vs
+# JAX, plus legacy codes like OAK and SD. A notes key that does not match a game
+# would otherwise vanish with no warning, so every reasonable spelling is mapped
+# to the canonical code and anything still unmatched is reported on the card.
+TEAM_ALIAS = {}
+_ALIASES = {
+ 'ARI':['ARI','ARZ','AZ','ARIZONA','CARDINALS','ARIZONA CARDINALS'],
+ 'ATL':['ATL','ATLANTA','FALCONS','ATLANTA FALCONS'],
+ 'BAL':['BAL','BLT','BALTIMORE','RAVENS','BALTIMORE RAVENS'],
+ 'BUF':['BUF','BUFFALO','BILLS','BUFFALO BILLS'],
+ 'CAR':['CAR','CAROLINA','PANTHERS','CAROLINA PANTHERS'],
+ 'CHI':['CHI','CHICAGO','BEARS','CHICAGO BEARS'],
+ 'CIN':['CIN','CINCINNATI','BENGALS','CINCINNATI BENGALS'],
+ 'CLE':['CLE','CLV','CLEVELAND','BROWNS','CLEVELAND BROWNS'],
+ 'DAL':['DAL','DALLAS','COWBOYS','DALLAS COWBOYS'],
+ 'DEN':['DEN','DENVER','BRONCOS','DENVER BRONCOS'],
+ 'DET':['DET','DETROIT','LIONS','DETROIT LIONS'],
+ 'GB':['GB','GNB','GBP','GREEN BAY','PACKERS','GREEN BAY PACKERS'],
+ 'HOU':['HOU','HST','HOUSTON','TEXANS','HOUSTON TEXANS'],
+ 'IND':['IND','INDIANAPOLIS','COLTS','INDIANAPOLIS COLTS'],
+ 'JAX':['JAX','JAC','JACKSONVILLE','JAGUARS','JACKSONVILLE JAGUARS'],
+ 'KC':['KC','KAN','KCC','KANSAS CITY','CHIEFS','KANSAS CITY CHIEFS'],
+ 'LA':['LA','LAR','RAM','RAMS','LOS ANGELES RAMS','STL','ST LOUIS RAMS'],
+ 'LAC':['LAC','SD','SDG','CHARGERS','LOS ANGELES CHARGERS','SAN DIEGO CHARGERS'],
+ 'LV':['LV','LVR','OAK','RAI','RAIDERS','LAS VEGAS','LAS VEGAS RAIDERS','OAKLAND RAIDERS'],
+ 'MIA':['MIA','MIAMI','DOLPHINS','MIAMI DOLPHINS'],
+ 'MIN':['MIN','MINNESOTA','VIKINGS','MINNESOTA VIKINGS'],
+ 'NE':['NE','NWE','NEP','NEW ENGLAND','PATRIOTS','NEW ENGLAND PATRIOTS'],
+ 'NO':['NO','NOR','NOS','NEW ORLEANS','SAINTS','NEW ORLEANS SAINTS'],
+ 'NYG':['NYG','NEW YORK GIANTS','GIANTS'],
+ 'NYJ':['NYJ','NEW YORK JETS','JETS'],
+ 'PHI':['PHI','PHILADELPHIA','EAGLES','PHILADELPHIA EAGLES'],
+ 'PIT':['PIT','PITTSBURGH','STEELERS','PITTSBURGH STEELERS'],
+ 'SEA':['SEA','SEATTLE','SEAHAWKS','SEATTLE SEAHAWKS'],
+ 'SF':['SF','SFO','SAN FRANCISCO','49ERS','NINERS','SAN FRANCISCO 49ERS'],
+ 'TB':['TB','TAM','TBB','TAMPA BAY','BUCCANEERS','BUCS','TAMPA BAY BUCCANEERS'],
+ 'TEN':['TEN','TENNESSEE','TITANS','TENNESSEE TITANS'],
+ 'WAS':['WAS','WSH','WFT','WASHINGTON','COMMANDERS','WASHINGTON COMMANDERS'],
+}
+for _canon, _alist in _ALIASES.items():
+    for _a in _alist:
+        TEAM_ALIAS[_a.upper().replace(".", "").replace("-", " ").strip()] = _canon
+
+def canon_team(t):
+    if t is None: return None
+    k = str(t).upper().replace(".", "").replace("-", " ").strip()
+    return TEAM_ALIAS.get(k, TEAM_ALIAS.get(k.replace(" ", ""), None))
+
+def canon_key(k):
+    """Normalise a notes key to AWAY@HOME using canonical codes.
+    Accepts @, vs, at and various separators."""
+    raw = str(k).upper()
+    for sep in ["@", " VS ", " V ", " AT ", "VS.", "--", "_"]:
+        if sep in raw:
+            parts = raw.split(sep, 1); break
+    else:
+        return None
+    a, b = (canon_team(parts[0]), canon_team(parts[1]))
+    return f"{a}@{b}" if a and b else None
+
+NOTES = {}
+if A.notes:
+    if os.path.exists(P(A.notes)):
+        try:
+            _raw = json.load(open(P(A.notes)))
+            NOTES = {}
+            _unmatched = []
+            for _k, _v in _raw.items():
+                if _k.startswith("_"): continue
+                _c = canon_key(_k)
+                if _c: NOTES[_c] = _v
+                else: _unmatched.append(_k)
+            if _unmatched:
+                issue("WARN", f"{len(_unmatched)} note(s) could not be matched to a game",
+                      "These entries were researched but will not appear on any card, because "
+                      f"the team names did not resolve: {', '.join(_unmatched[:6])}.",
+                      "Key each game as AWAY@HOME. Most spellings are accepted automatically; "
+                      "check for typos or a team that is not playing this week.", tab="card")
+        except Exception as e:
+            issue("WARN", f"Could not read {A.notes}",
+                  "Game notes will show only automated data such as injuries, weather and rest.",
+                  "Check the file is valid JSON, or omit --notes.", tab="card")
+    else:
+        issue("WARN", f"{A.notes} not found",
+              "Game notes will show only automated data.",
+              f"Create {A.notes} or omit --notes.", tab="card")
+
+if not os.path.exists(P("power_ratings.csv")):
+    sys.exit("ERROR: power_ratings.csv missing. Run: python3 build_ratings.py")
+r = pd.read_csv(P("power_ratings.csv"), index_col=0)
+# How old are the ratings? Read from build_ratings.py's own record, NOT from
+# the file's modification time. The workflow checks the repository out fresh on
+# every run, so every file looks brand new and an mtime age is always 0. That
+# made this warning impossible to fire in CI, which is the only place the card
+# is ever built. Ratings rebuild on Tuesdays, so they legitimately reach six
+# days old and the check has to work.
+_built_at, age = None, 0
+try:
+    with open(P("built.json")) as _bf:
+        _built_at = json.load(_bf).get("power_ratings.csv")
+    _when = dt.datetime.fromisoformat(str(_built_at))
+    if _when.tzinfo is None:
+        _when = _when.replace(tzinfo=dt.timezone.utc)
+    age = (dt.datetime.now(dt.timezone.utc) - _when).days
+except Exception:
+    _built_at = None
+if _built_at is None:
+    issue("WARN", "Cannot tell how old the power ratings are",
+          "build_ratings.py has not written scripts/built.json, so the staleness check below "
+          "is not running and the ratings on this card could be any age. A missing age is not "
+          "the same as a fresh one.",
+          "Run the workflow once with rebuild set to true.", tab="all")
+elif age > 7:
+    issue("WARN", f"Power ratings are {age} days old",
+          "Ratings still reflect games from over a week ago, so every model number on this card is stale.",
+          "Run the workflow with rebuild set to true.", tab="all")
+else:
+    print(f"  power ratings built {_built_at} ({age}d old)")
+# The regression toward the mean comes from model_state.json, the same place
+# build_ratings.py reads it. These used to be the literals 0.65 and 0.55 here,
+# which is 1 - OFF_REGRESS and 1 - DEF_REGRESS written out a second time in a
+# second file. build_ratings.py had already applied them and written the answer
+# to the Prior2026 column, and this line recomputed it. Nothing would have
+# failed if the two copies drifted. See 4.3h.
+# The grading constants used to be read here and used by two functions in this
+# file. Both are gone: grading now lives in nfl_picks.py, which reads the same
+# section of model_state.json plus the backtested record that caps it. Leaving
+# dead copies of the scale here is exactly how 4.3h starts.
+_off_keep = 1.0 - float(MS.RATINGS["off_regress"])
+_def_keep = 1.0 - float(MS.RATINGS["def_regress"])
+r["off"], r["def"] = r.Off2025 * _off_keep, r.Def2025 * _def_keep
+r["rating"] = r["off"] + r["def"]
+r["preseason"] = np.nan
+# Kept before the preseason swap below, because the check further down is about
+# whether this file and build_ratings.py still agree on the REGRESSION
+# constants. Comparing the market's preseason number to build_ratings.py's
+# column would fire every run and mean nothing.
+_rating_from_2025 = r["rating"].copy()
+
+# WHERE A TEAM STARTS BEFORE IT HAS PLAYED.
+# Last season regressed toward the mean is one answer, and it is the one this
+# card used. The market is another, and it prices the offseason: who signed,
+# who left, who got hurt in August. None of that is in last year's play-by-play.
+# preseason_2026.csv holds the sportsbook season win totals, cross-checked
+# against a second source and identical on all 32 teams.
+#
+# The conversion is measured, not chosen. See model_state.json.
+#
+# The offence and defence split stays as last season measured it, because the
+# market publishes no split. Both sides are shifted by half the difference, so
+# the balance between a team's offence and defence is preserved while the two
+# add up to the market's number.
+if str(MS.PRESEASON.get("mode", "")).lower() == "market":
+    _pre_path = P(str(MS.PRESEASON.get("file", "preseason_2026.csv")))
+    try:
+        _pre = pd.read_csv(_pre_path)
+        if not {"team", "win_total"}.issubset(_pre.columns):
+            raise ValueError("needs team and win_total columns")
+        _pre = _pre.set_index("team")["win_total"].astype(float)
+        _missing = [t for t in r.index if t not in _pre.index]
+        if _missing:
+            raise ValueError(f"no win total for {', '.join(sorted(_missing))}")
+        _pr = (_pre.reindex(r.index) - float(MS.PRESEASON["wins_at_average"])) \
+              * float(MS.PRESEASON["points_per_win"])
+        _pr = _pr - _pr.mean()          # books shade totals up; centre it out
+        _shift = (_pr - r["rating"]) / 2.0
+        r["preseason"] = _pr.round(2)
+        r["off"], r["def"] = r["off"] + _shift, r["def"] + _shift
+        r["rating"] = _pr
+        _src = str(pd.read_csv(_pre_path)["source"].iloc[0]) if "source" in pd.read_csv(_pre_path).columns else "preseason file"
+        _asof = str(pd.read_csv(_pre_path)["as_of"].iloc[0]) if "as_of" in pd.read_csv(_pre_path).columns else "?"
+        print(f"  preseason ratings from the market ({_src}, {_asof}): "
+              f"{r['rating'].min():+.1f} to {r['rating'].max():+.1f}")
+        issue("INFO", "Ratings are the market's preseason view",
+              f"No 2026 games have been played, so every team starts where the "
+              f"sportsbooks put it: season win totals from {_src}, taken "
+              f"{_asof}, converted to points at a rate measured over 352 past "
+              f"team-seasons. Last season's play-by-play still sets each team's "
+              f"offence and defence split.",
+              "No action. Results replace this as the season is played.", tab="all")
+    except Exception as _e:
+        issue("WARN", "Preseason ratings unavailable, using last season instead",
+              f"{os.path.basename(_pre_path)} could not be used ({_e}), so every "
+              "team starts from last season's play-by-play regressed toward the "
+              "mean rather than from the market's preseason view.",
+              f"Check {os.path.basename(_pre_path)} has a row per team with a "
+              "team and win_total column.", tab="all")
+# ---- results take over from the preseason number, at a measured rate ----------
+# Until this existed the card sat on its September ratings all season: the fit
+# saw one past season and nothing let the current one in. build_ratings.py now
+# writes this season's own offence and defence alongside, and the weight on them
+# is n/(n+k) after n games. k is MEASURED, not chosen: 10, over 3,407 games of
+# walk-forward backtesting. k=0, meaning drop the preseason number the moment a
+# game is played, is WORSE than never updating, by 0.54 points with a paired t
+# of -3.84, so both halves stay in all year.
+_K = float(MS.RATINGS.get("in_season_k", 0) or 0)
+_have_cur = {"OffCur", "DefCur", "GamesCur"} <= set(r.columns)
+_ngames = float(r["GamesCur"].fillna(0).max()) if _have_cur else 0.0
+if _K > 0 and _have_cur and _ngames > 0:
+    _n = r["GamesCur"].fillna(0).astype(float)
+    _lam = (_n / (_n + _K)).where(r["OffCur"].notna() & r["DefCur"].notna(), 0.0)
+    r["off"] = (1 - _lam) * r["off"] + _lam * r["OffCur"].fillna(0.0)
+    r["def"] = (1 - _lam) * r["def"] + _lam * r["DefCur"].fillna(0.0)
+    r["rating"] = r["off"] + r["def"]
+    r["blend"] = (100 * _lam).round(0)
+    issue("INFO", f"Ratings are {100*float(_lam.max()):.0f}% this season's results",
+          f"After {_ngames:.0f} games a team's rating is {100*float(_lam.max()):.0f}% what it has "
+          f"done this year and the rest its preseason number. The rate was measured, "
+          f"not chosen: the in-season fit carries n/(n+{_K:g}) of the weight after n games.",
+          "No action. The share rises on its own as the season is played.", tab="all")
+elif _K > 0:
+    r["blend"] = 0.0
+    issue("INFO", "Ratings are still the preseason view",
+          "No completed games from this season have reached the ratings yet, so every "
+          "team sits where the market put it in September.",
+          "No action. Results start moving these as soon as they are played.", tab="all")
+else:
+    r["blend"] = 0.0
+    issue("WARN", "In-season blending is switched off",
+          "ratings.in_season_k is zero or missing, so results will never move the "
+          "ratings and the card will show September's numbers in December.",
+          "Run the nfl-backtest workflow, which measures it and writes it back.", tab="all")
+
+if MS.FELL_BACK:
+    issue("WARN", "Running on the fallback constants",
+          f"{MS.FELL_BACK}, so every number on this card comes from the copy "
+          "compiled into model_state.py rather than the file that is meant to "
+          "hold them.",
+          "Check scripts/model_state.json is present and valid JSON.", tab="all")
+# The card and build_ratings.py now share one set of constants, so this has to
+# agree. Checking it is what would catch the two drifting apart again, which is
+# the whole reason the constants were moved.
+if "Prior2026" in r.columns:
+    _drift = float((_rating_from_2025 - r.Prior2026).abs().max())
+    if _drift > 0.02:                      # the CSV is rounded to four places
+        issue("ERROR", "The ratings on this card disagree with the ratings file",
+              f"Recomputing the power rating from model_state.json gives a number "
+              f"up to {_drift:.2f} points away from the Prior2026 column that "
+              "build_ratings.py wrote. One of the two is using different constants.",
+              "Rebuild the ratings so both are produced from the same model_state.json: "
+              "python3 build_ratings.py", tab="all")
+r["off_rank"] = r["off"].rank(ascending=False).astype(int)
+r["def_rank"] = r["def"].rank(ascending=False).astype(int)
+r["pwr_rank"] = r["rating"].rank(ascending=False).astype(int)
+if "PassRate" in r.columns:
+    lo, hi = r.PassRate.quantile(.30), r.PassRate.quantile(.70)
+    r["scheme"] = np.where(r.PassRate>=hi,"pass-heavy",np.where(r.PassRate<=lo,"run-heavy","balanced"))
+else:
+    r["PassRate"] = np.nan; r["scheme"] = "n/a"
+for c,rk in [("PassOff","po_rank"),("RushOff","ro_rank"),("PassDef","pd_rank"),("RushDef","rd_rank")]:
+    r[rk] = r[c].rank(ascending=False).astype(int) if c in r.columns else 0
+if "Giveaways" in r.columns:
+    r["gv_rank"] = r.Giveaways.rank(ascending=True).astype(int)
+    r["tk_rank"] = r.Takeaways.rank(ascending=False).astype(int)
+    r["to_diff"] = (r.Takeaways - r.Giveaways).round(2)
+else:
+    r["Giveaways"]=np.nan; r["Takeaways"]=np.nan; r["gv_rank"]=0; r["tk_rank"]=0; r["to_diff"]=np.nan
+_gap = r.pd_rank - r.rd_rank
+r["dsch"] = np.where(_gap <= -8, "pass-stopping", np.where(_gap >= 8, "run-stopping", "balanced D"))
+
+try:
+    ELO = pd.read_csv(P("elo_ratings.csv"), index_col=0).iloc[:,0]; ELO = (ELO-ELO.mean())/25.0
+except Exception:
+    ELO = None
+    issue("INFO", "Elo cross-check unavailable",
+          "The independent second-opinion model is not loaded, so games where the two models disagree cannot be flagged.",
+          "Run: python3 elo.py", tab="card")
+
+sch = nfl.load_schedules([SEASON]).to_pandas(); sch = sch[sch.game_type=="REG"]
+if A.week is None:
+    pl = sch[sch.result.notna()]
+    WEEK = int(pl.week.max())+1 if len(pl) else int(sch.week.min())
+else: WEEK = A.week
+REC = {}
+_done = sch[sch.result.notna() & (sch.week < WEEK)]
+for t in DIV:
+    hg = _done[_done.home_team==t]; ag = _done[_done.away_team==t]
+    w = int((hg.home_score>hg.away_score).sum() + (ag.away_score>ag.home_score).sum())
+    l = int((hg.home_score<hg.away_score).sum() + (ag.away_score<ag.home_score).sum())
+    t_ = int((hg.home_score==hg.away_score).sum() + (ag.away_score==ag.home_score).sum())
+    REC[t] = f"{w}-{l}" + (f"-{t_}" if t_ else "")
+
+gw = sch[(sch.week==WEEK) & sch.spread_line.notna()].copy()
+if len(gw)==0: sys.exit(f"No lines posted for week {WEEK} yet.")
+
+try:
+    INJ = nfl.load_injuries([SEASON]).to_pandas()
+    INJ = INJ[(INJ.week==WEEK) & INJ.report_status.isin(["Out","Doubtful","Questionable"])]
+    if len(INJ)==0:
+        INJ=None
+        issue("INFO", f"No injury report published for Week {WEEK} yet",
+              "Injuries are the largest single driver of line movement, so the card is missing its most important input.",
+              "Reports post Wednesday through Friday. Re-run the card on Friday.", tab="card")
+except Exception:
+    INJ=None
+    issue("INFO", f"Injury data not yet available for {SEASON}",
+          "nflverse publishes injuries once the season is underway. Until then game notes show no injury lines.",
+          "No action needed. This resolves automatically once Week 1 is played.", tab="card")
+
+def inj_list(t):
+    if INJ is None: return []
+    x = INJ[INJ.team==t]; out=[]
+    for _,v in x[x.report_status=="Out"].head(6).iterrows():
+        det = f" ({v.report_primary_injury})" if pd.notna(v.get('report_primary_injury')) else ""
+        out.append(f"OUT — {v.position} {v.last_name}{det}")
+    for _,v in x[x.report_status=="Questionable"].head(4).iterrows():
+        det = f" ({v.report_primary_injury})" if pd.notna(v.get('report_primary_injury')) else ""
+        out.append(f"Questionable — {v.position} {v.last_name}{det}")
+    return out
+
+_D=A.no_weather; _C={}
+def wx(t, roof):
+    global _D
+    if _D or str(roof) in ("dome","closed") or t not in LL: return None
+    if t in _C: return _C[t]
+    try:
+        import requests
+        la,lo = LL[t]
+        j = requests.get("https://api.open-meteo.com/v1/forecast", params={"latitude":la,"longitude":lo,
+            "hourly":"temperature_2m,wind_speed_10m,precipitation_probability","temperature_unit":"fahrenheit",
+            "wind_speed_unit":"mph","forecast_days":7}, timeout=6).json()["hourly"]
+        i=min(len(j["time"])-1,12)
+        d=dict(t=j["temperature_2m"][i],w=j["wind_speed_10m"][i],p=j["precipitation_probability"][i])
+    except Exception:
+        _D=True
+        issue("WARN","Weather forecast unavailable",
+              "Wind is the only weather variable that consistently moves totals, so totals may be overstated in windy games.",
+              "Usually a network restriction. Works on a normal machine; re-run without --no-weather.", tab="card")
+        return None
+    _C[t]=d; return d
+
+# Weeks 1 to 4 lean hardest on the preseason number and are measured apart from
+# the rest of the season, the same split the college card uses.
+SPREAD_STRATEGY = PK.spread_strategy(WEEK)
+rows=[]
+for _,g in gw.iterrows():
+    h,a = g.home_team, g.away_team
+    if h not in r.index or a not in r.index:
+        issue("ERROR", f"{a} @ {h} could not be priced",
+              "This game is missing from the card entirely because one team has no power rating.",
+              "Usually a team abbreviation change. Re-run build_ratings.py.", tab="all"); continue
+    hfa = 0.0 if str(g.location)=="Neutral" else HFA.get(h,DEF_HFA)
+    rd = int(g.home_rest - g.away_rest) if (pd.notna(g.home_rest) and pd.notna(g.away_rest)) else 0
+    rest_adj = float(np.clip(rd*0.25,-1.5,1.5))
+    w = wx(h,g.roof); wxt=0.0
+    if w:
+        wxt -= 5.0 if w["w"]>=20 else 3.0 if w["w"]>=15 else 1.5 if w["w"]>=10 else 0.0
+        if w["p"] and w["p"]>=40: wxt-=1.0
+        if w["t"]<=20: wxt-=1.5
+    ms = r.loc[h,"rating"]-r.loc[a,"rating"]+hfa+rest_adj
+    mt = 2*AVG_PTS + (r.loc[h,"off"]-r.loc[a,"def"]) + (r.loc[a,"off"]-r.loc[h,"def"]) + wxt
+    if str(g.roof)=="dome": mt+=1.5
+    sd = (SD_BASE + (TOT_BUMP_BY if g.total_line > TOT_BUMP_AT else 0.0)
+          - (WIND_BUMP_BY if (w and w["w"] >= WIND_BUMP_AT) else 0.0))
+    ph,pa = amp(g.home_moneyline), amp(g.away_moneyline); nv = ph/(ph+pa)
+    ml_imp = norm.ppf(np.clip(nv,.001,.999))*SD_BASE
+    # The moneyline-against-the-spread read used to live here and is gone.
+    # nflverse publishes ONE consensus moneyline and ONE consensus spread, and a
+    # consensus is internally consistent by construction: measured over 3,321
+    # games the two disagree by only 1.2 points of scatter and no threshold beats
+    # a coin flip (172-181 at 1.5 points or more). The college card keeps this
+    # angle because there it reads EACH BOOK's own two prices, where a stale one
+    # shows up. Restoring it here needs per-book prices, which this card lacks.
+    # ---- Monte Carlo: draw our true line from its own uncertainty, then draw the game ----
+    true_line = RNG.normal(ms, RATING_SE, N_SIMS)
+    margin = RNG.normal(true_line, sd)                      # home margin
+    tot_true = RNG.normal(mt, TOTAL_SE, N_SIMS)
+    total_sim = RNG.normal(tot_true, TOTAL_SD)
+    pwin = float((margin > 0).mean() + 0.5*(margin == 0).mean())
+    pcov = float((margin > g.spread_line).mean())
+    pover = float((total_sim > g.total_line).mean())
+    sp_side = h if pcov>.5 else a; ml_side = h if pwin>nv else a
+    # WHAT GRADES, AND WHY IT IS NOT THE COMPOSITE ANY MORE.
+    # This card used to score each market out of 100 (70 for the simulated win
+    # probability, 30 for the value over the price) and band the result. Nothing
+    # capped it, so a market could grade A on a strategy that had never been
+    # measured, or one that had been measured and lost.
+    #
+    # nfl_backtest.py has now measured both, on 3,407 games of real closing
+    # lines, and the answer is that our stated confidence about WHO COVERS
+    # carries no information: the fitted slope is not distinguishable from zero
+    # on the spread or on the total. Who WINS is a different question and does
+    # fit, clear of zero, which is why a moneyline reads its confidence there.
+    #
+    # So the letters come from nfl_picks.py, which calibrates the probability
+    # first and then caps the grade by the record behind that market. The old
+    # composite is still computed and still shown as the raw score, because the
+    # college card's port was verified against this card's own worked example
+    # and that anchor is worth keeping. It just is not the grade.
+    #
+    # One grade per market. A moneyline carries a real price, so its break-even
+    # comes from that price rather than from the standard -110 figure.
+    _ml_price = g.home_moneyline if ml_side == h else g.away_moneyline
+    G_SP = PK.grade_market(max(pcov, 1 - pcov), 100 * (max(pcov, 1 - pcov) - 0.5),
+                           SPREAD_STRATEGY)
+    G_ML = PK.grade_market((pwin if ml_side == h else 1 - pwin), abs(100 * (pwin - nv)),
+                           "moneyline_fav" if (_ml_price is not None and _ml_price < 0)
+                           else "moneyline_dog",
+                           price=_ml_price, conf_strategy="outright")
+    G_TOT = PK.grade_market(max(pover, 1 - pover), 100 * (max(pover, 1 - pover) - 0.5),
+                            "total_model")
+    sp_conf = round(100*max(pcov,1-pcov),1)
+    ml_conf = round(100*(pwin if ml_side==h else 1-pwin),1)
+    tot_conf = round(100*max(pover,1-pover),1)
+    rows.append(dict(away=a,home=h,gid=f"{a}@{h}",date=str(g.gameday),day=str(g.weekday),
+        time=str(g.gametime),venue=str(g.stadium),roof=str(g.roof),surface=str(g.surface),
+        hfa=hfa,rest=rd,div=bool(g.div_game),wx=w,wxt=round(wxt,1),
+        mk_sp=g.spread_line,our_sp=round(ms,1),sp_gap=round(ms-g.spread_line,1),
+        sp_side=sp_side,sp_tier=G_SP["grade"],
+        sp_edge=round(100*(max(pcov,1-pcov)-0.5),1),
+        sp_score=G_SP["score"], sp_raw=G_SP["raw"], sp_capped=(G_SP["capped"] or ""),
+        sp_evidence=G_SP["evidence"], sp_cal=G_SP["calibration"], sp_cpct=G_SP["conf_pct"],
+        mk_ml_h=g.home_moneyline,mk_ml_a=g.away_moneyline,nv=round(100*nv,1),
+        our_ph=round(100*pwin,1),ml_side=ml_side,
+        ml_tier=G_ML["grade"],
+        ml_score=G_ML["score"], ml_raw=G_ML["raw"], ml_capped=(G_ML["capped"] or ""),
+        ml_evidence=G_ML["evidence"], ml_cal=G_ML["calibration"], ml_cpct=G_ML["conf_pct"],
+        ml_edge=round(100*(pwin-nv),1),ml_mkt=round(100*(nv if ml_side==h else 1-nv),1),
+        ml_imp=round(ml_imp,1),
+        mk_tot=g.total_line,our_tot=round(mt,1),tot_gap=round(mt-g.total_line,1),
+        tot_side=("OVER" if pover>0.5 else "UNDER"),
+        tot_tier=G_TOT["grade"],
+        tot_score=G_TOT["score"], tot_raw=G_TOT["raw"], tot_capped=(G_TOT["capped"] or ""),
+        tot_evidence=G_TOT["evidence"], tot_cal=G_TOT["calibration"], tot_cpct=G_TOT["conf_pct"],
+        tot_edge=round(100*(max(pover,1-pover)-0.5),1), pover=round(100*pover,1),
+        elo_sp=(round(ELO[h]-ELO[a]+hfa,1) if (ELO is not None and h in ELO.index and a in ELO.index) else None),
+        split=(sp_side!=ml_side), sp_conf=sp_conf, ml_conf=ml_conf, tot_conf=tot_conf,
+        h_off=int(r.loc[h,"off_rank"]), h_def=int(r.loc[h,"def_rank"]), h_pwr=int(r.loc[h,"pwr_rank"]),
+        a_off=int(r.loc[a,"off_rank"]), a_def=int(r.loc[a,"def_rank"]), a_pwr=int(r.loc[a,"pwr_rank"]),
+        h_sch=str(r.loc[h,"scheme"]), a_sch=str(r.loc[a,"scheme"]),
+        h_dsch=str(r.loc[h,"dsch"]), a_dsch=str(r.loc[a,"dsch"]),
+        h_po=int(r.loc[h,"po_rank"]), h_ro=int(r.loc[h,"ro_rank"]),
+        h_pd=int(r.loc[h,"pd_rank"]), h_rd=int(r.loc[h,"rd_rank"]),
+        a_po=int(r.loc[a,"po_rank"]), a_ro=int(r.loc[a,"ro_rank"]),
+        a_pd=int(r.loc[a,"pd_rank"]), a_rd=int(r.loc[a,"rd_rank"]),
+        h_gv=(float(r.loc[h,"Giveaways"]) if pd.notna(r.loc[h,"Giveaways"]) else None),
+        a_gv=(float(r.loc[a,"Giveaways"]) if pd.notna(r.loc[a,"Giveaways"]) else None),
+        h_tk=(float(r.loc[h,"Takeaways"]) if pd.notna(r.loc[h,"Takeaways"]) else None),
+        a_tk=(float(r.loc[a,"Takeaways"]) if pd.notna(r.loc[a,"Takeaways"]) else None),
+        h_pr=(float(r.loc[h,"PassRate"]) if pd.notna(r.loc[h,"PassRate"]) else None),
+        a_pr=(float(r.loc[a,"PassRate"]) if pd.notna(r.loc[a,"PassRate"]) else None),
+        inj_h=inj_list(h), inj_a=inj_list(a)))
+D=pd.DataFrame(rows)
+if len(D)==0: sys.exit("No games priced.")
+D["elo_gap"]=D.apply(lambda x:(round(x.our_sp-x.elo_sp,1) if x.elo_sp is not None else np.nan),axis=1)
+_eg = D.elo_gap.dropna()
+ELO_SD = float(_eg.std()) if len(_eg)>3 else 3.5
+ELO_THR = round(1.5*ELO_SD, 1)
+if A.game:
+    k=A.game.replace(" ","").upper(); D=D[D.gid.str.upper()==k]
+    if len(D)==0: sys.exit(f"'{A.game}' not in week {WEEK}.")
+
+# Compare this run's notes against a snapshot of the previous run so the card
+# can say what actually changed, rather than leaving you to diff raw JSON.
+CHANGES, PREV_TS = {}, None
+_SNAP = P("notes_snapshot.json")
+if NOTES:
+    _prev = {}
+    if os.path.exists(_SNAP):
+        try:
+            _sn = json.load(open(_SNAP))
+            _prev = _sn.get("notes", {})
+            PREV_TS = _sn.get("saved")
+        except Exception:
+            _prev = {}
+    if _prev:
+        _keys = set(NOTES) | set(_prev)
+        for _g in sorted(_keys):
+            _now, _was = NOTES.get(_g, {}), _prev.get(_g, {})
+            _added, _removed = [], []
+            # "log" is the structured news log, recorded to newslog.csv rather
+            # than shown. It has no label in _LBL and its value is an object, so
+            # leaving it in here would print raw JSON on the page.
+            for _sec in (set(_now) | set(_was)) - {"log"}:
+                _a = _now.get(_sec, []); _b = _was.get(_sec, [])
+                _a = _a if isinstance(_a, list) else [_a]
+                _b = _b if isinstance(_b, list) else [_b]
+                _as = {json.dumps(x, sort_keys=True) if isinstance(x, dict) else str(x) for x in _a}
+                _bs = {json.dumps(x, sort_keys=True) if isinstance(x, dict) else str(x) for x in _b}
+                for _x in sorted(_as - _bs): _added.append((_sec, _x))
+                for _x in sorted(_bs - _as): _removed.append((_sec, _x))
+            if _added or _removed:
+                CHANGES[_g] = {"added": _added, "removed": _removed,
+                               "new_game": _g not in _prev, "dropped": _g not in NOTES}
+    try:
+        json.dump({"saved": dt.datetime.now().isoformat(timespec="minutes"), "notes": NOTES},
+                  open(_SNAP, "w"), indent=1)
+    except Exception as e:
+        issue("WARN", "Could not save the notes snapshot",
+              "The next run will not be able to show what changed.",
+              f"Check write permissions on data/notes_snapshot.json ({e})", tab="card")
+
+if not NOTES:
+    issue("INFO", "No researched news attached",
+          "Trades, coaching changes, suspensions, line movement and expert picks are not in any dataset, so game notes show only injuries, weather and rest.",
+          "Ask Claude to research the slate and produce notes.json, then re-run with --notes notes.json", tab="card")
+
+led=[]
+for _,x in D.iterrows():
+    led += [dict(week=WEEK,date=x.date,day=x.day,game=x.gid,market="Spread",
+                 pick=f"{x.sp_side} {(-x.mk_sp if x.sp_side==x.home else x.mk_sp):+.1f}",
+                 our_num=x.our_sp,market_num=x.mk_sp,gap=x.sp_gap,tier=x.sp_tier,result=""),
+            dict(week=WEEK,date=x.date,day=x.day,game=x.gid,market="Moneyline",pick=x.ml_side,
+                 our_num=x.ml_conf,market_num=x.ml_mkt,gap=round(x.ml_conf-x.ml_mkt,1),win_pct=x.ml_conf,tier=x.ml_tier,result=""),
+            dict(week=WEEK,date=x.date,day=x.day,game=x.gid,market="Total",
+                 pick=f"{x.tot_side} {x.mk_tot}",our_num=x.our_tot,market_num=x.mk_tot,
+                 gap=x.tot_gap,win_pct=x.tot_conf,tier=x.tot_tier,result="")]
+L=pd.DataFrame(led); L["result"]=L["result"].astype("object")
+
+# auto-grade any game that already has a final score
+_fin = {f"{g.away_team}@{g.home_team}": g for _,g in
+        sch[(sch.week==WEEK) & sch.result.notna()].iterrows()}
+def _autograde(row):
+    g = _fin.get(row.game)
+    if g is None: return row.result
+    hm, aw = g.home_score, g.away_score
+    marg, tot = hm-aw, hm+aw
+    if row.market == "Spread":
+        side = row.pick.split()[0]
+        if marg == g.spread_line: return "P"
+        covered = (marg > g.spread_line)
+        return "W" if (covered == (side == g.home_team)) else "L"
+    if row.market == "Moneyline":
+        if marg == 0: return "P"
+        return "W" if ((marg > 0) == (row.pick == g.home_team)) else "L"
+    if row.market == "Total":
+        if tot == g.total_line: return "P"
+        return "W" if ((tot > g.total_line) == row.pick.startswith("OVER")) else "L"
+    return row.result
+L["result"] = L.apply(_autograde, axis=1)
+_graded = int((L.result.isin(["W","L","P"])).sum())
+lp=P(f"ledger_week{WEEK}.csv"); pres=0
+if os.path.exists(lp):
+    try:
+        old=pd.read_csv(lp,dtype={"result":str},keep_default_na=False)
+        keep=old[old.result.str.upper().str.strip().isin(["W","L","P"])]
+        if len(keep):
+            L=L.merge(keep[["game","market","result"]],on=["game","market"],how="left",suffixes=("","_o"))
+            L["result"]=L["result_o"].fillna(L["result"]); L=L.drop(columns=["result_o"]); pres=len(keep)
+    except Exception as e:
+        issue("ERROR","Existing ledger could not be read",
+              "Results you already filled in were NOT carried over and may be overwritten.",
+              f"Back up ledger_week{WEEK}.csv before re-running. ({e})", tab="ledger")
+# ---- how each pick moved through the week, and freezing it once it is final ----
+# Trina bets on game day, so the number and the grade SHOULD keep moving during
+# the week: that movement is information, and the card is meant to show the
+# latest. What must not move is a pick that has already been played. Rebuilding
+# every row from today's ratings meant a game that finished on Sunday had its
+# grade recomputed on Tuesday, so the record paired Tuesday's grade with
+# Sunday's result. A record built partly after the result is known is worthless,
+# which is 4.3e in a different shape.
+#
+# So: keep recomputing while a game is unplayed, snapshot every run to
+# ledger_history.csv, and once a game has a final score carry the LAST snapshot
+# taken before it did. History rows are only ever written for unplayed games, so
+# the last one for a pick is by construction the last pre-result view of it.
+_hist_path = P("ledger_history.csv")
+_stamp = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%MZ")
+_track = ["our_num", "market_num", "gap", "tier"]
+_final = L.result.astype(str).str.upper().str.strip().isin(["W", "L", "P"])
+
+_hist = pd.DataFrame()
+if os.path.exists(_hist_path):
+    try:
+        _hist = pd.read_csv(_hist_path)
+    except Exception as e:
+        issue("WARN", "The pick history could not be read",
+              f"ledger_history.csv exists but could not be parsed ({e}), so this "
+              "run cannot show how picks moved and cannot freeze a finished pick "
+              "at its last pre-game number.",
+              "Back up ledger_history.csv and let the next run start a fresh one.",
+              tab="ledger")
+
+# freeze anything already played at its last pre-result snapshot
+_frozen = 0
+if len(_hist) and _final.any():
+    _last = (_hist[_hist.week == WEEK].sort_values("taken")
+             .groupby(["game", "market"]).tail(1).set_index(["game", "market"]))
+    for _i in L.index[_final]:
+        _k = (L.at[_i, "game"], L.at[_i, "market"])
+        if _k in _last.index:
+            for _c in _track:
+                if _c in _last.columns and pd.notna(_last.at[_k, _c]):
+                    L.at[_i, _c] = _last.at[_k, _c]
+            _frozen += 1
+
+# what the pick looked like the first time we saw it this week, so movement is
+# visible in the file itself rather than only by diffing runs
+if len(_hist):
+    _first = (_hist[_hist.week == WEEK].sort_values("taken")
+              .groupby(["game", "market"]).head(1).set_index(["game", "market"]))
+    L["opened_num"] = [_first.at[k, "our_num"] if k in _first.index else None
+                       for k in zip(L.game, L.market)]
+    L["opened_tier"] = [_first.at[k, "tier"] if k in _first.index else None
+                        for k in zip(L.game, L.market)]
+    _moved = int(sum(1 for a, b in zip(L.tier, L.opened_tier)
+                     if b is not None and pd.notna(b) and str(a) != str(b)))
+    if _moved:
+        print(f"  {_moved} pick(s) have changed grade since the first run this week")
+else:
+    L["opened_num"], L["opened_tier"] = None, None
+
+# snapshot the unplayed picks. Append-only: a snapshot is a record of what the
+# card said at a moment, and rewriting one would defeat the point.
+_snap = L.loc[~_final, ["week", "game", "market", "pick"] + _track].copy()
+if len(_snap):
+    _snap.insert(0, "taken", _stamp)
+    _hist = pd.concat([_hist, _snap], ignore_index=True) if len(_hist) else _snap
+    _hist = _hist.drop_duplicates(subset=["taken", "game", "market"], keep="last")
+    _hist.to_csv(_hist_path, index=False)
+print(f"  pick history: {len(_hist)} snapshots, {int((~_final).sum())} picks still open, "
+      f"{_frozen} frozen at their last pre-game number")
+
+L.to_csv(lp,index=False)
+
+# ---- the structured news log ------------------------------------------------
+# What the weekly research SAID, in three countable fields, recorded against the
+# numbers as they stood when it was written. The backtest says the model does not
+# beat the market on public data alone; the researched news is the one input the
+# market has and the model does not, and nothing in either repository can say
+# today whether it adds anything. This file is what will answer that, joined to
+# the ledger on season, week, away and home.
+#
+# Same filename, same columns, same order as the college card's, so one script
+# can read either. spread_open and total_open are deliberately EMPTY here.
+# nflverse publishes no opening line, and filling them from the earliest number
+# this card happened to see would put two different meanings under one column
+# name across the two files, which is the whole family of defects in 4.3h. What
+# the NFL card does have is ledger_history.csv, which is where its line movement
+# already lives.
+#
+# A game may appear more than once, and that is deliberate. One row per game and
+# never again looked right and collects nothing whenever the research lands on a
+# different day from the first build of the week. So: a row the first time a game
+# is seen before kickoff, and another whenever the research block CHANGES. The
+# last pre-kickoff row for a game is the one to analyse.
+#
+# Nothing is ever written for a game that has started, for the reason in 4.3e.
+def write_news_log():
+    """Append this run's research state for every game not yet under way.
+
+    Inside a function on purpose, per 4.3k: a local name in a long bare block
+    has clobbered a module-level helper three times in this project, and once it
+    silently threw away a whole run's record.
+    """
+    from zoneinfo import ZoneInfo
+    cols = ["written_utc", "season", "week", "away", "home",
+            "qb_out", "starters_out", "confidence",
+            "spread_open", "spread_at_write", "total_open", "total_at_write",
+            "our_number"]
+    path = P("newslog.csv")
+    old = pd.read_csv(path) if os.path.exists(path) else pd.DataFrame(columns=cols)
+    for c in cols:
+        if c not in old.columns:
+            old[c] = None
+
+    def fp(qb, starters, conf):
+        """One string standing for a research block.
+
+        Read back from CSV an integer 3 returns as 3.0, so comparing raw values
+        would report a change on every run and append a row every run.
+        Everything is normalised through here, on both sides of the comparison.
+        """
+        def one(v):
+            if v is None:
+                return ""
+            try:
+                if pd.isna(v):
+                    return ""
+            except Exception:
+                pass
+            try:
+                return str(int(float(v)))
+            except Exception:
+                return str(v).strip()
+        return f"{one(qb)}|{one(starters)}|{one(conf)}"
+
+    last = {}
+    for t in old.itertuples():
+        try:
+            if int(t.season) == int(SEASON) and int(t.week) == int(WEEK):
+                last[(str(t.away), str(t.home))] = fp(t.qb_out, t.starters_out,
+                                                      t.confidence)
+        except Exception:
+            continue
+
+    # Kickoff per game, from the schedule this run already read. nflverse gives
+    # gametime as US Eastern, so it is read as Eastern and compared in UTC
+    # rather than assumed to be either.
+    kick = {}
+    for _, g in gw.iterrows():
+        try:
+            kick[f"{g.away_team}@{g.home_team}"] = dt.datetime.fromisoformat(
+                f"{g.gameday}T{g.gametime}").replace(tzinfo=ZoneInfo("America/New_York"))
+        except Exception:
+            pass
+    now = dt.datetime.now(dt.timezone.utc)
+    today = now.strftime("%Y-%m-%d")
+
+    new, skipped = [], 0
+    for x in D.itertuples():
+        started = x.gid in _fin
+        k = kick.get(x.gid)
+        if k is not None:
+            started = started or k <= now
+        elif not started:
+            # No usable kickoff time. Fall to the conservative side of the guard
+            # and treat anything not still in the future as under way: a missing
+            # row costs a data point, a post-kickoff row corrupts the record.
+            started = str(x.date) <= today
+        if started:
+            skipped += 1
+            continue
+        lg = (NOTES.get(x.gid) or {}).get("log") or {}
+        if not isinstance(lg, dict):
+            lg = {}
+        qb = str(lg.get("qb_out", "") or "")
+        st = lg.get("starters_out")
+        cf = str(lg.get("confidence", "") or "")
+        key = (x.away, x.home)
+        if key in last and last[key] == fp(qb, st, cf):
+            continue
+        new.append(dict(written_utc=now.isoformat(timespec="seconds"),
+                        season=SEASON, week=WEEK, away=x.away, home=x.home,
+                        qb_out=qb, starters_out=st, confidence=cf,
+                        spread_open=None, spread_at_write=x.mk_sp,
+                        total_open=None, total_at_write=x.mk_tot,
+                        our_number=x.our_sp))
+        last[key] = fp(qb, st, cf)
+    out = pd.concat([old, pd.DataFrame(new)], ignore_index=True) if new else old
+    out = out[cols]
+    # A count written as 3.0 is the same number but a worse file to read. The
+    # nullable integer type keeps 3 as 3 and a missing block as empty, rather
+    # than forcing the column to float the moment one row has no block.
+    out["starters_out"] = pd.to_numeric(out["starters_out"],
+                                        errors="coerce").astype("Int64")
+    out.to_csv(path, index=False)
+    with_block = sum(1 for d in new if d["qb_out"] or d["confidence"]
+                     or d["starters_out"] is not None)
+    print(f"  news log: {len(out)} rows on file, {len(new)} written this run, "
+          f"{with_block} of them carrying a research block, "
+          f"{skipped} already under way and skipped")
+
+write_news_log()
+
+def tc(t): return {"A":"t-a","B":"t-b","C":"t-c","D":"t-d"}.get(t,"t-n")
+def ln(team,home,sp): return f"{team} {(-sp if team==home else sp):+.1f}"
+days = list(dict.fromkeys(D.day.tolist()))
+
+import glob as _g, re as _re2
+_weeks = set()
+for _p in _g.glob(P("Week*-Card.html")) + _g.glob(os.path.join(BASE, "..", "site", "Week*-Card.html")):
+    _m = _re2.search(r"Week(\\d+)-Card\\.html$", os.path.basename(_p))
+    if _m: _weeks.add(int(_m.group(1)))
+_weeks.add(WEEK)
+WEEKS = sorted(_weeks)
+
+
+def week_options(on_week):
+    """The week dropdown, as seen from the page for on_week.
+
+    on_week is which page these options are being written into, NOT which week
+    is current. They differ on an archived page: Week 1 has to show itself as
+    the one you are looking at while still offering Week 5 as the current one.
+    Written from only the current week's point of view, every archive is a dead
+    end that cannot navigate forward, which is what this used to do.
+    """
+    return "".join(
+        f'<option value="Week{w}-Card.html"{" selected" if w == on_week else ""}>'
+        f'Week {w}{" (current)" if w == WEEK else ""}</option>' for w in WEEKS)
+
+
+WK_SELECT_RE = _re2.compile(r'(<select id="wk"[^>]*>)(.*?)(</select>)', _re2.S)
+
+
+def refresh_archive_weeks():
+    """Put the full week list into every archive written in an earlier week.
+
+    An archive freezes when its week rolls over, so its dropdown lists only the
+    weeks that existed then. Week 1's page would offer Week 1 and nothing else
+    for the rest of the season.
+
+    Only the option list inside the single week dropdown is touched, and the
+    rewrite is only written if swapping the new block back for the old one
+    reproduces the original file byte for byte. Anything with no dropdown, or
+    more than one, is skipped and reported rather than written over. Rewriting
+    an already published page is the risky part, so it is checked, not assumed.
+    """
+    done, skipped = [], []
+    for w in WEEKS:
+        if w == WEEK:
+            continue                       # rewritten in full by this run anyway
+        path = P(f"Week{w}-Card.html")
+        try:
+            before = open(path, encoding="utf-8").read()
+        except OSError as e:
+            skipped.append((w, f"could not be read ({e})")); continue
+        hits = WK_SELECT_RE.findall(before)
+        if len(hits) != 1:
+            skipped.append((w, f"{len(hits)} week dropdowns found, expected 1")); continue
+        opts = week_options(w)
+        after = WK_SELECT_RE.sub(lambda m: m.group(1) + opts + m.group(3), before, count=1)
+        if after == before:
+            continue                       # already current
+        if after.replace(opts, hits[0][1], 1) != before:
+            skipped.append((w, "rewrite changed more than the dropdown")); continue
+        with open(path, "w", encoding="utf-8") as f:
+            f.write(after)
+        done.append(w)
+    return done, skipped
+
+
+_relinked, _relink_skipped = refresh_archive_weeks()
+if _relinked:
+    print(f"  relinked the week dropdown in {len(_relinked)} earlier page(s): "
+          + ", ".join(f"Week{w}" for w in _relinked))
+for _w, _why in _relink_skipped:
+    issue("WARN", f"Week {_w}'s page could not be relinked",
+          f"Its week dropdown still lists only the weeks that existed when it was "
+          f"written, so it cannot navigate forward. {_why}. The page itself is "
+          "untouched: nothing is rewritten unless the change can be proved to be "
+          "the dropdown and nothing else.",
+          f"Report this. Week{_w}-Card.html is readable but not in the expected shape.",
+          tab="all")
+
+WEEKOPTS = week_options(WEEK)
+H=[]
+H.append(f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>NFL Week {WEEK}</title><style>
+:root{{--ink:#12161c;--mute:#5d6875;--line:#dce1e7;--bg:#fbfcfd;--pan:#ffffff;--hd:#f4f6f8;--hov:#f8fafb;
+--a:#0d7a4f;--abg:#e8f5ee;--b:#1a5f9e;--bbg:#e7f0f9;--c:#7a6a1a;--cbg:#f7f2df;
+--n:#8b95a1;--nbg:#f1f3f5;--fl:#a8541a;--flbg:#fdf0e4;--sp:#553a7a;--spbg:#efe7f7;--sep:#aab4c0;
+--d:#a8324a;--dbg:#fbe9ed}}
+body.dark{{--ink:#e6eaf0;--mute:#9aa5b3;--line:#2b333d;--bg:#12161c;--pan:#1a1f27;--hd:#222833;--hov:#20262f;
+--a:#4ade80;--abg:#12321f;--b:#7cb8f0;--bbg:#0f2740;--c:#e0c766;--cbg:#332c12;
+--n:#8b95a1;--nbg:#252b34;--fl:#e0913f;--flbg:#3a2712;--sp:#c4a8ee;--spbg:#2c2140;--sep:#5a6675;
+--d:#f4899f;--dbg:#3d1622}}
+*{{box-sizing:border-box}}body{{margin:0;padding:26px 18px 70px;background:var(--bg);color:var(--ink);transition:background .15s;
+font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}}
+.wrap{{max-width:1280px;margin:0 auto}}
+.top{{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:6px}}
+h1{{font-size:25px;margin:0;letter-spacing:-.01em}}
+select,button{{font:inherit;font-size:13px;padding:6px 10px;border:1px solid var(--line);
+border-radius:6px;background:var(--pan);color:var(--ink);cursor:pointer}}
+a.btn{{font-size:13px;padding:6px 11px;border:1px solid var(--line);border-radius:6px;
+background:var(--pan);color:var(--ink);text-decoration:none;white-space:nowrap}}
+a.btn:hover{{border-color:var(--mute)}}
+.sub{{color:var(--mute);font-size:13px;margin-bottom:18px}}
+h2{{font-size:13px;text-transform:uppercase;letter-spacing:.09em;color:var(--mute);
+margin:30px 0 11px;padding-bottom:6px;border-bottom:1px solid var(--line);font-weight:600}}
+.iss{{background:var(--pan);border:1px solid var(--line);border-left:4px solid var(--fl);
+border-radius:6px;padding:12px 14px;margin-bottom:10px}}
+.iss .h{{font-weight:600;font-size:13.5px;margin-bottom:3px}}
+.iss .w{{font-size:13px;color:var(--mute);margin-bottom:5px}}
+.iss .f{{font-size:13px;background:var(--flbg);color:var(--fl);padding:5px 9px;border-radius:4px;display:inline-block}}
+.filters{{background:var(--pan);border:1px solid var(--line);border-radius:8px;padding:11px 13px;margin-bottom:11px;
+display:flex;gap:20px;flex-wrap:wrap;align-items:flex-start}}
+.fg{{font-size:12.5px}}.fg b{{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.06em;
+color:var(--mute);margin-bottom:5px}}
+label{{display:inline-flex;align-items:center;gap:4px;margin:0 9px 3px 0;cursor:pointer}}
+.scroll{{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--pan)}}
+table{{border-collapse:collapse;width:100%;font-size:12.5px}}
+th{{background:var(--hd);text-align:left;padding:8px 9px;font-weight:600;font-size:10.5px;
+text-transform:uppercase;letter-spacing:.05em;color:var(--mute);border-bottom:1px solid var(--line);white-space:nowrap}}
+td{{padding:8px 9px;border-bottom:1px solid var(--line);white-space:nowrap}}
+td.rd{{white-space:normal;font-size:12px;min-width:230px;line-height:1.4}}
+tbody tr:hover{{background:var(--hov)}}.game{{font-weight:600}}
+.num{{color:var(--mute);font-variant-numeric:tabular-nums}}.pick{{font-weight:600}}
+.grp{{border-left:1px solid var(--line)}}
+.tag{{display:inline-block;padding:2px 7px;border-radius:10px;font-size:10.5px;font-weight:600}}
+.cap{{margin-left:2px;cursor:help}}
+.rawsc{{font-size:9.5px;color:var(--mute);margin-top:2px;font-variant-numeric:tabular-nums}}
+.t-a{{background:var(--abg);color:var(--a)}}.t-b{{background:var(--bbg);color:var(--b)}}
+.t-c{{background:var(--cbg);color:var(--c)}}
+/* D had the same grey as t-n, the no-market colour, so a graded pick and an
+   empty cell looked identical. D is a judgement and gets its own colour. */
+.t-d{{background:var(--dbg);color:var(--d)}}
+/* The side we would take carries the same shade as its grade, so the two read as
+   one statement instead of two colours. The team name inside keeps its own
+   colour: .tm-* sets colour on the inner span and wins over the chip's, and every
+   team colour is chosen to clear 4.5:1 against all of these shades. The colour on
+   the chip is the fallback for a pick with no team in it, such as OVER. */
+.pk-a,.pk-b,.pk-c,.pk-d{{display:inline-block;padding:1px 6px;border-radius:4px;
+font-weight:700;line-height:1.5}}
+.pk-a{{background:var(--abg);color:var(--a)}}.pk-b{{background:var(--bbg);color:var(--b)}}
+.pk-c{{background:var(--cbg);color:var(--c)}}.pk-d{{background:var(--dbg);color:var(--d)}}
+.t-n{{background:var(--nbg);color:var(--n)}}
+.sp{{background:var(--spbg);color:var(--sp);padding:2px 6px;border-radius:9px;font-size:10.5px;font-weight:600;margin-right:3px}}
+.card.chg{{border-left:3px solid var(--b)}}
+.chgA{{color:var(--a);font-weight:700}}
+.chgR{{color:#b3313c;font-weight:700}}
+body.dark .chgR{{color:#f08fa4}}
+.chgTag{{background:var(--bbg);color:var(--b);padding:2px 7px;border-radius:9px;font-size:10.5px;font-weight:600}}
+.bad{{color:var(--fl);font-weight:600}}
+.card{{background:var(--pan);border:1px solid var(--line);border-radius:8px;padding:13px 15px;margin-bottom:10px}}
+.card h3{{margin:0 0 2px;font-size:15px}}
+.card .meta{{font-size:12px;color:var(--mute);margin-bottom:8px;font-variant-numeric:tabular-nums}}
+.nl{{margin:5px 0 0;padding-left:17px;font-size:13.5px}}.nl li{{margin:2px 0}}
+.lbl{{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--mute);font-weight:600;margin-top:10px}}
+.none{{color:var(--mute);font-size:13px;font-style:italic}}
+details{{background:var(--pan);border:1px solid var(--line);border-radius:8px;padding:12px 15px;margin-top:14px}}
+details .scroll{{margin-top:9px}}
+summary{{cursor:pointer;font-weight:600;font-size:14px}}
+details h4{{font-size:15px;margin:28px 0 9px;padding:6px 0 6px 11px;
+border-left:4px solid var(--hc);border-bottom:1px solid var(--line);color:var(--hc)}}
+details h4:nth-of-type(1){{--hc:#1a5f9e}} details h4:nth-of-type(2){{--hc:#0d7a4f}}
+details h4:nth-of-type(3){{--hc:#8a5a1a}} details h4:nth-of-type(4){{--hc:#7a3a8a}}
+details h4:nth-of-type(5){{--hc:#0e6f79}} details h4:nth-of-type(6){{--hc:#a03a52}}
+body.dark details h4:nth-of-type(1){{--hc:#7cb8f0}} body.dark details h4:nth-of-type(2){{--hc:#4ade80}}
+body.dark details h4:nth-of-type(3){{--hc:#e0a44f}} body.dark details h4:nth-of-type(4){{--hc:#c9a0e8}}
+body.dark details h4:nth-of-type(5){{--hc:#5fd0d8}} body.dark details h4:nth-of-type(6){{--hc:#f08fa4}}
+details .sh{{border-left:3px solid var(--line);padding-left:8px}}
+details .sh{{font-size:11.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--mute);font-weight:600;margin:16px 0 5px}}
+details .wt{{font-weight:400;font-size:11px;color:var(--mute);text-transform:uppercase;letter-spacing:.05em}}
+details table{{margin-bottom:6px}}
+details table{{font-size:13px;margin-top:4px}}details td,details th{{white-space:normal;vertical-align:top}}
+details p{{font-size:13.5px}}
+.nav{{position:sticky;top:0;z-index:20;background:var(--bg);padding:8px 0 10px;margin-bottom:6px;
+border-bottom:1px solid var(--line);display:flex;gap:8px;flex-wrap:wrap}}
+.secnav{{display:flex;gap:7px;flex-wrap:wrap;margin:-4px 0 12px}}
+.secnav a{{font-size:11.5px;padding:3px 9px;border:1px solid var(--line);border-radius:20px;
+color:var(--mute);text-decoration:none;background:var(--pan)}}
+.secnav a:hover{{color:var(--ink)}}
+.nav a{{font-size:12px;padding:4px 10px;border:1px solid var(--line);border-radius:20px;
+color:var(--mute);text-decoration:none;background:var(--pan)}}
+.nav a:hover{{color:var(--ink);border-color:var(--mute)}}
+h2{{scroll-margin-top:60px}}
+.hide{{display:none}}
+""" + "".join(f".tm-{k}{{color:{v}}}" for k,v in TEAMCOLOR_LIGHT.items())
+  + "".join(f"body.dark .tm-{k}{{color:{v}}}" for k,v in TEAMCOLOR_DARK.items()) + f"""
+.gc{{background:var(--pan);border:1px solid var(--line);border-radius:10px;margin-bottom:10px}}
+.gc>summary{{cursor:pointer;padding:14px 16px;list-style:none;
+display:grid;grid-template-columns:22px 1fr auto;gap:12px;align-items:start}}
+.gc>summary::-webkit-details-marker{{display:none}}
+summary:focus{{outline:none}}
+summary:focus-visible{{outline:2px solid var(--b);outline-offset:-2px;border-radius:10px}}
+.gc>summary:hover{{background:var(--hov);border-radius:10px}}
+.gc[open]>summary{{border-bottom:1px solid var(--line);border-radius:10px 10px 0 0}}
+.gc .car{{color:var(--mute);font-size:15px;line-height:1.25;transition:transform .15s;
+display:inline-block;text-align:center}}
+.gc[open] .car{{transform:rotate(90deg)}}
+.gcH{{font-size:15.5px;font-weight:600;line-height:1.3;letter-spacing:-.01em}}
+.gcH .vs{{color:var(--mute);font-weight:400;font-size:13px;margin:0 6px}}
+.gcM{{font-size:11.5px;color:var(--mute);margin-top:3px;font-variant-numeric:tabular-nums}}
+.gcP{{font-size:12.5px;color:var(--mute);margin-top:5px;line-height:1.5}}
+.gcP b{{font-weight:600}}
+.pvRow{{display:flex;flex-wrap:wrap;align-items:baseline;margin-top:4px}}
+.pvRow>span{{padding:2px 12px;border-left:2px solid var(--sep);line-height:1.35}}
+.pvRow>span:first-child{{padding-left:0;border-left:none}}
+.pvRow{{gap:0}}
+.pvT{{font-weight:700;font-size:13px;min-width:104px}}
+.pvS{{font-variant-numeric:tabular-nums;min-width:42px}}
+.pvU b{{font-size:10px;letter-spacing:.06em;color:var(--mute);font-weight:700}}
+.pvU i{{font-style:normal;color:var(--mute)}}
+@media(max-width:640px){{.pvRow>span{{padding:2px 8px}}.pvT{{min-width:84px}}.pvS{{min-width:34px}}}}
+.gcF{{display:flex;flex-direction:column;gap:4px;align-items:flex-end;padding-top:2px}}
+.gcX{{font-size:10.5px;font-weight:600;color:var(--fl);background:var(--flbg);
+border-radius:20px;padding:2px 9px;white-space:nowrap}}
+.gc .body{{padding:14px 16px 16px}}
+.gc .body .lbl:first-child{{margin-top:0}}
+.cmp{{width:100%;border-collapse:collapse;font-size:12.5px;margin-bottom:4px}}
+.cmp th{{background:transparent;border-bottom:1px solid var(--line);padding:5px 8px;
+font-size:12px;text-transform:none;letter-spacing:0;font-weight:600}}
+.cmp th.ca,.cmp th.ch{{text-align:center;width:29%}}
+.cmp td{{padding:5px 8px;border-bottom:1px solid var(--line);white-space:nowrap}}
+.cmp td.cl{{color:var(--mute)}}
+.cmp td.ca,.cmp td.ch{{text-align:center;font-variant-numeric:tabular-nums}}
+.cmp tr.grp2 td{{font-weight:700;background:var(--hd);font-size:10.5px;letter-spacing:.08em;color:var(--mute)}}
+.cmp td.bet{{background:rgba(13,122,79,.13);font-weight:600}}
+body.dark .cmp td.bet{{background:rgba(74,222,128,.15)}}
+.mkc{{margin-bottom:14px;border:none;background:transparent;padding:0}}
+summary.mk{{cursor:pointer;font-size:14px;font-weight:600;margin:18px 0 8px;padding-left:9px;
+border-left:4px solid var(--b);color:var(--ink);list-style:none}}
+summary.mk::-webkit-details-marker{{display:none}}
+.mkn{{font-weight:400;font-size:11.5px;color:var(--mute);margin-left:7px}}
+h3.sd{{font-size:14px;margin:6px 0 9px;padding-left:9px;border-left:4px solid var(--a);color:var(--ink)}}
+tr.tot td{{font-weight:700;background:var(--hd)}}
+.fpanel{{margin-bottom:10px}}.fpanel>summary{{cursor:pointer;font-size:13px;font-weight:600;padding:2px 0}}
+.fpanel .filters{{margin-top:9px}}
+td.rw{{color:var(--a);font-weight:700}}td.rl{{color:#b3313c;font-weight:700}}
+body.dark td.rl{{color:#f08fa4}}td.rp{{color:var(--mute);font-weight:700}}
+@media(max-width:640px){{.gc>summary{{grid-template-columns:20px 1fr}}.gcF{{display:none}}}}
+@media print{{body{{background:#fff;padding:0}}.filters,select{{display:none}}}}
+</style></head><body><div class="wrap">
+<div class="top"><h1>NFL Week {WEEK}</h1>
+<select id="view" onchange="setView()">
+  <option value="card">Weekly Card</option>
+  <option value="cheat">Team Cheat Sheet</option>
+  <option value="ledger">Ledger &amp; Results</option>
+</select>
+<select id="wk" onchange="goWeek()" title="View another week">{WEEKOPTS}</select>
+<a class="btn" href="https://github.com/{REPO}/actions/workflows/{WORKFLOW}"
+   target="_blank" rel="noopener" title="Opens the run screen on GitHub">Update now &rsaquo;</a>
+<button id="thm" onclick="tog()" style="margin-left:auto">Dark mode</button></div>
+<div class="sub">{SEASON} season · {len(D)} games · generated {dt.date.today()}</div>
+<div class="nav" id="nav"></div>""")
+
+if ISSUES:
+    H.append('<h2 id="s-issues" class="hide">Needs attention</h2>')
+    for i in ISSUES:
+        H.append(f'<div class="iss" data-tab="{i.get("tab","card")}"><div class="h">{i["lvl"]} — {i["what"]}</div>'
+                 f'<div class="w"><b>Why it matters:</b> {i["why"]}</div>'
+                 f'<div class="f"><b>Fix:</b> {i["fix"]}</div></div>')
+
+H.append('<div id="v-card">')
+H.append('<h2 id="s-summary">Summary — all markets</h2>')
+H.append('<div class="secnav" data-own="s-summary"></div>')
+H.append('<div class="filters"><div class="fg"><b>Day</b>')
+for d in days: H.append(f'<label><input type="checkbox" class="fd" value="{d}" checked onchange="flt()">{d}</label>')
+H.append('</div><div class="fg"><b>Game</b>')
+for _,x in D.iterrows(): H.append(f'<label><input type="checkbox" class="fgm" value="{x.gid}" checked onchange="flt()">{x.away} @ {x.home}</label>')
+H.append('</div><div class="fg"><b>&nbsp;</b><button onclick="allOn()">Select all</button> '
+         '<button onclick="allOff()">Clear</button>'
+         '<div id="fcount" class="none" style="margin-top:6px"></div></div></div>')
+H.append('<div class="scroll"><table><thead><tr><th>Date</th><th>Day / Time</th><th>Game</th>'
+         '<th class="grp">Spread</th><th>Grade</th>'
+         '<th class="grp">Moneyline</th><th>Grade</th>'
+         '<th class="grp">Total</th><th>Pick</th><th>Grade</th>'
+         '<th class="grp">What this tells you</th></tr></thead><tbody>')
+for _,x in D.iterrows():
+    reads = []
+    if x.split:
+        reads.append(f'Markets point different ways. Best cover is <b>{x.sp_side}</b> ({x.sp_conf}% to cover). '
+                     f'Best value to win outright is <b>{x.ml_side}</b> — we make them {x.ml_conf}%, '
+                     f'the price implies {x.ml_mkt}%.')
+    if x.gid in CHANGES:
+        _c = CHANGES[x.gid]
+        reads.append(f'<span class="chgTag">news updated</span> '
+                     f'{len(_c["added"])} added, {len(_c["removed"])} removed')
+    if pd.notna(x.elo_gap) and abs(x.elo_gap)>=ELO_THR:
+        lean = x.home if x.elo_sp > x.our_sp else x.away
+        reads.append(f'Our two models disagree by {abs(x.elo_gap):.1f} points on the spread: the EPA model has '
+                     f'{x.our_sp:+.1f}, the Elo model {x.elo_sp:+.1f}. Elo is higher on <b>{lean}</b>. '
+                     f'Low-information game.')
+    def grade_cell(grade, capped, score, raw):
+        """The letter, and a star when the record capped it.
+
+        A cap is never silent. The star carries the reason on hover and the raw
+        composite score sits under it, so what the simulation claimed and what
+        the evidence allows are both visible. Same behaviour as the college
+        card, which needed it first."""
+        star = (f'<span class="cap" title="Grade capped: {capped}. The raw composite '
+                f'score of {score:.0f} would have printed {raw}.">*</span>'
+                if capped else "")
+        return (f'<span class="tag {tc(grade)}">{grade}{star}</span>'
+                f'<div class="rawsc">raw {score:.0f}</div>')
+
+    def side_cell(home_team, home_num, away_team, away_num, home_is_pick, grade):
+        """Both sides of the market. The called one sits on its grade's shade, with
+        the team name still in the team's own colour inside it."""
+        pc = {"A":"pk-a","B":"pk-b","C":"pk-c","D":"pk-d"}.get(grade,"pk-d")
+        def side(t, n, picked):
+            if picked:
+                return f'<span class="{pc}"><span class="tm-{t}">{t}</span> {n}</span>'
+            return f'<span class="num">{t} {n}</span>'
+        return (side(home_team, home_num, home_is_pick) + ' <span class="num">/</span> '
+                + side(away_team, away_num, not home_is_pick))
+    sp_home_num = f"{-x.mk_sp:+.1f}"; sp_away_num = f"{x.mk_sp:+.1f}"
+    ml_home_num = f"{x.mk_ml_h:+.0f}"; ml_away_num = f"{x.mk_ml_a:+.0f}"
+    tot_pc = {"A":"pk-a","B":"pk-b","C":"pk-c","D":"pk-d"}.get(x.tot_tier,"pk-d")
+    H.append(f'<tr class="row" data-day="{x.day}" data-gid="{x.gid}">'
+      f'<td class="num">{x.date[5:].replace("-","/")}</td>'
+      f'<td class="num">{x.day[:3]} {x.time[:5]}</td>'
+      f'<td class="game"><span class="tm-{x.away}">{x.away}</span> <span class="num">@</span> <span class="tm-{x.home}">{x.home}</span></td>'
+      f'<td class="grp">{side_cell(x.home, sp_home_num, x.away, sp_away_num, x.sp_side==x.home, x.sp_tier)}</td>'
+      f'<td>{grade_cell(x.sp_tier, x.sp_capped, x.sp_score, x.sp_raw)}</td>'
+      f'<td class="grp">{side_cell(x.home, ml_home_num, x.away, ml_away_num, x.ml_side==x.home, x.ml_tier)}</td>'
+      f'<td>{grade_cell(x.ml_tier, x.ml_capped, x.ml_score, x.ml_raw)}</td>'
+      f'<td class="num grp">{x.mk_tot}</td>'
+      f'<td><span class="{tot_pc}">{x.tot_side}</span></td>'
+      f'<td>{grade_cell(x.tot_tier, x.tot_capped, x.tot_score, x.tot_raw)}</td>'
+      f'<td class="grp rd">{"<br>".join(reads) if reads else "<span class=\'none\'>nothing unusual</span>"}</td></tr>')
+H.append('</tbody></table></div>')
+
+if CHANGES:
+    _n_add = sum(len(v["added"]) for v in CHANGES.values())
+    _n_rem = sum(len(v["removed"]) for v in CHANGES.values())
+    H.append('<h2 id="s-changes">What changed since the last update</h2>')
+    H.append('<div class="secnav" data-own="s-changes"></div>')
+    H.append(f'<div class="card"><b>{len(CHANGES)} game(s) changed</b> — {_n_add} item(s) added, '
+             f'{_n_rem} removed'
+             + (f', compared against the notes saved {PREV_TS.replace("T", " ")}.' if PREV_TS else '.')
+             + ' Games not listed here are unchanged.</div>')
+    _LBL = {"returning": "Returning from injury", "trades": "Trades &amp; roster moves",
+            "coaching": "Coaching", "suspensions": "Suspensions", "birthdays": "Notable",
+            "movement": "Line movement", "experts": "Expert picks"}
+    def _fmt(v):
+        try:
+            _d = json.loads(v)
+            if isinstance(_d, dict):
+                return (f'<b>{_d.get("name","")}</b> ({_d.get("record","record n/a")}) — '
+                        f'{_d.get("pick","")}')
+        except Exception: pass
+        return v
+    for _g, _c in CHANGES.items():
+        _tagtxt = ' <span class="sp">new game</span>' if _c["new_game"] else (
+                  ' <span class="sp">no longer in notes</span>' if _c["dropped"] else '')
+        _aw, _hm = (_g.split("@") + ["", ""])[:2]
+        H.append(f'<div class="card chg"><h3><span class="tm-{_aw}">{_aw}</span>'
+                 f'<span class="vs"> at </span><span class="tm-{_hm}">{_hm}</span>{_tagtxt}</h3>')
+        if _c["added"]:
+            H.append('<div class="lbl">Added</div><ul class="nl">' + "".join(
+                f'<li><span class="chgA">+</span> <i>{_LBL.get(_s,_s)}</i> — {_fmt(_v)}</li>'
+                for _s, _v in _c["added"]) + '</ul>')
+        if _c["removed"]:
+            H.append('<div class="lbl">Removed</div><ul class="nl">' + "".join(
+                f'<li><span class="chgR">−</span> <i>{_LBL.get(_s,_s)}</i> — {_fmt(_v)}</li>'
+                for _s, _v in _c["removed"]) + '</ul>')
+        H.append('</div>')
+elif NOTES and PREV_TS:
+    H.append('<h2 id="s-changes">What changed since the last update</h2>')
+    H.append('<div class="secnav" data-own="s-changes"></div>')
+    H.append(f'<div class="card none">No changes since the notes saved '
+             f'{PREV_TS.replace("T", " ")}.</div>')
+
+H.append('<h2 id="s-notes">Game notes</h2>')
+H.append('<div style="margin:-2px 0 10px"><button onclick="expAll(1)">Expand all</button> '
+         '<button onclick="expAll(0)">Collapse all</button></div>')
+H.append('<div class="secnav" data-own="s-notes"></div>')
+for _,x in D.sort_values(["date","time"]).iterrows():
+    n = NOTES.get(x.gid, {})
+    wxs = (f' · {x.wx["t"]:.0f}°F, {x.wx["w"]:.0f} mph wind' + (" — wind flag" if x.wx["w"]>=15 else "")) if x.wx else ""
+    dome = " · dome" if x.roof=="dome" else ""
+    divg = " · division game" if x.div else ""
+    rest = f' · rest {x.rest:+d} days' if x.rest else ''
+    _flags = []
+    if x.split: _flags.append("markets split")
+    if pd.notna(x.elo_gap) and abs(x.elo_gap)>=ELO_THR: _flags.append("models disagree")
+    _fl = '<div class="gcF">' + "".join(f'<span class="gcX">{f}</span>' for f in _flags) + '</div>' if _flags else '<div class="gcF"></div>'
+    _meta = f'{x.day[:3]} {x.date[5:].replace("-","/")} · {x.time[:5]} · {x.venue}{dome} · {x.surface}{divg}{wxs}{rest}'
+    def _pline(t, name, rec, orank, osch, drank, dsch):
+        return (f'<span class="pvT tm-{t}">{name}</span>'
+                f'<span class="pvS">{rec}</span>'
+                f'<span class="pvU"><b>OFF</b> #{orank} <i>{osch}</i></span>'
+                f'<span class="pvU"><b>DEF</b> #{drank} <i>{dsch}</i></span>')
+    _prev = ('<div class="pvRow">' + _pline(x.away, TEAMNAME.get(x.away,x.away), REC.get(x.away,"0-0"),
+                                            x.a_off, x.a_sch, x.a_def, x.a_dsch) + '</div>'
+             '<div class="pvRow">' + _pline(x.home, TEAMNAME.get(x.home,x.home), REC.get(x.home,"0-0"),
+                                            x.h_off, x.h_sch, x.h_def, x.h_dsch) + '</div>')
+    H.append(f'<details class="gc row" data-day="{x.day}" data-gid="{x.gid}"><summary>'
+      f'<span class="car">&rsaquo;</span>'
+      f'<span><span class="gcH"><span class="tm-{x.away}">{x.away}</span>'
+      f'<span class="vs">at</span><span class="tm-{x.home}">{x.home}</span></span>'
+      f'<div class="gcM">{_meta}</div><div class="gcP">{_prev}</div></span>'
+      f'{_fl}</summary><div class="body">')
+    def _cmp_row(label, a_val, h_val, a_num=None, h_num=None, lower_better=False):
+        ac = hc = ""
+        if a_num is not None and h_num is not None and a_num != h_num:
+            a_better = (a_num < h_num) if lower_better else (a_num > h_num)
+            ac, hc = (" bet", "") if a_better else ("", " bet")
+        return (f'<tr><td class="cl">{label}</td><td class="ca{ac}">{a_val}</td>'
+                f'<td class="ch{hc}">{h_val}</td></tr>')
+    def _rk(n): return f'#{n}'
+    _to_a = f'{x.a_tk:.1f} / {x.a_gv:.1f}' if x.a_tk is not None else '—'
+    _to_h = f'{x.h_tk:.1f} / {x.h_gv:.1f}' if x.h_tk is not None else '—'
+    _pr_a = f'{x.a_pr*100:.0f}%' if x.a_pr else '—'
+    _pr_h = f'{x.h_pr*100:.0f}%' if x.h_pr else '—'
+    blocks=[f'<table class="cmp"><thead><tr><th></th>'
+            f'<th class="ca"><span class="tm-{x.away}">{TEAMNAME.get(x.away,x.away)}</span></th>'
+            f'<th class="ch"><span class="tm-{x.home}">{TEAMNAME.get(x.home,x.home)}</span></th></tr></thead><tbody>'
+            + _cmp_row("Record", REC.get(x.away,"0-0"), REC.get(x.home,"0-0"))
+            + _cmp_row("Division", DIV.get(x.away,"—"), DIV.get(x.home,"—"))
+            + _cmp_row("Power rank", _rk(x.a_pwr), _rk(x.h_pwr), x.a_pwr, x.h_pwr, True)
+            + '<tr class="grp2"><td class="cl">OFFENSE</td><td class="ca">&nbsp;</td><td class="ch">&nbsp;</td></tr>'
+            + _cmp_row("Overall", _rk(x.a_off), _rk(x.h_off), x.a_off, x.h_off, True)
+            + _cmp_row("Pass", _rk(x.a_po), _rk(x.h_po), x.a_po, x.h_po, True)
+            + _cmp_row("Rush", _rk(x.a_ro), _rk(x.h_ro), x.a_ro, x.h_ro, True)
+            + _cmp_row("Scheme", x.a_sch, x.h_sch)
+            + _cmp_row("Early-down pass rate", _pr_a, _pr_h)
+            + _cmp_row("Giveaways / gm", (f"{x.a_gv:.1f}" if x.a_gv is not None else "—"),
+                       (f"{x.h_gv:.1f}" if x.h_gv is not None else "—"), x.a_gv, x.h_gv, True)
+            + '<tr class="grp2"><td class="cl">DEFENSE</td><td class="ca">&nbsp;</td><td class="ch">&nbsp;</td></tr>'
+            + _cmp_row("Overall", _rk(x.a_def), _rk(x.h_def), x.a_def, x.h_def, True)
+            + _cmp_row("Pass", _rk(x.a_pd), _rk(x.h_pd), x.a_pd, x.h_pd, True)
+            + _cmp_row("Rush", _rk(x.a_rd), _rk(x.h_rd), x.a_rd, x.h_rd, True)
+            + _cmp_row("Identity", x.a_dsch, x.h_dsch)
+            + _cmp_row("Takeaways / gm", (f"{x.a_tk:.1f}" if x.a_tk is not None else "—"),
+                       (f"{x.h_tk:.1f}" if x.h_tk is not None else "—"), x.a_tk, x.h_tk, False)
+            + '</tbody></table>']
+    def sec(title, items):
+        if items: blocks.append(f'<div class="lbl">{title}</div><ul class="nl">' +
+                                "".join(f"<li>{i}</li>" for i in items) + "</ul>")
+    sec("Injury report", [f"{x.home} — {i}" for i in x.inj_h] + [f"{x.away} — {i}" for i in x.inj_a])
+    sec("Returning from injury", n.get("returning"))
+    sec("Trades &amp; roster moves", n.get("trades"))
+    sec("Coaching &amp; suspensions", (n.get("coaching") or []) + (n.get("suspensions") or []))
+    sec("Line movement", n.get("movement"))
+    sec("Notable", n.get("birthdays"))
+    ex = n.get("experts")
+    if ex:
+        blocks.append('<div class="lbl">Expert picks</div><ul class="nl">' + "".join(
+            f"<li><b>{e.get('name','')}</b> ({e.get('record','record n/a')}) — {e.get('pick','')}</li>"
+            for e in ex) + "</ul>")
+    if pd.notna(x.elo_gap) and abs(x.elo_gap)>=ELO_THR:
+        _l = x.home if x.elo_sp > x.our_sp else x.away
+        blocks.append(f'<div class="lbl">Models disagree</div><ul class="nl"><li>The <b>EPA model</b> (play-by-play '
+            f'efficiency, the main one) makes this {x.our_sp:+.1f}. The <b>Elo model</b> (game results only, no '
+            f'play-by-play) makes it {x.elo_sp:+.1f} — {abs(x.elo_gap):.1f} points apart, with Elo higher on '
+            f'{TEAMNAME.get(_l,_l)}. This week the two models differ by {ELO_SD:.1f} points on average, so anything '
+            f'past {ELO_THR:.1f} is an outlier. One of the two is badly wrong here and there is no way to know '
+            f'which.</li></ul>')
+    # The "which ticket to buy" block used to sit here, built from the consensus
+    # moneyline against the consensus spread. It is gone. See the note where
+    # ml_imp is computed: with one blended price per market there is nothing to
+    # compare, and the backtest measured it at 172-181.
+    for _mkt, _cap, _ev, _cal in (("Spread", x.sp_capped, x.sp_evidence, x.sp_cal),
+                                  ("Moneyline", x.ml_capped, x.ml_evidence, x.ml_cal),
+                                  ("Total", x.tot_capped, x.tot_evidence, x.tot_cal)):
+        if not _cap:
+            continue
+        blocks.append(f'<div class="lbl">Why the {_mkt.lower()} grade is capped</div><ul class="nl">'
+                      f'<li>{_cap[0].upper()}{_cap[1:]}.</li>'
+                      f'<li><b>Record:</b> {_ev}</li>'
+                      f'<li><b>Confidence:</b> {_cal}.</li></ul>')
+    H.append("".join(blocks))
+    H.append('</div></details>')
+H.append('</div>')
+
+
+H.append('<div id="v-cheat" class="hide"><h2 id="s-cheat">Team cheat sheet</h2>')
+H.append('<div class="secnav" data-own="s-cheat"></div>')
+_cs = r.copy(); _cs["team"] = _cs.index
+_cs["dvn"] = _cs.team.map(DIV); _cs = _cs[_cs.dvn.notna()]
+_cs["conf"] = _cs.dvn.str[:3]
+for cf in ["AFC","NFC"]:
+    blk = _cs[_cs.conf==cf].copy()
+    blk["crank"] = blk.rating.rank(ascending=False).astype(int)
+    blk = blk.sort_values("crank")
+    H.append(f'<details open><summary>{cf} — ranked 1 to {len(blk)}</summary>'
+             '<div class="scroll"><table><thead><tr><th>#</th><th>Team</th><th>Div</th><th>Rec</th>'
+             '<th>Off</th><th>Def</th><th>Off scheme</th><th>Pass rate</th>'
+             '<th>Def identity</th><th>Take/gm</th><th>Give/gm</th><th>TO diff</th></tr></thead><tbody>')
+    for _,t in blk.iterrows():
+        prv = f"{t.PassRate*100:.0f}%" if pd.notna(t.PassRate) else "—"
+        _tk = f'{t.Takeaways:.1f}' if pd.notna(t.Takeaways) else '—'
+        _gv = f'{t.Giveaways:.1f}' if pd.notna(t.Giveaways) else '—'
+        _td = f'{t.to_diff:+.1f}' if pd.notna(t.to_diff) else '—'
+        H.append(f'<tr><td class="num">{int(t.crank)}</td>'
+                 f'<td class="game"><span class="tm-{t.team}">{TEAMNAME.get(t.team,t.team)}</span></td>'
+                 f'<td class="num">{t.dvn.split()[1]}</td>'
+                 f'<td class="num">{REC.get(t.team,"0-0")}</td>'
+                 f'<td class="num">#{int(t.off_rank)}</td><td class="num">#{int(t.def_rank)}</td>'
+                 f'<td>{t.scheme}</td><td class="num">{prv}</td>'
+                 f'<td>{t.dsch}</td><td class="num">{_tk}</td><td class="num">{_gv}</td>'
+                 f'<td class="num">{_td}</td></tr>')
+    H.append('</tbody></table></div></details>')
+H.append('<h2 id="s-div">Rankings by division</h2>')
+H.append('<div class="secnav" data-own="s-div"></div>')
+for cf in ["AFC","NFC"]:
+    for dv in [f"{cf} East", f"{cf} North", f"{cf} South", f"{cf} West"]:
+        blk = _cs[_cs.dvn==dv].copy().sort_values("rating", ascending=False)
+        H.append(f'<details><summary>{dv}</summary><div class="scroll"><table><thead><tr>'
+                 '<th>#</th><th>Team</th><th>Rec</th><th>Lg</th><th>Off</th>'
+                 '<th>Def</th><th>Off scheme</th><th>Pass rate</th>'
+                 '<th>Def identity</th><th>TO diff</th></tr></thead><tbody>')
+        for i,(_,t) in enumerate(blk.iterrows(),1):
+            prv = f"{t.PassRate*100:.0f}%" if pd.notna(t.PassRate) else "—"
+            _td = f'{t.to_diff:+.1f}' if pd.notna(t.to_diff) else '—'
+            H.append(f'<tr><td class="num">{i}</td>'
+                     f'<td class="game"><span class="tm-{t.team}">{TEAMNAME.get(t.team,t.team)}</span></td>'
+                     f'<td class="num">{REC.get(t.team,"0-0")}</td><td class="num">#{int(t.pwr_rank)}</td>'
+                     f'<td class="num">#{int(t.off_rank)}</td><td class="num">#{int(t.def_rank)}</td>'
+                     f'<td>{t.scheme}</td><td class="num">{prv}</td>'
+                     f'<td>{t.dsch}</td><td class="num">{_td}</td></tr>')
+        H.append('</tbody></table></div></details>')
+H.append('</div>')
+
+H.append(f'<div id="v-ledger" class="hide"><h2 id="s-ledger">Ledger — Week {WEEK}</h2>')
+H.append('<div class="secnav" data-own="s-ledger"></div>')
+_ldays = list(dict.fromkeys(L.day.tolist()))
+H.append('<details class="fpanel"><summary>Filters</summary><div class="filters">')
+H.append('<div class="fg"><b>Day</b>')
+for d in _ldays: H.append(f'<label><input type="checkbox" class="ld" value="{d}" checked onchange="lflt()">{d[:3]}</label>')
+H.append('</div><div class="fg"><b>Grade</b>')
+for gd in ["A","B","C","D"]: H.append(f'<label><input type="checkbox" class="lt" value="{gd}" checked onchange="lflt()">{gd}</label>')
+H.append('</div><div class="fg"><b>Team</b>')
+_lteams = sorted({t for gid in L.game.unique() for t in gid.split("@")})
+for tmv in _lteams: H.append(f'<label><input type="checkbox" class="ltm" value="{tmv}" checked onchange="lflt()">{tmv}</label>')
+H.append('</div><div class="fg"><b>Result</b>')
+for rs in ["W","L","P","pending"]: H.append(f'<label><input type="checkbox" class="lr" value="{rs}" checked onchange="lflt()">{rs}</label>')
+H.append('</div><div class="fg"><b>&nbsp;</b><button onclick="lAll(1)">Select all</button> '
+         '<button onclick="lAll(0)">Clear</button><div id="lcount" class="none" style="margin-top:6px"></div>'
+         '</div></div></details>')
+import glob as _glob
+_all = []
+for _f in sorted(_glob.glob(P("ledger_week*.csv"))):
+    try:
+        _d = pd.read_csv(_f, dtype={"result":str}, keep_default_na=False)
+        if {"market","tier","result"}.issubset(_d.columns): _all.append(_d)
+    except Exception: pass
+if _all:
+    S = pd.concat(_all, ignore_index=True)
+    S = S[S.result.str.upper().str.strip().isin(["W","L","P"])]
+else:
+    S = pd.DataFrame(columns=["market","tier","result","week"])
+H.append('<h3 class="sd">Season to date</h3>')
+if len(S)==0:
+    H.append('<div class="card none">No graded picks yet. Records appear here automatically '
+             'once games have final scores.</div>')
+else:
+    H.append('<div class="scroll"><table><thead><tr><th>Market</th><th>Grade</th>'
+             '<th>W</th><th>L</th><th>P</th><th>Win %</th><th>Picks</th></tr></thead><tbody>')
+    for mk in ["Spread","Moneyline","Total"]:
+        blk = S[S.market==mk]
+        if len(blk)==0: continue
+        for gd in ["A","B","C","D"]:
+            g2 = blk[blk.tier==gd]
+            if len(g2)==0: continue
+            w=int((g2.result=="W").sum()); l=int((g2.result=="L").sum()); p=int((g2.result=="P").sum())
+            pct = f"{100*w/(w+l):.1f}%" if (w+l) else "—"
+            H.append(f'<tr><td>{mk}</td><td><span class="tag {tc(gd)}">{gd}</span></td>'
+                     f'<td class="num">{w}</td><td class="num">{l}</td><td class="num">{p}</td>'
+                     f'<td class="num">{pct}</td><td class="num">{w+l+p}</td></tr>')
+        w=int((blk.result=="W").sum()); l=int((blk.result=="L").sum()); p=int((blk.result=="P").sum())
+        pct = f"{100*w/(w+l):.1f}%" if (w+l) else "—"
+        H.append(f'<tr class="tot"><td>{mk}</td><td>all</td><td class="num">{w}</td>'
+                 f'<td class="num">{l}</td><td class="num">{p}</td><td class="num">{pct}</td>'
+                 f'<td class="num">{w+l+p}</td></tr>')
+    H.append('</tbody></table></div>')
+
+_ord = {"A":0,"B":1,"C":2,"D":3}
+for mkt in ["Spread","Moneyline","Total"]:
+    sub = L[L.market==mkt].copy()
+    if len(sub)==0: continue
+    sub["_o"] = sub.tier.map(_ord).fillna(9)
+    sub = sub.sort_values(["_o","gap"], ascending=[True,False])
+    H.append(f'<details class="mkc" open><summary class="mk">{mkt} <span class="mkn">{len(sub)} picks</span></summary>'
+             '<div class="scroll"><table><thead><tr>'
+             '<th>Date</th><th>Day</th><th>Game</th><th>Pick</th><th>Our #</th>'
+             '<th>Market #</th><th>Gap</th><th>Grade</th><th>Result</th></tr></thead><tbody>')
+    for _,y in sub.iterrows():
+        res = str(y.result).strip() if str(y.result).strip() in ("W","L","P") else ""
+        rcls = {"W":"rw","L":"rl","P":"rp"}.get(res,"")
+        H.append(f'<tr class="lrow" data-day="{y.day}" data-tier="{y.tier}" '
+                 f'data-teams="{y.game.replace("@"," ")}" data-res="{res or "pending"}">'
+                 f'<td class="num">{str(y.date)[5:].replace("-","/")}</td>'
+                 f'<td class="num">{str(y.day)[:3]}</td><td class="game">{y.game}</td>'
+                 f'<td class="pick">{y.pick}</td><td class="num">{y.our_num}</td>'
+                 f'<td class="num">{y.market_num}</td><td class="num">{y.gap}</td>'
+                 f'<td><span class="tag {tc(y.tier)}">{y.tier}</span></td>'
+                 f'<td class="{rcls}">{res or "—"}</td></tr>')
+    H.append('</tbody></table></div></details>')
+H.append('</div>')
+
+# The How to read tab prints the constants and the backtested figures the card is
+# actually running on, read from model_state.json at build time. Nothing here is
+# typed twice: re-run the nfl-backtest workflow and this table changes with it.
+be = PK.BREAK_EVEN
+wc, wv = PK.W_CONF, PK.W_VALUE
+_win = str(MS.BACKTEST.get("window") or "the backtest window")
+nseasons = _win.split()[0] if _win else "13"
+_CALNAME = {"model_gap_early": "Spread, weeks 1 to 4",
+            "model_gap_late": "Spread, week 5 onward",
+            "total_model": "Total",
+            "outright": "Who wins outright"}
+_rows = []
+for _k, _label in _CALNAME.items():
+    _c = (PK.CAL or {}).get(_k)
+    if not isinstance(_c, dict) or _c.get("k") is None:
+        continue
+    _verdict = ("clear of zero, so this carries real information"
+                if _c.get("k_clears_zero") else "not distinguishable from zero")
+    _rows.append(f'<tr><td style="width:200px"><b>{_label}</b></td>'
+                 f'<td>slope {float(_c["k"]):+.2f} over {int(_c.get("n", 0)):,} games, {_verdict}</td></tr>')
+caltbl = "".join(_rows) or '<tr><td colspan="2">No calibration has been fitted yet.</td></tr>'
+
+H.append(f"""<details id="s-help"><summary>How to read this card</summary>
+
+<h4 data-tab="all">Quick start</h4>
+<p>The dropdown at the top switches between three views: the <b>Weekly Card</b>, the <b>Team Cheat Sheet</b>, and the <b>Ledger</b>. Within the card, use the day and game checkboxes to narrow the slate — leaving a group fully ticked or fully empty means it filters nothing.</p>
+<p>Each summary row shows both sides of a market with our pick in bold, and a grade. Below, game notes carry the context numbers cannot: injuries, returning players, trades, coaching changes and line movement.</p>
+
+<h4 data-tab="card">The Grade</h4>
+<p>A grade is a claim about evidence, so it cannot outrun the record behind it. Each market gets two readings, then one letter, then a cap.</p>
+<table><tbody>
+<tr><td style="width:235px"><b>Confidence</b></td><td>How likely this is to happen, after calibration. Nothing to do with the price. The raw simulated probability is passed through a line fitted on real past games, so what the model claims is converted into what actually happened when it claimed it.</td></tr>
+<tr><td><b>Value</b></td><td>How far that calibrated probability clears what the price demands. A spread or total carries no price in this feed, so it uses the standard {be:.1f}% break-even. A moneyline uses its own posted price.</td></tr>
+</tbody></table>
+<p>The two merge into one letter, weighted {wc:.0%} to confidence and {wv:.0%} to value. Those weights are the only chosen numbers in the whole scheme, and they sit in model_state.json beside the measured ones so which is which is visible.</p>
+<p class="sh">The caps, and why they bite</p>
+<p>nfl_backtest.py refits this model as of each week of the past {nseasons} seasons, prices every game against the closing line, and fits, per market, the line that maps what the model claimed onto what happened. The result is stark:</p>
+<table><tbody>
+{caltbl}
+</tbody></table>
+<p>A slope of 1 would be perfect calibration. A slope of 0 means the stated confidence carries no information at all. So the model predicts football well and predicts <b>who covers</b> not at all, which is a different thing. A market whose strategy backtested with its whole 95% interval below break-even cannot grade above C; one never measured, or measured and found inconclusive, cannot grade above B.</p>
+<p>A capped grade shows a <b>*</b>. Hover it for the reason, and the raw score underneath is what the old composite scheme would have printed. Nothing is capped silently.</p>
+<p class="sh">The raw score</p>
+<p>The number under each grade is the old composite: 70 points for the simulated win probability (scaled so 40% earns nothing and 60% earns the full 70) and 30 for the value over the price (scaled so 8 points of edge earns the full 30). It is shown because this card invented that scheme and the college card was verified against it. It is no longer the grade, because nothing in it was ever capped by a record.</p>
+
+<h4 data-tab="card">The simulation</h4>
+<p>Every game runs 20,000 times rather than through a single formula. Each run makes two draws.</p>
+<table><tbody>
+<tr><td style="width:200px"><b>Our own uncertainty</b></td><td>We do not know the true line, only our estimate of it. Each run pulls a true line from a distribution centered on our number with a 3-point spread — an admission the rating could be wrong.</td></tr>
+<tr><td><b>The game itself</b></td><td>Given that line, the margin is drawn with a standard deviation of about 13.2 points, adjusted for high totals and high wind. Totals are drawn separately at 10.4 points.</td></tr>
+</tbody></table>
+<p>Counting across all runs gives the probability each side wins outright, covers, and that the total goes over.</p>
+<p class="sh">Why this finds underdogs</p>
+<p>Layering our own uncertainty on top widens the distribution. A team the market prices at 36% to win may simulate at 44%. Those surface as strong moneyline grades on teams the book has as underdogs, often beside a weak grade on that same team's spread. Not a contradiction: the team wins more often than the price implies, but still rarely covers a large number.</p>
+<p class="sh">Worked example</p>
+<table><tbody>
+<tr><td style="width:200px">Market</td><td>Seattle −3.5, moneyline −185</td></tr>
+<tr><td>Our line</td><td>Ratings, home field, rest and weather give Seattle −5.0</td></tr>
+<tr><td>Simulate</td><td>Seattle covers in 54.5% of runs, wins outright in 63%</td></tr>
+<tr><td>Raw score</td><td>Win 54.5% earns 51 of 70. Edge 4.5 points earns 17 of 30. Raw 68, which the old scheme printed as a <b>B</b>.</td></tr>
+<tr><td>Spread grade</td><td>Calibrated, that 54.5% comes back close to a coin flip, and the spread strategy backtested below break-even. So the letter is capped and shows a star. The raw 68 is still printed beside it.</td></tr>
+</tbody></table>
+
+<h4 data-tab="card">The "What this tells you" column</h4>
+<table><tbody>
+<tr><td><b>"Markets point different ways"</b></td><td>The best cover and the best value to win outright are different teams. Legitimate: a team can be likely to win without winning by the number. Low-scoring games make this common, because they compress margins toward zero.</td></tr>
+<tr><td><b>"Our two models disagree"</b></td><td>The EPA model uses play-by-play efficiency; the Elo model uses game results only. When they diverge past 1.5 standard deviations of that week's spread between them, one is badly wrong with no way to tell which. Low information.</td></tr>
+<tr><td><b>"nothing unusual"</b></td><td>No pricing inconsistency, no split between markets, no model disagreement.</td></tr>
+</tbody></table>
+
+<h4 data-tab="card">Other columns</h4>
+<table><tbody>
+<tr><td style="width:130px"><b>Spread</b></td><td>Points a team must win by, or can lose by. "KC −3" means Kansas City must win by 4 or more.</td></tr>
+<tr><td><b>Moneyline</b></td><td>Straight bet on who wins, no points. Negative marks the favorite.</td></tr>
+<tr><td><b>Total</b></td><td>Combined points by both teams.</td></tr>
+<tr><td><b>HFA</b></td><td>Home field advantage in points, shown in game notes. Venue-specific, roughly 0.8 to 2.2. Not a flat 3.</td></tr>
+<tr><td><b>Scheme</b></td><td>Early-down pass rate. Top 30% of teams pass-heavy, bottom 30% run-heavy.</td></tr>
+</tbody></table>
+
+<h4 data-tab="cheat">The cheat sheet</h4>
+<p>All 32 teams, ranked within conference and within division. Offense and defense ranks are league-wide out of 32. Offensive scheme is early-down pass rate: the top 30% are pass-heavy, the bottom 30% run-heavy. Defensive identity compares pass-defense rank against rush-defense rank — a team stronger against the pass by 8 or more places is labeled pass-stopping.</p>
+<p>Takeaways and giveaways are per game. TO diff is takeaways minus giveaways; positive is good. Turnovers are among the least stable stats in football and regress hard year to year, so treat a big number as a description of last season rather than a prediction of this one.</p>
+<p>The banner at the top of the tab states whether the figures are preseason projections or updated through completed games.</p>
+
+<h4 data-tab="ledger">The ledger</h4>
+<p>Every pick logged for the week, split into one table per market and sorted best grade first. Results fill in automatically once a game has a final score: W, L or P for each market. Nothing to enter by hand.</p>
+<p>Filters narrow by day, grade and result. Clearing any group shows nothing until you make a selection.</p>
+
+<h4 data-tab="all">Where the numbers come from</h4>
+<p>Power ratings are opponent-adjusted EPA and success rate from play-by-play, weighted toward passing, with an eight-game recency half-life. They correlate 0.935 with actual point differentials. Lines, schedules, rest days and injuries come from nflverse; weather from Open-Meteo. All free, no accounts.</p>
+<p>Trades, coaching changes, suspensions, line movement and expert picks are not in any dataset. They are researched separately and attached to the card.</p>
+
+</details>
+
+<script>
+var NAVS={{card:[['s-issues','Needs attention'],['s-summary','Summary'],['s-changes','What changed'],['s-notes','Game notes'],['s-help','How to read']],
+ cheat:[['s-cheat','Conference ranks'],['s-div','Division ranks'],['s-help','How to read']],
+ ledger:[['s-ledger','Ledger'],['s-help','How to read']]}};
+function mkLink(p){{var t=document.getElementById(p[0]);if(!t)return null;
+ var a=document.createElement('a');a.href='#'+p[0];a.textContent=p[1];
+ a.onclick=function(e){{e.preventDefault();
+   if(p[0]==='s-help'){{var d=document.getElementById('s-help');if(d)d.open=true;}}
+   t.scrollIntoView({{behavior:'smooth',block:'start'}});}};
+ return a;}}
+function buildNav(v){{
+ var n=document.getElementById('nav');
+ if(n){{n.innerHTML='';(NAVS[v]||[]).forEach(function(p){{var a=mkLink(p);if(a)n.appendChild(a);}});}}
+ // per-section strips: every other section, excluding its own
+ [].slice.call(document.querySelectorAll('.secnav')).forEach(function(el){{
+   el.innerHTML='';
+   var own=el.dataset.own;
+   var all=[['s-summary','Summary'],['s-changes','What changed'],['s-notes','Game notes'],['s-cheat','Conference ranks'],
+            ['s-div','Division ranks'],['s-ledger','Ledger'],['s-help','How to read']];
+   all.forEach(function(p){{ if(p[0]===own) return; var a=mkLink(p); if(a) el.appendChild(a); }});}});}}
+function setView(){{var v=document.getElementById('view').value;
+['card','cheat','ledger'].forEach(function(k){{
+  var el=document.getElementById('v-'+k); if(el) el.classList.toggle('hide',v!==k);}});
+buildNav(v);
+ [].slice.call(document.querySelectorAll('#s-help h4')).forEach(function(hd){{
+   var t=hd.dataset.tab||'all', on=(t==='all'||t===v);
+   hd.style.display=on?'':'none';
+   var n=hd.nextElementSibling;
+   while(n && n.tagName!=='H4'){{n.style.display=on?'':'none';n=n.nextElementSibling;}}}});
+ var any=false;
+ [].slice.call(document.querySelectorAll('.iss')).forEach(function(el){{
+   var t=el.dataset.tab||'card', on=(t==='all'||t===v);
+   el.style.display=on?'':'none'; if(on)any=true;}});
+ var hdr=document.getElementById('s-issues');
+ if(hdr) hdr.classList.toggle('hide',!any);}}
+setView();flt();lflt();
+function goWeek(){{var v=document.getElementById('wk').value; if(v) location.href=v;}}
+function tog(){{var d=document.body.classList.toggle('dark');
+document.getElementById('thm').textContent=d?'Light mode':'Dark mode';
+try{{localStorage.setItem('nflthm',d?'1':'0')}}catch(e){{}}}}
+try{{if(localStorage.getItem('nflthm')==='1'){{document.body.classList.add('dark');
+document.getElementById('thm').textContent='Light mode';}}}}catch(e){{}}
+function flt(){{
+ var dAll=document.querySelectorAll('.fd').length, gAll=document.querySelectorAll('.fgm').length;
+ var ds=[].slice.call(document.querySelectorAll('.fd:checked')).map(function(e){{return e.value}});
+ var gs=[].slice.call(document.querySelectorAll('.fgm:checked')).map(function(e){{return e.value}});
+ // a group with nothing ticked, or everything ticked, imposes no constraint
+ // an empty group hides everything; a fully ticked group imposes no constraint
+ [].slice.call(document.querySelectorAll('.row')).forEach(function(rw){{
+   var ok;
+   if(ds.length===0 || gs.length===0) ok = false;
+   else ok = (ds.length===dAll || ds.indexOf(rw.dataset.day)>-1)
+          && (gs.length===gAll || gs.indexOf(rw.dataset.gid)>-1);
+   rw.style.display = ok ? '' : 'none';}});
+ var n=document.querySelectorAll('#v-card tbody .row:not([style*="none"])').length;
+ var c=document.getElementById('fcount'); if(c) c.textContent=n+' of '+gAll+' games shown';}}
+function expAll(o){{[].slice.call(document.querySelectorAll('details.gc')).forEach(function(d){{d.open=!!o;}});}}
+function lflt(){{
+ var dA=document.querySelectorAll('.ld').length,tA=document.querySelectorAll('.lt').length,rA=document.querySelectorAll('.lr').length;
+ var ds=[].slice.call(document.querySelectorAll('.ld:checked')).map(function(e){{return e.value}});
+ var ts=[].slice.call(document.querySelectorAll('.lt:checked')).map(function(e){{return e.value}});
+ var mA=document.querySelectorAll('.ltm').length;
+ var ms=[].slice.call(document.querySelectorAll('.ltm:checked')).map(function(e){{return e.value}});
+ var rs=[].slice.call(document.querySelectorAll('.lr:checked')).map(function(e){{return e.value}});
+ var n=0;
+ [].slice.call(document.querySelectorAll('.lrow')).forEach(function(rw){{
+   var ok;
+   if(ds.length===0||ts.length===0||rs.length===0||ms.length===0) ok=false;
+   else{{ var tm=rw.dataset.teams.split(' ');
+     ok=(ds.length===dA||ds.indexOf(rw.dataset.day)>-1)
+      &&(ts.length===tA||ts.indexOf(rw.dataset.tier)>-1)
+      &&(rs.length===rA||rs.indexOf(rw.dataset.res)>-1)
+      &&(ms.length===mA||ms.indexOf(tm[0])>-1||ms.indexOf(tm[1])>-1);}}
+   rw.style.display=ok?'':'none'; if(ok)n++;}});
+ var c=document.getElementById('lcount'); if(c)c.textContent=n+' picks shown';}}
+function lAll(o){{[].slice.call(document.querySelectorAll('.ld,.lt,.lr,.ltm')).forEach(function(e){{e.checked=!!o}});lflt();}}
+function allOn(){{[].slice.call(document.querySelectorAll('.fd,.fgm')).forEach(function(e){{e.checked=true}});flt();}}
+function allOff(){{[].slice.call(document.querySelectorAll('.fd,.fgm')).forEach(function(e){{e.checked=false}});flt();}}
+</script></div></body></html>""")
+
+_html = "".join(H)
+
+# ---- self-check: catch template and structure faults before writing ----
+import re as _re
+_ph = set(_re.findall(r'\{[A-Za-z_][A-Za-z0-9_().\[\]]*\}', _html)) - {"{return e.value}"}
+if _ph:
+    issue("ERROR", f"{len(_ph)} template placeholder(s) did not render",
+          f"Raw code is showing on the page instead of values: {', '.join(sorted(_ph)[:6])}. "
+          "Usually means an f-string prefix was lost when the template was edited.",
+          "Check the f-string segments in nfl_card.py around the <style> block.", tab="all")
+if "{{" in _html:
+    issue("ERROR", "Unescaped double braces in the output",
+          "CSS or script braces are doubled on the page, which breaks styling.",
+          "A template segment is missing its f-string prefix.", tab="all")
+for _t in ["div","table","tbody","details","summary"]:
+    _o = len(_re.findall(r"<%s[ >]" % _t, _html)); _c = _html.count("</%s>" % _t)
+    if _o != _c:
+        issue("ERROR", f"Unbalanced <{_t}> tags ({_o} open, {_c} closed)",
+              "The page may render with sections nested wrongly or cut off.",
+              "Report this — it is a bug in the card generator, not your data.", tab="all")
+if len(D) and _html.count('class="gc row"') != len(D):
+    issue("ERROR", "Game card count does not match the slate",
+          f"{_html.count('class=\"gc row\"')} cards rendered for {len(D)} games.",
+          "Report this — a game is missing from the notes section.", tab="card")
+
+# consistency: every team's stats must match the ratings table wherever they appear
+_incons = []
+for _t in set(D.home) | set(D.away):
+    _exp = (int(r.loc[_t,"off_rank"]), int(r.loc[_t,"def_rank"]), int(r.loc[_t,"pwr_rank"]),
+            str(r.loc[_t,"scheme"]), str(r.loc[_t,"dsch"]))
+    _seen = set()
+    for _,_g in D.iterrows():
+        if _g.home == _t: _seen.add((_g.h_off,_g.h_def,_g.h_pwr,_g.h_sch,_g.h_dsch))
+        if _g.away == _t: _seen.add((_g.a_off,_g.a_def,_g.a_pwr,_g.a_sch,_g.a_dsch))
+    if len(_seen) > 1 or (_seen and _exp not in _seen):
+        _incons.append(_t)
+if _incons:
+    issue("ERROR", f"Team stats disagree between cards: {', '.join(sorted(_incons)[:8])}",
+          "The same team is showing different rankings in different places on this page, "
+          "so at least one card is wrong.",
+          "Report this — it is a bug in the card generator, not your data.", tab="all")
+_expected_cols = {"off_rank","def_rank","pwr_rank","po_rank","ro_rank","pd_rank","rd_rank",
+                  "scheme","dsch","Giveaways","Takeaways"}
+_missing = _expected_cols - set(r.columns)
+if _missing:
+    issue("WARN", f"Ratings file is missing {len(_missing)} stat column(s)",
+          f"Some stats will show as blank or zero across every card: {', '.join(sorted(_missing))}.",
+          "Re-run build_ratings.py to regenerate power_ratings.csv with all columns.", tab="all")
+
+# re-render the issues panel now that self-checks have run
+if ISSUES:
+    _panel = ['<h2 id="s-issues" class="hide">Needs attention</h2>']
+    for i in ISSUES:
+        _panel.append(f'<div class="iss" data-tab="{i.get("tab","card")}"><div class="h">{i["lvl"]} — {i["what"]}</div>'
+                      f'<div class="w"><b>Why it matters:</b> {i["why"]}</div>'
+                      f'<div class="f"><b>Fix:</b> {i["fix"]}</div></div>')
+    _new = "".join(_panel)
+    if 'id="s-issues"' in _html:
+        _s = _html.index('<h2 id="s-issues"'); _e = _html.index('<div id="v-card">')
+        _html = _html[:_s] + _new + _html[_e:]
+    else:
+        _a = _html.index('<div id="v-card">')
+        _html = _html[:_a] + _new + _html[_a:]
+
+# ---- refuse to publish a page that is structurally broken ----------------
+# Everything found above goes into Needs attention and the page still publishes,
+# because a warning is information and withholding the card helps nobody. These
+# three are different: they mean the OUTPUT is malformed, and writing it would
+# overwrite a good page with a broken one. Same rule as the college card, and
+# the same three tests, so a fault caught on one is caught on the other.
+_fatal = []
+_body = _re.sub(r"<style>.*?</style>|<script>.*?</script>", "", _html, flags=_re.S)
+_left = _re.findall(r"\{[A-Za-z_][A-Za-z0-9_.\[\]'\"()]*\}", _body)
+if _left:
+    _fatal.append(f"unrendered placeholders in the page: {_left[:4]}")
+if _re.search(r"\bnan\b", _body, _re.I):
+    _fatal.append("the page contains the word nan, so a missing number leaked through")
+if _html.count("<html") != 1 or _html.count("</html>") != 1:
+    _fatal.append("the page markup is not one complete document")
+if _fatal:
+    for _b in _fatal:
+        print(f"REFUSING TO PUBLISH: {_b}")
+    print("The previous card is still live and is still correct. Fix this and re-run.")
+    sys.exit(1)
+
+open(P(f"Week{WEEK}-Card.html"),"w").write(_html)
+print(f"\ncard: Week{WEEK}-Card.html | ledger: ledger_week{WEEK}.csv | {len(D)} games, {len(L)} picks"
+      + (f" | {pres} results preserved" if pres else ""))
