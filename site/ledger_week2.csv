@@ -4,7 +4,7 @@ week,date,day,game,market,pick,our_num,market_num,gap,tier,result,win_pct,opened
 2,2026-09-17,Thursday,DET@BUF,Total,UNDER 51.5,50.1,51.5,-1.4,D,,54.5,50.1,D
 2,2026-09-20,Sunday,CAR@ATL,Spread,CAR +1.5,1.2,1.5,-0.3,D,,,1.2,D
 2,2026-09-20,Sunday,CAR@ATL,Moneyline,ATL,53.3,53.2,0.1,D,,53.3,53.3,D
-2,2026-09-20,Sunday,CAR@ATL,Total,OVER 43.5,44.2,43.5,0.7,D,,52.2,44.2,D
+2,2026-09-20,Sunday,CAR@ATL,Total,OVER 42.5,44.2,42.5,1.7,D,,56.1,44.2,D
 2,2026-09-20,Sunday,NO@BAL,Spread,BAL -7.5,10.2,7.5,2.7,D,,,10.2,D
 2,2026-09-20,Sunday,NO@BAL,Moneyline,BAL,77.5,75.7,1.8,C,,77.5,77.5,C
 2,2026-09-20,Sunday,NO@BAL,Total,UNDER 46.5,38.7,46.5,-7.8,D,,77.0,38.7,D
@@ -14,9 +14,9 @@ week,date,day,game,market,pick,our_num,market_num,gap,tier,result,win_pct,opened
 2,2026-09-20,Sunday,CIN@HOU,Spread,CIN +2.5,1.5,2.5,-1.0,D,,,1.5,D
 2,2026-09-20,Sunday,CIN@HOU,Moneyline,CIN,45.6,42.8,2.8,C,,45.6,45.6,C
 2,2026-09-20,Sunday,CIN@HOU,Total,UNDER 45.5,44.0,45.5,-1.5,D,,55.5,44.0,D
-2,2026-09-20,Sunday,PIT@NE,Spread,NE -4.5,6.6,4.5,2.1,D,,,,
-2,2026-09-20,Sunday,PIT@NE,Moneyline,NE,68.5,64.5,4.0,C,,68.5,,
-2,2026-09-20,Sunday,PIT@NE,Total,OVER 43.5,49.5,43.5,6.0,D,,71.5,,
+2,2026-09-20,Sunday,PIT@NE,Spread,NE -4.5,6.6,4.5,2.1,D,,,6.6,D
+2,2026-09-20,Sunday,PIT@NE,Moneyline,NE,68.5,64.5,4.0,C,,68.5,68.5,C
+2,2026-09-20,Sunday,PIT@NE,Total,OVER 43.5,49.5,43.5,6.0,D,,71.5,49.5,D
 2,2026-09-20,Sunday,GB@NYJ,Spread,GB -5.5,-6.7,-5.5,-1.2,D,,,-6.7,D
 2,2026-09-20,Sunday,GB@NYJ,Moneyline,GB,69.3,68.1,1.2,C,,69.3,69.2,C
 2,2026-09-20,Sunday,GB@NYJ,Total,OVER 42.5,50.9,42.5,8.4,D,,78.3,50.9,D
