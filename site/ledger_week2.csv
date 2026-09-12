@@ -6,7 +6,7 @@ week,date,day,game,market,pick,our_num,market_num,gap,tier,result,win_pct,opened
 2,2026-09-20,Sunday,CAR@ATL,Moneyline,ATL,53.3,53.2,0.1,D,,53.3,53.3,D
 2,2026-09-20,Sunday,CAR@ATL,Total,OVER 42.5,44.2,42.5,1.7,D,,56.1,44.2,D
 2,2026-09-20,Sunday,NO@BAL,Spread,BAL -7.5,10.2,7.5,2.7,D,,,10.2,D
-2,2026-09-20,Sunday,NO@BAL,Moneyline,BAL,77.5,75.7,1.8,C,,77.5,77.5,C
+2,2026-09-20,Sunday,NO@BAL,Moneyline,BAL,77.5,74.8,2.7,C,,77.5,77.5,C
 2,2026-09-20,Sunday,NO@BAL,Total,UNDER 46.5,38.7,46.5,-7.8,D,,77.0,38.7,D
 2,2026-09-20,Sunday,MIN@CHI,Spread,CHI -3.0,3.6,3.0,0.6,D,,,3.6,D
 2,2026-09-20,Sunday,MIN@CHI,Moneyline,CHI,60.5,60.4,0.1,C,,60.5,60.5,C
@@ -33,7 +33,7 @@ week,date,day,game,market,pick,our_num,market_num,gap,tier,result,win_pct,opened
 2,2026-09-20,Sunday,LV@LAC,Moneyline,LAC,79.6,76.6,3.0,C,,79.6,79.3,C
 2,2026-09-20,Sunday,LV@LAC,Total,UNDER 42.5,34.8,42.5,-7.7,D,,76.6,34.8,D
 2,2026-09-20,Sunday,WAS@DAL,Spread,DAL -4.5,5.6,4.5,1.1,D,,,5.6,D
-2,2026-09-20,Sunday,WAS@DAL,Moneyline,DAL,64.9,64.5,0.4,C,,64.9,65.0,C
+2,2026-09-20,Sunday,WAS@DAL,Moneyline,DAL,64.9,63.7,1.2,C,,64.9,65.0,C
 2,2026-09-20,Sunday,WAS@DAL,Total,OVER 51.5,59.4,51.5,7.9,D,,77.7,59.4,D
 2,2026-09-20,Sunday,MIA@SF,Spread,SF -11.5,14.6,11.5,3.1,D,,,14.6,D
 2,2026-09-20,Sunday,MIA@SF,Moneyline,SF,86.2,85.4,0.8,C,,86.2,85.9,C
