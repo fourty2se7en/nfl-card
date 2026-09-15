@@ -1,5 +1,5 @@
 {
- "saved": "2026-09-15T19:12",
+ "saved": "2026-09-15T23:30",
  "notes": {
   "NE@SEA": {
    "returning": [
@@ -703,6 +703,301 @@
      "pick": "Under 42.5"
     }
    ]
+  },
+  "DET@BUF": {
+   "trades": [
+    "Detroit RB Isiah Pacheco underwent back surgery Monday and is expected to miss significant time",
+    "Detroit C Cade Mays is on injured reserve with a wrist injury and is aiming to return around mid-October, per Dave Birkett of the Detroit Free Press"
+   ],
+   "movement": [
+    "Opened Buffalo -3 with a total of 52.5, now Buffalo -4.5 and 53.5"
+   ],
+   "experts": [
+    {
+     "name": "CBS Sports (via USA TODAY)",
+     "record": "record not published",
+     "pick": "Bills 38, Lions 31"
+    },
+    {
+     "name": "Sports Illustrated (via USA TODAY)",
+     "record": "record not published",
+     "pick": "Lions cover"
+    }
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 2,
+    "confidence": "confirmed"
+   }
+  },
+  "CAR@ATL": {
+   "trades": [
+    "Atlanta started QB Cooper Rush in Week 1 with Michael Penix Jr. (knee) and Tua Tagovailoa (oblique) both unavailable, and the Week 2 starter was still unsettled as of Tuesday",
+    "Atlanta placed OT Cam Williams on injured reserve with an ankle injury on Sept 12",
+    "Atlanta DT Da'Shawn Hand tore a quadriceps in Sunday's loss to Pittsburgh, per Marc Raimondi of ESPN",
+    "Atlanta G Chris Lindstrom was diagnosed with a concussion in Sunday's game against Pittsburgh, per Tori McElhaney of the team's official site",
+    "Carolina WR Jalen Coker was in a walking boot Monday with a left ankle injury suffered Sunday"
+   ],
+   "movement": [
+    "Opened Atlanta -1.5 with a total of 43.5, now Carolina -2.5 with the total unchanged, a four-point move to Carolina"
+   ],
+   "experts": [
+    {
+     "name": "CBS Sports (via USA TODAY)",
+     "record": "record not published",
+     "pick": "Falcons"
+    }
+   ],
+   "log": {
+    "qb_out": "home",
+    "starters_out": 3,
+    "confidence": "unconfirmed"
+   }
+  },
+  "NO@BAL": {
+   "trades": [
+    "Baltimore WR Ja'Kobi Lane is expected to undergo wrist surgery this week, per Matt Zenitz of CBS Sports",
+    "New Orleans placed RB Audric Estime on injured reserve with a thigh injury on Sept 12"
+   ],
+   "movement": [
+    "Opened Baltimore -7.5 with a total of 46.5, now Baltimore -8.5 with the total unchanged"
+   ]
+  },
+  "MIN@CHI": {
+   "trades": [
+    "Minnesota QB Kyler Murray remains in concussion protocol after leaving Sunday's game in the first quarter, and Carson Wentz would start if he is not cleared",
+    "Minnesota RB Jordan Mason was still being evaluated Monday, head coach Kevin O'Connell said"
+   ],
+   "movement": [
+    "Opened Chicago -3.5 with a total of 45.5, now Chicago -5.5"
+   ],
+   "log": {
+    "qb_out": "away",
+    "starters_out": 1,
+    "confidence": "unconfirmed"
+   }
+  },
+  "CIN@HOU": {
+   "trades": [
+    "Houston LB Henry To'oTo'o hurt his shoulder Sunday and may land on injured reserve, per Aaron Wilson of KPRC 2 Houston",
+    "Houston placed DT Kayden McDonald on injured reserve with an ankle injury on Sept 11",
+    "Houston LB Jake Hummel is considered week-to-week with a groin injury, per Aaron Wilson of KPRC 2 Houston"
+   ],
+   "movement": [
+    "Opened Houston -2.5 with a total of 46.5, and the spread has not moved"
+   ],
+   "experts": [
+    {
+     "name": "Sports Illustrated (via USA TODAY)",
+     "record": "record not published",
+     "pick": "Texans"
+    }
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 1,
+    "confidence": "reported"
+   }
+  },
+  "PIT@NE": {
+   "returning": [
+    "New England RB TreVeyon Henderson returned to practice Monday after an ankle injury that had kept him out since Aug 24, head coach Mike Vrabel said"
+   ],
+   "trades": [
+    "New England put WR A.J. Brown on injured reserve with a high-ankle sprain suffered in the Week 1 opener, so he misses at least four games"
+   ],
+   "movement": [
+    "Opened New England -4.5 with a total of 43.5, now New England -5.5"
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 1,
+    "confidence": "confirmed"
+   }
+  },
+  "GB@NYJ": {
+   "trades": [
+    "New York placed WR Tim Patrick on injured reserve with a groin injury on Sept 12",
+    "New York WR Omar Cooper Jr. is week-to-week with an ankle injury",
+    "Green Bay signed WR Bo Melton from the practice squad to the active roster Monday"
+   ],
+   "suspensions": [
+    "Green Bay RB Josh Jacobs has been on the NFL commissioner's exempt list since Aug 30 and remains out, with the league able to count that time toward any eventual discipline"
+   ],
+   "movement": [
+    "Opened Green Bay -6.5 with a total of 42.5, now Green Bay -4.5 and 44.5, two points to the Jets"
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 2,
+    "confidence": "confirmed"
+   }
+  },
+  "CLE@TB": {
+   "trades": [
+    "Cleveland placed RB Dylan Sampson on injured reserve with a knee injury Tuesday and signed RB Jaleel McLaughlin from the practice squad",
+    "Tampa Bay CB Jacob Parrish sprained his back in Sunday's loss to Cincinnati, per Brianna Dix of the team's official site"
+   ],
+   "movement": [
+    "Opened Tampa Bay -5.5 with a total of 42.5, now Tampa Bay -8.5, three points to Tampa Bay"
+   ],
+   "experts": [
+    {
+     "name": "CBS Sports (via USA TODAY)",
+     "record": "record not published",
+     "pick": "Buccaneers 34, Browns 16"
+    }
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 1,
+    "confidence": "confirmed"
+   }
+  },
+  "PHI@TEN": {
+   "returning": [
+    "Tennessee LB Cedric Gray is trending toward playing after a concussion suffered in Week 1"
+   ],
+   "trades": [
+    "Philadelphia placed G Landon Dickerson on injured reserve with a knee injury Monday, per Adam Schefter of ESPN",
+    "Philadelphia placed TE Eli Stowers on injured reserve on Sept 12"
+   ],
+   "movement": [
+    "Opened Philadelphia -4.5 with a total of 42.5, now Philadelphia -7"
+   ],
+   "experts": [
+    {
+     "name": "CBS Sports (via USA TODAY)",
+     "record": "record not published",
+     "pick": "Eagles to win comfortably"
+    }
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 1,
+    "confidence": "confirmed"
+   }
+  },
+  "JAX@DEN": {
+   "coaching": [
+    "Denver's offense is being called by first-year offensive coordinator Davis Webb after Sean Payton handed over play-calling duties for 2026"
+   ],
+   "trades": [
+    "Jacksonville WR Brian Thomas Jr. will be limited in practice with a shoulder injury, head coach Liam Coen said Monday",
+    "Denver released WR Lil'Jordan Humphrey on Monday"
+   ],
+   "movement": [
+    "Opened Denver -2.5 with a total of 43.5, and the spread has not moved"
+   ],
+   "experts": [
+    {
+     "name": "Sports Illustrated (via USA TODAY)",
+     "record": "record not published",
+     "pick": "Jaguars"
+    }
+   ]
+  },
+  "LV@LAC": {
+   "trades": [
+    "Los Angeles placed WR KeAndre Lambert-Smith on injured reserve after a hamstring injury suffered Sunday",
+    "Las Vegas TE Brock Bowers is day-to-day with a knee injury, head coach Klint Kubiak said Monday",
+    "Los Angeles WR Ladd McConkey is day-to-day with a rib injury, head coach Jim Harbaugh said Monday"
+   ],
+   "movement": [
+    "Opened Los Angeles -8.5 with a total of 42.5, now Los Angeles -6.5, two points to Las Vegas"
+   ]
+  },
+  "SEA@ARI": {
+   "trades": [
+    "Seattle QB Sam Darnold is expected to miss Week 2 with a glute injury and Drew Lock is set to start, with Darnold's return reported at roughly four weeks"
+   ],
+   "movement": [
+    "Opened Seattle -10 with a total of 44.5, now Seattle -4.5 and 41.5, with reporting tying the move to Darnold's absence"
+   ],
+   "experts": [
+    {
+     "name": "CBS Sports (via USA TODAY)",
+     "record": "record not published",
+     "pick": "Cardinals 20, Seahawks 17"
+    }
+   ],
+   "log": {
+    "qb_out": "away",
+    "starters_out": 1,
+    "confidence": "reported"
+   }
+  },
+  "WAS@DAL": {
+   "trades": [
+    "Dallas placed G Tyler Smith on injured reserve with a thumb injury on Sept 9",
+    "Dallas LB DeMarvion Overshown is expected to miss time, head coach Brian Schottenheimer said Monday",
+    "Dallas S Malik Hooker was diagnosed with a forearm fracture after tests Monday, per Ian Rapoport of NFL Network",
+    "Dallas placed RB Malik Davis on injured reserve and signed RB Tyler Goodson off Atlanta's practice squad Tuesday"
+   ],
+   "movement": [
+    "Opened Dallas -4.5 with a total of 51.5, and the spread has not moved"
+   ],
+   "experts": [
+    {
+     "name": "Eric Cohen (SportsLine)",
+     "record": "10-6 straight up in 2026",
+     "pick": "Cowboys 34, Commanders 26"
+    }
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 2,
+    "confidence": "confirmed"
+   }
+  },
+  "MIA@SF": {
+   "trades": [
+    "San Francisco placed DT Alfred Collins on injured reserve with a knee injury on Sept 10",
+    "San Francisco WR De'Zhaun Stribling is expected to miss at least a month with an ankle injury",
+    "Miami LB Kyle Louis is expected to miss Week 2 with a knee injury, per David Furones of the South Florida Sun Sentinel"
+   ],
+   "movement": [
+    "Opened San Francisco -10.5 with a total of 46.5, now San Francisco -13.5 and 45.5"
+   ],
+   "experts": [
+    {
+     "name": "CBS Sports (via USA TODAY)",
+     "record": "record not published",
+     "pick": "49ers 38, Dolphins 16"
+    },
+    {
+     "name": "Sports Illustrated (via USA TODAY)",
+     "record": "record not published",
+     "pick": "Dolphins cover"
+    }
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 1,
+    "confidence": "confirmed"
+   }
+  },
+  "IND@KC": {
+   "trades": [
+    "Kansas City CB Mansoor Delane and LB Cooper McDonald both left Monday night's game, Delane with a shoulder injury and McDonald with a knee injury"
+   ],
+   "movement": [
+    "Opened Kansas City -5.5 with a total of 47.5, now Kansas City -6.5"
+   ]
+  },
+  "NYG@LA": {
+   "trades": [
+    "Los Angeles DE Myles Garrett is undergoing arthroscopic knee surgery and going on injured reserve, so he misses at least four games",
+    "Los Angeles LB Nate Landman is expected to be ready for Monday night after a shoulder and thumb injury"
+   ],
+   "movement": [
+    "Opened Los Angeles -8.5 with a total of 47.5, now Los Angeles -7"
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 1,
+    "confidence": "confirmed"
+   }
   }
  }
 }
