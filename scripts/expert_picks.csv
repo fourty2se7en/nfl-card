@@ -1,0 +1,60 @@
+first_seen_utc,season,week,game,name,market,side,line,pick
+2026-09-04T23:50:16+00:00,2026,1,NE@SEA,Jared Dubin (CBS Sports),spread,SEA,-3.5,SEA -3.5
+2026-09-04T23:50:16+00:00,2026,1,NE@SEA,Ryan Wilson (CBS Sports),spread,SEA,-3.5,SEA -3.5
+2026-09-04T23:50:16+00:00,2026,1,NE@SEA,Micah Roberts (CBS Sports/SportsLine),spread,SEA,-4.5,SEA -4.5
+2026-09-04T23:50:16+00:00,2026,1,NE@SEA,Matt Severance (CBS Sports/SportsLine),total,under,45.5,Under 45.5
+2026-09-04T23:50:16+00:00,2026,1,NE@SEA,Jason Logan (Covers),spread,SEA,-3.5,SEA -3.5
+2026-09-04T23:50:16+00:00,2026,1,NE@SEA,Julian Edlow (DraftKings Network),spread,SEA,-3.5,SEA -3.5
+2026-09-04T23:50:16+00:00,2026,1,SF@LA,Jared Dubin (CBS Sports),spread,LA,-3.5,LA -3.5
+2026-09-04T23:50:16+00:00,2026,1,SF@LA,Ryan Wilson (CBS Sports),spread,LA,-3.5,LA -3.5
+2026-09-04T23:50:16+00:00,2026,1,SF@LA,Tyler Sullivan (CBS Sports),spread,SF,3.5,SF +3.5
+2026-09-04T23:50:16+00:00,2026,1,SF@LA,Jason Logan (Covers),total,under,48.5,Under 48.5
+2026-09-04T23:50:16+00:00,2026,1,CHI@CAR,Jared Dubin (CBS Sports),spread,CHI,-2.5,CHI -2.5
+2026-09-04T23:50:16+00:00,2026,1,CHI@CAR,Ryan Wilson (CBS Sports),spread,CHI,-2.5,CHI -2.5
+2026-09-04T23:50:16+00:00,2026,1,CHI@CAR,Tyler Sullivan (CBS Sports),spread,CHI,-2.5,CHI -2.5
+2026-09-04T23:50:16+00:00,2026,1,CHI@CAR,Jason Logan (Covers),spread,CHI,-2.5,CHI -2.5
+2026-09-04T23:50:16+00:00,2026,1,TB@CIN,Jared Dubin (CBS Sports),spread,TB,3.5,TB +3.5
+2026-09-04T23:50:16+00:00,2026,1,TB@CIN,Ryan Wilson (CBS Sports),spread,TB,3.5,TB +3.5
+2026-09-04T23:50:16+00:00,2026,1,TB@CIN,Tyler Sullivan (CBS Sports),spread,CIN,-3.5,CIN -3.5
+2026-09-04T23:50:16+00:00,2026,1,NO@DET,Jared Dubin (CBS Sports),spread,DET,-7.0,DET -7
+2026-09-04T23:50:16+00:00,2026,1,NO@DET,Ryan Wilson (CBS Sports),spread,NO,7.0,NO +7
+2026-09-04T23:50:16+00:00,2026,1,NO@DET,Tyler Sullivan (CBS Sports),spread,DET,-7.0,DET -7
+2026-09-04T23:50:16+00:00,2026,1,NO@DET,Julian Edlow (DraftKings Network),total,over,48.5,Over 48.5
+2026-09-04T23:50:16+00:00,2026,1,BUF@HOU,Jared Dubin (CBS Sports),spread,HOU,1.5,HOU +1.5
+2026-09-04T23:50:16+00:00,2026,1,BUF@HOU,Ryan Wilson (CBS Sports),spread,BUF,-1.5,BUF -1.5
+2026-09-04T23:50:16+00:00,2026,1,BUF@HOU,Tyler Sullivan (CBS Sports),spread,HOU,1.5,HOU +1.5
+2026-09-04T23:50:16+00:00,2026,1,BUF@HOU,Eric Cohen (SportsLine),spread,HOU,1.5,"HOU +1.5, Texans 23 Bills 20"
+2026-09-04T23:50:16+00:00,2026,1,BUF@HOU,Jason Logan (Covers),total,over,45.5,Over 45.5
+2026-09-04T23:50:16+00:00,2026,1,BAL@IND,Jared Dubin (CBS Sports),spread,BAL,-3.5,BAL -3.5
+2026-09-04T23:50:16+00:00,2026,1,BAL@IND,Ryan Wilson (CBS Sports),spread,BAL,-3.5,BAL -3.5
+2026-09-04T23:50:16+00:00,2026,1,BAL@IND,Tyler Sullivan (CBS Sports),spread,IND,3.5,IND +3.5
+2026-09-04T23:50:16+00:00,2026,1,CLE@JAX,Jared Dubin (CBS Sports),spread,JAX,-7.5,JAX -7.5
+2026-09-04T23:50:16+00:00,2026,1,CLE@JAX,Ryan Wilson (CBS Sports),spread,CLE,7.5,CLE +7.5
+2026-09-04T23:50:16+00:00,2026,1,CLE@JAX,Tyler Sullivan (CBS Sports),spread,JAX,-7.5,JAX -7.5
+2026-09-04T23:50:16+00:00,2026,1,ATL@PIT,Jared Dubin (CBS Sports),spread,PIT,-3.0,PIT -3
+2026-09-04T23:50:16+00:00,2026,1,ATL@PIT,Ryan Wilson (CBS Sports),spread,PIT,-3.0,PIT -3
+2026-09-04T23:50:16+00:00,2026,1,ATL@PIT,Tyler Sullivan (CBS Sports),spread,PIT,-3.0,PIT -3
+2026-09-04T23:50:16+00:00,2026,1,NYJ@TEN,Jared Dubin (CBS Sports),spread,TEN,-1.5,TEN -1.5
+2026-09-04T23:50:16+00:00,2026,1,NYJ@TEN,Ryan Wilson (CBS Sports),spread,TEN,-1.5,TEN -1.5
+2026-09-04T23:50:16+00:00,2026,1,NYJ@TEN,Tyler Sullivan (CBS Sports),spread,NYJ,1.5,NYJ +1.5
+2026-09-04T23:50:16+00:00,2026,1,ARI@LAC,Jared Dubin (CBS Sports),spread,LAC,-10.5,LAC -10.5
+2026-09-04T23:50:16+00:00,2026,1,ARI@LAC,Ryan Wilson (CBS Sports),spread,ARI,10.5,ARI +10.5
+2026-09-04T23:50:16+00:00,2026,1,ARI@LAC,Tyler Sullivan (CBS Sports),spread,ARI,10.5,ARI +10.5
+2026-09-04T23:50:16+00:00,2026,1,MIA@LV,Jared Dubin (CBS Sports),spread,LV,-3.5,LV -3.5
+2026-09-04T23:50:16+00:00,2026,1,MIA@LV,Ryan Wilson (CBS Sports),spread,LV,-3.5,LV -3.5
+2026-09-04T23:50:16+00:00,2026,1,MIA@LV,Tyler Sullivan (CBS Sports),spread,MIA,3.5,MIA +3.5
+2026-09-04T23:50:16+00:00,2026,1,GB@MIN,Jared Dubin (CBS Sports),spread,GB,1.5,GB +1.5
+2026-09-04T23:50:16+00:00,2026,1,GB@MIN,Ryan Wilson (CBS Sports),spread,MIN,-1.5,MIN -1.5
+2026-09-04T23:50:16+00:00,2026,1,GB@MIN,Tyler Sullivan (CBS Sports),spread,MIN,-1.5,MIN -1.5
+2026-09-04T23:50:16+00:00,2026,1,GB@MIN,Jason Logan (Covers),total,under,44.5,Under 44.5
+2026-09-04T23:50:16+00:00,2026,1,WAS@PHI,Jared Dubin (CBS Sports),spread,PHI,-4.5,PHI -4.5
+2026-09-04T23:50:16+00:00,2026,1,WAS@PHI,Ryan Wilson (CBS Sports),spread,PHI,-4.5,PHI -4.5
+2026-09-04T23:50:16+00:00,2026,1,WAS@PHI,Tyler Sullivan (CBS Sports),spread,PHI,-4.5,PHI -4.5
+2026-09-04T23:50:16+00:00,2026,1,DAL@NYG,Jared Dubin (CBS Sports),spread,DAL,-2.5,DAL -2.5
+2026-09-04T23:50:16+00:00,2026,1,DAL@NYG,Ryan Wilson (CBS Sports),spread,NYG,2.5,NYG +2.5
+2026-09-04T23:50:16+00:00,2026,1,DAL@NYG,Tyler Sullivan (CBS Sports),spread,NYG,2.5,NYG +2.5
+2026-09-04T23:50:16+00:00,2026,1,DAL@NYG,Jason Logan (Covers),total,over,48.5,Over 48.5
+2026-09-04T23:50:16+00:00,2026,1,DEN@KC,Jared Dubin (CBS Sports),spread,DEN,2.5,DEN +2.5
+2026-09-04T23:50:16+00:00,2026,1,DEN@KC,Ryan Wilson (CBS Sports),spread,DEN,2.5,DEN +2.5
+2026-09-04T23:50:16+00:00,2026,1,DEN@KC,Tyler Sullivan (CBS Sports),spread,DEN,2.5,DEN +2.5
+2026-09-04T23:50:16+00:00,2026,1,DEN@KC,Jason Logan (Covers),total,under,42.5,Under 42.5
