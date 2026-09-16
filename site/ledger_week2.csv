@@ -5,11 +5,11 @@ week,date,day,game,market,pick,our_num,market_num,gap,tier,result,win_pct,opened
 2,2026-09-20,Sunday,CAR@ATL,Spread,ATL +2.5,1.4,-2.5,3.9,D,,,1.2,D
 2,2026-09-20,Sunday,CAR@ATL,Moneyline,ATL,53.8,44.9,8.9,C,,53.8,53.3,D
 2,2026-09-20,Sunday,CAR@ATL,Total,OVER 43.5,43.9,43.5,0.4,D,,51.2,44.2,D
-2,2026-09-20,Sunday,NO@BAL,Spread,BAL -8.5,10.5,8.5,2.0,D,,,10.2,D
-2,2026-09-20,Sunday,NO@BAL,Moneyline,BAL,76.6,75.7,0.9,C,,76.6,77.5,C
+2,2026-09-20,Sunday,NO@BAL,Spread,BAL -7.5,10.5,7.5,3.0,D,,,10.2,D
+2,2026-09-20,Sunday,NO@BAL,Moneyline,BAL,76.6,77.2,-0.6,C,,76.6,77.5,C
 2,2026-09-20,Sunday,NO@BAL,Total,UNDER 47.5,39.2,47.5,-8.3,D,,78.4,38.7,D
 2,2026-09-20,Sunday,MIN@CHI,Spread,MIN +5.5,3.7,5.5,-1.8,D,,,3.6,D
-2,2026-09-20,Sunday,MIN@CHI,Moneyline,CHI,60.0,66.9,-6.9,C,,60.0,60.5,C
+2,2026-09-20,Sunday,MIN@CHI,Moneyline,CHI,60.0,66.4,-6.4,C,,60.0,60.5,C
 2,2026-09-20,Sunday,MIN@CHI,Total,UNDER 47.5,41.3,47.5,-6.2,D,,72.3,40.1,D
 2,2026-09-20,Sunday,CIN@HOU,Spread,CIN +2.5,0.9,2.5,-1.6,D,,,1.5,D
 2,2026-09-20,Sunday,CIN@HOU,Moneyline,HOU,52.7,56.3,-3.6,D,,52.7,45.6,C
@@ -33,7 +33,7 @@ week,date,day,game,market,pick,our_num,market_num,gap,tier,result,win_pct,opened
 2,2026-09-20,Sunday,LV@LAC,Moneyline,LAC,75.3,71.8,3.5,C,,75.3,79.3,C
 2,2026-09-20,Sunday,LV@LAC,Total,UNDER 43.5,35.1,43.5,-8.4,D,,78.4,34.8,D
 2,2026-09-20,Sunday,SEA@ARI,Spread,SEA -3.5,-12.3,-3.5,-8.8,C,,,-13.9,C
-2,2026-09-20,Sunday,SEA@ARI,Moneyline,SEA,81.4,65.7,15.7,C,,81.4,84.4,C
+2,2026-09-20,Sunday,SEA@ARI,Moneyline,SEA,81.4,64.5,16.9,C,,81.4,84.4,C
 2,2026-09-20,Sunday,SEA@ARI,Total,OVER 40.5,42.8,40.5,2.3,D,,59.0,42.8,D
 2,2026-09-20,Sunday,WAS@DAL,Spread,WAS +4.5,4.6,4.5,0.1,D,,,5.6,D
 2,2026-09-20,Sunday,WAS@DAL,Moneyline,DAL,62.2,65.7,-3.5,C,,62.2,65.0,C
@@ -43,7 +43,7 @@ week,date,day,game,market,pick,our_num,market_num,gap,tier,result,win_pct,opened
 2,2026-09-20,Sunday,MIA@SF,Total,OVER 45.5,50.2,45.5,4.7,D,,67.0,51.6,D
 2,2026-09-20,Sunday,IND@KC,Spread,KC -6.5,9.3,6.5,2.8,D,,,8.1,D
 2,2026-09-20,Sunday,IND@KC,Moneyline,KC,75.4,71.0,4.4,C,,75.4,29.0,D
-2,2026-09-20,Sunday,IND@KC,Total,UNDER 46.5,43.2,46.5,-3.3,D,,61.8,45.4,D
+2,2026-09-20,Sunday,IND@KC,Total,UNDER 46.5,44.7,46.5,-1.8,D,,56.3,45.4,D
 2,2026-09-21,Monday,NYG@LA,Spread,LA -7.0,7.9,7.0,0.9,D,,,10.0,D
 2,2026-09-21,Monday,NYG@LA,Moneyline,LA,70.6,74.8,-4.2,C,,70.6,24.7,D
 2,2026-09-21,Monday,NYG@LA,Total,OVER 47.5,53.5,47.5,6.0,D,,71.2,52.9,D
