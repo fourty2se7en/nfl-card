@@ -1,5 +1,5 @@
 {
- "saved": "2026-09-16T02:58",
+ "saved": "2026-09-16T03:18",
  "notes": {
   "NE@SEA": {
    "returning": [
@@ -712,18 +712,6 @@
    "movement": [
     "Opened Buffalo -3 with a total of 52.5, now Buffalo -4.5 and 53.5"
    ],
-   "experts": [
-    {
-     "name": "CBS Sports (via USA TODAY)",
-     "record": "record not published",
-     "pick": "Bills 38, Lions 31"
-    },
-    {
-     "name": "Sports Illustrated (via USA TODAY)",
-     "record": "record not published",
-     "pick": "Lions cover"
-    }
-   ],
    "log": {
     "qb_out": "none",
     "starters_out": 2,
@@ -740,13 +728,6 @@
    ],
    "movement": [
     "Opened Atlanta -1.5 with a total of 43.5, now Carolina -2.5 with the total unchanged, a four-point move to Carolina"
-   ],
-   "experts": [
-    {
-     "name": "CBS Sports (via USA TODAY)",
-     "record": "record not published",
-     "pick": "Falcons"
-    }
    ],
    "log": {
     "qb_out": "home",
@@ -785,13 +766,6 @@
    ],
    "movement": [
     "Opened Houston -2.5 with a total of 46.5, and the spread has not moved"
-   ],
-   "experts": [
-    {
-     "name": "Sports Illustrated (via USA TODAY)",
-     "record": "record not published",
-     "pick": "Texans"
-    }
    ],
    "log": {
     "qb_out": "none",
@@ -841,13 +815,6 @@
    "movement": [
     "Opened Tampa Bay -5.5 with a total of 42.5, now Tampa Bay -8.5, three points to Tampa Bay"
    ],
-   "experts": [
-    {
-     "name": "CBS Sports (via USA TODAY)",
-     "record": "record not published",
-     "pick": "Buccaneers 34, Browns 16"
-    }
-   ],
    "log": {
     "qb_out": "none",
     "starters_out": 1,
@@ -865,13 +832,6 @@
    "movement": [
     "Opened Philadelphia -4.5 with a total of 42.5, now Philadelphia -7"
    ],
-   "experts": [
-    {
-     "name": "CBS Sports (via USA TODAY)",
-     "record": "record not published",
-     "pick": "Eagles to win comfortably"
-    }
-   ],
    "log": {
     "qb_out": "none",
     "starters_out": 1,
@@ -888,13 +848,6 @@
    ],
    "movement": [
     "Opened Denver -2.5 with a total of 43.5, and the spread has not moved"
-   ],
-   "experts": [
-    {
-     "name": "Sports Illustrated (via USA TODAY)",
-     "record": "record not published",
-     "pick": "Jaguars"
-    }
    ]
   },
   "LV@LAC": {
@@ -913,13 +866,6 @@
    ],
    "movement": [
     "Opened Seattle -10 with a total of 44.5, now Seattle -4.5 and 41.5, with reporting tying the move to Darnold's absence"
-   ],
-   "experts": [
-    {
-     "name": "CBS Sports (via USA TODAY)",
-     "record": "record not published",
-     "pick": "Cardinals 20, Seahawks 17"
-    }
    ],
    "log": {
     "qb_out": "away",
@@ -941,7 +887,9 @@
     {
      "name": "Eric Cohen (SportsLine)",
      "record": "10-6 straight up in 2026",
-     "pick": "Cowboys 34, Commanders 26"
+     "pick": "Cowboys 34, Commanders 26",
+     "market": "moneyline",
+     "side": "DAL"
     }
    ],
    "log": {
@@ -958,18 +906,6 @@
    ],
    "movement": [
     "Opened San Francisco -10.5 with a total of 46.5, now San Francisco -13.5 and 45.5"
-   ],
-   "experts": [
-    {
-     "name": "CBS Sports (via USA TODAY)",
-     "record": "record not published",
-     "pick": "49ers 38, Dolphins 16"
-    },
-    {
-     "name": "Sports Illustrated (via USA TODAY)",
-     "record": "record not published",
-     "pick": "Dolphins cover"
-    }
    ],
    "log": {
     "qb_out": "none",

@@ -1,6 +1,6 @@
 week,date,day,game,market,pick,our_num,market_num,gap,tier,result,win_pct,opened_num,opened_tier
 2,2026-09-17,Thursday,DET@BUF,Spread,DET +4.5,2.6,4.5,-1.9,D,,,2.2,D
-2,2026-09-17,Thursday,DET@BUF,Moneyline,BUF,57.4,66.4,-9.0,C,,57.4,43.9,C
+2,2026-09-17,Thursday,DET@BUF,Moneyline,BUF,57.4,65.7,-8.3,C,,57.4,43.9,C
 2,2026-09-17,Thursday,DET@BUF,Total,UNDER 54.5,50.2,54.5,-4.3,D,,65.0,50.1,D
 2,2026-09-20,Sunday,CAR@ATL,Spread,ATL +2.5,1.4,-2.5,3.9,D,,,1.2,D
 2,2026-09-20,Sunday,CAR@ATL,Moneyline,ATL,53.8,44.9,8.9,C,,53.8,53.3,D
@@ -43,7 +43,7 @@ week,date,day,game,market,pick,our_num,market_num,gap,tier,result,win_pct,opened
 2,2026-09-20,Sunday,MIA@SF,Total,OVER 45.5,50.2,45.5,4.7,D,,67.0,51.6,D
 2,2026-09-20,Sunday,IND@KC,Spread,KC -6.5,9.3,6.5,2.8,D,,,8.1,D
 2,2026-09-20,Sunday,IND@KC,Moneyline,KC,75.4,71.0,4.4,C,,75.4,29.0,D
-2,2026-09-20,Sunday,IND@KC,Total,UNDER 46.5,43.2,46.5,-3.3,D,,61.8,45.4,D
+2,2026-09-20,Sunday,IND@KC,Total,UNDER 46.5,44.7,46.5,-1.8,D,,56.3,45.4,D
 2,2026-09-21,Monday,NYG@LA,Spread,LA -7.0,7.9,7.0,0.9,D,,,10.0,D
 2,2026-09-21,Monday,NYG@LA,Moneyline,LA,70.6,74.8,-4.2,C,,70.6,24.7,D
 2,2026-09-21,Monday,NYG@LA,Total,OVER 47.5,53.5,47.5,6.0,D,,71.2,52.9,D
