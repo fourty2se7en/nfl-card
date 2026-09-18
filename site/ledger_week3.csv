@@ -1,49 +1,49 @@
 week,date,day,game,market,pick,our_num,market_num,gap,tier,result,win_pct,opened_num,opened_tier
-3,2026-09-24,Thursday,ATL@GB,Spread,ATL +6.5,5.9,6.5,-0.6,D,,,,
-3,2026-09-24,Thursday,ATL@GB,Moneyline,GB,67.1,72.6,-5.5,C,,67.1,,
-3,2026-09-24,Thursday,ATL@GB,Total,OVER 46.5,49.1,46.5,2.6,D,,60.2,,
-3,2026-09-27,Sunday,LAC@BUF,Spread,LAC +4.5,4.0,4.5,-0.5,D,,,,
-3,2026-09-27,Sunday,LAC@BUF,Moneyline,BUF,60.7,66.6,-5.9,C,,60.7,,
-3,2026-09-27,Sunday,LAC@BUF,Total,UNDER 50.5,45.4,50.5,-5.1,D,,68.2,,
-3,2026-09-27,Sunday,CAR@CLE,Spread,CAR -2.5,-2.9,-2.5,-0.4,D,,,,
-3,2026-09-27,Sunday,CAR@CLE,Moneyline,CAR,58.3,56.3,2.0,C,,58.3,,
-3,2026-09-27,Sunday,CAR@CLE,Total,UNDER 40.5,33.0,40.5,-7.5,D,,76.1,,
-3,2026-09-27,Sunday,NYJ@DET,Spread,DET -7.5,10.8,7.5,3.3,D,,,,
-3,2026-09-27,Sunday,NYJ@DET,Moneyline,DET,77.3,75.9,1.4,C,,77.3,,
-3,2026-09-27,Sunday,NYJ@DET,Total,UNDER 48.5,47.0,48.5,-1.5,D,,55.8,,
-3,2026-09-27,Sunday,HOU@IND,Spread,HOU -2.5,-2.9,-2.5,-0.4,D,,,,
-3,2026-09-27,Sunday,HOU@IND,Moneyline,HOU,58.5,55.1,3.4,C,,58.5,,
-3,2026-09-27,Sunday,HOU@IND,Total,UNDER 45.5,44.0,45.5,-1.5,D,,55.8,,
-3,2026-09-27,Sunday,NE@JAX,Spread,NE +2.5,0.7,2.5,-1.8,D,,,,
-3,2026-09-27,Sunday,NE@JAX,Moneyline,JAX,52.2,55.1,-2.9,D,,52.2,,
-3,2026-09-27,Sunday,NE@JAX,Total,OVER 45.5,47.9,45.5,2.4,D,,59.0,,
-3,2026-09-27,Sunday,KC@MIA,Spread,KC -8.5,-10.7,-8.5,-2.2,D,,,,
-3,2026-09-27,Sunday,KC@MIA,Moneyline,KC,79.0,78.7,0.3,C,,79.0,,
-3,2026-09-27,Sunday,KC@MIA,Total,UNDER 44.5,42.6,44.5,-1.9,D,,57.6,,
-3,2026-09-27,Sunday,TEN@NYG,Spread,TEN +5.5,4.3,5.5,-1.2,D,,,,
-3,2026-09-27,Sunday,TEN@NYG,Moneyline,NYG,62.4,68.5,-6.1,C,,62.4,,
-3,2026-09-27,Sunday,TEN@NYG,Total,OVER 43.5,48.1,43.5,4.6,D,,66.5,,
-3,2026-09-27,Sunday,CIN@PIT,Spread,PIT +2.5,0.3,-2.5,2.8,D,,,,
-3,2026-09-27,Sunday,CIN@PIT,Moneyline,PIT,51.7,44.9,6.8,C,,51.7,,
-3,2026-09-27,Sunday,CIN@PIT,Total,OVER 45.5,46.1,45.5,0.6,D,,52.5,,
-3,2026-09-27,Sunday,SEA@WAS,Spread,SEA -2.5,-4.3,-2.5,-1.8,D,,,,
-3,2026-09-27,Sunday,SEA@WAS,Moneyline,SEA,62.6,55.1,7.5,C,,62.6,,
-3,2026-09-27,Sunday,SEA@WAS,Total,OVER 41.5,47.4,41.5,5.9,D,,70.4,,
-3,2026-09-27,Sunday,ARI@SF,Spread,SF -8.5,14.8,8.5,6.3,D,,,,
-3,2026-09-27,Sunday,ARI@SF,Moneyline,SF,84.8,79.6,5.2,C,,84.8,,
-3,2026-09-27,Sunday,ARI@SF,Total,OVER 47.5,51.5,47.5,4.0,D,,64.6,,
-3,2026-09-27,Sunday,MIN@TB,Spread,MIN +1.5,1.0,1.5,-0.5,D,,,,
-3,2026-09-27,Sunday,MIN@TB,Moneyline,TB,53.2,53.2,0.0,D,,53.2,,
-3,2026-09-27,Sunday,MIN@TB,Total,UNDER 45.5,35.9,45.5,-9.6,D,,81.0,,
-3,2026-09-27,Sunday,BAL@DAL,Spread,BAL -3.0,-5.2,-3.0,-2.2,D,,,,
-3,2026-09-27,Sunday,BAL@DAL,Moneyline,BAL,64.2,58.3,5.9,C,,64.2,,
-3,2026-09-27,Sunday,BAL@DAL,Total,OVER 52.5,54.2,52.5,1.7,D,,56.3,,
-3,2026-09-27,Sunday,LV@NO,Spread,NO -3.0,5.5,3.0,2.5,D,,,,
-3,2026-09-27,Sunday,LV@NO,Moneyline,NO,65.9,59.3,6.6,C,,65.9,,
-3,2026-09-27,Sunday,LV@NO,Total,UNDER 45.5,32.6,45.5,-12.9,D,,88.6,,
-3,2026-09-27,Sunday,LA@DEN,Spread,DEN +2.5,-1.1,-2.5,1.4,D,,,,
-3,2026-09-27,Sunday,LA@DEN,Moneyline,LA,53.4,55.1,-1.7,D,,53.4,,
-3,2026-09-27,Sunday,LA@DEN,Total,OVER 46.5,47.1,46.5,0.6,D,,52.3,,
-3,2026-09-28,Monday,PHI@CHI,Spread,PHI +1.5,0.3,1.5,-1.2,D,,,,
-3,2026-09-28,Monday,PHI@CHI,Moneyline,CHI,51.0,51.7,-0.7,D,,51.0,,
-3,2026-09-28,Monday,PHI@CHI,Total,UNDER 47.5,45.0,47.5,-2.5,D,,58.7,,
+3,2026-09-24,Thursday,ATL@GB,Spread,ATL +6.5,5.9,6.5,-0.6,D,,,5.9,D
+3,2026-09-24,Thursday,ATL@GB,Moneyline,GB,67.1,71.8,-4.7,C,,67.1,67.1,C
+3,2026-09-24,Thursday,ATL@GB,Total,OVER 46.5,49.1,46.5,2.6,D,,60.2,49.1,D
+3,2026-09-27,Sunday,LAC@BUF,Spread,LAC +4.5,4.0,4.5,-0.5,D,,,4.0,D
+3,2026-09-27,Sunday,LAC@BUF,Moneyline,BUF,60.7,66.6,-5.9,C,,60.7,60.7,C
+3,2026-09-27,Sunday,LAC@BUF,Total,UNDER 50.5,45.4,50.5,-5.1,D,,68.2,45.4,D
+3,2026-09-27,Sunday,CAR@CLE,Spread,CAR -2.5,-2.9,-2.5,-0.4,D,,,-2.9,D
+3,2026-09-27,Sunday,CAR@CLE,Moneyline,CAR,58.3,56.3,2.0,C,,58.3,58.3,C
+3,2026-09-27,Sunday,CAR@CLE,Total,UNDER 40.5,33.0,40.5,-7.5,D,,76.1,33.0,D
+3,2026-09-27,Sunday,NYJ@DET,Spread,DET -7.5,10.8,7.5,3.3,D,,,10.8,D
+3,2026-09-27,Sunday,NYJ@DET,Moneyline,DET,77.3,75.9,1.4,C,,77.3,77.3,C
+3,2026-09-27,Sunday,NYJ@DET,Total,UNDER 48.5,47.0,48.5,-1.5,D,,55.8,47.0,D
+3,2026-09-27,Sunday,HOU@IND,Spread,HOU -2.5,-2.9,-2.5,-0.4,D,,,-2.9,D
+3,2026-09-27,Sunday,HOU@IND,Moneyline,HOU,58.5,55.1,3.4,C,,58.5,58.5,C
+3,2026-09-27,Sunday,HOU@IND,Total,UNDER 45.5,44.0,45.5,-1.5,D,,55.8,44.0,D
+3,2026-09-27,Sunday,NE@JAX,Spread,NE +2.5,0.7,2.5,-1.8,D,,,0.7,D
+3,2026-09-27,Sunday,NE@JAX,Moneyline,JAX,52.2,55.1,-2.9,D,,52.2,52.2,D
+3,2026-09-27,Sunday,NE@JAX,Total,OVER 45.5,47.9,45.5,2.4,D,,59.0,47.9,D
+3,2026-09-27,Sunday,KC@MIA,Spread,KC -8.5,-10.7,-8.5,-2.2,D,,,-10.7,D
+3,2026-09-27,Sunday,KC@MIA,Moneyline,KC,79.0,78.7,0.3,C,,79.0,79.0,C
+3,2026-09-27,Sunday,KC@MIA,Total,UNDER 44.5,42.6,44.5,-1.9,D,,57.6,42.6,D
+3,2026-09-27,Sunday,TEN@NYG,Spread,TEN +5.5,4.3,5.5,-1.2,D,,,4.3,D
+3,2026-09-27,Sunday,TEN@NYG,Moneyline,NYG,62.4,68.5,-6.1,C,,62.4,62.4,C
+3,2026-09-27,Sunday,TEN@NYG,Total,OVER 43.5,48.1,43.5,4.6,D,,66.5,48.1,D
+3,2026-09-27,Sunday,CIN@PIT,Spread,PIT +2.5,0.3,-2.5,2.8,D,,,0.3,D
+3,2026-09-27,Sunday,CIN@PIT,Moneyline,PIT,51.7,44.9,6.8,C,,51.7,51.7,C
+3,2026-09-27,Sunday,CIN@PIT,Total,OVER 45.5,46.1,45.5,0.6,D,,52.5,46.1,D
+3,2026-09-27,Sunday,SEA@WAS,Spread,SEA -2.5,-4.3,-2.5,-1.8,D,,,-4.3,D
+3,2026-09-27,Sunday,SEA@WAS,Moneyline,SEA,62.6,55.1,7.5,C,,62.6,62.6,C
+3,2026-09-27,Sunday,SEA@WAS,Total,OVER 41.5,47.4,41.5,5.9,D,,70.4,47.4,D
+3,2026-09-27,Sunday,ARI@SF,Spread,SF -8.5,14.8,8.5,6.3,D,,,14.8,D
+3,2026-09-27,Sunday,ARI@SF,Moneyline,SF,84.8,79.6,5.2,C,,84.8,84.8,C
+3,2026-09-27,Sunday,ARI@SF,Total,OVER 47.5,51.5,47.5,4.0,D,,64.6,51.5,D
+3,2026-09-27,Sunday,MIN@TB,Spread,MIN +1.5,1.0,1.5,-0.5,D,,,1.0,D
+3,2026-09-27,Sunday,MIN@TB,Moneyline,TB,53.2,53.2,0.0,D,,53.2,53.2,D
+3,2026-09-27,Sunday,MIN@TB,Total,UNDER 45.5,35.9,45.5,-9.6,D,,81.0,35.9,D
+3,2026-09-27,Sunday,BAL@DAL,Spread,BAL -3.0,-5.2,-3.0,-2.2,D,,,-5.2,D
+3,2026-09-27,Sunday,BAL@DAL,Moneyline,BAL,64.2,58.3,5.9,C,,64.2,64.2,C
+3,2026-09-27,Sunday,BAL@DAL,Total,OVER 52.5,54.2,52.5,1.7,D,,56.3,54.2,D
+3,2026-09-27,Sunday,LV@NO,Spread,NO -3.0,5.5,3.0,2.5,D,,,5.5,D
+3,2026-09-27,Sunday,LV@NO,Moneyline,NO,65.9,59.3,6.6,C,,65.9,65.9,C
+3,2026-09-27,Sunday,LV@NO,Total,UNDER 45.5,32.6,45.5,-12.9,D,,88.6,32.6,D
+3,2026-09-27,Sunday,LA@DEN,Spread,DEN +2.5,-1.1,-2.5,1.4,D,,,-1.1,D
+3,2026-09-27,Sunday,LA@DEN,Moneyline,LA,53.4,55.1,-1.7,D,,53.4,53.4,D
+3,2026-09-27,Sunday,LA@DEN,Total,OVER 46.5,47.1,46.5,0.6,D,,52.3,47.1,D
+3,2026-09-28,Monday,PHI@CHI,Spread,PHI +1.5,0.3,1.5,-1.2,D,,,0.3,D
+3,2026-09-28,Monday,PHI@CHI,Moneyline,CHI,51.0,51.7,-0.7,D,,51.0,51.0,D
+3,2026-09-28,Monday,PHI@CHI,Total,UNDER 47.5,45.0,47.5,-2.5,D,,58.7,45.0,D
