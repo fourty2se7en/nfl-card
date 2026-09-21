@@ -45,5 +45,5 @@ week,date,day,game,market,pick,our_num,market_num,gap,tier,result,win_pct,opened
 2,2026-09-20,Sunday,IND@KC,Moneyline,KC,75.4,69.6,5.8,C,W,75.4,29.0,D
 2,2026-09-20,Sunday,IND@KC,Total,UNDER 46.5,44.7,46.5,-1.8,D,L,56.3,45.4,D
 2,2026-09-21,Monday,NYG@LA,Spread,LA -6.5,7.9,6.5,1.4,D,,,10.0,D
-2,2026-09-21,Monday,NYG@LA,Moneyline,LA,70.6,71.4,-0.8,C,,70.6,24.7,D
+2,2026-09-21,Monday,NYG@LA,Moneyline,LA,70.6,71.8,-1.2,C,,70.6,24.7,D
 2,2026-09-21,Monday,NYG@LA,Total,OVER 47.5,53.5,47.5,6.0,D,,71.2,52.9,D
