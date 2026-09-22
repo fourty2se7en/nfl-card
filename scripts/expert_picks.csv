@@ -165,3 +165,46 @@ first_seen_utc,season,week,game,name,market,side,line,pick
 2026-09-18T19:48:58+00:00,2026,2,NYG@LA,Tyler Sullivan (CBS Sports),spread,LA,-7.0,LA -7
 2026-09-18T19:48:58+00:00,2026,2,NYG@LA,Dave Richard (CBS Sports),spread,NYG,7.0,NYG +7
 2026-09-18T19:48:58+00:00,2026,2,NYG@LA,Jamey Eisenberg (CBS Sports),spread,NYG,7.0,NYG +7
+2026-09-22T23:41:35+00:00,2026,3,ATL@GB,Peter Dewey (Sports Illustrated),spread,GB,-7.0,GB -7
+2026-09-22T23:41:35+00:00,2026,3,ATL@GB,Iain MacMillan (Sports Illustrated),spread,ATL,6.5,ATL +6.5
+2026-09-22T23:41:35+00:00,2026,3,ATL@GB,Jason Logan (Covers),spread,ATL,7.5,ATL +7.5
+2026-09-22T23:41:35+00:00,2026,3,ATL@GB,Jason Logan (Covers),total,under,44.5,Under 44.5
+2026-09-22T23:41:35+00:00,2026,3,ATL@GB,Zachary Cohen (VSiN),spread,ATL,6.5,ATL +6.5
+2026-09-22T23:41:35+00:00,2026,3,LAC@BUF,Iain MacMillan (Sports Illustrated),total,over,49.5,Over 49.5
+2026-09-22T23:41:35+00:00,2026,3,CAR@CLE,Ryan Gilbert (Sports Illustrated),total,over,42.5,Over 42.5
+2026-09-22T23:41:35+00:00,2026,3,CAR@CLE,Iain MacMillan (Sports Illustrated),total,over,42.0,Over 42
+2026-09-22T23:41:35+00:00,2026,3,CAR@CLE,Jason Logan (Covers),total,over,41.5,Over 41.5
+2026-09-22T23:41:35+00:00,2026,3,CAR@CLE,Eric Cohen (SportsLine),moneyline,CAR,,Panthers to win outright
+2026-09-22T23:41:35+00:00,2026,3,NYJ@DET,Ryan Gilbert (Sports Illustrated),spread,NYJ,6.5,NYJ +6.5
+2026-09-22T23:41:35+00:00,2026,3,NYJ@DET,Iain MacMillan (Sports Illustrated),spread,DET,-6.5,DET -6.5
+2026-09-22T23:41:35+00:00,2026,3,NYJ@DET,Ed Scimia (Covers),spread,DET,-6.5,DET -6.5
+2026-09-22T23:41:35+00:00,2026,3,NYJ@DET,Ed Scimia (Covers),total,under,48.5,Under 48.5
+2026-09-22T23:41:35+00:00,2026,3,HOU@IND,Ryan Gilbert (Sports Illustrated),total,over,43.5,Over 43.5
+2026-09-22T23:41:35+00:00,2026,3,HOU@IND,Iain MacMillan (Sports Illustrated),spread,HOU,-2.5,HOU -2.5
+2026-09-22T23:41:35+00:00,2026,3,NE@JAX,Peter Dewey (Sports Illustrated),spread,NE,3.0,NE +3
+2026-09-22T23:41:35+00:00,2026,3,NE@JAX,Iain MacMillan (Sports Illustrated),spread,JAX,-2.5,JAX -2.5
+2026-09-22T23:41:35+00:00,2026,3,NE@JAX,Jason Logan (Covers),spread,JAX,-2.5,JAX -2.5
+2026-09-22T23:41:35+00:00,2026,3,KC@MIA,Ryan Gilbert (Sports Illustrated),spread,KC,-11.5,KC -11.5
+2026-09-22T23:41:35+00:00,2026,3,KC@MIA,Iain MacMillan (Sports Illustrated),total,over,45.5,Over 45.5
+2026-09-22T23:41:35+00:00,2026,3,TEN@NYG,Ryan Gilbert (Sports Illustrated),total,under,40.5,Under 40.5
+2026-09-22T23:41:35+00:00,2026,3,TEN@NYG,Iain MacMillan (Sports Illustrated),moneyline,TEN,,TEN +162 moneyline
+2026-09-22T23:41:35+00:00,2026,3,CIN@PIT,Ryan Gilbert (Sports Illustrated),total,under,42.5,Under 42.5
+2026-09-22T23:41:35+00:00,2026,3,CIN@PIT,Iain MacMillan (Sports Illustrated),total,under,42.5,Under 42.5
+2026-09-22T23:41:35+00:00,2026,3,CIN@PIT,Quinn Allen (Covers),spread,CIN,-3.5,CIN -3.5
+2026-09-22T23:41:35+00:00,2026,3,CIN@PIT,Quinn Allen (Covers),total,under,42.5,Under 42.5
+2026-09-22T23:41:35+00:00,2026,3,SEA@WAS,Peter Dewey (Sports Illustrated),spread,SEA,-7.0,SEA -7
+2026-09-22T23:41:35+00:00,2026,3,SEA@WAS,Iain MacMillan (Sports Illustrated),spread,SEA,-6.5,SEA -6.5
+2026-09-22T23:41:35+00:00,2026,3,SEA@WAS,Jason Logan (Covers),spread,WAS,7.5,WAS +7.5
+2026-09-22T23:41:35+00:00,2026,3,ARI@SF,Ryan Gilbert (Sports Illustrated),spread,SF,-8.5,SF -8.5
+2026-09-22T23:41:35+00:00,2026,3,ARI@SF,Iain MacMillan (Sports Illustrated),spread,SF,-7.5,SF -7.5
+2026-09-22T23:41:35+00:00,2026,3,MIN@TB,Iain MacMillan (Sports Illustrated),total,under,43.5,Under 43.5
+2026-09-22T23:41:35+00:00,2026,3,BAL@DAL,Iain MacMillan (Sports Illustrated),spread,BAL,-3.0,BAL -3
+2026-09-22T23:41:35+00:00,2026,3,BAL@DAL,Neil Parker (Covers),spread,DAL,2.5,DAL +2.5
+2026-09-22T23:41:35+00:00,2026,3,BAL@DAL,Neil Parker (Covers),total,over,52.5,Over 52.5
+2026-09-22T23:41:35+00:00,2026,3,LV@NO,Iain MacMillan (Sports Illustrated),total,under,43.5,Under 43.5
+2026-09-22T23:41:35+00:00,2026,3,LV@NO,Geoff Clark (Covers),spread,NO,-3.5,NO -3.5
+2026-09-22T23:41:35+00:00,2026,3,LV@NO,Geoff Clark (Covers),total,over,43.5,Over 43.5
+2026-09-22T23:41:35+00:00,2026,3,LA@DEN,Iain MacMillan (Sports Illustrated),spread,LA,-2.5,LA -2.5
+2026-09-22T23:41:35+00:00,2026,3,LA@DEN,Gary Pearson (Sportsbook Review),total,under,45.5,Under 45.5
+2026-09-22T23:41:35+00:00,2026,3,PHI@CHI,Iain MacMillan (Sports Illustrated),spread,CHI,3.5,CHI +3.5
+2026-09-22T23:41:35+00:00,2026,3,PHI@CHI,Gary Pearson (Sportsbook Review),spread,PHI,-3.5,PHI -3.5

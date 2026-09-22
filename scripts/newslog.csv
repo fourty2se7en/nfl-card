@@ -61,3 +61,7 @@ written_utc,season,week,away,home,qb_out,starters_out,confidence,spread_open,spr
 2026-09-18T12:22:49+00:00,2026,3,PHI,CHI,,,,,1.5,,47.5,0.3
 2026-09-18T19:48:58+00:00,2026,2,MIN,CHI,away,3,confirmed,,4.5,,47.5,3.7
 2026-09-18T19:48:58+00:00,2026,2,SEA,ARI,away,1,confirmed,,-3.5,,40.5,-12.3
+2026-09-22T23:41:35+00:00,2026,3,ATL,GB,none,2,confirmed,,6.0,,43.5,9.4
+2026-09-22T23:41:35+00:00,2026,3,SEA,WAS,home,1,reported,,-7.0,,40.5,-8.2
+2026-09-22T23:41:35+00:00,2026,3,MIN,TB,none,0,confirmed,,-1.5,,42.5,-2.6
+2026-09-22T23:41:35+00:00,2026,3,PHI,CHI,home,1,unconfirmed,,-4.5,,41.5,2.7

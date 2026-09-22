@@ -1,5 +1,5 @@
 {
- "saved": "2026-09-22T19:49",
+ "saved": "2026-09-22T23:41",
  "notes": {
   "NE@SEA": {
    "returning": [
@@ -1810,6 +1810,530 @@
      "line": 7
     }
    ]
+  },
+  "ATL@GB": {
+   "returning": [
+    "Atlanta QB Michael Penix Jr. starts Thursday night, his first game action in about 10 months after tearing knee ligaments last November and having surgery"
+   ],
+   "trades": [
+    "Atlanta signed DL Zach Harrison to the active roster off the practice squad and placed CB A.J. Terrell Jr. on injured reserve",
+    "Green Bay signed G Cordell Volson to the practice squad"
+   ],
+   "suspensions": [
+    "Atlanta DE James Pearce Jr. is serving game three of an eight-game suspension under the personal conduct policy"
+   ],
+   "experts": [
+    {
+     "name": "Peter Dewey (Sports Illustrated)",
+     "record": "record not published",
+     "pick": "GB -7",
+     "market": "spread",
+     "side": "GB",
+     "line": -7
+    },
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "13-19",
+     "pick": "ATL +6.5",
+     "market": "spread",
+     "side": "ATL",
+     "line": 6.5
+    },
+    {
+     "name": "Jason Logan (Covers)",
+     "record": "record not published",
+     "pick": "ATL +7.5",
+     "market": "spread",
+     "side": "ATL",
+     "line": 7.5
+    },
+    {
+     "name": "Jason Logan (Covers)",
+     "record": "record not published",
+     "pick": "Under 44.5",
+     "market": "total",
+     "side": "under",
+     "line": 44.5
+    },
+    {
+     "name": "Zachary Cohen (VSiN)",
+     "record": "record not published",
+     "pick": "ATL +6.5",
+     "market": "spread",
+     "side": "ATL",
+     "line": 6.5
+    }
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 2,
+    "confidence": "confirmed"
+   }
+  },
+  "LAC@BUF": {
+   "trades": [
+    "Los Angeles signed TE Hayden Rucci to the active roster off Jacksonville's practice squad after losing both of its top tight ends",
+    "Buffalo lost edge rusher Andre Jones Jr. off its practice squad to Miami"
+   ],
+   "experts": [
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "13-19",
+     "pick": "Over 49.5",
+     "market": "total",
+     "side": "over",
+     "line": 49.5
+    }
+   ]
+  },
+  "CAR@CLE": {
+   "trades": [
+    "Cleveland signed WR Jimmy Horn Jr. to the practice squad three days after Carolina waived him",
+    "Cleveland signed LB Krys Barnes to the practice squad and placed LB Nathaniel Watson on practice squad injured reserve",
+    "Carolina promoted LB Tyrel Dodson from the practice squad to the active roster"
+   ],
+   "movement": [
+    "Spread: open CAR -2.5, now CAR -3. Total: now 41.5, opener not confirmed. Moneyline: CAR now -144, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Ryan Gilbert (Sports Illustrated)",
+     "record": "record not published",
+     "pick": "Over 42.5",
+     "market": "total",
+     "side": "over",
+     "line": 42.5
+    },
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "13-19",
+     "pick": "Over 42",
+     "market": "total",
+     "side": "over",
+     "line": 42
+    },
+    {
+     "name": "Jason Logan (Covers)",
+     "record": "record not published",
+     "pick": "Over 41.5",
+     "market": "total",
+     "side": "over",
+     "line": 41.5
+    },
+    {
+     "name": "Eric Cohen (SportsLine)",
+     "record": "21-11 on 2026 NFL picks",
+     "pick": "Panthers to win outright",
+     "market": "moneyline",
+     "side": "CAR"
+    }
+   ]
+  },
+  "NYJ@DET": {
+   "trades": [
+    "New York elevated K Jason Sanders and LB Troy Reeder from the practice squad",
+    "Detroit signed veteran S Jalen Mills to the practice squad"
+   ],
+   "experts": [
+    {
+     "name": "Ryan Gilbert (Sports Illustrated)",
+     "record": "record not published",
+     "pick": "NYJ +6.5",
+     "market": "spread",
+     "side": "NYJ",
+     "line": 6.5
+    },
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "13-19",
+     "pick": "DET -6.5",
+     "market": "spread",
+     "side": "DET",
+     "line": -6.5
+    },
+    {
+     "name": "Ed Scimia (Covers)",
+     "record": "record not published",
+     "pick": "DET -6.5",
+     "market": "spread",
+     "side": "DET",
+     "line": -6.5
+    },
+    {
+     "name": "Ed Scimia (Covers)",
+     "record": "record not published",
+     "pick": "Under 48.5",
+     "market": "total",
+     "side": "under",
+     "line": 48.5
+    }
+   ]
+  },
+  "HOU@IND": {
+   "trades": [
+    "Indianapolis signed WR Darius Slayton and placed DE Micheal Clemons on injured reserve in the corresponding move",
+    "Houston signed WR Bryce Oliver to the practice squad and released QB Mark Gronowski"
+   ],
+   "movement": [
+    "Spread: open HOU -2.5, now HOU -1.5. Total: now 43.5, opener not confirmed. Moneyline: HOU now -125, opener not confirmed. Houston's offense has looked clunky and Nico Collins missed Week 2 with a hamstring injury."
+   ],
+   "experts": [
+    {
+     "name": "Ryan Gilbert (Sports Illustrated)",
+     "record": "record not published",
+     "pick": "Over 43.5",
+     "market": "total",
+     "side": "over",
+     "line": 43.5
+    },
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "13-19",
+     "pick": "HOU -2.5",
+     "market": "spread",
+     "side": "HOU",
+     "line": -2.5
+    }
+   ]
+  },
+  "NE@JAX": {
+   "trades": [
+    "Jacksonville signed LB Jack Kiser to the active roster and DE BJ Ojulari to the practice squad",
+    "Jacksonville lost TE Hayden Rucci off its practice squad to the Los Angeles Chargers",
+    "New England signed OL Xavier Newman-Johnson to the practice squad"
+   ],
+   "experts": [
+    {
+     "name": "Peter Dewey (Sports Illustrated)",
+     "record": "record not published",
+     "pick": "NE +3",
+     "market": "spread",
+     "side": "NE",
+     "line": 3
+    },
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "13-19",
+     "pick": "JAX -2.5",
+     "market": "spread",
+     "side": "JAX",
+     "line": -2.5
+    },
+    {
+     "name": "Jason Logan (Covers)",
+     "record": "record not published",
+     "pick": "JAX -2.5",
+     "market": "spread",
+     "side": "JAX",
+     "line": -2.5
+    }
+   ]
+  },
+  "KC@MIA": {
+   "trades": [
+    "Miami signed edge Andre Jones Jr. off Buffalo's practice squad and added LS Luke Basso to its practice squad",
+    "Kansas City signed FB Ben VanSumeren to the active roster from the practice squad"
+   ],
+   "movement": [
+    "Spread: open KC -8.5, now KC -10.5. Total: open 44.5, unchanged. Moneyline: KC now -599, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Ryan Gilbert (Sports Illustrated)",
+     "record": "record not published",
+     "pick": "KC -11.5",
+     "market": "spread",
+     "side": "KC",
+     "line": -11.5
+    },
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "13-19",
+     "pick": "Over 45.5",
+     "market": "total",
+     "side": "over",
+     "line": 45.5
+    }
+   ]
+  },
+  "TEN@NYG": {
+   "trades": [
+    "New York signed CB Nikko Reed off the Chargers' practice squad and elevated WR Braxton Berrios and LB Malik Harrison",
+    "Tennessee signed G Drew Moss to the practice squad and released LB Jimmy Ciarlo"
+   ],
+   "experts": [
+    {
+     "name": "Ryan Gilbert (Sports Illustrated)",
+     "record": "record not published",
+     "pick": "Under 40.5",
+     "market": "total",
+     "side": "under",
+     "line": 40.5
+    },
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "13-19",
+     "pick": "TEN +162 moneyline",
+     "market": "moneyline",
+     "side": "TEN"
+    }
+   ]
+  },
+  "CIN@PIT": {
+   "trades": [
+    "Pittsburgh signed WR Isaiah Hodgins and DB Darius Rush to the practice squad, both returning to the team"
+   ],
+   "movement": [
+    "Spread: open CIN -2.5, now CIN -3.5. Total: now 43.5, opener not confirmed. Moneyline: CIN now -192, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Ryan Gilbert (Sports Illustrated)",
+     "record": "record not published",
+     "pick": "Under 42.5",
+     "market": "total",
+     "side": "under",
+     "line": 42.5
+    },
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "13-19",
+     "pick": "Under 42.5",
+     "market": "total",
+     "side": "under",
+     "line": 42.5
+    },
+    {
+     "name": "Quinn Allen (Covers)",
+     "record": "record not published",
+     "pick": "CIN -3.5",
+     "market": "spread",
+     "side": "CIN",
+     "line": -3.5
+    },
+    {
+     "name": "Quinn Allen (Covers)",
+     "record": "record not published",
+     "pick": "Under 42.5",
+     "market": "total",
+     "side": "under",
+     "line": 42.5
+    }
+   ]
+  },
+  "SEA@WAS": {
+   "trades": [
+    "Washington signed DT Ricky Barber to the practice squad and elevated Barber and LB Ale Kaho to the active roster",
+    "Seattle signed G Evan Beerntsen to the practice squad"
+   ],
+   "movement": [
+    "Spread: open SEA -2.5, now SEA -6. Total: now 41.5, opener not confirmed. Moneyline: SEA now -250, opener not confirmed. Washington QB Jayden Daniels dislocated his left elbow in Week 2 and Marcus Mariota is reported to start."
+   ],
+   "experts": [
+    {
+     "name": "Peter Dewey (Sports Illustrated)",
+     "record": "record not published",
+     "pick": "SEA -7",
+     "market": "spread",
+     "side": "SEA",
+     "line": -7
+    },
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "13-19",
+     "pick": "SEA -6.5",
+     "market": "spread",
+     "side": "SEA",
+     "line": -6.5
+    },
+    {
+     "name": "Jason Logan (Covers)",
+     "record": "record not published",
+     "pick": "WAS +7.5",
+     "market": "spread",
+     "side": "WAS",
+     "line": 7.5
+    }
+   ],
+   "log": {
+    "qb_out": "home",
+    "starters_out": 1,
+    "confidence": "reported"
+   }
+  },
+  "ARI@SF": {
+   "trades": [
+    "San Francisco promoted DL Ogbo Okoronkwo to the active roster and placed WR De'Zhaun Stribling on injured reserve"
+   ],
+   "experts": [
+    {
+     "name": "Ryan Gilbert (Sports Illustrated)",
+     "record": "record not published",
+     "pick": "SF -8.5",
+     "market": "spread",
+     "side": "SF",
+     "line": -8.5
+    },
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "13-19",
+     "pick": "SF -7.5",
+     "market": "spread",
+     "side": "SF",
+     "line": -7.5
+    }
+   ]
+  },
+  "MIN@TB": {
+   "returning": [
+    "Minnesota QB Kyler Murray returns after clearing concussion protocol, having been knocked out on his 11th snap of the opener and missing Week 2"
+   ],
+   "trades": [
+    "Minnesota signed P Johnny Hekker and RB Jaret Patterson to the practice squad",
+    "Tampa Bay elevated S Ifeatu Melifonwu from the practice squad for a second straight week"
+   ],
+   "suspensions": [
+    "Minnesota WR Jeshaun Jones misses Week 3 as the last game of a three-game substance-abuse suspension and is eligible to return September 28"
+   ],
+   "movement": [
+    "Spread: open TB -1.5, now MIN -2.5. Total: now 44.5, opener not confirmed. Moneyline: MIN now -142, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "13-19",
+     "pick": "Under 43.5",
+     "market": "total",
+     "side": "under",
+     "line": 43.5
+    }
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 0,
+    "confidence": "confirmed"
+   }
+  },
+  "BAL@DAL": {
+   "trades": [
+    "Baltimore signed LB Carl Jones Jr. from the practice squad to the 53-man roster and placed CB T.J. Tampa on injured reserve",
+    "Dallas signed RB Tyler Goodson off Atlanta's practice squad"
+   ],
+   "experts": [
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "13-19",
+     "pick": "BAL -3",
+     "market": "spread",
+     "side": "BAL",
+     "line": -3
+    },
+    {
+     "name": "Neil Parker (Covers)",
+     "record": "record not published",
+     "pick": "DAL +2.5",
+     "market": "spread",
+     "side": "DAL",
+     "line": 2.5
+    },
+    {
+     "name": "Neil Parker (Covers)",
+     "record": "record not published",
+     "pick": "Over 52.5",
+     "market": "total",
+     "side": "over",
+     "line": 52.5
+    }
+   ]
+  },
+  "LV@NO": {
+   "returning": [
+    "Las Vegas TE Brock Bowers is aiming to make his season debut after a September 8 meniscus procedure on his left knee cost him the first two games"
+   ],
+   "trades": [
+    "New Orleans signed RB CJ Donaldson from the practice squad to the active roster and placed LS Zach Wood on injured reserve"
+   ],
+   "experts": [
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "13-19",
+     "pick": "Under 43.5",
+     "market": "total",
+     "side": "under",
+     "line": 43.5
+    },
+    {
+     "name": "Geoff Clark (Covers)",
+     "record": "record not published",
+     "pick": "NO -3.5",
+     "market": "spread",
+     "side": "NO",
+     "line": -3.5
+    },
+    {
+     "name": "Geoff Clark (Covers)",
+     "record": "record not published",
+     "pick": "Over 43.5",
+     "market": "total",
+     "side": "over",
+     "line": 43.5
+    }
+   ]
+  },
+  "LA@DEN": {
+   "trades": [
+    "Los Angeles signed S Tanner Ingle from the practice squad to the active roster and added DT Jaxson Moi to the practice squad"
+   ],
+   "experts": [
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "13-19",
+     "pick": "LA -2.5",
+     "market": "spread",
+     "side": "LA",
+     "line": -2.5
+    },
+    {
+     "name": "Gary Pearson (Sportsbook Review)",
+     "record": "record not published",
+     "pick": "Under 45.5",
+     "market": "total",
+     "side": "under",
+     "line": 45.5
+    }
+   ]
+  },
+  "PHI@CHI": {
+   "trades": [
+    "Philadelphia signed three-time Pro Bowl TE Zach Ertz to the practice squad",
+    "Chicago signed LS Scott Daly to the active roster and DB Nick McCloud to the practice squad"
+   ],
+   "movement": [
+    "Spread: open CHI -1.5, now PHI -4.5. Total: open 46.5, now 43.5. Moneyline: PHI now -205, opener not confirmed. Chicago QB Caleb Williams strained a hamstring in Week 2 and is week to week."
+   ],
+   "experts": [
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "13-19",
+     "pick": "CHI +3.5",
+     "market": "spread",
+     "side": "CHI",
+     "line": 3.5
+    },
+    {
+     "name": "Gary Pearson (Sportsbook Review)",
+     "record": "record not published",
+     "pick": "PHI -3.5",
+     "market": "spread",
+     "side": "PHI",
+     "line": -3.5
+    }
+   ],
+   "log": {
+    "qb_out": "home",
+    "starters_out": 1,
+    "confidence": "unconfirmed"
+   }
   }
  }
 }
