@@ -1,5 +1,5 @@
 {
- "saved": "2026-09-25T19:15",
+ "saved": "2026-09-25T23:11",
  "notes": {
   "NE@SEA": {
    "returning": [
@@ -1873,7 +1873,11 @@
   "LAC@BUF": {
    "trades": [
     "Los Angeles signed TE Hayden Rucci to the active roster off Jacksonville's practice squad after losing both of its top tight ends",
-    "Buffalo lost edge rusher Andre Jones Jr. off its practice squad to Miami"
+    "Buffalo lost edge rusher Andre Jones Jr. off its practice squad to Miami",
+    "Los Angeles placed TE David Njoku and TE Charlie Kolar on injured reserve on Sept 22, leaving the Chargers without their top two tight ends"
+   ],
+   "movement": [
+    "Spread: now BUF -7, opener not confirmed. Total: now 50.5, opener not confirmed. Moneyline: BUF now -325, opener not confirmed."
    ],
    "experts": [
     {
@@ -1883,14 +1887,36 @@
      "market": "total",
      "side": "over",
      "line": 49.5
+    },
+    {
+     "name": "Owen O'Brien (CBS Sports)",
+     "record": "record not published",
+     "pick": "Over 50.5",
+     "market": "total",
+     "side": "over",
+     "line": 50.5
+    },
+    {
+     "name": "Jason Logan (Covers)",
+     "record": "2-4 ATS",
+     "pick": "LAC +7.5",
+     "market": "spread",
+     "side": "LAC",
+     "line": 7.5
     }
-   ]
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 1,
+    "confidence": "confirmed"
+   }
   },
   "CAR@CLE": {
    "trades": [
     "Cleveland signed WR Jimmy Horn Jr. to the practice squad three days after Carolina waived him",
     "Cleveland signed LB Krys Barnes to the practice squad and placed LB Nathaniel Watson on practice squad injured reserve",
-    "Carolina promoted LB Tyrel Dodson from the practice squad to the active roster"
+    "Carolina promoted LB Tyrel Dodson from the practice squad to the active roster",
+    "Carolina placed RB Jonathon Brooks on injured reserve after core muscle surgery, with a six-to-eight-week absence expected"
    ],
    "movement": [
     "Spread: open CAR -2.5, now CAR -3. Total: now 41.5, opener not confirmed. Moneyline: CAR now -144, opener not confirmed."
@@ -1926,13 +1952,37 @@
      "pick": "Panthers to win outright",
      "market": "moneyline",
      "side": "CAR"
+    },
+    {
+     "name": "Owen O'Brien (CBS Sports)",
+     "record": "record not published",
+     "pick": "CLE +3",
+     "market": "spread",
+     "side": "CLE",
+     "line": 3
+    },
+    {
+     "name": "Steve Makinen (VSiN)",
+     "record": "10-8 ATS",
+     "pick": "CLE +2.5",
+     "market": "spread",
+     "side": "CLE",
+     "line": 2.5
     }
-   ]
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 1,
+    "confidence": "confirmed"
+   }
   },
   "NYJ@DET": {
    "trades": [
     "New York elevated K Jason Sanders and LB Troy Reeder from the practice squad",
     "Detroit signed veteran S Jalen Mills to the practice squad"
+   ],
+   "movement": [
+    "Spread: open DET -7, now DET -6.5. Total: now 47.5, opener not confirmed. Moneyline: DET now -298, opener not confirmed."
    ],
    "experts": [
     {
@@ -1966,6 +2016,14 @@
      "market": "total",
      "side": "under",
      "line": 48.5
+    },
+    {
+     "name": "Steve Makinen (VSiN)",
+     "record": "10-8 ATS",
+     "pick": "DET -6.5",
+     "market": "spread",
+     "side": "DET",
+     "line": -6.5
     }
    ]
   },
@@ -1993,6 +2051,14 @@
      "market": "spread",
      "side": "HOU",
      "line": -2.5
+    },
+    {
+     "name": "Steve Makinen (VSiN)",
+     "record": "10-8 ATS",
+     "pick": "IND +1.5",
+     "market": "spread",
+     "side": "IND",
+     "line": 1.5
     }
    ]
   },
@@ -2001,6 +2067,9 @@
     "Jacksonville signed LB Jack Kiser to the active roster and DE BJ Ojulari to the practice squad",
     "Jacksonville lost TE Hayden Rucci off its practice squad to the Los Angeles Chargers",
     "New England signed OL Xavier Newman-Johnson to the practice squad"
+   ],
+   "movement": [
+    "Spread: now JAX -3, opener not confirmed. Total: now 45.5, opener not confirmed. Moneyline: JAX now -155, opener not confirmed."
    ],
    "experts": [
     {
@@ -2026,6 +2095,14 @@
      "market": "spread",
      "side": "JAX",
      "line": -2.5
+    },
+    {
+     "name": "Owen O'Brien (CBS Sports)",
+     "record": "record not published",
+     "pick": "NE +3",
+     "market": "spread",
+     "side": "NE",
+     "line": 3
     }
    ]
   },
@@ -2053,13 +2130,30 @@
      "market": "total",
      "side": "over",
      "line": 45.5
+    },
+    {
+     "name": "Steve Makinen (VSiN)",
+     "record": "10-8 ATS",
+     "pick": "MIA +10.5",
+     "market": "spread",
+     "side": "MIA",
+     "line": 10.5
     }
    ]
   },
   "TEN@NYG": {
+   "returning": [
+    "New York QB Jameis Winston starts after Jaxson Dart was ruled out for the rest of the regular season on Sept 24 with MCL, PCL and meniscus damage that needs surgery"
+   ],
    "trades": [
     "New York signed CB Nikko Reed off the Chargers' practice squad and elevated WR Braxton Berrios and LB Malik Harrison",
     "Tennessee signed G Drew Moss to the practice squad and released LB Jimmy Ciarlo"
+   ],
+   "coaching": [
+    "Tennessee offensive coordinator Brian Daboll calls plays at MetLife Stadium for the first time since he was the Giants head coach"
+   ],
+   "movement": [
+    "Spread: now NYG -3, opener not confirmed. Total: now 38.5, opener not confirmed. Moneyline: NYG now -130, opener not confirmed. The Giants lost QB Jaxson Dart for the rest of the regular season on Sept 24."
    ],
    "experts": [
     {
@@ -2076,8 +2170,21 @@
      "pick": "TEN +162 moneyline",
      "market": "moneyline",
      "side": "TEN"
+    },
+    {
+     "name": "Owen O'Brien (CBS Sports)",
+     "record": "record not published",
+     "pick": "TEN +3",
+     "market": "spread",
+     "side": "TEN",
+     "line": 3
     }
-   ]
+   ],
+   "log": {
+    "qb_out": "home",
+    "starters_out": 1,
+    "confidence": "confirmed"
+   }
   },
   "CIN@PIT": {
    "trades": [
@@ -2153,6 +2260,14 @@
      "market": "spread",
      "side": "WAS",
      "line": 7.5
+    },
+    {
+     "name": "Owen O'Brien (CBS Sports)",
+     "record": "record not published",
+     "pick": "SEA -6.5",
+     "market": "spread",
+     "side": "SEA",
+     "line": -6.5
     }
    ],
    "log": {
@@ -2164,6 +2279,9 @@
   "ARI@SF": {
    "trades": [
     "San Francisco promoted DL Ogbo Okoronkwo to the active roster and placed WR De'Zhaun Stribling on injured reserve"
+   ],
+   "movement": [
+    "Spread: open SF -8.5, unchanged. Total: open 47.5, unchanged. Moneyline: SF now -455, opener not confirmed."
    ],
    "experts": [
     {
@@ -2181,6 +2299,22 @@
      "market": "spread",
      "side": "SF",
      "line": -7.5
+    },
+    {
+     "name": "Owen O'Brien (CBS Sports)",
+     "record": "record not published",
+     "pick": "ARI +8.5",
+     "market": "spread",
+     "side": "ARI",
+     "line": 8.5
+    },
+    {
+     "name": "Steve Makinen (VSiN)",
+     "record": "10-8 ATS",
+     "pick": "ARI +8.5",
+     "market": "spread",
+     "side": "ARI",
+     "line": 8.5
     }
    ]
   },
@@ -2206,6 +2340,22 @@
      "market": "total",
      "side": "under",
      "line": 43.5
+    },
+    {
+     "name": "Steve Makinen (VSiN)",
+     "record": "10-8 ATS",
+     "pick": "TB +1.5",
+     "market": "spread",
+     "side": "TB",
+     "line": 1.5
+    },
+    {
+     "name": "Jason Logan (Covers)",
+     "record": "2-4 ATS",
+     "pick": "TB +1.5",
+     "market": "spread",
+     "side": "TB",
+     "line": 1.5
     }
    ],
    "log": {
@@ -2218,6 +2368,9 @@
    "trades": [
     "Baltimore signed LB Carl Jones Jr. from the practice squad to the 53-man roster and placed CB T.J. Tampa on injured reserve",
     "Dallas signed RB Tyler Goodson off Atlanta's practice squad"
+   ],
+   "movement": [
+    "Spread: now BAL -3.5, opener not confirmed. Total: now 53.5, opener not confirmed. Moneyline: BAL now -175, opener not confirmed."
    ],
    "experts": [
     {
@@ -2243,6 +2396,14 @@
      "market": "total",
      "side": "over",
      "line": 52.5
+    },
+    {
+     "name": "Steve Makinen (VSiN)",
+     "record": "10-8 ATS",
+     "pick": "Over 52.5",
+     "market": "total",
+     "side": "over",
+     "line": 52.5
     }
    ]
   },
@@ -2252,6 +2413,9 @@
    ],
    "trades": [
     "New Orleans signed RB CJ Donaldson from the practice squad to the active roster and placed LS Zach Wood on injured reserve"
+   ],
+   "movement": [
+    "Spread: open NO -3, unchanged. Total: open 43.5, unchanged. Moneyline: NO now -185, opener not confirmed."
    ],
    "experts": [
     {
@@ -2277,12 +2441,23 @@
      "market": "total",
      "side": "over",
      "line": 43.5
+    },
+    {
+     "name": "Jason Logan (Covers)",
+     "record": "2-4 ATS",
+     "pick": "LV +3.5",
+     "market": "spread",
+     "side": "LV",
+     "line": 3.5
     }
    ]
   },
   "LA@DEN": {
    "trades": [
     "Los Angeles signed S Tanner Ingle from the practice squad to the active roster and added DT Jaxson Moi to the practice squad"
+   ],
+   "movement": [
+    "Spread: open LA -2.5, unchanged. Total: open 44.5, unchanged. Moneyline: LA now -130, opener not confirmed."
    ],
    "experts": [
     {
@@ -2300,10 +2475,29 @@
      "market": "total",
      "side": "under",
      "line": 45.5
+    },
+    {
+     "name": "Owen O'Brien (CBS Sports)",
+     "record": "record not published",
+     "pick": "LA -2.5",
+     "market": "spread",
+     "side": "LA",
+     "line": -2.5
+    },
+    {
+     "name": "Steve Makinen (VSiN)",
+     "record": "10-8 ATS",
+     "pick": "DEN +2.5",
+     "market": "spread",
+     "side": "DEN",
+     "line": 2.5
     }
    ]
   },
   "PHI@CHI": {
+   "returning": [
+    "Chicago is expected to be without QB Caleb Williams with a hamstring injury and backup Tyson Bagent is in the concussion protocol, leaving 14-year veteran Case Keenum, who practised Wednesday, in line to start"
+   ],
    "trades": [
     "Philadelphia signed three-time Pro Bowl TE Zach Ertz to the practice squad",
     "Chicago signed LS Scott Daly to the active roster and DB Nick McCloud to the practice squad"
@@ -2327,12 +2521,28 @@
      "market": "spread",
      "side": "PHI",
      "line": -3.5
+    },
+    {
+     "name": "Owen O'Brien (CBS Sports)",
+     "record": "record not published",
+     "pick": "Under 44.5",
+     "market": "total",
+     "side": "under",
+     "line": 44.5
+    },
+    {
+     "name": "Steve Makinen (VSiN)",
+     "record": "10-8 ATS",
+     "pick": "CHI +4.5",
+     "market": "spread",
+     "side": "CHI",
+     "line": 4.5
     }
    ],
    "log": {
     "qb_out": "home",
     "starters_out": 1,
-    "confidence": "unconfirmed"
+    "confidence": "reported"
    }
   }
  }

@@ -65,3 +65,7 @@ written_utc,season,week,away,home,qb_out,starters_out,confidence,spread_open,spr
 2026-09-22T23:41:35+00:00,2026,3,SEA,WAS,home,1,reported,,-7.0,,40.5,-8.2
 2026-09-22T23:41:35+00:00,2026,3,MIN,TB,none,0,confirmed,,-1.5,,42.5,-2.6
 2026-09-22T23:41:35+00:00,2026,3,PHI,CHI,home,1,unconfirmed,,-4.5,,41.5,2.7
+2026-09-25T23:11:48+00:00,2026,3,LAC,BUF,none,1,confirmed,,7.0,,50.5,6.4
+2026-09-25T23:11:48+00:00,2026,3,CAR,CLE,none,1,confirmed,,-2.5,,42.5,-4.0
+2026-09-25T23:11:48+00:00,2026,3,TEN,NYG,home,1,confirmed,,2.5,,38.5,3.5
+2026-09-25T23:11:48+00:00,2026,3,PHI,CHI,home,1,reported,,-4.5,,41.5,2.7

@@ -208,3 +208,23 @@ first_seen_utc,season,week,game,name,market,side,line,pick
 2026-09-22T23:41:35+00:00,2026,3,LA@DEN,Gary Pearson (Sportsbook Review),total,under,45.5,Under 45.5
 2026-09-22T23:41:35+00:00,2026,3,PHI@CHI,Iain MacMillan (Sports Illustrated),spread,CHI,3.5,CHI +3.5
 2026-09-22T23:41:35+00:00,2026,3,PHI@CHI,Gary Pearson (Sportsbook Review),spread,PHI,-3.5,PHI -3.5
+2026-09-25T23:11:48+00:00,2026,3,LAC@BUF,Owen O'Brien (CBS Sports),total,over,50.5,Over 50.5
+2026-09-25T23:11:48+00:00,2026,3,LAC@BUF,Jason Logan (Covers),spread,LAC,7.5,LAC +7.5
+2026-09-25T23:11:48+00:00,2026,3,CAR@CLE,Owen O'Brien (CBS Sports),spread,CLE,3.0,CLE +3
+2026-09-25T23:11:48+00:00,2026,3,CAR@CLE,Steve Makinen (VSiN),spread,CLE,2.5,CLE +2.5
+2026-09-25T23:11:48+00:00,2026,3,NYJ@DET,Steve Makinen (VSiN),spread,DET,-6.5,DET -6.5
+2026-09-25T23:11:48+00:00,2026,3,HOU@IND,Steve Makinen (VSiN),spread,IND,1.5,IND +1.5
+2026-09-25T23:11:48+00:00,2026,3,NE@JAX,Owen O'Brien (CBS Sports),spread,NE,3.0,NE +3
+2026-09-25T23:11:48+00:00,2026,3,KC@MIA,Steve Makinen (VSiN),spread,MIA,10.5,MIA +10.5
+2026-09-25T23:11:48+00:00,2026,3,TEN@NYG,Owen O'Brien (CBS Sports),spread,TEN,3.0,TEN +3
+2026-09-25T23:11:48+00:00,2026,3,SEA@WAS,Owen O'Brien (CBS Sports),spread,SEA,-6.5,SEA -6.5
+2026-09-25T23:11:48+00:00,2026,3,ARI@SF,Owen O'Brien (CBS Sports),spread,ARI,8.5,ARI +8.5
+2026-09-25T23:11:48+00:00,2026,3,ARI@SF,Steve Makinen (VSiN),spread,ARI,8.5,ARI +8.5
+2026-09-25T23:11:48+00:00,2026,3,MIN@TB,Steve Makinen (VSiN),spread,TB,1.5,TB +1.5
+2026-09-25T23:11:48+00:00,2026,3,MIN@TB,Jason Logan (Covers),spread,TB,1.5,TB +1.5
+2026-09-25T23:11:48+00:00,2026,3,BAL@DAL,Steve Makinen (VSiN),total,over,52.5,Over 52.5
+2026-09-25T23:11:48+00:00,2026,3,LV@NO,Jason Logan (Covers),spread,LV,3.5,LV +3.5
+2026-09-25T23:11:48+00:00,2026,3,LA@DEN,Owen O'Brien (CBS Sports),spread,LA,-2.5,LA -2.5
+2026-09-25T23:11:48+00:00,2026,3,LA@DEN,Steve Makinen (VSiN),spread,DEN,2.5,DEN +2.5
+2026-09-25T23:11:48+00:00,2026,3,PHI@CHI,Owen O'Brien (CBS Sports),total,under,44.5,Under 44.5
+2026-09-25T23:11:48+00:00,2026,3,PHI@CHI,Steve Makinen (VSiN),spread,CHI,4.5,CHI +4.5
