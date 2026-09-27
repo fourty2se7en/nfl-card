@@ -1,5 +1,5 @@
 {
- "saved": "2026-09-27T13:19",
+ "saved": "2026-09-27T15:18",
  "notes": {
   "NE@SEA": {
    "returning": [
@@ -2496,7 +2496,7 @@
   },
   "PHI@CHI": {
    "returning": [
-    "Chicago is expected to be without QB Caleb Williams with a hamstring injury and backup Tyson Bagent is in the concussion protocol, leaving 14-year veteran Case Keenum, who practised Wednesday, in line to start"
+    "Chicago ruled QB Caleb Williams out on Sept 26 and has not named a starter, with Tyson Bagent questionable in the concussion protocol after clearing practice restrictions Saturday and Case Keenum the alternative, a game-time call (supersedes the Sept 25 entry that had Keenum in line to start)"
    ],
    "trades": [
     "Philadelphia signed three-time Pro Bowl TE Zach Ertz to the practice squad",
@@ -2542,7 +2542,7 @@
    "log": {
     "qb_out": "home",
     "starters_out": 1,
-    "confidence": "reported"
+    "confidence": "confirmed"
    }
   }
  }
