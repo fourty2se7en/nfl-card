@@ -45,5 +45,5 @@ week,date,day,game,market,pick,our_num,market_num,gap,tier,result,win_pct,opened
 3,2026-09-27,Sunday,LA@DEN,Moneyline,LA,57.3,52.6,4.7,C,L,57.3,53.4,D
 3,2026-09-27,Sunday,LA@DEN,Total,OVER 43.5,44.4,44.5,-0.1,D,W,53.5,47.1,D
 3,2026-09-28,Monday,PHI@CHI,Spread,CHI +3.5,2.7,-3.5,6.2,C,,,0.3,D
-3,2026-09-28,Monday,PHI@CHI,Moneyline,CHI,58.3,36.9,21.4,C,,58.3,51.0,D
-3,2026-09-28,Monday,PHI@CHI,Total,OVER 41.5,46.7,41.5,5.2,D,,68.6,45.0,D
+3,2026-09-28,Monday,PHI@CHI,Moneyline,CHI,58.3,36.3,22.0,C,,58.3,51.0,D
+3,2026-09-28,Monday,PHI@CHI,Total,OVER 42.5,46.7,42.5,4.2,D,,65.3,45.0,D
