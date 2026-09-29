@@ -228,3 +228,25 @@ first_seen_utc,season,week,game,name,market,side,line,pick
 2026-09-25T23:11:48+00:00,2026,3,LA@DEN,Steve Makinen (VSiN),spread,DEN,2.5,DEN +2.5
 2026-09-25T23:11:48+00:00,2026,3,PHI@CHI,Owen O'Brien (CBS Sports),total,under,44.5,Under 44.5
 2026-09-25T23:11:48+00:00,2026,3,PHI@CHI,Steve Makinen (VSiN),spread,CHI,4.5,CHI +4.5
+2026-09-29T22:34:10+00:00,2026,4,PIT@CLE,Chris Vasile (Covers),spread,PIT,-2.5,PIT -2.5
+2026-09-29T22:34:10+00:00,2026,4,PIT@CLE,John Breech (CBS Sports),spread,CLE,2.5,CLE +2.5
+2026-09-29T22:34:10+00:00,2026,4,IND@WAS,Chris Vasile (Covers),spread,WAS,3.5,WAS +3.5
+2026-09-29T22:34:10+00:00,2026,4,TEN@BAL,Chris Vasile (Covers),spread,TEN,11.5,TEN +11.5
+2026-09-29T22:34:10+00:00,2026,4,NE@BUF,Chris Vasile (Covers),spread,BUF,-6.5,BUF -6.5
+2026-09-29T22:34:10+00:00,2026,4,NYJ@CHI,Chris Vasile (Covers),spread,NYJ,3.5,NYJ +3.5
+2026-09-29T22:34:10+00:00,2026,4,JAX@CIN,Chris Vasile (Covers),spread,CIN,-2.5,CIN -2.5
+2026-09-29T22:34:10+00:00,2026,4,JAX@CIN,John Breech (CBS Sports),spread,CIN,-2.5,CIN -2.5
+2026-09-29T22:34:10+00:00,2026,4,DAL@HOU,Chris Vasile (Covers),spread,DAL,2.5,DAL +2.5
+2026-09-29T22:34:10+00:00,2026,4,DAL@HOU,John Breech (CBS Sports),spread,HOU,-2.5,HOU -2.5
+2026-09-29T22:34:10+00:00,2026,4,ARI@NYG,Chris Vasile (Covers),spread,ARI,-1.5,ARI -1.5
+2026-09-29T22:34:10+00:00,2026,4,ARI@NYG,Peter Dewey (Sports Illustrated),moneyline,ARI,,ARI moneyline
+2026-09-29T22:34:10+00:00,2026,4,LA@PHI,Chris Vasile (Covers),spread,PHI,3.5,PHI +3.5
+2026-09-29T22:34:10+00:00,2026,4,GB@TB,Chris Vasile (Covers),spread,GB,-3.5,GB -3.5
+2026-09-29T22:34:10+00:00,2026,4,MIA@MIN,Chris Vasile (Covers),spread,MIA,10.5,MIA +10.5
+2026-09-29T22:34:10+00:00,2026,4,KC@LV,Chris Vasile (Covers),spread,LV,4.5,LV +4.5
+2026-09-29T22:34:10+00:00,2026,4,KC@LV,John Breech (CBS Sports),spread,KC,-4.5,KC -4.5
+2026-09-29T22:34:10+00:00,2026,4,LAC@SEA,Chris Vasile (Covers),spread,LAC,7.5,LAC +7.5
+2026-09-29T22:34:10+00:00,2026,4,DEN@SF,Chris Vasile (Covers),spread,SF,-2.5,SF -2.5
+2026-09-29T22:34:10+00:00,2026,4,DET@CAR,Chris Vasile (Covers),spread,DET,-3.5,DET -3.5
+2026-09-29T22:34:10+00:00,2026,4,ATL@NO,Chris Vasile (Covers),spread,ATL,2.5,ATL +2.5
+2026-09-29T22:34:10+00:00,2026,4,ATL@NO,John Breech (CBS Sports),spread,ATL,2.5,ATL +2.5

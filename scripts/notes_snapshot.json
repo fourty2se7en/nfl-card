@@ -1,5 +1,5 @@
 {
- "saved": "2026-09-29T20:57",
+ "saved": "2026-09-29T22:34",
  "notes": {
   "NE@SEA": {
    "returning": [
@@ -2543,6 +2543,424 @@
     "qb_out": "home",
     "starters_out": 1,
     "confidence": "confirmed"
+   }
+  },
+  "PIT@CLE": {
+   "returning": [
+    "RB Rico Dowdle did not play in Week 3 and was a non-participant on Monday's estimated report, leaving him unlikely on the short Thursday turnaround",
+    "RB Dylan Sampson has been on injured reserve since Week 2 with a knee injury and is expected to miss significant time"
+   ],
+   "movement": [
+    "Spread: open PIT -2.5, unchanged. Total: open 38.5, unchanged. Moneyline: PIT now -145, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Chris Vasile (Covers)",
+     "record": "record not published",
+     "pick": "PIT -2.5",
+     "market": "spread",
+     "side": "PIT",
+     "line": -2.5
+    },
+    {
+     "name": "John Breech (CBS Sports)",
+     "record": "6-9-1 ATS in Week 3",
+     "pick": "CLE +2.5",
+     "market": "spread",
+     "side": "CLE",
+     "line": 2.5
+    }
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 1,
+    "confidence": "reported"
+   }
+  },
+  "IND@WAS": {
+   "returning": [
+    "QB Jayden Daniels has missed two games with a dislocated left elbow and is travelling to London and practising, but has not been cleared to play",
+    "WR Alec Pierce went on injured reserve in Week 3 after aggravating the heel injury that needed offseason surgery and is rehabbing to avoid a second operation",
+    "TE Chig Okonkwo has not played since a Week 1 hamstring injury and was ruled out again in Week 3"
+   ],
+   "movement": [
+    "Spread: open IND -3.5, unchanged. Total: open 46.5, now 47. Moneyline: IND now -194, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Chris Vasile (Covers)",
+     "record": "record not published",
+     "pick": "WAS +3.5",
+     "market": "spread",
+     "side": "WAS",
+     "line": 3.5
+    }
+   ]
+  },
+  "TEN@BAL": {
+   "movement": [
+    "Spread: open BAL -11.5, unchanged. Total: open 43.5, unchanged. Moneyline: BAL now -686, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Chris Vasile (Covers)",
+     "record": "record not published",
+     "pick": "TEN +11.5",
+     "market": "spread",
+     "side": "TEN",
+     "line": 11.5
+    }
+   ]
+  },
+  "NE@BUF": {
+   "returning": [
+    "WR A.J. Brown is on injured reserve with a high-ankle sprain and cannot return before Week 6"
+   ],
+   "movement": [
+    "Spread: open BUF -7, now BUF -6.5. Total: open 48.5, unchanged. Moneyline: BUF now -311, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Chris Vasile (Covers)",
+     "record": "record not published",
+     "pick": "BUF -6.5",
+     "market": "spread",
+     "side": "BUF",
+     "line": -6.5
+    }
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 1,
+    "confidence": "confirmed"
+   }
+  },
+  "NYJ@CHI": {
+   "returning": [
+    "QB Caleb Williams has not played since a Week 2 hamstring strain and ESPN reported a three-to-four-week timeline that covers this game",
+    "RB Breece Hall injured a quadricep in Week 3 and head coach Aaron Glenn called him week-to-week on Monday",
+    "TE Mason Taylor missed Week 3 with a thumb injury and is reported week-to-week"
+   ],
+   "movement": [
+    "Spread: open CHI -3, unchanged. Total: now 43, opener not confirmed. Moneyline: CHI now -171, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Chris Vasile (Covers)",
+     "record": "record not published",
+     "pick": "NYJ +3.5",
+     "market": "spread",
+     "side": "NYJ",
+     "line": 3.5
+    }
+   ],
+   "log": {
+    "qb_out": "home",
+    "starters_out": 3,
+    "confidence": "reported"
+   }
+  },
+  "JAX@CIN": {
+   "returning": [
+    "WR Andrei Iosivas went on injured reserve in Week 3 with a thumb injury"
+   ],
+   "movement": [
+    "Spread: open CIN -2.5, unchanged. Total: now 51.5, opener not confirmed. Moneyline: CIN now -142, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Chris Vasile (Covers)",
+     "record": "record not published",
+     "pick": "CIN -2.5",
+     "market": "spread",
+     "side": "CIN",
+     "line": -2.5
+    },
+    {
+     "name": "John Breech (CBS Sports)",
+     "record": "6-9-1 ATS in Week 3",
+     "pick": "CIN -2.5",
+     "market": "spread",
+     "side": "CIN",
+     "line": -2.5
+    }
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 1,
+    "confidence": "confirmed"
+   }
+  },
+  "DAL@HOU": {
+   "returning": [
+    "WR Nico Collins missed Week 3 with a hamstring injury and the team is hopeful he returns this week",
+    "RB Malik Davis is on injured reserve with a hip injury and will miss the rest of the season"
+   ],
+   "movement": [
+    "Spread: open HOU -2.5, unchanged. Total: now 48, opener not confirmed. Moneyline: HOU now -141, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Chris Vasile (Covers)",
+     "record": "record not published",
+     "pick": "DAL +2.5",
+     "market": "spread",
+     "side": "DAL",
+     "line": 2.5
+    },
+    {
+     "name": "John Breech (CBS Sports)",
+     "record": "6-9-1 ATS in Week 3",
+     "pick": "HOU -2.5",
+     "market": "spread",
+     "side": "HOU",
+     "line": -2.5
+    }
+   ]
+  },
+  "ARI@NYG": {
+   "returning": [
+    "QB Jaxson Dart will have surgery on a torn meniscus and is out for the rest of the regular season, with Jameis Winston reported as the likely starter"
+   ],
+   "trades": [
+    "Acquired QB J.J. McCarthy from Minnesota on Monday for a 2027 fifth-round pick"
+   ],
+   "movement": [
+    "Spread: now ARI -1.5, opener not confirmed. Total: open 43.5, now 44.5. Moneyline: ARI now -123, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Chris Vasile (Covers)",
+     "record": "record not published",
+     "pick": "ARI -1.5",
+     "market": "spread",
+     "side": "ARI",
+     "line": -1.5
+    },
+    {
+     "name": "Peter Dewey (Sports Illustrated)",
+     "record": "record not published",
+     "pick": "ARI moneyline",
+     "market": "moneyline",
+     "side": "ARI"
+    }
+   ],
+   "log": {
+    "qb_out": "home",
+    "starters_out": 1,
+    "confidence": "reported"
+   }
+  },
+  "LA@PHI": {
+   "returning": [
+    "WR Puka Nacua has missed two games with a groin injury and Sean McVay said Monday he is hopeful Nacua is available",
+    "TE Dallas Goedert sprained an MCL in Week 2 and is expected to miss multiple weeks"
+   ],
+   "trades": [
+    "Philadelphia signed veteran TE Zach Ertz on Monday with Dallas Goedert and Eli Stowers both out"
+   ],
+   "movement": [
+    "Spread: open LA -2.5, now LA -3. Total: open 45.5, now 43.5. Moneyline: LA now -161, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Chris Vasile (Covers)",
+     "record": "record not published",
+     "pick": "PHI +3.5",
+     "market": "spread",
+     "side": "PHI",
+     "line": 3.5
+    }
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 2,
+    "confidence": "reported"
+   }
+  },
+  "GB@TB": {
+   "returning": [
+    "QB Baker Mayfield dislocated a thumb in Week 3, is out at least three weeks, and rookie Jalon Daniels will start",
+    "WR Jalen McMillan sprained a PCL in Week 3 and went on injured reserve Monday with a six-to-eight-week absence expected",
+    "WR Jayden Reed suffered a neck injury in Week 2 and Matt LaFleur said it is too early to say whether Reed plays again in 2026"
+   ],
+   "suspensions": [
+    "RB Josh Jacobs remains on the Commissioner's Exempt List and has not played this season"
+   ],
+   "movement": [
+    "Spread: now GB -4, opener not confirmed. Total: now 39.5, opener not confirmed. Moneyline: GB now -199, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Chris Vasile (Covers)",
+     "record": "record not published",
+     "pick": "GB -3.5",
+     "market": "spread",
+     "side": "GB",
+     "line": -3.5
+    }
+   ],
+   "log": {
+    "qb_out": "home",
+    "starters_out": 3,
+    "confidence": "confirmed"
+   }
+  },
+  "MIA@MIN": {
+   "returning": [
+    "RB De'Von Achane tore an ACL in Week 3 and is out for the season",
+    "WR Justin Jefferson sprained an ankle in Week 3 and ESPN reported the sprain is not serious and that he could play",
+    "RB Jaylen Wright missed Week 3 with a foot injury and could return to the game-day roster",
+    "RB Jordan Mason has been on injured reserve since Week 2 with a thumb injury"
+   ],
+   "trades": [
+    "Traded QB J.J. McCarthy to the New York Giants on Monday for a 2027 fifth-round pick"
+   ],
+   "movement": [
+    "Spread: open MIN -10.5, now MIN -11. Total: now 38.5, opener not confirmed. Moneyline: MIN now -644, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Chris Vasile (Covers)",
+     "record": "record not published",
+     "pick": "MIA +10.5",
+     "market": "spread",
+     "side": "MIA",
+     "line": 10.5
+    }
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 2,
+    "confidence": "confirmed"
+   }
+  },
+  "KC@LV": {
+   "movement": [
+    "Spread: open KC -5.5, now KC -4.5. Total: now 47.5, opener not confirmed. Moneyline: KC now -221, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Chris Vasile (Covers)",
+     "record": "record not published",
+     "pick": "LV +4.5",
+     "market": "spread",
+     "side": "LV",
+     "line": 4.5
+    },
+    {
+     "name": "John Breech (CBS Sports)",
+     "record": "6-9-1 ATS in Week 3",
+     "pick": "KC -4.5",
+     "market": "spread",
+     "side": "KC",
+     "line": -4.5
+    }
+   ]
+  },
+  "LAC@SEA": {
+   "returning": [
+    "TE David Njoku was carted off in Week 2 and went on injured reserve with a fibula injury, facing an extended absence"
+   ],
+   "movement": [
+    "Spread: open SEA -6.5, now SEA -7. Total: open 43.5, now 43. Moneyline: SEA now -350, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Chris Vasile (Covers)",
+     "record": "record not published",
+     "pick": "LAC +7.5",
+     "market": "spread",
+     "side": "LAC",
+     "line": 7.5
+    }
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 1,
+    "confidence": "confirmed"
+   }
+  },
+  "DEN@SF": {
+   "returning": [
+    "WR Demarcus Robinson suffered a high-ankle sprain in Week 2 and will miss significant time",
+    "WR De'Zhaun Stribling has been on injured reserve since Week 2 after surgery on a torn deltoid ligament in his ankle",
+    "WR Mike Evans could not finish Week 3 with a rib injury, his second straight game cut short by an unrelated injury"
+   ],
+   "movement": [
+    "Spread: open SF -3, now SF -2.5. Total: open 45.5, now 47.5. Moneyline: SF now -152, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Chris Vasile (Covers)",
+     "record": "record not published",
+     "pick": "SF -2.5",
+     "market": "spread",
+     "side": "SF",
+     "line": -2.5
+    }
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 2,
+    "confidence": "confirmed"
+   }
+  },
+  "DET@CAR": {
+   "returning": [
+    "RB Isiah Pacheco has been on injured reserve since the start of the season with a back injury",
+    "RB Jonathan Brooks aggravated a groin injury, went on injured reserve in Week 3 and is expected to have core muscle surgery",
+    "WR Jalen Coker left Week 3 with a quadricep injury"
+   ],
+   "movement": [
+    "Spread: open DET -3, now DET -3.5. Total: open 49.5, now 50.5. Moneyline: DET now -192, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Chris Vasile (Covers)",
+     "record": "record not published",
+     "pick": "DET -3.5",
+     "market": "spread",
+     "side": "DET",
+     "line": -3.5
+    }
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 2,
+    "confidence": "confirmed"
+   }
+  },
+  "ATL@NO": {
+   "returning": [
+    "RB Travis Etienne aggravated a hamstring injury in Week 3 and Kellen Moore said Monday he expects Etienne to miss some time",
+    "WR Jordyn Tyson has been on injured reserve since the start of the season with a hamstring injury and will miss at least the first four games"
+   ],
+   "movement": [
+    "Spread: open NO -2.5, unchanged. Total: now 48.5, opener not confirmed. Moneyline: NO now -153, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Chris Vasile (Covers)",
+     "record": "record not published",
+     "pick": "ATL +2.5",
+     "market": "spread",
+     "side": "ATL",
+     "line": 2.5
+    },
+    {
+     "name": "John Breech (CBS Sports)",
+     "record": "6-9-1 ATS in Week 3",
+     "pick": "ATL +2.5",
+     "market": "spread",
+     "side": "ATL",
+     "line": 2.5
+    }
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 2,
+    "confidence": "reported"
    }
   }
  }
