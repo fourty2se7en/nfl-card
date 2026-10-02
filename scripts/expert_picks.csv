@@ -250,3 +250,28 @@ first_seen_utc,season,week,game,name,market,side,line,pick
 2026-09-29T22:34:10+00:00,2026,4,DET@CAR,Chris Vasile (Covers),spread,DET,-3.5,DET -3.5
 2026-09-29T22:34:10+00:00,2026,4,ATL@NO,Chris Vasile (Covers),spread,ATL,2.5,ATL +2.5
 2026-09-29T22:34:10+00:00,2026,4,ATL@NO,John Breech (CBS Sports),spread,ATL,2.5,ATL +2.5
+2026-10-02T16:40:33+00:00,2026,4,IND@WAS,Jordan Dajani (CBS Sports),spread,IND,-3.5,IND -3.5
+2026-10-02T16:40:33+00:00,2026,4,IND@WAS,Jared Dubin (CBS Sports),spread,WAS,3.5,WAS +3.5
+2026-10-02T16:40:33+00:00,2026,4,NE@BUF,Jordan Dajani (CBS Sports),spread,BUF,-7.0,BUF -7
+2026-10-02T16:40:33+00:00,2026,4,NE@BUF,Steve Makinen (VSiN),spread,NE,6.5,NE +6.5
+2026-10-02T16:40:33+00:00,2026,4,JAX@CIN,Jordan Dajani (CBS Sports),spread,CIN,-2.5,CIN -2.5
+2026-10-02T16:40:33+00:00,2026,4,JAX@CIN,Jared Dubin (CBS Sports),spread,JAX,2.5,JAX +2.5
+2026-10-02T16:40:33+00:00,2026,4,JAX@CIN,Steve Makinen (VSiN),spread,CIN,-2.5,CIN -2.5
+2026-10-02T16:40:33+00:00,2026,4,DAL@HOU,Jordan Dajani (CBS Sports),spread,HOU,-2.5,HOU -2.5
+2026-10-02T16:40:33+00:00,2026,4,DAL@HOU,Jared Dubin (CBS Sports),spread,HOU,-2.5,HOU -2.5
+2026-10-02T16:40:33+00:00,2026,4,ARI@NYG,Steve Makinen (VSiN),spread,NYG,2.5,NYG +2.5
+2026-10-02T16:40:33+00:00,2026,4,LA@PHI,Jordan Dajani (CBS Sports),spread,LA,-3.5,LA -3.5
+2026-10-02T16:40:33+00:00,2026,4,LA@PHI,Jared Dubin (CBS Sports),spread,LA,-3.0,LA -3
+2026-10-02T16:40:33+00:00,2026,4,MIA@MIN,Jordan Dajani (CBS Sports),spread,MIN,-10.5,MIN -10.5
+2026-10-02T16:40:33+00:00,2026,4,MIA@MIN,Steve Makinen (VSiN),spread,MIA,10.5,MIA +10.5
+2026-10-02T16:40:33+00:00,2026,4,KC@LV,Jordan Dajani (CBS Sports),spread,LV,4.5,LV +4.5
+2026-10-02T16:40:33+00:00,2026,4,KC@LV,Steve Makinen (VSiN),total,under,47.5,Under 47.5
+2026-10-02T16:40:33+00:00,2026,4,LAC@SEA,Steve Makinen (VSiN),spread,LAC,7.0,LAC +7
+2026-10-02T16:40:33+00:00,2026,4,DEN@SF,Jordan Dajani (CBS Sports),spread,DEN,3.0,DEN +3
+2026-10-02T16:40:33+00:00,2026,4,DEN@SF,Jared Dubin (CBS Sports),spread,SF,-3.0,SF -3
+2026-10-02T16:40:33+00:00,2026,4,DEN@SF,Steve Makinen (VSiN),spread,SF,-3.0,SF -3
+2026-10-02T16:40:33+00:00,2026,4,DET@CAR,Jordan Dajani (CBS Sports),spread,DET,-3.5,DET -3.5
+2026-10-02T16:40:33+00:00,2026,4,DET@CAR,Jared Dubin (CBS Sports),spread,DET,-3.5,DET -3.5
+2026-10-02T16:40:33+00:00,2026,4,DET@CAR,Steve Makinen (VSiN),spread,CAR,3.5,CAR +3.5
+2026-10-02T16:40:33+00:00,2026,4,ATL@NO,Jordan Dajani (CBS Sports),spread,NO,-3.0,NO -3
+2026-10-02T16:40:33+00:00,2026,4,ATL@NO,Steve Makinen (VSiN),spread,ATL,2.5,ATL +2.5

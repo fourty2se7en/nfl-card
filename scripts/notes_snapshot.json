@@ -1,5 +1,5 @@
 {
- "saved": "2026-10-02T14:09",
+ "saved": "2026-10-02T16:40",
  "notes": {
   "NE@SEA": {
    "returning": [
@@ -2584,7 +2584,7 @@
     "TE Chig Okonkwo has not played since a Week 1 hamstring injury and was ruled out again in Week 3"
    ],
    "movement": [
-    "Spread: open IND -3.5, unchanged. Total: open 46.5, now 47. Moneyline: IND now -194, opener not confirmed."
+    "Spread: open IND -3.5, unchanged. Total: open 46.5, now 48.5. Moneyline: IND now -192, opener not confirmed."
    ],
    "experts": [
     {
@@ -2594,12 +2594,33 @@
      "market": "spread",
      "side": "WAS",
      "line": 3.5
+    },
+    {
+     "name": "Jordan Dajani (CBS Sports)",
+     "record": "23-25 ATS",
+     "pick": "IND -3.5",
+     "market": "spread",
+     "side": "IND",
+     "line": -3.5
+    },
+    {
+     "name": "Jared Dubin (CBS Sports)",
+     "record": "record not published",
+     "pick": "WAS +3.5",
+     "market": "spread",
+     "side": "WAS",
+     "line": 3.5
     }
-   ]
+   ],
+   "log": {
+    "qb_out": "home",
+    "starters_out": 3,
+    "confidence": "reported"
+   }
   },
   "TEN@BAL": {
    "movement": [
-    "Spread: open BAL -11.5, unchanged. Total: open 43.5, unchanged. Moneyline: BAL now -686, opener not confirmed."
+    "Spread: open BAL -11.5, unchanged. Total: open 43.5, now 42.5. Moneyline: BAL now -650, opener not confirmed."
    ],
    "experts": [
     {
@@ -2627,6 +2648,22 @@
      "market": "spread",
      "side": "BUF",
      "line": -6.5
+    },
+    {
+     "name": "Jordan Dajani (CBS Sports)",
+     "record": "23-25 ATS",
+     "pick": "BUF -7",
+     "market": "spread",
+     "side": "BUF",
+     "line": -7
+    },
+    {
+     "name": "Steve Makinen (VSiN)",
+     "record": "18-10 ATS",
+     "pick": "NE +6.5",
+     "market": "spread",
+     "side": "NE",
+     "line": 6.5
     }
    ],
    "log": {
@@ -2642,7 +2679,7 @@
     "TE Mason Taylor missed Week 3 with a thumb injury and is reported week-to-week"
    ],
    "movement": [
-    "Spread: open CHI -3, unchanged. Total: now 43, opener not confirmed. Moneyline: CHI now -171, opener not confirmed."
+    "Spread: open CHI -3, now CHI -3.5. Total: now 43.5, opener not confirmed. Moneyline: CHI now -175, opener not confirmed."
    ],
    "experts": [
     {
@@ -2683,6 +2720,30 @@
      "market": "spread",
      "side": "CIN",
      "line": -2.5
+    },
+    {
+     "name": "Jordan Dajani (CBS Sports)",
+     "record": "23-25 ATS",
+     "pick": "CIN -2.5",
+     "market": "spread",
+     "side": "CIN",
+     "line": -2.5
+    },
+    {
+     "name": "Jared Dubin (CBS Sports)",
+     "record": "record not published",
+     "pick": "JAX +2.5",
+     "market": "spread",
+     "side": "JAX",
+     "line": 2.5
+    },
+    {
+     "name": "Steve Makinen (VSiN)",
+     "record": "18-10 ATS",
+     "pick": "CIN -2.5",
+     "market": "spread",
+     "side": "CIN",
+     "line": -2.5
     }
    ],
    "log": {
@@ -2697,7 +2758,7 @@
     "RB Malik Davis is on injured reserve with a hip injury and will miss the rest of the season"
    ],
    "movement": [
-    "Spread: open HOU -2.5, unchanged. Total: now 48, opener not confirmed. Moneyline: HOU now -141, opener not confirmed."
+    "Spread: open HOU -2.5, now HOU -3. Total: now 48.5, opener not confirmed. Moneyline: HOU now -162, opener not confirmed."
    ],
    "experts": [
     {
@@ -2715,6 +2776,22 @@
      "market": "spread",
      "side": "HOU",
      "line": -2.5
+    },
+    {
+     "name": "Jordan Dajani (CBS Sports)",
+     "record": "23-25 ATS",
+     "pick": "HOU -2.5",
+     "market": "spread",
+     "side": "HOU",
+     "line": -2.5
+    },
+    {
+     "name": "Jared Dubin (CBS Sports)",
+     "record": "record not published",
+     "pick": "HOU -2.5",
+     "market": "spread",
+     "side": "HOU",
+     "line": -2.5
     }
    ]
   },
@@ -2726,7 +2803,7 @@
     "Acquired QB J.J. McCarthy from Minnesota on Monday for a 2027 fifth-round pick"
    ],
    "movement": [
-    "Spread: now ARI -1.5, opener not confirmed. Total: open 43.5, now 44.5. Moneyline: ARI now -123, opener not confirmed."
+    "Spread: open NYG -2.5, now ARI -2.5. Total: open 43.5, now 44.5. Moneyline: ARI now -142, opener not confirmed."
    ],
    "experts": [
     {
@@ -2743,6 +2820,14 @@
      "pick": "ARI moneyline",
      "market": "moneyline",
      "side": "ARI"
+    },
+    {
+     "name": "Steve Makinen (VSiN)",
+     "record": "18-10 ATS",
+     "pick": "NYG +2.5",
+     "market": "spread",
+     "side": "NYG",
+     "line": 2.5
     }
    ],
    "log": {
@@ -2760,7 +2845,7 @@
     "Philadelphia signed veteran TE Zach Ertz on Monday with Dallas Goedert and Eli Stowers both out"
    ],
    "movement": [
-    "Spread: open LA -2.5, now LA -3. Total: open 45.5, now 43.5. Moneyline: LA now -161, opener not confirmed."
+    "Spread: open LA -2.5, now LA -3.5. Total: open 45.5, now 42.5. Moneyline: LA now -185, opener not confirmed."
    ],
    "experts": [
     {
@@ -2770,6 +2855,22 @@
      "market": "spread",
      "side": "PHI",
      "line": 3.5
+    },
+    {
+     "name": "Jordan Dajani (CBS Sports)",
+     "record": "23-25 ATS",
+     "pick": "LA -3.5",
+     "market": "spread",
+     "side": "LA",
+     "line": -3.5
+    },
+    {
+     "name": "Jared Dubin (CBS Sports)",
+     "record": "record not published",
+     "pick": "LA -3",
+     "market": "spread",
+     "side": "LA",
+     "line": -3
     }
    ],
    "log": {
@@ -2788,7 +2889,7 @@
     "RB Josh Jacobs remains on the Commissioner's Exempt List and has not played this season"
    ],
    "movement": [
-    "Spread: now GB -4, opener not confirmed. Total: now 39.5, opener not confirmed. Moneyline: GB now -199, opener not confirmed."
+    "Spread: now GB -3.5, opener not confirmed. Total: now 38.5, opener not confirmed. Moneyline: GB now -185, opener not confirmed."
    ],
    "experts": [
     {
@@ -2817,12 +2918,28 @@
     "Traded QB J.J. McCarthy to the New York Giants on Monday for a 2027 fifth-round pick"
    ],
    "movement": [
-    "Spread: open MIN -10.5, now MIN -11. Total: now 38.5, opener not confirmed. Moneyline: MIN now -644, opener not confirmed."
+    "Spread: open MIN -10.5, unchanged. Total: now 38.5, opener not confirmed. Moneyline: MIN now -625, opener not confirmed."
    ],
    "experts": [
     {
      "name": "Chris Vasile (Covers)",
      "record": "record not published",
+     "pick": "MIA +10.5",
+     "market": "spread",
+     "side": "MIA",
+     "line": 10.5
+    },
+    {
+     "name": "Jordan Dajani (CBS Sports)",
+     "record": "23-25 ATS",
+     "pick": "MIN -10.5",
+     "market": "spread",
+     "side": "MIN",
+     "line": -10.5
+    },
+    {
+     "name": "Steve Makinen (VSiN)",
+     "record": "18-10 ATS",
      "pick": "MIA +10.5",
      "market": "spread",
      "side": "MIA",
@@ -2855,6 +2972,22 @@
      "market": "spread",
      "side": "KC",
      "line": -4.5
+    },
+    {
+     "name": "Jordan Dajani (CBS Sports)",
+     "record": "23-25 ATS",
+     "pick": "LV +4.5",
+     "market": "spread",
+     "side": "LV",
+     "line": 4.5
+    },
+    {
+     "name": "Steve Makinen (VSiN)",
+     "record": "18-10 ATS",
+     "pick": "Under 47.5",
+     "market": "total",
+     "side": "under",
+     "line": 47.5
     }
    ]
   },
@@ -2863,7 +2996,7 @@
     "TE David Njoku was carted off in Week 2 and went on injured reserve with a fibula injury, facing an extended absence"
    ],
    "movement": [
-    "Spread: open SEA -6.5, now SEA -7. Total: open 43.5, now 43. Moneyline: SEA now -350, opener not confirmed."
+    "Spread: open SEA -6.5, now SEA -7. Total: open 43.5, now 42.5. Moneyline: SEA now -375, opener not confirmed."
    ],
    "experts": [
     {
@@ -2873,6 +3006,14 @@
      "market": "spread",
      "side": "LAC",
      "line": 7.5
+    },
+    {
+     "name": "Steve Makinen (VSiN)",
+     "record": "18-10 ATS",
+     "pick": "LAC +7",
+     "market": "spread",
+     "side": "LAC",
+     "line": 7
     }
    ],
    "log": {
@@ -2885,7 +3026,8 @@
    "returning": [
     "WR Demarcus Robinson suffered a high-ankle sprain in Week 2 and will miss significant time",
     "WR De'Zhaun Stribling has been on injured reserve since Week 2 after surgery on a torn deltoid ligament in his ankle",
-    "WR Mike Evans could not finish Week 3 with a rib injury, his second straight game cut short by an unrelated injury"
+    "WR Mike Evans could not finish Week 3 with a rib injury, his second straight game cut short by an unrelated injury",
+    "DE Nick Bosa pulled a calf at practice on Sept 25 and was reported out a few weeks, with injured reserve under consideration"
    ],
    "movement": [
     "Spread: open SF -3, now SF -2.5. Total: open 45.5, now 47.5. Moneyline: SF now -152, opener not confirmed."
@@ -2898,19 +3040,44 @@
      "market": "spread",
      "side": "SF",
      "line": -2.5
+    },
+    {
+     "name": "Jordan Dajani (CBS Sports)",
+     "record": "23-25 ATS",
+     "pick": "DEN +3",
+     "market": "spread",
+     "side": "DEN",
+     "line": 3
+    },
+    {
+     "name": "Jared Dubin (CBS Sports)",
+     "record": "record not published",
+     "pick": "SF -3",
+     "market": "spread",
+     "side": "SF",
+     "line": -3
+    },
+    {
+     "name": "Steve Makinen (VSiN)",
+     "record": "18-10 ATS",
+     "pick": "SF -3",
+     "market": "spread",
+     "side": "SF",
+     "line": -3
     }
    ],
    "log": {
     "qb_out": "none",
-    "starters_out": 2,
-    "confidence": "confirmed"
+    "starters_out": 3,
+    "confidence": "reported"
    }
   },
   "DET@CAR": {
    "returning": [
     "RB Isiah Pacheco has been on injured reserve since the start of the season with a back injury",
     "RB Jonathan Brooks aggravated a groin injury, went on injured reserve in Week 3 and is expected to have core muscle surgery",
-    "WR Jalen Coker left Week 3 with a quadricep injury"
+    "WR Jalen Coker left Week 3 with a quadricep injury",
+    "CBs Jaycee Horn (quad) and Mike Jackson (groin) were placed on injured reserve on Sept 30 and will miss at least four games, leaving Carolina without either starting cornerback"
    ],
    "movement": [
     "Spread: open DET -3, now DET -3.5. Total: open 49.5, now 50.5. Moneyline: DET now -192, opener not confirmed."
@@ -2923,11 +3090,35 @@
      "market": "spread",
      "side": "DET",
      "line": -3.5
+    },
+    {
+     "name": "Jordan Dajani (CBS Sports)",
+     "record": "23-25 ATS",
+     "pick": "DET -3.5",
+     "market": "spread",
+     "side": "DET",
+     "line": -3.5
+    },
+    {
+     "name": "Jared Dubin (CBS Sports)",
+     "record": "record not published",
+     "pick": "DET -3.5",
+     "market": "spread",
+     "side": "DET",
+     "line": -3.5
+    },
+    {
+     "name": "Steve Makinen (VSiN)",
+     "record": "18-10 ATS",
+     "pick": "CAR +3.5",
+     "market": "spread",
+     "side": "CAR",
+     "line": 3.5
     }
    ],
    "log": {
     "qb_out": "none",
-    "starters_out": 2,
+    "starters_out": 4,
     "confidence": "confirmed"
    }
   },
@@ -2937,7 +3128,7 @@
     "WR Jordyn Tyson has been on injured reserve since the start of the season with a hamstring injury and will miss at least the first four games"
    ],
    "movement": [
-    "Spread: open NO -2.5, unchanged. Total: now 48.5, opener not confirmed. Moneyline: NO now -153, opener not confirmed."
+    "Spread: open NO -2.5, unchanged. Total: now 47.5, opener not confirmed. Moneyline: NO now -142, opener not confirmed."
    ],
    "experts": [
     {
@@ -2951,6 +3142,22 @@
     {
      "name": "John Breech (CBS Sports)",
      "record": "6-9-1 ATS in Week 3",
+     "pick": "ATL +2.5",
+     "market": "spread",
+     "side": "ATL",
+     "line": 2.5
+    },
+    {
+     "name": "Jordan Dajani (CBS Sports)",
+     "record": "23-25 ATS",
+     "pick": "NO -3",
+     "market": "spread",
+     "side": "NO",
+     "line": -3
+    },
+    {
+     "name": "Steve Makinen (VSiN)",
+     "record": "18-10 ATS",
      "pick": "ATL +2.5",
      "market": "spread",
      "side": "ATL",

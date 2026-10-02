@@ -98,3 +98,6 @@ written_utc,season,week,away,home,qb_out,starters_out,confidence,spread_open,spr
 2026-09-29T22:34:10+00:00,2026,4,DEN,SF,none,2,confirmed,,3.0,,47.5,5.9
 2026-09-29T22:34:10+00:00,2026,4,DET,CAR,none,2,confirmed,,-3.5,,50.5,-2.4
 2026-09-29T22:34:10+00:00,2026,4,ATL,NO,none,2,reported,,3.0,,48.5,3.3
+2026-10-02T16:40:33+00:00,2026,4,IND,WAS,home,3,reported,,-3.5,,48.5,0.9
+2026-10-02T16:40:33+00:00,2026,4,DEN,SF,none,3,reported,,3.0,,47.5,5.9
+2026-10-02T16:40:33+00:00,2026,4,DET,CAR,none,4,confirmed,,-3.5,,50.5,-2.4
