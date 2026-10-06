@@ -44,6 +44,6 @@ week,date,day,game,market,pick,our_num,market_num,gap,tier,result,win_pct,opened
 4,2026-10-04,Sunday,DET@CAR,Spread,CAR +4.5,-2.4,-3.5,1.1,D,W,,-2.4,D
 4,2026-10-04,Sunday,DET@CAR,Moneyline,DET,56.5,63.7,-7.2,C,L,56.5,56.5,C
 4,2026-10-04,Sunday,DET@CAR,Total,UNDER 52.5,47.6,51.5,-3.9,D,L,67.4,47.6,D
-4,2026-10-05,Monday,ATL@NO,Spread,NO -1.5,3.3,1.5,1.8,D,,,3.3,D
-4,2026-10-05,Monday,ATL@NO,Moneyline,NO,59.2,52.2,7.0,C,,59.2,59.2,C
-4,2026-10-05,Monday,ATL@NO,Total,UNDER 47.5,37.3,47.5,-10.2,D,,83.2,37.3,D
+4,2026-10-05,Monday,ATL@NO,Spread,NO -1.5,3.3,1.5,1.8,D,L,,3.3,D
+4,2026-10-05,Monday,ATL@NO,Moneyline,NO,59.2,52.2,7.0,C,L,59.2,59.2,C
+4,2026-10-05,Monday,ATL@NO,Total,UNDER 47.5,37.3,47.5,-10.2,D,L,83.2,37.3,D
