@@ -9,7 +9,7 @@ week,date,day,game,market,pick,our_num,market_num,gap,tier,result,win_pct,opened
 5,2026-10-11,Sunday,CHI@GB,Moneyline,CHI,57.5,57.2,0.3,C,,57.5,57.5,C
 5,2026-10-11,Sunday,CHI@GB,Total,OVER 45.5,56.2,45.5,10.7,D,,84.3,56.2,D
 5,2026-10-11,Sunday,CIN@MIA,Spread,CIN -6.5,-9.4,-6.5,-2.9,D,,,-9.4,D
-5,2026-10-11,Sunday,CIN@MIA,Moneyline,CIN,75.6,74.1,1.5,C,,75.6,75.8,C
+5,2026-10-11,Sunday,CIN@MIA,Moneyline,CIN,75.6,72.6,3.0,C,,75.6,75.8,C
 5,2026-10-11,Sunday,CIN@MIA,Total,OVER 42.5,47.7,42.5,5.2,D,,68.6,47.7,D
 5,2026-10-11,Sunday,LV@NE,Spread,NE -3.5,8.4,3.5,4.9,D,,,8.4,D
 5,2026-10-11,Sunday,LV@NE,Moneyline,NE,73.3,63.7,9.6,C,,73.3,73.0,C
@@ -24,7 +24,7 @@ week,date,day,game,market,pick,our_num,market_num,gap,tier,result,win_pct,opened
 5,2026-10-11,Sunday,IND@PIT,Moneyline,PIT,65.8,57.2,8.6,C,,65.8,65.8,C
 5,2026-10-11,Sunday,IND@PIT,Total,OVER 44.5,45.4,44.5,0.9,D,,52.9,45.4,D
 5,2026-10-11,Sunday,HOU@TEN,Spread,TEN +7.5,-4.9,-7.5,2.6,D,,,-4.9,D
-5,2026-10-11,Sunday,HOU@TEN,Moneyline,HOU,63.9,75.7,-11.8,C,,63.9,64.2,C
+5,2026-10-11,Sunday,HOU@TEN,Moneyline,HOU,63.9,75.1,-11.2,C,,63.9,64.2,C
 5,2026-10-11,Sunday,HOU@TEN,Total,OVER 37.5,39.7,37.5,2.2,D,,58.4,39.7,D
 5,2026-10-11,Sunday,NYG@WAS,Spread,NYG +3.5,2.3,3.5,-1.2,D,,,2.3,D
 5,2026-10-11,Sunday,NYG@WAS,Moneyline,WAS,56.3,61.6,-5.3,C,,56.3,57.5,C
