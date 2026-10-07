@@ -275,3 +275,36 @@ first_seen_utc,season,week,game,name,market,side,line,pick
 2026-10-02T16:40:33+00:00,2026,4,DET@CAR,Steve Makinen (VSiN),spread,CAR,3.5,CAR +3.5
 2026-10-02T16:40:33+00:00,2026,4,ATL@NO,Jordan Dajani (CBS Sports),spread,NO,-3.0,NO -3
 2026-10-02T16:40:33+00:00,2026,4,ATL@NO,Steve Makinen (VSiN),spread,ATL,2.5,ATL +2.5
+2026-10-07T18:52:15+00:00,2026,5,TB@DAL,Tyler Sullivan (CBS Sports),spread,DAL,-8.5,DAL -8.5
+2026-10-07T18:52:15+00:00,2026,5,TB@DAL,Sascha Paruk (SportsBettingDime),spread,DAL,-9.5,DAL -9.5
+2026-10-07T18:52:15+00:00,2026,5,PHI@JAX,Tyler Sullivan (CBS Sports),spread,JAX,-6.5,JAX -6.5
+2026-10-07T18:52:15+00:00,2026,5,PHI@JAX,Sascha Paruk (SportsBettingDime),spread,JAX,-4.5,JAX -4.5
+2026-10-07T18:52:15+00:00,2026,5,CHI@GB,Tyler Sullivan (CBS Sports),spread,CHI,-2.5,CHI -2.5
+2026-10-07T18:52:15+00:00,2026,5,CHI@GB,Jason Logan (Covers),spread,GB,3.0,GB +3
+2026-10-07T18:52:15+00:00,2026,5,CHI@GB,Sascha Paruk (SportsBettingDime),spread,GB,1.5,GB +1.5
+2026-10-07T18:52:15+00:00,2026,5,CIN@MIA,Tyler Sullivan (CBS Sports),spread,CIN,-7.5,CIN -7.5
+2026-10-07T18:52:15+00:00,2026,5,CIN@MIA,Sascha Paruk (SportsBettingDime),spread,CIN,-7.5,CIN -7.5
+2026-10-07T18:52:15+00:00,2026,5,LV@NE,Tyler Sullivan (CBS Sports),spread,LV,3.5,LV +3.5
+2026-10-07T18:52:15+00:00,2026,5,LV@NE,Sascha Paruk (SportsBettingDime),spread,LV,3.5,LV +3.5
+2026-10-07T18:52:15+00:00,2026,5,MIN@NO,Tyler Sullivan (CBS Sports),spread,MIN,-1.5,MIN -1.5
+2026-10-07T18:52:15+00:00,2026,5,MIN@NO,Sascha Paruk (SportsBettingDime),spread,MIN,-1.5,MIN -1.5
+2026-10-07T18:52:15+00:00,2026,5,CLE@NYJ,Tyler Sullivan (CBS Sports),spread,NYJ,-2.5,NYJ -2.5
+2026-10-07T18:52:15+00:00,2026,5,CLE@NYJ,Jason Logan (Covers),spread,CLE,2.5,CLE +2.5
+2026-10-07T18:52:15+00:00,2026,5,CLE@NYJ,Sascha Paruk (SportsBettingDime),spread,CLE,1.5,CLE +1.5
+2026-10-07T18:52:15+00:00,2026,5,IND@PIT,Tyler Sullivan (CBS Sports),spread,PIT,-2.5,PIT -2.5
+2026-10-07T18:52:15+00:00,2026,5,IND@PIT,Sascha Paruk (SportsBettingDime),spread,IND,2.5,IND +2.5
+2026-10-07T18:52:15+00:00,2026,5,HOU@TEN,Tyler Sullivan (CBS Sports),spread,HOU,-7.0,HOU -7
+2026-10-07T18:52:15+00:00,2026,5,HOU@TEN,Sascha Paruk (SportsBettingDime),spread,HOU,-6.5,HOU -6.5
+2026-10-07T18:52:15+00:00,2026,5,NYG@WAS,Tyler Sullivan (CBS Sports),spread,NYG,3.5,NYG +3.5
+2026-10-07T18:52:15+00:00,2026,5,NYG@WAS,Sascha Paruk (SportsBettingDime),spread,WAS,-2.5,WAS -2.5
+2026-10-07T18:52:15+00:00,2026,5,DEN@LAC,Tyler Sullivan (CBS Sports),spread,DEN,-3.5,DEN -3.5
+2026-10-07T18:52:15+00:00,2026,5,DEN@LAC,Sascha Paruk (SportsBettingDime),spread,DEN,-3.5,DEN -3.5
+2026-10-07T18:52:15+00:00,2026,5,DET@ARI,Tyler Sullivan (CBS Sports),spread,ARI,4.5,ARI +4.5
+2026-10-07T18:52:15+00:00,2026,5,DET@ARI,Sascha Paruk (SportsBettingDime),spread,DET,-5.5,DET -5.5
+2026-10-07T18:52:15+00:00,2026,5,SF@SEA,Tyler Sullivan (CBS Sports),spread,SEA,-3.0,SEA -3
+2026-10-07T18:52:15+00:00,2026,5,SF@SEA,Sascha Paruk (SportsBettingDime),spread,SEA,-2.5,SEA -2.5
+2026-10-07T18:52:15+00:00,2026,5,BAL@ATL,Tyler Sullivan (CBS Sports),spread,ATL,-2.5,ATL -2.5
+2026-10-07T18:52:15+00:00,2026,5,BAL@ATL,Jason Logan (Covers),spread,BAL,3.5,BAL +3.5
+2026-10-07T18:52:15+00:00,2026,5,BAL@ATL,Sascha Paruk (SportsBettingDime),spread,BAL,-3.5,BAL -3.5
+2026-10-07T18:52:15+00:00,2026,5,BUF@LA,Tyler Sullivan (CBS Sports),spread,LA,-2.5,LA -2.5
+2026-10-07T18:52:15+00:00,2026,5,BUF@LA,Sascha Paruk (SportsBettingDime),spread,BUF,2.5,BUF +2.5

@@ -1,5 +1,5 @@
 {
- "saved": "2026-10-07T14:45",
+ "saved": "2026-10-07T18:52",
  "notes": {
   "NE@SEA": {
    "returning": [
@@ -3169,6 +3169,398 @@
     "starters_out": 2,
     "confidence": "reported"
    }
+  },
+  "TB@DAL": {
+   "movement": [
+    "Spread: open DAL -10, now DAL -8.5. Total: open 47.5, unchanged. Moneyline: DAL now -455, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Tyler Sullivan (CBS Sports)",
+     "record": "27-35-2 ATS",
+     "pick": "DAL -8.5",
+     "market": "spread",
+     "side": "DAL",
+     "line": -8.5
+    },
+    {
+     "name": "Sascha Paruk (SportsBettingDime)",
+     "record": "27-33-1 ATS",
+     "pick": "DAL -9.5",
+     "market": "spread",
+     "side": "DAL",
+     "line": -9.5
+    }
+   ]
+  },
+  "PHI@JAX": {
+   "trades": [
+    "Traded C Cam Jurgens and a 2027 seventh-round pick to Baltimore on Oct 7 for a 2028 second-rounder and a 2027 fifth-rounder",
+    "RT Lane Johnson announced his retirement on Oct 6, a day before the Jurgens trade"
+   ],
+   "movement": [
+    "Spread: open JAX -3.5, now JAX -7.0. Total: open 42.5, unchanged. Moneyline: JAX now -355, opener not confirmed. Philadelphia lost four of five key starters for all of Week 4, then Johnson retired and Jurgens was traded."
+   ],
+   "experts": [
+    {
+     "name": "Tyler Sullivan (CBS Sports)",
+     "record": "27-35-2 ATS",
+     "pick": "JAX -6.5",
+     "market": "spread",
+     "side": "JAX",
+     "line": -6.5
+    },
+    {
+     "name": "Sascha Paruk (SportsBettingDime)",
+     "record": "27-33-1 ATS",
+     "pick": "JAX -4.5",
+     "market": "spread",
+     "side": "JAX",
+     "line": -4.5
+    }
+   ]
+  },
+  "CHI@GB": {
+   "movement": [
+    "Spread: open CHI -1.5, now CHI -3.0. Total: open 44.5, now 45.5. Moneyline: CHI now -155, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Tyler Sullivan (CBS Sports)",
+     "record": "27-35-2 ATS",
+     "pick": "CHI -2.5",
+     "market": "spread",
+     "side": "CHI",
+     "line": -2.5
+    },
+    {
+     "name": "Jason Logan (Covers)",
+     "record": "5-7 ATS",
+     "pick": "GB +3",
+     "market": "spread",
+     "side": "GB",
+     "line": 3
+    },
+    {
+     "name": "Sascha Paruk (SportsBettingDime)",
+     "record": "27-33-1 ATS",
+     "pick": "GB +1.5",
+     "market": "spread",
+     "side": "GB",
+     "line": 1.5
+    }
+   ],
+   "log": {
+    "qb_out": "away",
+    "starters_out": 1,
+    "confidence": "confirmed"
+   }
+  },
+  "CIN@MIA": {
+   "movement": [
+    "Spread: open CIN -7.5, now CIN -7.0. Total: now 42.5, opener not confirmed. Moneyline: CIN now -345, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Tyler Sullivan (CBS Sports)",
+     "record": "27-35-2 ATS",
+     "pick": "CIN -7.5",
+     "market": "spread",
+     "side": "CIN",
+     "line": -7.5
+    },
+    {
+     "name": "Sascha Paruk (SportsBettingDime)",
+     "record": "27-33-1 ATS",
+     "pick": "CIN -7.5",
+     "market": "spread",
+     "side": "CIN",
+     "line": -7.5
+    }
+   ]
+  },
+  "LV@NE": {
+   "movement": [
+    "Spread: open NE -3.5, unchanged. Total: open 45.5, unchanged. Moneyline: NE now -192, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Tyler Sullivan (CBS Sports)",
+     "record": "27-35-2 ATS",
+     "pick": "LV +3.5",
+     "market": "spread",
+     "side": "LV",
+     "line": 3.5
+    },
+    {
+     "name": "Sascha Paruk (SportsBettingDime)",
+     "record": "27-33-1 ATS",
+     "pick": "LV +3.5",
+     "market": "spread",
+     "side": "LV",
+     "line": 3.5
+    }
+   ]
+  },
+  "MIN@NO": {
+   "movement": [
+    "Spread: open MIN -1.5, unchanged. Total: open 43.5, now 42.5. Moneyline: MIN now -125, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Tyler Sullivan (CBS Sports)",
+     "record": "27-35-2 ATS",
+     "pick": "MIN -1.5",
+     "market": "spread",
+     "side": "MIN",
+     "line": -1.5
+    },
+    {
+     "name": "Sascha Paruk (SportsBettingDime)",
+     "record": "27-33-1 ATS",
+     "pick": "MIN -1.5",
+     "market": "spread",
+     "side": "MIN",
+     "line": -1.5
+    }
+   ]
+  },
+  "CLE@NYJ": {
+   "movement": [
+    "Spread: open NYJ -1.5, now NYJ -2.5. Total: open 39.5, unchanged. Moneyline: NYJ now -130, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Tyler Sullivan (CBS Sports)",
+     "record": "27-35-2 ATS",
+     "pick": "NYJ -2.5",
+     "market": "spread",
+     "side": "NYJ",
+     "line": -2.5
+    },
+    {
+     "name": "Jason Logan (Covers)",
+     "record": "5-7 ATS",
+     "pick": "CLE +2.5",
+     "market": "spread",
+     "side": "CLE",
+     "line": 2.5
+    },
+    {
+     "name": "Sascha Paruk (SportsBettingDime)",
+     "record": "27-33-1 ATS",
+     "pick": "CLE +1.5",
+     "market": "spread",
+     "side": "CLE",
+     "line": 1.5
+    }
+   ]
+  },
+  "IND@PIT": {
+   "movement": [
+    "Spread: open PIT -2.5, unchanged. Total: open 44.5, unchanged. Moneyline: PIT now -148, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Tyler Sullivan (CBS Sports)",
+     "record": "27-35-2 ATS",
+     "pick": "PIT -2.5",
+     "market": "spread",
+     "side": "PIT",
+     "line": -2.5
+    },
+    {
+     "name": "Sascha Paruk (SportsBettingDime)",
+     "record": "27-33-1 ATS",
+     "pick": "IND +2.5",
+     "market": "spread",
+     "side": "IND",
+     "line": 2.5
+    }
+   ]
+  },
+  "HOU@TEN": {
+   "suspensions": [
+    "DB Nazeeh Johnson is serving a six-game suspension for a performance-enhancing substances violation and is eligible for reinstatement on Oct 19"
+   ],
+   "movement": [
+    "Spread: open HOU -6.5, now HOU -7.5. Total: open 40.5, now 37.5. Moneyline: HOU now -360, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Tyler Sullivan (CBS Sports)",
+     "record": "27-35-2 ATS",
+     "pick": "HOU -7",
+     "market": "spread",
+     "side": "HOU",
+     "line": -7
+    },
+    {
+     "name": "Sascha Paruk (SportsBettingDime)",
+     "record": "27-33-1 ATS",
+     "pick": "HOU -6.5",
+     "market": "spread",
+     "side": "HOU",
+     "line": -6.5
+    }
+   ]
+  },
+  "NYG@WAS": {
+   "movement": [
+    "Spread: open WAS -3, now WAS -3.5. Total: open 44.5, now 43.5. Moneyline: WAS now -180, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Tyler Sullivan (CBS Sports)",
+     "record": "27-35-2 ATS",
+     "pick": "NYG +3.5",
+     "market": "spread",
+     "side": "NYG",
+     "line": 3.5
+    },
+    {
+     "name": "Sascha Paruk (SportsBettingDime)",
+     "record": "27-33-1 ATS",
+     "pick": "WAS -2.5",
+     "market": "spread",
+     "side": "WAS",
+     "line": -2.5
+    }
+   ]
+  },
+  "DEN@LAC": {
+   "movement": [
+    "Spread: open DEN -3.5, unchanged. Total: open 43.5, now 42.5. Moneyline: DEN now -185, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Tyler Sullivan (CBS Sports)",
+     "record": "27-35-2 ATS",
+     "pick": "DEN -3.5",
+     "market": "spread",
+     "side": "DEN",
+     "line": -3.5
+    },
+    {
+     "name": "Sascha Paruk (SportsBettingDime)",
+     "record": "27-33-1 ATS",
+     "pick": "DEN -3.5",
+     "market": "spread",
+     "side": "DEN",
+     "line": -3.5
+    }
+   ]
+  },
+  "DET@ARI": {
+   "movement": [
+    "Spread: open DET -5.5, unchanged. Total: open 53.5, now 54.5. Moneyline: DET now -258, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Tyler Sullivan (CBS Sports)",
+     "record": "27-35-2 ATS",
+     "pick": "ARI +4.5",
+     "market": "spread",
+     "side": "ARI",
+     "line": 4.5
+    },
+    {
+     "name": "Sascha Paruk (SportsBettingDime)",
+     "record": "27-33-1 ATS",
+     "pick": "DET -5.5",
+     "market": "spread",
+     "side": "DET",
+     "line": -5.5
+    }
+   ]
+  },
+  "SF@SEA": {
+   "movement": [
+    "Spread: open SEA -3, now SEA -2.5. Total: open 46.5, unchanged. Moneyline: SEA now -155, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Tyler Sullivan (CBS Sports)",
+     "record": "27-35-2 ATS",
+     "pick": "SEA -3",
+     "market": "spread",
+     "side": "SEA",
+     "line": -3
+    },
+    {
+     "name": "Sascha Paruk (SportsBettingDime)",
+     "record": "27-33-1 ATS",
+     "pick": "SEA -2.5",
+     "market": "spread",
+     "side": "SEA",
+     "line": -2.5
+    }
+   ]
+  },
+  "BAL@ATL": {
+   "trades": [
+    "Acquired C Cam Jurgens and a 2027 seventh-round pick from Philadelphia on Oct 7 for a 2028 second-rounder and a 2027 fifth-rounder"
+   ],
+   "suspensions": [
+    "Atlanta edge James Pearce Jr. is serving the fifth game of an eight-game personal-conduct suspension and is eligible to return in Week 9"
+   ],
+   "movement": [
+    "Spread: open BAL -3.5, now ATL -3.5. Total: open 46.5, now 43.5. Moneyline: ATL now -175, opener not confirmed. Lamar Jackson sprained an ankle in Week 4 and was reported as only an outside chance to play."
+   ],
+   "experts": [
+    {
+     "name": "Tyler Sullivan (CBS Sports)",
+     "record": "27-35-2 ATS",
+     "pick": "ATL -2.5",
+     "market": "spread",
+     "side": "ATL",
+     "line": -2.5
+    },
+    {
+     "name": "Jason Logan (Covers)",
+     "record": "5-7 ATS",
+     "pick": "BAL +3.5",
+     "market": "spread",
+     "side": "BAL",
+     "line": 3.5
+    },
+    {
+     "name": "Sascha Paruk (SportsBettingDime)",
+     "record": "27-33-1 ATS",
+     "pick": "BAL -3.5",
+     "market": "spread",
+     "side": "BAL",
+     "line": -3.5
+    }
+   ],
+   "log": {
+    "qb_out": "away",
+    "starters_out": 2,
+    "confidence": "reported"
+   }
+  },
+  "BUF@LA": {
+   "movement": [
+    "Spread: open LA -2.5, now LA -3.0. Total: open 53.5, now 54.5. Moneyline: LA now -162, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Tyler Sullivan (CBS Sports)",
+     "record": "27-35-2 ATS",
+     "pick": "LA -2.5",
+     "market": "spread",
+     "side": "LA",
+     "line": -2.5
+    },
+    {
+     "name": "Sascha Paruk (SportsBettingDime)",
+     "record": "27-33-1 ATS",
+     "pick": "BUF +2.5",
+     "market": "spread",
+     "side": "BUF",
+     "line": 2.5
+    }
+   ]
   }
  }
 }
