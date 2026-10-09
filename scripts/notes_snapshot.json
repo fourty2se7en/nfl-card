@@ -1,5 +1,5 @@
 {
- "saved": "2026-10-09T14:40",
+ "saved": "2026-10-09T17:04",
  "notes": {
   "NE@SEA": {
    "returning": [
@@ -3403,6 +3403,9 @@
      "side": "HOU",
      "line": -6.5
     }
+   ],
+   "coaching": [
+    "Head coach DeMeco Ryans takes over defensive play-calling from coordinator Matt Burke starting with this game, after an 0-4 start"
    ]
   },
   "NYG@WAS": {
@@ -3426,6 +3429,9 @@
      "side": "WAS",
      "line": -2.5
     }
+   ],
+   "returning": [
+    "QB Jayden Daniels is expected back from the left elbow he dislocated in Week 2, having been ruled out in Week 4"
    ]
   },
   "DEN@LAC": {
@@ -3449,6 +3455,9 @@
      "side": "DEN",
      "line": -3.5
     }
+   ],
+   "coaching": [
+    "Head coach Sean Payton takes back offensive play-calling from coordinator Davis Webb starting with this game"
    ]
   },
   "DET@ARI": {
