@@ -1,5 +1,5 @@
 {
- "saved": "2026-10-09T20:07",
+ "saved": "2026-10-09T22:31",
  "notes": {
   "NE@SEA": {
    "returning": [
@@ -3197,7 +3197,8 @@
    "trades": [
     "Traded C Cam Jurgens and a 2027 seventh-round pick to Baltimore on Oct 7 for a 2028 second-rounder and a 2027 fifth-rounder",
     "RT Lane Johnson announced his retirement on Oct 6, a day before the Jurgens trade",
-    "Placed RB Tank Bigsby on injured reserve on Oct 7 ahead of abdominal surgery, and released LB Anfernee Orji from the practice squad"
+    "Placed RB Tank Bigsby on injured reserve on Oct 7 ahead of abdominal surgery, and released LB Anfernee Orji from the practice squad",
+    "Released QB Andy Dalton and signed RB Carson Steele and C Jake Majors on Oct 9"
    ],
    "movement": [
     "Spread: open JAX -3.5, now JAX -7.5. Total: open 42.5, unchanged. Moneyline: JAX now -355, opener not confirmed. Philadelphia lost four of five key starters for all of Week 4, then Johnson retired and Jurgens was traded."
@@ -3218,8 +3219,69 @@
      "market": "spread",
      "side": "JAX",
      "line": -4.5
+    },
+    {
+     "name": "Jared Dubin (CBS Sports)",
+     "record": "record not published",
+     "pick": "PHI +6.5",
+     "market": "spread",
+     "side": "PHI",
+     "line": 6.5
+    },
+    {
+     "name": "Ryan Wilson (CBS Sports)",
+     "record": "record not published",
+     "pick": "JAX -6.5",
+     "market": "spread",
+     "side": "JAX",
+     "line": -6.5
+    },
+    {
+     "name": "John Breech (CBS Sports)",
+     "record": "record not published",
+     "pick": "JAX -6.5",
+     "market": "spread",
+     "side": "JAX",
+     "line": -6.5
+    },
+    {
+     "name": "Dave Richard (CBS Sports)",
+     "record": "record not published",
+     "pick": "JAX -6.5",
+     "market": "spread",
+     "side": "JAX",
+     "line": -6.5
+    },
+    {
+     "name": "Jamey Eisenberg (CBS Sports)",
+     "record": "record not published",
+     "pick": "JAX -6.5",
+     "market": "spread",
+     "side": "JAX",
+     "line": -6.5
+    },
+    {
+     "name": "Pete Prisco (CBS Sports)",
+     "record": "25-37-2 ATS",
+     "pick": "JAX -7",
+     "market": "spread",
+     "side": "JAX",
+     "line": -7
+    },
+    {
+     "name": "Jordan Dajani (CBS Sports)",
+     "record": "record not published",
+     "pick": "JAX -7",
+     "market": "spread",
+     "side": "JAX",
+     "line": -7
     }
-   ]
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 4,
+    "confidence": "confirmed"
+   }
   },
   "CHI@GB": {
    "movement": [
@@ -3249,6 +3311,54 @@
      "market": "spread",
      "side": "GB",
      "line": 1.5
+    },
+    {
+     "name": "Ryan Wilson (CBS Sports)",
+     "record": "record not published",
+     "pick": "CHI -3",
+     "market": "spread",
+     "side": "CHI",
+     "line": -3
+    },
+    {
+     "name": "John Breech (CBS Sports)",
+     "record": "record not published",
+     "pick": "CHI -3",
+     "market": "spread",
+     "side": "CHI",
+     "line": -3
+    },
+    {
+     "name": "Dave Richard (CBS Sports)",
+     "record": "record not published",
+     "pick": "CHI -3",
+     "market": "spread",
+     "side": "CHI",
+     "line": -3
+    },
+    {
+     "name": "Jamey Eisenberg (CBS Sports)",
+     "record": "record not published",
+     "pick": "GB +3",
+     "market": "spread",
+     "side": "GB",
+     "line": 3
+    },
+    {
+     "name": "Pete Prisco (CBS Sports)",
+     "record": "25-37-2 ATS",
+     "pick": "GB +3",
+     "market": "spread",
+     "side": "GB",
+     "line": 3
+    },
+    {
+     "name": "Jordan Dajani (CBS Sports)",
+     "record": "record not published",
+     "pick": "GB +3",
+     "market": "spread",
+     "side": "GB",
+     "line": 3
     }
    ],
    "log": {
@@ -3277,8 +3387,64 @@
      "market": "spread",
      "side": "CIN",
      "line": -7.5
+    },
+    {
+     "name": "Jared Dubin (CBS Sports)",
+     "record": "record not published",
+     "pick": "CIN -7.5",
+     "market": "spread",
+     "side": "CIN",
+     "line": -7.5
+    },
+    {
+     "name": "Ryan Wilson (CBS Sports)",
+     "record": "record not published",
+     "pick": "CIN -7.5",
+     "market": "spread",
+     "side": "CIN",
+     "line": -7.5
+    },
+    {
+     "name": "John Breech (CBS Sports)",
+     "record": "record not published",
+     "pick": "CIN -7.5",
+     "market": "spread",
+     "side": "CIN",
+     "line": -7.5
+    },
+    {
+     "name": "Dave Richard (CBS Sports)",
+     "record": "record not published",
+     "pick": "MIA +7.5",
+     "market": "spread",
+     "side": "MIA",
+     "line": 7.5
+    },
+    {
+     "name": "Jamey Eisenberg (CBS Sports)",
+     "record": "record not published",
+     "pick": "CIN -7.5",
+     "market": "spread",
+     "side": "CIN",
+     "line": -7.5
+    },
+    {
+     "name": "Pete Prisco (CBS Sports)",
+     "record": "25-37-2 ATS",
+     "pick": "CIN -7",
+     "market": "spread",
+     "side": "CIN",
+     "line": -7
     }
-   ]
+   ],
+   "trades": [
+    "Miami claimed RB Kaytron Allen off waivers from Washington on Oct 9"
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 1,
+    "confidence": "confirmed"
+   }
   },
   "LV@NE": {
    "movement": [
@@ -3300,8 +3466,61 @@
      "market": "spread",
      "side": "LV",
      "line": 3.5
+    },
+    {
+     "name": "Jared Dubin (CBS Sports)",
+     "record": "record not published",
+     "pick": "LV +3.5",
+     "market": "spread",
+     "side": "LV",
+     "line": 3.5
+    },
+    {
+     "name": "Ryan Wilson (CBS Sports)",
+     "record": "record not published",
+     "pick": "NE -3.5",
+     "market": "spread",
+     "side": "NE",
+     "line": -3.5
+    },
+    {
+     "name": "John Breech (CBS Sports)",
+     "record": "record not published",
+     "pick": "NE -3.5",
+     "market": "spread",
+     "side": "NE",
+     "line": -3.5
+    },
+    {
+     "name": "Dave Richard (CBS Sports)",
+     "record": "record not published",
+     "pick": "NE -3.5",
+     "market": "spread",
+     "side": "NE",
+     "line": -3.5
+    },
+    {
+     "name": "Jamey Eisenberg (CBS Sports)",
+     "record": "record not published",
+     "pick": "NE -3.5",
+     "market": "spread",
+     "side": "NE",
+     "line": -3.5
+    },
+    {
+     "name": "Pete Prisco (CBS Sports)",
+     "record": "25-37-2 ATS",
+     "pick": "NE -3.5",
+     "market": "spread",
+     "side": "NE",
+     "line": -3.5
     }
-   ]
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 3,
+    "confidence": "confirmed"
+   }
   },
   "MIN@NO": {
    "movement": [
@@ -3323,8 +3542,61 @@
      "market": "spread",
      "side": "MIN",
      "line": -1.5
+    },
+    {
+     "name": "Jared Dubin (CBS Sports)",
+     "record": "record not published",
+     "pick": "MIN -2",
+     "market": "spread",
+     "side": "MIN",
+     "line": -2
+    },
+    {
+     "name": "Ryan Wilson (CBS Sports)",
+     "record": "record not published",
+     "pick": "MIN -2",
+     "market": "spread",
+     "side": "MIN",
+     "line": -2
+    },
+    {
+     "name": "John Breech (CBS Sports)",
+     "record": "record not published",
+     "pick": "MIN -2",
+     "market": "spread",
+     "side": "MIN",
+     "line": -2
+    },
+    {
+     "name": "Dave Richard (CBS Sports)",
+     "record": "record not published",
+     "pick": "NO +2",
+     "market": "spread",
+     "side": "NO",
+     "line": 2
+    },
+    {
+     "name": "Jamey Eisenberg (CBS Sports)",
+     "record": "record not published",
+     "pick": "MIN -2",
+     "market": "spread",
+     "side": "MIN",
+     "line": -2
+    },
+    {
+     "name": "Pete Prisco (CBS Sports)",
+     "record": "25-37-2 ATS",
+     "pick": "MIN -1.5",
+     "market": "spread",
+     "side": "MIN",
+     "line": -1.5
     }
-   ]
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 2,
+    "confidence": "confirmed"
+   }
   },
   "CLE@NYJ": {
    "movement": [
@@ -3354,8 +3626,61 @@
      "market": "spread",
      "side": "CLE",
      "line": 1.5
+    },
+    {
+     "name": "Jared Dubin (CBS Sports)",
+     "record": "record not published",
+     "pick": "NYJ -2.5",
+     "market": "spread",
+     "side": "NYJ",
+     "line": -2.5
+    },
+    {
+     "name": "Ryan Wilson (CBS Sports)",
+     "record": "record not published",
+     "pick": "CLE +2.5",
+     "market": "spread",
+     "side": "CLE",
+     "line": 2.5
+    },
+    {
+     "name": "John Breech (CBS Sports)",
+     "record": "record not published",
+     "pick": "CLE +2.5",
+     "market": "spread",
+     "side": "CLE",
+     "line": 2.5
+    },
+    {
+     "name": "Dave Richard (CBS Sports)",
+     "record": "record not published",
+     "pick": "CLE +2.5",
+     "market": "spread",
+     "side": "CLE",
+     "line": 2.5
+    },
+    {
+     "name": "Jamey Eisenberg (CBS Sports)",
+     "record": "record not published",
+     "pick": "CLE +2.5",
+     "market": "spread",
+     "side": "CLE",
+     "line": 2.5
+    },
+    {
+     "name": "Pete Prisco (CBS Sports)",
+     "record": "25-37-2 ATS",
+     "pick": "NYJ -2.5",
+     "market": "spread",
+     "side": "NYJ",
+     "line": -2.5
     }
-   ]
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 3,
+    "confidence": "confirmed"
+   }
   },
   "IND@PIT": {
    "movement": [
@@ -3377,6 +3702,62 @@
      "market": "spread",
      "side": "IND",
      "line": 2.5
+    },
+    {
+     "name": "Jared Dubin (CBS Sports)",
+     "record": "record not published",
+     "pick": "IND +2.5",
+     "market": "spread",
+     "side": "IND",
+     "line": 2.5
+    },
+    {
+     "name": "Ryan Wilson (CBS Sports)",
+     "record": "record not published",
+     "pick": "PIT -2.5",
+     "market": "spread",
+     "side": "PIT",
+     "line": -2.5
+    },
+    {
+     "name": "John Breech (CBS Sports)",
+     "record": "record not published",
+     "pick": "IND +2.5",
+     "market": "spread",
+     "side": "IND",
+     "line": 2.5
+    },
+    {
+     "name": "Dave Richard (CBS Sports)",
+     "record": "record not published",
+     "pick": "PIT -2.5",
+     "market": "spread",
+     "side": "PIT",
+     "line": -2.5
+    },
+    {
+     "name": "Jamey Eisenberg (CBS Sports)",
+     "record": "record not published",
+     "pick": "PIT -2.5",
+     "market": "spread",
+     "side": "PIT",
+     "line": -2.5
+    },
+    {
+     "name": "Pete Prisco (CBS Sports)",
+     "record": "25-37-2 ATS",
+     "pick": "PIT -2.5",
+     "market": "spread",
+     "side": "PIT",
+     "line": -2.5
+    },
+    {
+     "name": "Jordan Dajani (CBS Sports)",
+     "record": "record not published",
+     "pick": "PIT -2.5",
+     "market": "spread",
+     "side": "PIT",
+     "line": -2.5
     }
    ]
   },
@@ -3403,15 +3784,68 @@
      "market": "spread",
      "side": "HOU",
      "line": -6.5
+    },
+    {
+     "name": "Jared Dubin (CBS Sports)",
+     "record": "record not published",
+     "pick": "HOU -7",
+     "market": "spread",
+     "side": "HOU",
+     "line": -7
+    },
+    {
+     "name": "Ryan Wilson (CBS Sports)",
+     "record": "record not published",
+     "pick": "HOU -7",
+     "market": "spread",
+     "side": "HOU",
+     "line": -7
+    },
+    {
+     "name": "John Breech (CBS Sports)",
+     "record": "record not published",
+     "pick": "TEN +7",
+     "market": "spread",
+     "side": "TEN",
+     "line": 7
+    },
+    {
+     "name": "Dave Richard (CBS Sports)",
+     "record": "record not published",
+     "pick": "TEN +7",
+     "market": "spread",
+     "side": "TEN",
+     "line": 7
+    },
+    {
+     "name": "Jamey Eisenberg (CBS Sports)",
+     "record": "record not published",
+     "pick": "HOU -7",
+     "market": "spread",
+     "side": "HOU",
+     "line": -7
+    },
+    {
+     "name": "Pete Prisco (CBS Sports)",
+     "record": "25-37-2 ATS",
+     "pick": "TEN +7",
+     "market": "spread",
+     "side": "TEN",
+     "line": 7
     }
    ],
    "coaching": [
     "Head coach DeMeco Ryans takes over defensive play-calling from coordinator Matt Burke starting with this game, after an 0-4 start"
-   ]
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 1,
+    "confidence": "confirmed"
+   }
   },
   "NYG@WAS": {
    "movement": [
-    "Spread: open WAS -3, now WAS -3.5. Total: open 44.5, now 43.5. Moneyline: WAS now -180, opener not confirmed."
+    "Spread: open WAS -3, now WAS -4.5. Total: open 44.5, now 41.5. Moneyline: WAS now -192, opener not confirmed. Jayden Daniels was confirmed on Friday to start."
    ],
    "experts": [
     {
@@ -3429,11 +3863,65 @@
      "market": "spread",
      "side": "WAS",
      "line": -2.5
+    },
+    {
+     "name": "Jared Dubin (CBS Sports)",
+     "record": "record not published",
+     "pick": "WAS -3.5",
+     "market": "spread",
+     "side": "WAS",
+     "line": -3.5
+    },
+    {
+     "name": "Ryan Wilson (CBS Sports)",
+     "record": "record not published",
+     "pick": "NYG +3.5",
+     "market": "spread",
+     "side": "NYG",
+     "line": 3.5
+    },
+    {
+     "name": "John Breech (CBS Sports)",
+     "record": "record not published",
+     "pick": "NYG +3.5",
+     "market": "spread",
+     "side": "NYG",
+     "line": 3.5
+    },
+    {
+     "name": "Dave Richard (CBS Sports)",
+     "record": "record not published",
+     "pick": "WAS -3.5",
+     "market": "spread",
+     "side": "WAS",
+     "line": -3.5
+    },
+    {
+     "name": "Jamey Eisenberg (CBS Sports)",
+     "record": "record not published",
+     "pick": "NYG +3.5",
+     "market": "spread",
+     "side": "NYG",
+     "line": 3.5
+    },
+    {
+     "name": "Pete Prisco (CBS Sports)",
+     "record": "25-37-2 ATS",
+     "pick": "NYG +3",
+     "market": "spread",
+     "side": "NYG",
+     "line": 3
     }
    ],
    "returning": [
-    "QB Jayden Daniels is expected back from the left elbow he dislocated in Week 2, having been ruled out in Week 4"
-   ]
+    "QB Jayden Daniels will start, back from the left elbow he dislocated in Week 2 after being ruled out in Week 4",
+    "WR Malik Nabers was a full participant on Friday with no injury designation after missing practice earlier in the week with a knee issue"
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 2,
+    "confidence": "confirmed"
+   }
   },
   "DEN@LAC": {
    "movement": [
@@ -3455,11 +3943,68 @@
      "market": "spread",
      "side": "DEN",
      "line": -3.5
+    },
+    {
+     "name": "Jared Dubin (CBS Sports)",
+     "record": "record not published",
+     "pick": "LAC +3.5",
+     "market": "spread",
+     "side": "LAC",
+     "line": 3.5
+    },
+    {
+     "name": "Ryan Wilson (CBS Sports)",
+     "record": "record not published",
+     "pick": "DEN -3.5",
+     "market": "spread",
+     "side": "DEN",
+     "line": -3.5
+    },
+    {
+     "name": "John Breech (CBS Sports)",
+     "record": "record not published",
+     "pick": "DEN -3.5",
+     "market": "spread",
+     "side": "DEN",
+     "line": -3.5
+    },
+    {
+     "name": "Dave Richard (CBS Sports)",
+     "record": "record not published",
+     "pick": "DEN -3.5",
+     "market": "spread",
+     "side": "DEN",
+     "line": -3.5
+    },
+    {
+     "name": "Jamey Eisenberg (CBS Sports)",
+     "record": "record not published",
+     "pick": "DEN -3.5",
+     "market": "spread",
+     "side": "DEN",
+     "line": -3.5
+    },
+    {
+     "name": "Pete Prisco (CBS Sports)",
+     "record": "25-37-2 ATS",
+     "pick": "LAC +3.5",
+     "market": "spread",
+     "side": "LAC",
+     "line": 3.5
     }
    ],
    "coaching": [
     "Head coach Sean Payton takes back offensive play-calling from coordinator Davis Webb starting with this game"
-   ]
+   ],
+   "trades": [
+    "Denver placed WR Pat Bryant on injured reserve on Oct 9 with the ankle he hurt in Week 4, a minimum four-game absence",
+    "Chargers LT Rashawn Slater had surgery on Oct 8 for the high ankle sprain he suffered in Week 4 and is going on injured reserve"
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 4,
+    "confidence": "confirmed"
+   }
   },
   "DET@ARI": {
    "movement": [
@@ -3481,8 +4026,61 @@
      "market": "spread",
      "side": "DET",
      "line": -5.5
+    },
+    {
+     "name": "Jared Dubin (CBS Sports)",
+     "record": "record not published",
+     "pick": "DET -4.5",
+     "market": "spread",
+     "side": "DET",
+     "line": -4.5
+    },
+    {
+     "name": "Ryan Wilson (CBS Sports)",
+     "record": "record not published",
+     "pick": "ARI +4.5",
+     "market": "spread",
+     "side": "ARI",
+     "line": 4.5
+    },
+    {
+     "name": "John Breech (CBS Sports)",
+     "record": "record not published",
+     "pick": "DET -4.5",
+     "market": "spread",
+     "side": "DET",
+     "line": -4.5
+    },
+    {
+     "name": "Dave Richard (CBS Sports)",
+     "record": "record not published",
+     "pick": "DET -4.5",
+     "market": "spread",
+     "side": "DET",
+     "line": -4.5
+    },
+    {
+     "name": "Jamey Eisenberg (CBS Sports)",
+     "record": "record not published",
+     "pick": "DET -4.5",
+     "market": "spread",
+     "side": "DET",
+     "line": -4.5
+    },
+    {
+     "name": "Pete Prisco (CBS Sports)",
+     "record": "25-37-2 ATS",
+     "pick": "DET -4.5",
+     "market": "spread",
+     "side": "DET",
+     "line": -4.5
     }
-   ]
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 2,
+    "confidence": "confirmed"
+   }
   },
   "SF@SEA": {
    "movement": [
@@ -3504,8 +4102,72 @@
      "market": "spread",
      "side": "SEA",
      "line": -2.5
+    },
+    {
+     "name": "Jared Dubin (CBS Sports)",
+     "record": "record not published",
+     "pick": "SEA -3",
+     "market": "spread",
+     "side": "SEA",
+     "line": -3
+    },
+    {
+     "name": "Ryan Wilson (CBS Sports)",
+     "record": "record not published",
+     "pick": "SEA -3",
+     "market": "spread",
+     "side": "SEA",
+     "line": -3
+    },
+    {
+     "name": "John Breech (CBS Sports)",
+     "record": "record not published",
+     "pick": "SF +3",
+     "market": "spread",
+     "side": "SF",
+     "line": 3
+    },
+    {
+     "name": "Dave Richard (CBS Sports)",
+     "record": "record not published",
+     "pick": "SEA -3",
+     "market": "spread",
+     "side": "SEA",
+     "line": -3
+    },
+    {
+     "name": "Jamey Eisenberg (CBS Sports)",
+     "record": "record not published",
+     "pick": "SF +3",
+     "market": "spread",
+     "side": "SF",
+     "line": 3
+    },
+    {
+     "name": "Pete Prisco (CBS Sports)",
+     "record": "25-37-2 ATS",
+     "pick": "SEA -2.5",
+     "market": "spread",
+     "side": "SEA",
+     "line": -2.5
+    },
+    {
+     "name": "Jordan Dajani (CBS Sports)",
+     "record": "record not published",
+     "pick": "SF +2.5",
+     "market": "spread",
+     "side": "SF",
+     "line": 2.5
     }
-   ]
+   ],
+   "trades": [
+    "San Francisco released DL Ogbo Okoronkwo on Oct 9"
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 1,
+    "confidence": "confirmed"
+   }
   },
   "BAL@ATL": {
    "trades": [
@@ -3515,7 +4177,7 @@
     "Atlanta edge James Pearce Jr. is serving the fifth game of an eight-game personal-conduct suspension and is eligible to return in Week 9"
    ],
    "movement": [
-    "Spread: open BAL -3.5, now ATL -3.5. Total: open 46.5, now 43.5. Moneyline: ATL now -175, opener not confirmed. Lamar Jackson sprained an ankle in Week 4 and was reported as only an outside chance to play."
+    "Spread: open BAL -3.5, now ATL -3.5. Total: open 46.5, now 43.5. Moneyline: ATL now -180, opener not confirmed. Lamar Jackson was ruled out on Friday with the ankle he sprained in Week 4 and Tyler Huntley will start."
    ],
    "experts": [
     {
@@ -3541,12 +4203,68 @@
      "market": "spread",
      "side": "BAL",
      "line": -3.5
+    },
+    {
+     "name": "Jared Dubin (CBS Sports)",
+     "record": "record not published",
+     "pick": "ATL -3",
+     "market": "spread",
+     "side": "ATL",
+     "line": -3
+    },
+    {
+     "name": "Ryan Wilson (CBS Sports)",
+     "record": "record not published",
+     "pick": "ATL -3",
+     "market": "spread",
+     "side": "ATL",
+     "line": -3
+    },
+    {
+     "name": "John Breech (CBS Sports)",
+     "record": "record not published",
+     "pick": "ATL -3",
+     "market": "spread",
+     "side": "ATL",
+     "line": -3
+    },
+    {
+     "name": "Dave Richard (CBS Sports)",
+     "record": "record not published",
+     "pick": "ATL -3",
+     "market": "spread",
+     "side": "ATL",
+     "line": -3
+    },
+    {
+     "name": "Jamey Eisenberg (CBS Sports)",
+     "record": "record not published",
+     "pick": "ATL -3",
+     "market": "spread",
+     "side": "ATL",
+     "line": -3
+    },
+    {
+     "name": "Pete Prisco (CBS Sports)",
+     "record": "25-37-2 ATS",
+     "pick": "BAL -2.5",
+     "market": "spread",
+     "side": "BAL",
+     "line": -2.5
+    },
+    {
+     "name": "Jordan Dajani (CBS Sports)",
+     "record": "record not published",
+     "pick": "ATL -3.5",
+     "market": "spread",
+     "side": "ATL",
+     "line": -3.5
     }
    ],
    "log": {
     "qb_out": "away",
     "starters_out": 2,
-    "confidence": "reported"
+    "confidence": "confirmed"
    }
   },
   "BUF@LA": {
@@ -3569,6 +4287,62 @@
      "market": "spread",
      "side": "BUF",
      "line": 2.5
+    },
+    {
+     "name": "Jared Dubin (CBS Sports)",
+     "record": "record not published",
+     "pick": "LA -2.5",
+     "market": "spread",
+     "side": "LA",
+     "line": -2.5
+    },
+    {
+     "name": "Ryan Wilson (CBS Sports)",
+     "record": "record not published",
+     "pick": "BUF +2.5",
+     "market": "spread",
+     "side": "BUF",
+     "line": 2.5
+    },
+    {
+     "name": "John Breech (CBS Sports)",
+     "record": "record not published",
+     "pick": "LA -2.5",
+     "market": "spread",
+     "side": "LA",
+     "line": -2.5
+    },
+    {
+     "name": "Dave Richard (CBS Sports)",
+     "record": "record not published",
+     "pick": "LA -2.5",
+     "market": "spread",
+     "side": "LA",
+     "line": -2.5
+    },
+    {
+     "name": "Jamey Eisenberg (CBS Sports)",
+     "record": "record not published",
+     "pick": "LA -2.5",
+     "market": "spread",
+     "side": "LA",
+     "line": -2.5
+    },
+    {
+     "name": "Pete Prisco (CBS Sports)",
+     "record": "25-37-2 ATS",
+     "pick": "BUF +2.5",
+     "market": "spread",
+     "side": "BUF",
+     "line": 2.5
+    },
+    {
+     "name": "Jordan Dajani (CBS Sports)",
+     "record": "record not published",
+     "pick": "BUF +3",
+     "market": "spread",
+     "side": "BUF",
+     "line": 3
     }
    ]
   }
