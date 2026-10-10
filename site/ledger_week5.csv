@@ -1,7 +1,7 @@
 week,date,day,game,market,pick,our_num,market_num,gap,tier,result,win_pct,opened_num,opened_tier
 5,2026-10-08,Thursday,TB@DAL,Spread,TB +9.5,2.9,9.5,-6.6,D,W,,2.9,D
 5,2026-10-08,Thursday,TB@DAL,Moneyline,DAL,58.2,80.0,-21.8,C,L,58.2,58.2,C
-5,2026-10-08,Thursday,TB@DAL,Total,OVER 49.5,54.5,48.5,6.0,D,L,68.3,54.5,D
+5,2026-10-08,Thursday,TB@DAL,Total,OVER 48.5,54.5,48.5,6.0,D,L,68.3,54.5,D
 5,2026-10-11,Sunday,PHI@JAX,Spread,PHI +7.5,5.2,7.5,-2.3,D,,,5.2,D
 5,2026-10-11,Sunday,PHI@JAX,Moneyline,JAX,64.8,76.6,-11.8,D,,64.8,64.8,C
 5,2026-10-11,Sunday,PHI@JAX,Total,UNDER 41.5,40.6,41.5,-0.9,D,,53.5,39.6,D
@@ -39,8 +39,8 @@ week,date,day,game,market,pick,our_num,market_num,gap,tier,result,win_pct,opened
 5,2026-10-11,Sunday,SF@SEA,Moneyline,SF,53.8,40.7,13.1,D,,53.8,53.6,C
 5,2026-10-11,Sunday,SF@SEA,Total,OVER 45.5,51.5,45.5,6.0,D,,71.5,51.5,D
 5,2026-10-11,Sunday,BAL@ATL,Spread,BAL +3.5,-6.1,3.5,-9.6,D,,,-6.1,D
-5,2026-10-11,Sunday,BAL@ATL,Moneyline,BAL,68.8,38.4,30.4,D,,68.8,67.5,C
-5,2026-10-11,Sunday,BAL@ATL,Total,UNDER 43.5,37.8,43.5,-5.7,D,,70.2,43.8,D
+5,2026-10-11,Sunday,BAL@ATL,Moneyline,BAL,67.5,38.4,29.1,D,,67.5,67.5,C
+5,2026-10-11,Sunday,BAL@ATL,Total,OVER 43.5,43.8,43.5,0.3,D,,50.8,43.8,D
 5,2026-10-12,Monday,BUF@LA,Spread,LA -3.0,4.3,3.0,1.3,D,,,4.3,D
 5,2026-10-12,Monday,BUF@LA,Moneyline,LA,62.0,60.9,1.1,D,,62.0,62.0,C
 5,2026-10-12,Monday,BUF@LA,Total,OVER 54.5,57.0,54.5,2.5,D,,59.3,57.0,D
