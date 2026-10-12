@@ -4646,3 +4646,6 @@ taken,week,game,market,pick,our_num,market_num,gap,tier
 2026-10-12T17:02Z,5,BUF@LA,Spread,LA -3.5,4.3,3.5,0.8,D
 2026-10-12T17:02Z,5,BUF@LA,Moneyline,LA,62.0,60.9,1.1,D
 2026-10-12T17:02Z,5,BUF@LA,Total,OVER 54.5,57.0,54.5,2.5,D
+2026-10-12T22:30Z,5,BUF@LA,Spread,LA -3.5,4.3,3.5,0.8,D
+2026-10-12T22:30Z,5,BUF@LA,Moneyline,LA,62.0,62.2,-0.2,D
+2026-10-12T22:30Z,5,BUF@LA,Total,OVER 55.5,57.0,55.5,1.5,D

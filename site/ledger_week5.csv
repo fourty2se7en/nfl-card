@@ -42,5 +42,5 @@ week,date,day,game,market,pick,our_num,market_num,gap,tier,result,win_pct,opened
 5,2026-10-11,Sunday,BAL@ATL,Moneyline,BAL,67.5,39.1,28.4,D,W,67.5,67.5,C
 5,2026-10-11,Sunday,BAL@ATL,Total,OVER 43.5,43.8,43.5,0.3,D,W,53.0,43.8,D
 5,2026-10-12,Monday,BUF@LA,Spread,LA -3.5,4.3,3.5,0.8,D,,,4.3,D
-5,2026-10-12,Monday,BUF@LA,Moneyline,LA,62.0,60.9,1.1,D,,62.0,62.0,C
-5,2026-10-12,Monday,BUF@LA,Total,OVER 54.5,57.0,54.5,2.5,D,,59.3,57.0,D
+5,2026-10-12,Monday,BUF@LA,Moneyline,LA,62.0,62.2,-0.2,D,,62.0,62.0,C
+5,2026-10-12,Monday,BUF@LA,Total,OVER 55.5,57.0,55.5,1.5,D,,55.7,57.0,D
