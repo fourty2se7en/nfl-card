@@ -6,7 +6,7 @@ week,date,day,game,market,pick,our_num,market_num,gap,tier,result,win_pct,opened
 6,2026-10-18,Sunday,HOU@JAX,Moneyline,JAX,60.5,57.2,3.3,D,,60.5,60.5,D
 6,2026-10-18,Sunday,HOU@JAX,Total,UNDER 42.5,38.4,42.5,-4.1,D,,64.9,38.4,D
 6,2026-10-18,Sunday,CHI@ATL,Spread,ATL +3.0,-0.8,-3.0,2.2,D,,,-0.8,D
-6,2026-10-18,Sunday,CHI@ATL,Moneyline,CHI,51.6,61.6,-10.0,D,,51.6,51.6,D
+6,2026-10-18,Sunday,CHI@ATL,Moneyline,CHI,51.6,60.9,-9.3,D,,51.6,51.6,D
 6,2026-10-18,Sunday,CHI@ATL,Total,UNDER 49.5,47.8,49.5,-1.7,D,,56.9,47.8,D
 6,2026-10-18,Sunday,BAL@CLE,Spread,BAL -4.5,-8.8,-4.5,-4.3,D,,,-8.8,D
 6,2026-10-18,Sunday,BAL@CLE,Moneyline,BAL,74.2,68.1,6.1,D,,74.2,74.2,D
@@ -30,7 +30,7 @@ week,date,day,game,market,pick,our_num,market_num,gap,tier,result,win_pct,opened
 6,2026-10-18,Sunday,ARI@LA,Moneyline,LA,86.7,86.3,0.4,D,,86.7,86.7,D
 6,2026-10-18,Sunday,ARI@LA,Total,OVER 52.5,54.0,52.5,1.5,D,,55.5,54.0,D
 6,2026-10-18,Sunday,LAC@KC,Spread,LAC +8.5,8.1,8.5,-0.4,D,,,8.1,D
-6,2026-10-18,Sunday,LAC@KC,Moneyline,KC,72.6,80.0,-7.4,D,,72.6,72.6,D
+6,2026-10-18,Sunday,LAC@KC,Moneyline,KC,72.6,80.4,-7.8,D,,72.6,72.6,D
 6,2026-10-18,Sunday,LAC@KC,Total,UNDER 42.5,36.3,42.5,-6.2,D,,71.7,36.3,D
 6,2026-10-18,Sunday,BUF@LV,Spread,BUF -5.5,-7.7,-5.5,-2.2,D,,,-7.7,D
 6,2026-10-18,Sunday,BUF@LV,Moneyline,BUF,69.8,70.0,-0.2,D,,69.8,69.8,D
