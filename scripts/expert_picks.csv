@@ -397,3 +397,23 @@ first_seen_utc,season,week,game,name,market,side,line,pick
 2026-10-09T22:31:58+00:00,2026,5,BUF@LA,Jamey Eisenberg (CBS Sports),spread,LA,-2.5,LA -2.5
 2026-10-09T22:31:58+00:00,2026,5,BUF@LA,Pete Prisco (CBS Sports),spread,BUF,2.5,BUF +2.5
 2026-10-09T22:31:58+00:00,2026,5,BUF@LA,Jordan Dajani (CBS Sports),spread,BUF,3.0,BUF +3
+2026-10-13T23:03:16+00:00,2026,6,SEA@DEN,Jason Logan (Covers),spread,DEN,2.5,DEN +2.5
+2026-10-13T23:03:16+00:00,2026,6,SEA@DEN,Jason Logan (Covers),total,under,42.5,Under 42.5
+2026-10-13T23:03:16+00:00,2026,6,SEA@DEN,Iain MacMillan (Sports Illustrated),total,under,41.5,Under 41.5
+2026-10-13T23:03:16+00:00,2026,6,HOU@JAX,Iain MacMillan (Sports Illustrated),spread,HOU,3.0,HOU +3
+2026-10-13T23:03:16+00:00,2026,6,CHI@ATL,Iain MacMillan (Sports Illustrated),spread,CHI,-3.0,CHI -3
+2026-10-13T23:03:16+00:00,2026,6,BAL@CLE,Iain MacMillan (Sports Illustrated),spread,BAL,-4.5,BAL -4.5
+2026-10-13T23:03:16+00:00,2026,6,TEN@IND,Iain MacMillan (Sports Illustrated),moneyline,TEN,,TEN +270
+2026-10-13T23:03:16+00:00,2026,6,NYJ@NE,Jason Logan (Covers),spread,NYJ,7.0,NYJ +7
+2026-10-13T23:03:16+00:00,2026,6,NYJ@NE,Iain MacMillan (Sports Illustrated),spread,NYJ,7.5,NYJ +7.5
+2026-10-13T23:03:16+00:00,2026,6,NO@NYG,Iain MacMillan (Sports Illustrated),spread,NO,-1.0,NO -1
+2026-10-13T23:03:16+00:00,2026,6,CAR@PHI,Iain MacMillan (Sports Illustrated),moneyline,CAR,,CAR +104
+2026-10-13T23:03:16+00:00,2026,6,PIT@TB,Jason Logan (Covers),total,under,40.5,Under 40.5
+2026-10-13T23:03:16+00:00,2026,6,PIT@TB,Iain MacMillan (Sports Illustrated),total,under,40.5,Under 40.5
+2026-10-13T23:03:16+00:00,2026,6,ARI@LA,Iain MacMillan (Sports Illustrated),spread,ARI,13.5,ARI +13.5
+2026-10-13T23:03:16+00:00,2026,6,LAC@KC,Jason Logan (Covers),spread,KC,-7.5,KC -7.5
+2026-10-13T23:03:16+00:00,2026,6,LAC@KC,Iain MacMillan (Sports Illustrated),total,over,41.5,Over 41.5
+2026-10-13T23:03:16+00:00,2026,6,BUF@LV,Iain MacMillan (Sports Illustrated),spread,BUF,-6.0,BUF -6
+2026-10-13T23:03:16+00:00,2026,6,DAL@GB,Jason Logan (Covers),spread,GB,1.5,GB +1.5
+2026-10-13T23:03:16+00:00,2026,6,DAL@GB,Iain MacMillan (Sports Illustrated),total,over,52.5,Over 52.5
+2026-10-13T23:03:16+00:00,2026,6,WAS@SF,Iain MacMillan (Sports Illustrated),spread,SF,-7.5,SF -7.5

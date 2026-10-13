@@ -1,5 +1,5 @@
 {
- "saved": "2026-10-13T21:22",
+ "saved": "2026-10-13T23:03",
  "notes": {
   "NE@SEA": {
    "returning": [
@@ -4345,6 +4345,340 @@
      "line": 3
     }
    ]
+  },
+  "SEA@DEN": {
+   "coaching": [
+    "HC Sean Payton took over offensive play-calling from OC Davis Webb on Oct. 8, with Week 5 his first game calling plays"
+   ],
+   "movement": [
+    "Spread: open SEA -2.5, unchanged. Total: now 40.5, opener not confirmed. Moneyline: SEA now -148, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Jason Logan (Covers)",
+     "record": "record not published",
+     "pick": "DEN +2.5",
+     "market": "spread",
+     "side": "DEN",
+     "line": 2.5
+    },
+    {
+     "name": "Jason Logan (Covers)",
+     "record": "record not published",
+     "pick": "Under 42.5",
+     "market": "total",
+     "side": "under",
+     "line": 42.5
+    },
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "35-42-1",
+     "pick": "Under 41.5",
+     "market": "total",
+     "side": "under",
+     "line": 41.5
+    }
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 1,
+    "confidence": "reported"
+   }
+  },
+  "HOU@JAX": {
+   "trades": [
+    "Acquired WR Marvin Harrison Jr. and a 2027 sixth-round pick from Arizona on Oct. 12 for 2027 second- and seventh-round picks"
+   ],
+   "returning": [
+    "WR Tank Dell - 21-day practice window opened this week after he began the season on injured reserve with a knee injury, not yet activated"
+   ],
+   "movement": [
+    "Spread: open JAX -3, unchanged. Total: open 43.5, now 42.5. Moneyline: JAX now -148, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "35-42-1",
+     "pick": "HOU +3",
+     "market": "spread",
+     "side": "HOU",
+     "line": 3
+    }
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 1,
+    "confidence": "confirmed"
+   }
+  },
+  "CHI@ATL": {
+   "returning": [
+    "QB Caleb Williams is on track to return from the Grade 2 hamstring strain he suffered in Week 2 that cost him three games, though Chicago has not confirmed him"
+   ],
+   "suspensions": [
+    "DE Montez Sweat is suspended for this game and Week 7 for a performance-enhancing substance violation, eligible for reinstatement Oct. 23"
+   ],
+   "movement": [
+    "Spread: open ATL -1.5, now CHI -3. Total: open 47.5, now 49.5. Moneyline: CHI now -175, opener not confirmed. VSiN attributes the swing to Michael Penix Jr.'s rib injury."
+   ],
+   "experts": [
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "35-42-1",
+     "pick": "CHI -3",
+     "market": "spread",
+     "side": "CHI",
+     "line": -3
+    }
+   ]
+  },
+  "BAL@CLE": {
+   "movement": [
+    "Spread: open BAL -3.5, now BAL -4.5. Total: open 40.5, now 41.5. Moneyline: BAL now -245, opener not confirmed. Sports Illustrated ties the move to the latest Lamar Jackson ankle update."
+   ],
+   "experts": [
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "35-42-1",
+     "pick": "BAL -4.5",
+     "market": "spread",
+     "side": "BAL",
+     "line": -4.5
+    }
+   ]
+  },
+  "TEN@IND": {
+   "movement": [
+    "Spread: open IND -7, unchanged. Total: open 44.5, unchanged. Moneyline: IND now -325, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "35-42-1",
+     "pick": "TEN +270",
+     "market": "moneyline",
+     "side": "TEN"
+    }
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 1,
+    "confidence": "confirmed"
+   }
+  },
+  "NYJ@NE": {
+   "returning": [
+    "WR A.J. Brown - on injured reserve with a high-ankle sprain, HC Mike Vrabel said Monday there is 'a chance' he practises this week"
+   ],
+   "movement": [
+    "Spread: open NE -7.5, unchanged. Total: open 44.5, now 43.5. Moneyline: NE now -380, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Jason Logan (Covers)",
+     "record": "record not published",
+     "pick": "NYJ +7",
+     "market": "spread",
+     "side": "NYJ",
+     "line": 7
+    },
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "35-42-1",
+     "pick": "NYJ +7.5",
+     "market": "spread",
+     "side": "NYJ",
+     "line": 7.5
+    }
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 1,
+    "confidence": "confirmed"
+   }
+  },
+  "NO@NYG": {
+   "trades": [
+    "Signed LB Malik Harrison to the active roster and added OLB Dawuane Smoot to the practice squad on Monday"
+   ],
+   "movement": [
+    "Spread: open NYG -1.5, now NO -1.5. Total: open 45.5, unchanged. Moneyline: NO now -115, opener not confirmed. VSiN says the number showed NYG -1.5 on Sunday night before flipping back toward the lookahead."
+   ],
+   "experts": [
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "35-42-1",
+     "pick": "NO -1",
+     "market": "spread",
+     "side": "NO",
+     "line": -1
+    }
+   ],
+   "log": {
+    "qb_out": "home",
+    "starters_out": 2,
+    "confidence": "confirmed"
+   }
+  },
+  "CAR@PHI": {
+   "returning": [
+    "WR Jalen Coker - HC Dave Canales said Monday he is 'on track' for this game after a Week 3 quad injury cost him two games"
+   ],
+   "movement": [
+    "Spread: open PHI -1.5, unchanged. Total: open 43.5, now 40.5. Moneyline: PHI now -115, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "35-42-1",
+     "pick": "CAR +104",
+     "market": "moneyline",
+     "side": "CAR"
+    }
+   ]
+  },
+  "PIT@TB": {
+   "movement": [
+    "Spread: open PIT -3, now PIT -2.5. Total: open 40.5, unchanged. Moneyline: PIT now -135, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Jason Logan (Covers)",
+     "record": "record not published",
+     "pick": "Under 40.5",
+     "market": "total",
+     "side": "under",
+     "line": 40.5
+    },
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "35-42-1",
+     "pick": "Under 40.5",
+     "market": "total",
+     "side": "under",
+     "line": 40.5
+    }
+   ],
+   "log": {
+    "qb_out": "home",
+    "starters_out": 3,
+    "confidence": "reported"
+   }
+  },
+  "ARI@LA": {
+   "trades": [
+    "Rams released K Harrison Mevis on Oct. 13 after two missed field goals in the Week 5 overtime loss and signed K Blake Grupe off the Jets' practice squad",
+    "Cardinals traded WR Marvin Harrison Jr. and a 2027 sixth-round pick to Houston on Oct. 12 for 2027 second- and seventh-round picks"
+   ],
+   "movement": [
+    "Spread: open LA -12.5, unchanged. Total: open 52.5, unchanged. Moneyline: LA now -900, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "35-42-1",
+     "pick": "ARI +13.5",
+     "market": "spread",
+     "side": "ARI",
+     "line": 13.5
+    }
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 1,
+    "confidence": "confirmed"
+   }
+  },
+  "LAC@KC": {
+   "experts": [
+    {
+     "name": "Jason Logan (Covers)",
+     "record": "record not published",
+     "pick": "KC -7.5",
+     "market": "spread",
+     "side": "KC",
+     "line": -7.5
+    },
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "35-42-1",
+     "pick": "Over 41.5",
+     "market": "total",
+     "side": "over",
+     "line": 41.5
+    }
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 3,
+    "confidence": "reported"
+   }
+  },
+  "BUF@LV": {
+   "experts": [
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "35-42-1",
+     "pick": "BUF -6",
+     "market": "spread",
+     "side": "BUF",
+     "line": -6
+    }
+   ]
+  },
+  "DAL@GB": {
+   "suspensions": [
+    "RB Josh Jacobs remains on the commissioner exempt list over domestic violence allegations, with ESPN's Jeremy Fowler reporting he could face a 4-6 game suspension once activated"
+   ],
+   "movement": [
+    "Spread: open DAL -1.5, now GB -1.5. Total: now 52.5, opener not confirmed. Moneyline: GB now -122, opener not confirmed. Covers ties the swing to Dallas' Week 5 loss to Tampa Bay."
+   ],
+   "experts": [
+    {
+     "name": "Jason Logan (Covers)",
+     "record": "record not published",
+     "pick": "GB +1.5",
+     "market": "spread",
+     "side": "GB",
+     "line": 1.5
+    },
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "35-42-1",
+     "pick": "Over 52.5",
+     "market": "total",
+     "side": "over",
+     "line": 52.5
+    }
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 2,
+    "confidence": "confirmed"
+   }
+  },
+  "WAS@SF": {
+   "returning": [
+    "WR Terry McLaurin - played in Week 5 as a game-time decision after injuring his hamstring in a Week 4 practice"
+   ],
+   "movement": [
+    "Spread: open SF -7.5, unchanged. Total: open 50.5, unchanged. Moneyline: SF now -440, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "35-42-1",
+     "pick": "SF -7.5",
+     "market": "spread",
+     "side": "SF",
+     "line": -7.5
+    }
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 3,
+    "confidence": "confirmed"
+   }
   }
  }
 }
