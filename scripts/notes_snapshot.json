@@ -1,5 +1,5 @@
 {
- "saved": "2026-10-14T19:22",
+ "saved": "2026-10-15T03:17",
  "notes": {
   "NE@SEA": {
    "returning": [
@@ -4351,7 +4351,7 @@
     "HC Sean Payton took over offensive play-calling from OC Davis Webb on Oct. 8, with Week 5 his first game calling plays"
    ],
    "movement": [
-    "Spread: open SEA -2.5, unchanged. Total: now 40.5, opener not confirmed. Moneyline: SEA now -148, opener not confirmed."
+    "Spread: now SEA -2.5, opener not confirmed \u2014 Action Network's open column says SEA -1.5, against SEA -2.5 from Sports Illustrated and Covers, so the earlier 'open SEA -2.5' is withdrawn. Total: now 40.5, opener not confirmed. Moneyline: SEA now -148, opener not confirmed."
    ],
    "experts": [
     {
@@ -4377,6 +4377,38 @@
      "market": "total",
      "side": "under",
      "line": 41.5
+    },
+    {
+     "name": "Brandon Kravitz (Action Network)",
+     "record": "46-58-1 (last 30d)",
+     "pick": "DEN +2.5",
+     "market": "spread",
+     "side": "DEN",
+     "line": 2.5
+    },
+    {
+     "name": "Adam Kaufman (Action Network)",
+     "record": "262-275-7 (last 30d)",
+     "pick": "SEA -2.5",
+     "market": "spread",
+     "side": "SEA",
+     "line": -2.5
+    },
+    {
+     "name": "Mike McNamara (Action Network)",
+     "record": "64-67-1 (last 30d)",
+     "pick": "DEN +3",
+     "market": "spread",
+     "side": "DEN",
+     "line": 3
+    },
+    {
+     "name": "Doug Ziefel (Action Network)",
+     "record": "342-379-7 (last 30d)",
+     "pick": "DEN +3.5",
+     "market": "spread",
+     "side": "DEN",
+     "line": 3.5
     }
    ],
    "log": {
@@ -4403,6 +4435,38 @@
      "market": "spread",
      "side": "HOU",
      "line": 3
+    },
+    {
+     "name": "Adam Kaufman (Action Network)",
+     "record": "262-275-7 (last 30d)",
+     "pick": "HOU +3",
+     "market": "spread",
+     "side": "HOU",
+     "line": 3
+    },
+    {
+     "name": "Sandy Plashkes (Action Network)",
+     "record": "99-85-2 (last 30d)",
+     "pick": "HOU +2.5",
+     "market": "spread",
+     "side": "HOU",
+     "line": 2.5
+    },
+    {
+     "name": "Brandon Kravitz (Action Network)",
+     "record": "46-58-1 (last 30d)",
+     "pick": "HOU +2.5",
+     "market": "spread",
+     "side": "HOU",
+     "line": 2.5
+    },
+    {
+     "name": "Doug Ziefel (Action Network)",
+     "record": "342-379-7 (last 30d)",
+     "pick": "Under 43.5",
+     "market": "total",
+     "side": "under",
+     "line": 43.5
     }
    ],
    "log": {
@@ -4429,6 +4493,14 @@
      "market": "spread",
      "side": "CHI",
      "line": -3
+    },
+    {
+     "name": "Doug Ziefel (Action Network)",
+     "record": "342-379-7 (last 30d)",
+     "pick": "Over 47.5",
+     "market": "total",
+     "side": "over",
+     "line": 47.5
     }
    ]
   },
@@ -4444,6 +4516,22 @@
      "market": "spread",
      "side": "BAL",
      "line": -4.5
+    },
+    {
+     "name": "Doug Ziefel (Action Network)",
+     "record": "342-379-7 (last 30d)",
+     "pick": "BAL -4.5",
+     "market": "spread",
+     "side": "BAL",
+     "line": -4.5
+    },
+    {
+     "name": "Brandon Anderson (Action Network)",
+     "record": "35-93-0 (last 30d)",
+     "pick": "BAL -3",
+     "market": "spread",
+     "side": "BAL",
+     "line": -3
     }
    ]
   },
@@ -4458,6 +4546,22 @@
      "pick": "TEN +270",
      "market": "moneyline",
      "side": "TEN"
+    },
+    {
+     "name": "Kendra Middleton (Action Network)",
+     "record": "11-24-0 (last 30d)",
+     "pick": "TEN +7",
+     "market": "spread",
+     "side": "TEN",
+     "line": 7
+    },
+    {
+     "name": "Doug Ziefel (Action Network)",
+     "record": "342-379-7 (last 30d)",
+     "pick": "IND -6.5",
+     "market": "spread",
+     "side": "IND",
+     "line": -6.5
     }
    ],
    "log": {
@@ -4489,6 +4593,14 @@
      "market": "spread",
      "side": "NYJ",
      "line": 7.5
+    },
+    {
+     "name": "Doug Ziefel (Action Network)",
+     "record": "342-379-7 (last 30d)",
+     "pick": "NYJ +7.5",
+     "market": "spread",
+     "side": "NYJ",
+     "line": 7.5
     }
    ],
    "log": {
@@ -4512,6 +4624,21 @@
      "market": "spread",
      "side": "NO",
      "line": -1
+    },
+    {
+     "name": "Sandy Plashkes (Action Network)",
+     "record": "99-85-2 (last 30d)",
+     "pick": "NO -114",
+     "market": "moneyline",
+     "side": "NO"
+    },
+    {
+     "name": "Doug Ziefel (Action Network)",
+     "record": "342-379-7 (last 30d)",
+     "pick": "Over 44.5",
+     "market": "total",
+     "side": "over",
+     "line": 44.5
     }
    ],
    "log": {
@@ -4532,6 +4659,42 @@
      "name": "Iain MacMillan (Sports Illustrated)",
      "record": "35-42-1",
      "pick": "CAR +104",
+     "market": "moneyline",
+     "side": "CAR"
+    },
+    {
+     "name": "Brandon Kravitz (Action Network)",
+     "record": "46-58-1 (last 30d)",
+     "pick": "CAR -102",
+     "market": "moneyline",
+     "side": "CAR"
+    },
+    {
+     "name": "Adam Kaufman (Action Network)",
+     "record": "262-275-7 (last 30d)",
+     "pick": "CAR -102",
+     "market": "moneyline",
+     "side": "CAR"
+    },
+    {
+     "name": "Frank Ammirante (Action Network)",
+     "record": "78-84-0 (last 30d)",
+     "pick": "CAR +1.5",
+     "market": "spread",
+     "side": "CAR",
+     "line": 1.5
+    },
+    {
+     "name": "Sandy Plashkes (Action Network)",
+     "record": "99-85-2 (last 30d)",
+     "pick": "PHI -114",
+     "market": "moneyline",
+     "side": "PHI"
+    },
+    {
+     "name": "Doug Ziefel (Action Network)",
+     "record": "342-379-7 (last 30d)",
+     "pick": "CAR +108",
      "market": "moneyline",
      "side": "CAR"
     }
@@ -4557,6 +4720,14 @@
      "market": "total",
      "side": "under",
      "line": 40.5
+    },
+    {
+     "name": "Nick Giffen (Action Network)",
+     "record": "42-87-0 (last 30d)",
+     "pick": "Under 39.5",
+     "market": "total",
+     "side": "under",
+     "line": 39.5
     }
    ],
    "log": {
@@ -4581,6 +4752,14 @@
      "market": "spread",
      "side": "ARI",
      "line": 13.5
+    },
+    {
+     "name": "Kendra Middleton (Action Network)",
+     "record": "11-24-0 (last 30d)",
+     "pick": "Under 52",
+     "market": "total",
+     "side": "under",
+     "line": 52
     }
    ],
    "log": {
@@ -4606,6 +4785,30 @@
      "market": "total",
      "side": "over",
      "line": 41.5
+    },
+    {
+     "name": "Nick Giffen (Action Network)",
+     "record": "42-87-0 (last 30d)",
+     "pick": "LAC +8.5",
+     "market": "spread",
+     "side": "LAC",
+     "line": 8.5
+    },
+    {
+     "name": "Sandy Plashkes (Action Network)",
+     "record": "99-85-2 (last 30d)",
+     "pick": "LAC +8.5",
+     "market": "spread",
+     "side": "LAC",
+     "line": 8.5
+    },
+    {
+     "name": "Doug Ziefel (Action Network)",
+     "record": "342-379-7 (last 30d)",
+     "pick": "Under 42.5",
+     "market": "total",
+     "side": "under",
+     "line": 42.5
     }
    ],
    "log": {
@@ -4623,6 +4826,21 @@
      "market": "spread",
      "side": "BUF",
      "line": -6
+    },
+    {
+     "name": "Brandon Kravitz (Action Network)",
+     "record": "46-58-1 (last 30d)",
+     "pick": "LV +217",
+     "market": "moneyline",
+     "side": "LV"
+    },
+    {
+     "name": "Brandon Kravitz (Action Network)",
+     "record": "46-58-1 (last 30d)",
+     "pick": "LV +6",
+     "market": "spread",
+     "side": "LV",
+     "line": 6
     }
    ]
   },
@@ -4645,6 +4863,35 @@
     {
      "name": "Iain MacMillan (Sports Illustrated)",
      "record": "35-42-1",
+     "pick": "Over 52.5",
+     "market": "total",
+     "side": "over",
+     "line": 52.5
+    },
+    {
+     "name": "Adam Kaufman (Action Network)",
+     "record": "262-275-7 (last 30d)",
+     "pick": "DAL +105",
+     "market": "moneyline",
+     "side": "DAL"
+    },
+    {
+     "name": "Mike McNamara (Action Network)",
+     "record": "64-67-1 (last 30d)",
+     "pick": "DAL -105",
+     "market": "moneyline",
+     "side": "DAL"
+    },
+    {
+     "name": "Brandon Kravitz (Action Network)",
+     "record": "46-58-1 (last 30d)",
+     "pick": "GB -105",
+     "market": "moneyline",
+     "side": "GB"
+    },
+    {
+     "name": "Doug Ziefel (Action Network)",
+     "record": "342-379-7 (last 30d)",
      "pick": "Over 52.5",
      "market": "total",
      "side": "over",
@@ -4672,6 +4919,22 @@
      "market": "spread",
      "side": "SF",
      "line": -7.5
+    },
+    {
+     "name": "Adam Kaufman (Action Network)",
+     "record": "262-275-7 (last 30d)",
+     "pick": "SF -7.5",
+     "market": "spread",
+     "side": "SF",
+     "line": -7.5
+    },
+    {
+     "name": "Brandon Anderson (Action Network)",
+     "record": "35-93-0 (last 30d)",
+     "pick": "SF -7",
+     "market": "spread",
+     "side": "SF",
+     "line": -7
     }
    ],
    "log": {
