@@ -12,7 +12,7 @@ week,date,day,game,market,pick,our_num,market_num,gap,tier,result,win_pct,opened
 6,2026-10-18,Sunday,BAL@CLE,Moneyline,BAL,74.2,60.4,13.8,D,,74.2,74.2,D
 6,2026-10-18,Sunday,BAL@CLE,Total,UNDER 39.5,37.8,39.5,-1.7,D,,56.4,36.3,D
 6,2026-10-18,Sunday,TEN@IND,Spread,TEN +6.5,6.4,6.5,-0.1,D,,,6.4,D
-6,2026-10-18,Sunday,TEN@IND,Moneyline,IND,68.1,72.6,-4.5,D,,68.1,68.1,D
+6,2026-10-18,Sunday,TEN@IND,Moneyline,IND,68.1,72.2,-4.1,D,,68.1,68.1,D
 6,2026-10-18,Sunday,TEN@IND,Total,OVER 44.5,46.9,44.5,2.4,D,,58.8,46.9,D
 6,2026-10-18,Sunday,NYJ@NE,Spread,NE -7.5,11.1,7.5,3.6,D,,,11.1,D
 6,2026-10-18,Sunday,NYJ@NE,Moneyline,NE,79.3,75.1,4.2,D,,79.3,79.3,D
@@ -37,7 +37,7 @@ week,date,day,game,market,pick,our_num,market_num,gap,tier,result,win_pct,opened
 6,2026-10-18,Sunday,BUF@LV,Total,UNDER 53.5,52.9,53.5,-0.6,D,,51.6,52.9,D
 6,2026-10-18,Sunday,DAL@GB,Spread,GB -1.5,4.6,1.5,3.1,D,,,4.6,D
 6,2026-10-18,Sunday,DAL@GB,Moneyline,GB,62.0,51.1,10.9,D,,62.0,62.0,D
-6,2026-10-18,Sunday,DAL@GB,Total,OVER 53.5,60.4,53.5,6.9,D,,74.2,61.9,D
+6,2026-10-18,Sunday,DAL@GB,Total,OVER 53.5,61.9,53.5,8.4,D,,78.3,61.9,D
 6,2026-10-19,Monday,WAS@SF,Spread,SF -7.5,12.3,7.5,4.8,D,,,12.3,D
 6,2026-10-19,Monday,WAS@SF,Moneyline,SF,79.7,79.1,0.6,D,,79.7,79.7,D
 6,2026-10-19,Monday,WAS@SF,Total,OVER 52.5,55.1,52.5,2.6,D,,59.7,55.1,D
