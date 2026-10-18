@@ -1,5 +1,5 @@
 {
- "saved": "2026-10-17T17:51",
+ "saved": "2026-10-18T12:12",
  "notes": {
   "NE@SEA": {
    "returning": [
@@ -4422,10 +4422,10 @@
     "Acquired WR Marvin Harrison Jr. and a 2027 sixth-round pick from Arizona on Oct. 12 for 2027 second- and seventh-round picks"
    ],
    "returning": [
-    "WR Tank Dell - 21-day practice window opened this week after he began the season on injured reserve with a knee injury, not yet activated"
+    "WR Tank Dell - will not make his season debut here, the knee injury that put him on injured reserve keeping him out even after his 21-day practice window opened last week"
    ],
    "movement": [
-    "Spread: open JAX -3, unchanged. Total: open 43.5, now 42.5. Moneyline: JAX now -148, opener not confirmed."
+    "Spread: open JAX -3, now JAX -2.5. Total: open 43.5, now 42.5. Moneyline: JAX now -148, opener not confirmed."
    ],
    "experts": [
     {
@@ -4467,23 +4467,30 @@
      "market": "total",
      "side": "under",
      "line": 43.5
+    },
+    {
+     "name": "Kev Mahserejian (Action Network)",
+     "record": "14-16-0 (last 30d)",
+     "pick": "HOU +124",
+     "market": "moneyline",
+     "side": "HOU"
     }
    ],
    "log": {
     "qb_out": "none",
-    "starters_out": 1,
+    "starters_out": 3,
     "confidence": "confirmed"
    }
   },
   "CHI@ATL": {
    "returning": [
-    "QB Caleb Williams is on track to return from the Grade 2 hamstring strain he suffered in Week 2 that cost him three games, though Chicago has not confirmed him"
+    "QB Caleb Williams was a full participant in practice all week in his return from the Grade 2 hamstring strain he suffered in Week 2, but said Thursday he does not know yet whether he is playing"
    ],
    "suspensions": [
     "DE Montez Sweat is suspended for this game and Week 7 for a performance-enhancing substance violation, eligible for reinstatement Oct. 23"
    ],
    "movement": [
-    "Spread: open ATL -1.5, now CHI -3. Total: open 47.5, now 49.5. Moneyline: CHI now -175, opener not confirmed. VSiN attributes the swing to Michael Penix Jr.'s rib injury."
+    "Spread: now CHI -1.5, opener not confirmed - Sports Illustrated and SportsBettingDime both have ATL -1.5 while VegasInsider says Chicago opened -3.5 on Sunday night. Total: open 47.5, now 52.5. Moneyline: CHI now -118, opener not confirmed. VegasInsider ties the move back toward Atlanta and the climbing total to Michael Penix Jr. being expected to start and Caleb Williams trending toward a return."
    ],
    "experts": [
     {
@@ -4501,12 +4508,41 @@
      "market": "total",
      "side": "over",
      "line": 47.5
+    },
+    {
+     "name": "Doug Ziefel (Action Network)",
+     "record": "354-394-8 (last 30d)",
+     "pick": "CHI -3",
+     "market": "spread",
+     "side": "CHI",
+     "line": -3
+    },
+    {
+     "name": "Kody Malstrom (Action Network)",
+     "record": "62-55-1 (last 30d)",
+     "pick": "Under 51.5",
+     "market": "total",
+     "side": "under",
+     "line": 51.5
+    },
+    {
+     "name": "Kev Mahserejian (Action Network)",
+     "record": "14-16-0 (last 30d)",
+     "pick": "Over 51.5",
+     "market": "total",
+     "side": "over",
+     "line": 51.5
     }
-   ]
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 4,
+    "confidence": "reported"
+   }
   },
   "BAL@CLE": {
    "movement": [
-    "Spread: open BAL -3.5, now BAL -4.5. Total: open 40.5, now 41.5. Moneyline: BAL now -245, opener not confirmed. Sports Illustrated ties the move to the latest Lamar Jackson ankle update."
+    "Spread: open BAL -3.5, now BAL -3. Total: open 40.5, now 39.5. Moneyline: BAL now -166, opener not confirmed."
    ],
    "experts": [
     {
@@ -4532,12 +4568,28 @@
      "market": "spread",
      "side": "BAL",
      "line": -3
+    },
+    {
+     "name": "Brandon Kravitz (Action Network)",
+     "record": "47-58-1 (last 30d)",
+     "pick": "CLE +5.5",
+     "market": "spread",
+     "side": "CLE",
+     "line": 5.5
     }
-   ]
+   ],
+   "returning": [
+    "WR Zay Flowers - carries no injury designation for Baltimore after being limited on Thursday and Friday with a toe injury"
+   ],
+   "log": {
+    "qb_out": "away",
+    "starters_out": 5,
+    "confidence": "confirmed"
+   }
   },
   "TEN@IND": {
    "movement": [
-    "Spread: open IND -7, unchanged. Total: open 44.5, unchanged. Moneyline: IND now -325, opener not confirmed."
+    "Spread: open IND -7, unchanged. Total: open 44.5, unchanged. Moneyline: IND now -340, opener not confirmed."
    ],
    "experts": [
     {
@@ -4562,20 +4614,30 @@
      "market": "spread",
      "side": "IND",
      "line": -6.5
+    },
+    {
+     "name": "Kody Malstrom (Action Network)",
+     "record": "62-55-1 (last 30d)",
+     "pick": "TEN +7",
+     "market": "spread",
+     "side": "TEN",
+     "line": 7
     }
    ],
    "log": {
     "qb_out": "none",
-    "starters_out": 1,
+    "starters_out": 3,
     "confidence": "confirmed"
    }
   },
   "NYJ@NE": {
    "returning": [
-    "WR A.J. Brown - on injured reserve with a high-ankle sprain, HC Mike Vrabel said Monday there is 'a chance' he practises this week"
+    "WR A.J. Brown - back at practice this week after a high-ankle sprain put him on injured reserve, and Ian Rapoport reports New England will likely activate him for this game",
+    "CB Christian Gonzalez - back for New England after a shoulder injury had sidelined him",
+    "WR Omar Cooper Jr. - slated to return for the Jets after an ankle injury, having logged a full practice on Friday"
    ],
    "movement": [
-    "Spread: open NE -7.5, unchanged. Total: open 44.5, now 43.5. Moneyline: NE now -380, opener not confirmed."
+    "Spread: open NE -7.5, unchanged. Total: open 44.5, now 43.5. Moneyline: NE now -340, opener not confirmed."
    ],
    "experts": [
     {
@@ -4601,11 +4663,27 @@
      "market": "spread",
      "side": "NYJ",
      "line": 7.5
+    },
+    {
+     "name": "Matt Moore (Action Network)",
+     "record": "25-38-1 (last 30d)",
+     "pick": "NYJ +7",
+     "market": "spread",
+     "side": "NYJ",
+     "line": 7
+    },
+    {
+     "name": "Kody Malstrom (Action Network)",
+     "record": "62-55-1 (last 30d)",
+     "pick": "NYJ +7.5",
+     "market": "spread",
+     "side": "NYJ",
+     "line": 7.5
     }
    ],
    "log": {
     "qb_out": "none",
-    "starters_out": 1,
+    "starters_out": 3,
     "confidence": "confirmed"
    }
   },
@@ -4614,7 +4692,7 @@
     "Signed LB Malik Harrison to the active roster and added OLB Dawuane Smoot to the practice squad on Monday"
    ],
    "movement": [
-    "Spread: open NYG -1.5, now NO -1.5. Total: open 45.5, unchanged. Moneyline: NO now -115, opener not confirmed. VSiN says the number showed NYG -1.5 on Sunday night before flipping back toward the lookahead."
+    "Spread: open NYG -1.5, now NO -1.5. Total: open 45.5, now 46.5. Moneyline: NO now -110, opener not confirmed. VSiN says the number showed NYG -1.5 on Sunday night before flipping back toward the lookahead."
    ],
    "experts": [
     {
@@ -4639,11 +4717,27 @@
      "market": "total",
      "side": "over",
      "line": 44.5
+    },
+    {
+     "name": "Matt Moore (Action Network)",
+     "record": "25-38-1 (last 30d)",
+     "pick": "NYG PK",
+     "market": "spread",
+     "side": "NYG",
+     "line": 0
+    },
+    {
+     "name": "Ryan Minion (Action Network)",
+     "record": "214-242-5 (last 30d)",
+     "pick": "Over 44.5",
+     "market": "total",
+     "side": "over",
+     "line": 44.5
     }
    ],
    "log": {
     "qb_out": "home",
-    "starters_out": 2,
+    "starters_out": 4,
     "confidence": "confirmed"
    }
   },
@@ -4652,7 +4746,7 @@
     "WR Jalen Coker - HC Dave Canales said Monday he is 'on track' for this game after a Week 3 quad injury cost him two games"
    ],
    "movement": [
-    "Spread: open PHI -1.5, unchanged. Total: open 43.5, now 40.5. Moneyline: PHI now -115, opener not confirmed."
+    "Spread: open PHI -1.5, now CAR -3. Total: open 43.5, now 39.5. Moneyline: CAR now -166, opener not confirmed. VegasInsider ties the swing to Jalen Hurts being ruled out with a superficial blood clot in his calf."
    ],
    "experts": [
     {
@@ -4697,12 +4791,42 @@
      "pick": "CAR +108",
      "market": "moneyline",
      "side": "CAR"
+    },
+    {
+     "name": "Ryan Minion (Action Network)",
+     "record": "214-242-5 (last 30d)",
+     "pick": "CAR +100",
+     "market": "moneyline",
+     "side": "CAR"
+    },
+    {
+     "name": "Austin Pendergrass (Action Network)",
+     "record": "56-40-0 (last 30d)",
+     "pick": "CAR -154",
+     "market": "moneyline",
+     "side": "CAR"
+    },
+    {
+     "name": "Kev Mahserejian (Action Network)",
+     "record": "14-16-0 (last 30d)",
+     "pick": "PHI +3.5",
+     "market": "spread",
+     "side": "PHI",
+     "line": 3.5
     }
-   ]
+   ],
+   "trades": [
+    "Eagles right tackle Lane Johnson announced his retirement on Oct. 6 after 14 seasons, four games into this season"
+   ],
+   "log": {
+    "qb_out": "home",
+    "starters_out": 4,
+    "confidence": "confirmed"
+   }
   },
   "PIT@TB": {
    "movement": [
-    "Spread: open PIT -3, now PIT -2.5. Total: open 40.5, unchanged. Moneyline: PIT now -135, opener not confirmed."
+    "Spread: open PIT -3, now PIT -2.5. Total: open 40.5, now 38.5. Moneyline: PIT now -148, opener not confirmed."
    ],
    "experts": [
     {
@@ -4728,12 +4852,28 @@
      "market": "total",
      "side": "under",
      "line": 39.5
+    },
+    {
+     "name": "Matt Moore (Action Network)",
+     "record": "25-38-1 (last 30d)",
+     "pick": "TB +2.5",
+     "market": "spread",
+     "side": "TB",
+     "line": 2.5
+    },
+    {
+     "name": "Kev Mahserejian (Action Network)",
+     "record": "14-16-0 (last 30d)",
+     "pick": "Under 39",
+     "market": "total",
+     "side": "under",
+     "line": 39
     }
    ],
    "log": {
     "qb_out": "home",
     "starters_out": 3,
-    "confidence": "reported"
+    "confidence": "confirmed"
    }
   },
   "ARI@LA": {
@@ -4742,7 +4882,7 @@
     "Cardinals traded WR Marvin Harrison Jr. and a 2027 sixth-round pick to Houston on Oct. 12 for 2027 second- and seventh-round picks"
    ],
    "movement": [
-    "Spread: open LA -12.5, unchanged. Total: open 52.5, unchanged. Moneyline: LA now -900, opener not confirmed."
+    "Spread: open LA -12.5, unchanged. Total: open 52.5, now 51.5. Moneyline: LA now -800, opener not confirmed."
    ],
    "experts": [
     {
@@ -4760,11 +4900,27 @@
      "market": "total",
      "side": "under",
      "line": 52
+    },
+    {
+     "name": "Matt Moore (Action Network)",
+     "record": "25-38-1 (last 30d)",
+     "pick": "ARI +12.5",
+     "market": "spread",
+     "side": "ARI",
+     "line": 12.5
+    },
+    {
+     "name": "Doug Kezirian (Action Network)",
+     "record": "8-4-1 (last 30d)",
+     "pick": "LA -12.5",
+     "market": "spread",
+     "side": "LA",
+     "line": -12.5
     }
    ],
    "log": {
     "qb_out": "none",
-    "starters_out": 1,
+    "starters_out": 2,
     "confidence": "confirmed"
    }
   },
@@ -4809,13 +4965,35 @@
      "market": "total",
      "side": "under",
      "line": 42.5
+    },
+    {
+     "name": "Matt Moore (Action Network)",
+     "record": "25-38-1 (last 30d)",
+     "pick": "LAC +7.5",
+     "market": "spread",
+     "side": "LAC",
+     "line": 7.5
+    },
+    {
+     "name": "Kody Malstrom (Action Network)",
+     "record": "62-55-1 (last 30d)",
+     "pick": "Over 41.5",
+     "market": "total",
+     "side": "over",
+     "line": 41.5
     }
    ],
    "log": {
     "qb_out": "none",
-    "starters_out": 3,
-    "confidence": "reported"
-   }
+    "starters_out": 5,
+    "confidence": "confirmed"
+   },
+   "returning": [
+    "WR Ladd McConkey - carries no injury designation and will play for the Chargers after a foot injury"
+   ],
+   "movement": [
+    "Spread: open KC -7.5, unchanged. Total: open 45.5, now 41.5. Moneyline: KC open -375, now -455."
+   ]
   },
   "BUF@LV": {
    "experts": [
@@ -4841,15 +5019,51 @@
      "market": "spread",
      "side": "LV",
      "line": 6
+    },
+    {
+     "name": "Mike McNamara (Action Network)",
+     "record": "65-68-1 (last 30d)",
+     "pick": "LV +5.5",
+     "market": "spread",
+     "side": "LV",
+     "line": 5.5
+    },
+    {
+     "name": "Matt Moore (Action Network)",
+     "record": "25-38-1 (last 30d)",
+     "pick": "LV +5.5",
+     "market": "spread",
+     "side": "LV",
+     "line": 5.5
+    },
+    {
+     "name": "Kody Malstrom (Action Network)",
+     "record": "62-55-1 (last 30d)",
+     "pick": "LV +6",
+     "market": "spread",
+     "side": "LV",
+     "line": 6
     }
-   ]
+   ],
+   "returning": [
+    "TE Brock Bowers - carries no injury designation for Las Vegas after back-to-back full practices, having been limited early in the week with a knee injury",
+    "OT Spencer Brown - carries no injury designation and will play for Buffalo after a back injury"
+   ],
+   "movement": [
+    "Spread: open BUF -5.5, now BUF -4.5. Total: now 53.5, opener not confirmed. Moneyline: BUF now -230, opener not confirmed."
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 1,
+    "confidence": "confirmed"
+   }
   },
   "DAL@GB": {
    "suspensions": [
-    "RB Josh Jacobs remains on the commissioner exempt list over domestic violence allegations, with ESPN's Jeremy Fowler reporting he could face a 4-6 game suspension once activated"
+    "RB Josh Jacobs was removed from the commissioner exempt list by the NFL on Oct. 16 but is not eligible until Week 7, so he misses this game, his sixth of the season"
    ],
    "movement": [
-    "Spread: open DAL -1.5, now GB -1.5. Total: now 52.5, opener not confirmed. Moneyline: GB now -122, opener not confirmed. Covers ties the swing to Dallas' Week 5 loss to Tampa Bay."
+    "Spread: open DAL -1.5, now GB -1.5. Total: open 50.5, now 53.5. Moneyline: GB now -118, opener not confirmed. Covers ties the swing to Dallas' Week 5 loss to Tampa Bay."
    ],
    "experts": [
     {
@@ -4896,11 +5110,27 @@
      "market": "total",
      "side": "over",
      "line": 52.5
+    },
+    {
+     "name": "Kody Malstrom (Action Network)",
+     "record": "62-55-1 (last 30d)",
+     "pick": "Under 53.5",
+     "market": "total",
+     "side": "under",
+     "line": 53.5
+    },
+    {
+     "name": "Doug Kezirian (Action Network)",
+     "record": "8-4-1 (last 30d)",
+     "pick": "Over 53",
+     "market": "total",
+     "side": "over",
+     "line": 53
     }
    ],
    "log": {
     "qb_out": "none",
-    "starters_out": 2,
+    "starters_out": 4,
     "confidence": "confirmed"
    }
   },
@@ -4909,7 +5139,7 @@
     "WR Terry McLaurin - played in Week 5 as a game-time decision after injuring his hamstring in a Week 4 practice"
    ],
    "movement": [
-    "Spread: open SF -7.5, unchanged. Total: open 50.5, unchanged. Moneyline: SF now -440, opener not confirmed."
+    "Spread: open SF -7.5, unchanged. Total: open 50.5, now 52.5. Moneyline: SF now -425, opener not confirmed."
    ],
    "experts": [
     {
@@ -4935,6 +5165,30 @@
      "market": "spread",
      "side": "SF",
      "line": -7
+    },
+    {
+     "name": "Kody Malstrom (Action Network)",
+     "record": "62-55-1 (last 30d)",
+     "pick": "Under 52",
+     "market": "total",
+     "side": "under",
+     "line": 52
+    },
+    {
+     "name": "Ryan Minion (Action Network)",
+     "record": "214-242-5 (last 30d)",
+     "pick": "WAS +7.5",
+     "market": "spread",
+     "side": "WAS",
+     "line": 7.5
+    },
+    {
+     "name": "Doug Kezirian (Action Network)",
+     "record": "8-4-1 (last 30d)",
+     "pick": "SF -7.5",
+     "market": "spread",
+     "side": "SF",
+     "line": -7.5
     }
    ],
    "log": {
