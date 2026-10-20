@@ -1,5 +1,5 @@
 {
- "saved": "2026-10-20T20:03",
+ "saved": "2026-10-20T22:33",
  "notes": {
   "NE@SEA": {
    "returning": [
@@ -5196,6 +5196,540 @@
     "starters_out": 3,
     "confidence": "confirmed"
    }
+  },
+  "NE@CHI": {
+   "experts": [
+    {
+     "name": "Mike McNamara (Action Network)",
+     "record": "74-72-2 (last 30d)",
+     "pick": "CHI -2.5",
+     "market": "spread",
+     "side": "CHI",
+     "line": -2.5
+    },
+    {
+     "name": "Doug Ziefel (Action Network)",
+     "record": "361-409-7 (last 30d)",
+     "pick": "Over 50.5",
+     "market": "total",
+     "side": "over",
+     "line": 50.5
+    },
+    {
+     "name": "Frank Ammirante (Action Network)",
+     "record": "107-100-0 (last 30d)",
+     "pick": "Over 50.5",
+     "market": "total",
+     "side": "over",
+     "line": 50.5
+    },
+    {
+     "name": "Nick Giffen (Action Network)",
+     "record": "54-119-0 (last 30d)",
+     "pick": "Over 50.5",
+     "market": "total",
+     "side": "over",
+     "line": 50.5
+    },
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "43-48-2",
+     "pick": "Under 50.5",
+     "market": "total",
+     "side": "under",
+     "line": 50.5
+    }
+   ],
+   "log": {
+    "confidence": "confirmed",
+    "qb_out": "none",
+    "starters_out": 2
+   },
+   "movement": [
+    "Spread: open CHI -2.5, now CHI -3. Total: open 49.5, now 50.5. Moneyline: CHI now -148, opener not confirmed. Covers says early action on the Bears pushed the spread as high as -3.5, and CBS Sports ties the move to Caleb Williams' return and to New England's offensive line injuries."
+   ],
+   "returning": [
+    "WR A.J. Brown, back in the New England lineup in Week 6, was a limited practice participant Monday and Tuesday with an ankle injury",
+    "QB Caleb Williams came through his first game back from the Grade 2 hamstring strain he suffered in Week 2, leading Chicago to 31 points at Atlanta in Week 6"
+   ],
+   "suspensions": [
+    "Bears edge Montez Sweat misses this game as the second of a two-game suspension for a performance-enhancing substances violation, eligible for reinstatement Oct. 23"
+   ]
+  },
+  "PIT@NO": {
+   "experts": [
+    {
+     "name": "Anthony Dabbundo (Action Network)",
+     "record": "48-62-0 (last 30d)",
+     "pick": "PIT -2.5",
+     "market": "spread",
+     "side": "PIT",
+     "line": -2.5
+    },
+    {
+     "name": "Doug Ziefel (Action Network)",
+     "record": "361-409-7 (last 30d)",
+     "pick": "NO +3.5",
+     "market": "spread",
+     "side": "NO",
+     "line": 3.5
+    },
+    {
+     "name": "Brandon Kravitz (Action Network)",
+     "record": "50-60-1 (last 30d)",
+     "pick": "NO +3.5",
+     "market": "spread",
+     "side": "NO",
+     "line": 3.5
+    },
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "43-48-2",
+     "pick": "PIT -3",
+     "market": "spread",
+     "side": "PIT",
+     "line": -3
+    }
+   ],
+   "log": {
+    "confidence": "confirmed",
+    "qb_out": "none",
+    "starters_out": 2
+   },
+   "movement": [
+    "Spread: open PIT -2.5, now PIT -3.5. Total: open 44.5, unchanged. Moneyline: PIT open -142, now -180."
+   ],
+   "returning": [
+    "Saints WR Jordyn Tyson, on injured reserve with a hamstring injury since Week 4, made the trip to Paris with the team, coach Kellen Moore said Monday"
+   ]
+  },
+  "SF@ATL": {
+   "experts": [
+    {
+     "name": "Doug Ziefel (Action Network)",
+     "record": "361-409-7 (last 30d)",
+     "pick": "SF -3.5",
+     "market": "spread",
+     "side": "SF",
+     "line": -3.5
+    },
+    {
+     "name": "Ryan Minion (Action Network)",
+     "record": "228-246-5 (last 30d)",
+     "pick": "ATL +3.5",
+     "market": "spread",
+     "side": "ATL",
+     "line": 3.5
+    },
+    {
+     "name": "Frank Ammirante (Action Network)",
+     "record": "107-100-0 (last 30d)",
+     "pick": "ATL +3.5",
+     "market": "spread",
+     "side": "ATL",
+     "line": 3.5
+    },
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "43-48-2",
+     "pick": "SF -3",
+     "market": "spread",
+     "side": "SF",
+     "line": -3
+    }
+   ],
+   "log": {
+    "confidence": "confirmed",
+    "qb_out": "none",
+    "starters_out": 1
+   },
+   "movement": [
+    "Spread: open SF -4.5, now SF -3. Total: open 50.5, now 48.5. Moneyline: SF open -225, now -170."
+   ],
+   "returning": [
+    "49ers WR Ricky Pearsall is out for the season with a knee injury and WR Christian Kirk was downgraded to out with a calf injury before Monday's game"
+   ],
+   "trades": [
+    "Falcons signed edge Charles Snowden to the active roster off Washington's practice squad on Tuesday",
+    "Falcons released QB Cooper Rush and signed QB Andy Dalton on Monday, nine days after Philadelphia released Dalton"
+   ]
+  },
+  "CIN@BAL": {
+   "experts": [
+    {
+     "name": "Doug Ziefel (Action Network)",
+     "record": "361-409-7 (last 30d)",
+     "pick": "Under 51.5",
+     "market": "total",
+     "side": "under",
+     "line": 51.5
+    },
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "43-48-2",
+     "pick": "CIN +3",
+     "market": "spread",
+     "side": "CIN",
+     "line": 3
+    }
+   ],
+   "log": {
+    "confidence": "unconfirmed",
+    "qb_out": "home",
+    "starters_out": 1
+   },
+   "movement": [
+    "Spread: open BAL -3, unchanged. Total: open 50.5, now 51.5. Moneyline: BAL open -180, now -148. Sports Illustrated ties the shorter Baltimore price to Lamar Jackson's unclear status."
+   ],
+   "returning": [
+    "Ravens QB Lamar Jackson has not played since Week 4 with an ankle injury and coach Jesse Minter said Monday he is day to day and could potentially return to practice Wednesday"
+   ],
+   "trades": [
+    "Bengals signed DB Russ Yeast to the active roster on Tuesday",
+    "Ravens signed K Jake Moody to the practice squad on Tuesday"
+   ]
+  },
+  "TB@CAR": {
+   "experts": [
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "43-48-2",
+     "pick": "TB +154",
+     "market": "moneyline",
+     "side": "TB"
+    }
+   ],
+   "log": {
+    "confidence": "unconfirmed",
+    "qb_out": "away",
+    "starters_out": 1
+   },
+   "movement": [
+    "Spread: open CAR -3, now CAR -3.5. Total: open 43.5, now 44.5. Moneyline: CAR open -180, now -185."
+   ],
+   "returning": [
+    "Buccaneers QB Baker Mayfield, who has not played or practiced since Week 3 with a right thumb injury, is expected to practice Wednesday, coach Todd Bowles said Monday"
+   ],
+   "trades": [
+    "Panthers waived OL Albert Reese on Tuesday"
+   ]
+  },
+  "NYG@HOU": {
+   "experts": [
+    {
+     "name": "Doug Ziefel (Action Network)",
+     "record": "356-403-7 (last 30d)",
+     "pick": "HOU -9.5",
+     "market": "spread",
+     "side": "HOU",
+     "line": -9.5
+    },
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "43-48-2",
+     "pick": "HOU -9.5",
+     "market": "spread",
+     "side": "HOU",
+     "line": -9.5
+    }
+   ],
+   "log": {
+    "confidence": "confirmed",
+    "qb_out": "none",
+    "starters_out": 1
+   },
+   "movement": [
+    "Spread: open HOU -9.5, now HOU -10. Total: open 43.5, now 42.5. Moneyline: HOU now -520, opener not confirmed."
+   ],
+   "returning": [
+    "Texans WR Tank Dell will play Sunday, his first game since he tore his ACL, MCL and LCL, dislocated his kneecap and damaged his meniscus in Week 16 of the 2024 season, coach DeMeco Ryans said"
+   ],
+   "trades": [
+    "Giants released RB Najee Harris on Tuesday after 33 carries for 99 yards in five games",
+    "Texans released QB Mark Gronowski and DT Aaron Graves and waived LB Jamal Hill on Tuesday"
+   ]
+  },
+  "IND@MIN": {
+   "coaching": [
+    "Colts fired general manager Chris Ballard on Monday after a 2-4 start to his 10th season in the job"
+   ],
+   "experts": [
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "43-48-2",
+     "pick": "MIN -5.5",
+     "market": "spread",
+     "side": "MIN",
+     "line": -5.5
+    }
+   ],
+   "log": {
+    "confidence": "reported",
+    "qb_out": "none",
+    "starters_out": 1
+   },
+   "movement": [
+    "Spread: open MIN -6, now MIN -6.5. Total: open 42.5, now 41.5. Moneyline: MIN now -285, opener not confirmed."
+   ],
+   "returning": [
+    "Vikings RB Jordan Mason was designated to return to practice from injured reserve on Monday after a thumb injury that has cost him several weeks",
+    "Colts CB Sauce Gardner is considered week to week with a mild calf strain suffered in Sunday's loss to Tennessee, per NFL Network's Ian Rapoport"
+   ],
+   "trades": [
+    "Colts signed WR Mecole Hardman and P Thomas Morstead to the practice squad on Tuesday"
+   ]
+  },
+  "MIA@NYJ": {
+   "experts": [
+    {
+     "name": "Frank Ammirante (Action Network)",
+     "record": "107-100-0 (last 30d)",
+     "pick": "MIA +5.5",
+     "market": "spread",
+     "side": "MIA",
+     "line": 5.5
+    },
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "43-48-2",
+     "pick": "MIA +5.5",
+     "market": "spread",
+     "side": "MIA",
+     "line": 5.5
+    }
+   ],
+   "log": {
+    "confidence": "confirmed",
+    "qb_out": "none",
+    "starters_out": 1
+   },
+   "movement": [
+    "Spread: open NYJ -4.5, unchanged. Total: open 38.5, unchanged. Moneyline: NYJ now -238, opener not confirmed."
+   ],
+   "returning": [
+    "Dolphins RB De'Von Achane is out for the season with a knee injury"
+   ],
+   "trades": [
+    "Dolphins released K Riley Patterson and signed K Zane Gonzalez to the practice squad on Tuesday",
+    "Dolphins signed edge Rodney McGraw to the active roster off their own practice squad on Tuesday"
+   ]
+  },
+  "CLE@TEN": {
+   "experts": [
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "43-48-2",
+     "pick": "CLE -1.5",
+     "market": "spread",
+     "side": "CLE",
+     "line": -1.5
+    }
+   ],
+   "log": {
+    "confidence": "confirmed",
+    "qb_out": "none",
+    "starters_out": 1
+   },
+   "movement": [
+    "Spread: open CLE -1.5, unchanged. Total: open 36.5, now 38.5. Moneyline: CLE now -130, opener not confirmed. CBS Sports says the total came down from 37.5 before settling."
+   ],
+   "trades": [
+    "Titans released DL Jordan Elliott on Tuesday after reviewing an incident at the team facility on Oct. 15",
+    "Browns signed OT Andrew Coker, S John Saunders Jr. and P Wes Pahl to the practice squad on Tuesday"
+   ]
+  },
+  "DEN@ARI": {
+   "experts": [
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "43-48-2",
+     "pick": "DEN -4.5",
+     "market": "spread",
+     "side": "DEN",
+     "line": -4.5
+    }
+   ],
+   "movement": [
+    "Spread: open DEN -4.5, unchanged. Total: open 43.5, unchanged. Moneyline: DEN now -238, opener not confirmed."
+   ],
+   "returning": [
+    "Cardinals rookie RB Jeremiyah Love was ruled out of Week 6 with an ankle injury and could return against Denver"
+   ],
+   "trades": [
+    "Cardinals signed LB Bradyn Swinson to the practice squad on Tuesday"
+   ]
+  },
+  "GB@DET": {
+   "experts": [
+    {
+     "name": "Doug Ziefel (Action Network)",
+     "record": "361-409-7 (last 30d)",
+     "pick": "GB +3.5",
+     "market": "spread",
+     "side": "GB",
+     "line": 3.5
+    },
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "43-48-2",
+     "pick": "DET -3",
+     "market": "spread",
+     "side": "DET",
+     "line": -3
+    }
+   ],
+   "log": {
+    "confidence": "confirmed",
+    "qb_out": "none",
+    "starters_out": 1
+   },
+   "movement": [
+    "Spread: open DET -3, unchanged. Total: open 52.5, now 53.5. Moneyline: DET open -180, now -162."
+   ],
+   "returning": [
+    "Packers RB Josh Jacobs was officially taken off the Commissioner's Exempt List on Monday and is eligible to play for the first time this season",
+    "Packers DE Micah Parsons will not practice this week and remains on the physically unable to perform list with a knee injury, coach Matt LaFleur said Monday"
+   ],
+   "trades": [
+    "Packers signed DT Mazi Smith to the practice squad on Tuesday",
+    "Lions signed WR DeAndre Carter to the practice squad on Monday"
+   ]
+  },
+  "LA@LV": {
+   "experts": [
+    {
+     "name": "Doug Ziefel (Action Network)",
+     "record": "361-409-7 (last 30d)",
+     "pick": "Over 47.5",
+     "market": "total",
+     "side": "over",
+     "line": 47.5
+    },
+    {
+     "name": "Brandon Kravitz (Action Network)",
+     "record": "50-60-1 (last 30d)",
+     "pick": "LV +5",
+     "market": "spread",
+     "side": "LV",
+     "line": 5
+    },
+    {
+     "name": "Frank Ammirante (Action Network)",
+     "record": "107-100-0 (last 30d)",
+     "pick": "LV +4.5",
+     "market": "spread",
+     "side": "LV",
+     "line": 4.5
+    },
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "43-48-2",
+     "pick": "LA -4.5",
+     "market": "spread",
+     "side": "LA",
+     "line": -4.5
+    }
+   ],
+   "log": {
+    "confidence": "confirmed",
+    "qb_out": "none",
+    "starters_out": 4
+   },
+   "movement": [
+    "Spread: open LA -6, now LA -4.5. Total: open 48.5, now 47.5. Moneyline: LA now -225, opener not confirmed."
+   ],
+   "returning": [
+    "Rams WR Davante Adams was placed on injured reserve Tuesday and is expected to miss six to 10 weeks after rupturing a hamstring in Sunday's loss to Arizona",
+    "Rams DE Myles Garrett is not expected to return to practice this week from a knee injury, coach Sean McVay said Monday",
+    "Rams DT Poona Ford is out for the season with a ruptured triceps and DT Kobie Turner goes on injured reserve for at least four weeks with a groin injury"
+   ],
+   "trades": [
+    "Rams are signing K Brandon McManus after placing K Blake Grupe on injured reserve with the knee injury he suffered Sunday",
+    "Raiders signed OT Amari Kight and OT Darian Kinnard to the practice squad on Monday"
+   ]
+  },
+  "KC@SEA": {
+   "experts": [
+    {
+     "name": "Anthony Dabbundo (Action Network)",
+     "record": "48-62-0 (last 30d)",
+     "pick": "Under 43",
+     "market": "total",
+     "side": "under",
+     "line": 43
+    },
+    {
+     "name": "Brandon Anderson (Action Network)",
+     "record": "40-116-0 (last 30d)",
+     "pick": "Under 44.5",
+     "market": "total",
+     "side": "under",
+     "line": 44.5
+    },
+    {
+     "name": "Brandon Kravitz (Action Network)",
+     "record": "50-60-1 (last 30d)",
+     "pick": "KC +2.5",
+     "market": "spread",
+     "side": "KC",
+     "line": 2.5
+    },
+    {
+     "name": "Nick Griffith (Action Network)",
+     "record": "48-42-0 (last 30d)",
+     "pick": "SEA -2",
+     "market": "spread",
+     "side": "SEA",
+     "line": -2
+    },
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "43-48-2",
+     "pick": "KC +120",
+     "market": "moneyline",
+     "side": "KC"
+    }
+   ],
+   "log": {
+    "confidence": "reported",
+    "qb_out": "none",
+    "starters_out": 1
+   },
+   "movement": [
+    "Spread: now SEA -2.5, opener not confirmed - SportsBettingDime and Sports Illustrated both have SEA -1.5 while Covers and CBS Sports say Seattle opened -2.5. Total: open 42.5, unchanged. Moneyline: SEA now -142, opener not confirmed. Covers says the market is moving away from Seattle's struggling offense."
+   ],
+   "returning": [
+    "Seahawks G Anthony Bradford was designated to return to practice from injured reserve on Monday",
+    "Seahawks TE Elijah Arroyo is likely to be placed on injured reserve with the shoulder injury he suffered in last Thursday's loss at Denver"
+   ]
+  },
+  "DAL@PHI": {
+   "experts": [
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "43-48-2",
+     "pick": "PHI +5",
+     "market": "spread",
+     "side": "PHI",
+     "line": 5
+    }
+   ],
+   "log": {
+    "confidence": "confirmed",
+    "qb_out": "home",
+    "starters_out": 2
+   },
+   "movement": [
+    "Spread: open DAL -5.5, now DAL -4.5. Total: open 44.5, unchanged. Moneyline: DAL now -218, opener not confirmed. Covers says Dallas opened as 4.5-point road chalk at some shops, against the 5.5 reported by SportsBettingDime, Sports Illustrated and CBS Sports."
+   ],
+   "returning": [
+    "Eagles QB Jalen Hurts is expected to miss the rest of the 2026 season while being treated for blood clots, with QB Tanner McKee starting in his place",
+    "Eagles RB Saquon Barkley has missed the last two games with a hamstring injury, and both Tank Bigsby and Will Shipley are on injured reserve behind him"
+   ],
+   "trades": [
+    "Eagles signed RB Elijah Mitchell to the practice squad and waived RB Jaydon Blue on Tuesday",
+    "Cowboys signed DB Juanyeh Thomas to the active roster on Tuesday"
+   ]
   }
  }
 }
