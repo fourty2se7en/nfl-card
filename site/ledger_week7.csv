@@ -3,16 +3,16 @@ week,date,day,game,market,pick,our_num,market_num,gap,tier,result,win_pct,opened
 7,2026-10-22,Thursday,NE@CHI,Moneyline,NE,52.4,41.7,10.7,D,,52.4,52.4,D
 7,2026-10-22,Thursday,NE@CHI,Total,OVER 50.5,53.1,50.5,2.6,D,,60.2,53.1,D
 7,2026-10-25,Sunday,PIT@NO,Spread,PIT -3.5,-5.1,-3.5,-1.6,D,,,-5.1,D
-7,2026-10-25,Sunday,PIT@NO,Moneyline,PIT,64.7,61.6,3.1,D,,64.7,64.7,D
+7,2026-10-25,Sunday,PIT@NO,Moneyline,PIT,64.7,62.2,2.5,D,,64.7,64.7,D
 7,2026-10-25,Sunday,PIT@NO,Total,UNDER 44.5,42.0,44.5,-2.5,D,,59.1,42.0,D
 7,2026-10-25,Sunday,SF@ATL,Spread,SF -3.0,-6.5,-3.0,-3.5,D,,,-6.5,D
-7,2026-10-25,Sunday,SF@ATL,Moneyline,SF,67.2,60.9,6.3,D,,67.2,67.2,D
-7,2026-10-25,Sunday,SF@ATL,Total,UNDER 49.5,48.4,49.5,-1.1,D,,54.5,48.4,D
-7,2026-10-25,Sunday,CIN@BAL,Spread,BAL -2.5,3.5,2.5,1.0,D,,,3.5,D
+7,2026-10-25,Sunday,SF@ATL,Moneyline,SF,67.2,61.6,5.6,D,,67.2,67.2,D
+7,2026-10-25,Sunday,SF@ATL,Total,UNDER 50.5,48.4,50.5,-2.1,D,,58.2,48.4,D
+7,2026-10-25,Sunday,CIN@BAL,Spread,BAL -3.0,3.5,3.0,0.5,D,,,3.5,D
 7,2026-10-25,Sunday,CIN@BAL,Moneyline,BAL,59.5,57.2,2.3,D,,59.5,59.5,D
 7,2026-10-25,Sunday,CIN@BAL,Total,UNDER 51.5,50.2,51.5,-1.3,D,,55.0,50.2,D
 7,2026-10-25,Sunday,TB@CAR,Spread,TB +3.5,3.0,3.5,-0.5,D,,,3.0,D
-7,2026-10-25,Sunday,TB@CAR,Moneyline,CAR,58.8,62.2,-3.4,D,,58.8,58.8,D
+7,2026-10-25,Sunday,TB@CAR,Moneyline,CAR,58.8,60.9,-2.1,D,,58.8,58.8,D
 7,2026-10-25,Sunday,TB@CAR,Total,UNDER 44.5,42.5,44.5,-2.0,D,,57.2,42.5,D
 7,2026-10-25,Sunday,NYG@HOU,Spread,NYG +10.0,8.1,10.0,-1.9,D,,,8.1,D
 7,2026-10-25,Sunday,NYG@HOU,Moneyline,HOU,72.6,80.8,-8.2,D,,72.6,72.6,D
@@ -21,19 +21,19 @@ week,date,day,game,market,pick,our_num,market_num,gap,tier,result,win_pct,opened
 7,2026-10-25,Sunday,IND@MIN,Moneyline,MIN,71.9,71.4,0.5,D,,71.9,71.9,D
 7,2026-10-25,Sunday,IND@MIN,Total,UNDER 41.5,34.5,41.5,-7.0,D,,74.8,34.5,D
 7,2026-10-25,Sunday,MIA@NYJ,Spread,NYJ -4.5,5.7,4.5,1.2,D,,,5.7,D
-7,2026-10-25,Sunday,MIA@NYJ,Moneyline,NYJ,66.2,67.5,-1.3,D,,66.2,66.2,D
+7,2026-10-25,Sunday,MIA@NYJ,Moneyline,NYJ,66.2,66.9,-0.7,D,,66.2,66.2,D
 7,2026-10-25,Sunday,MIA@NYJ,Total,OVER 38.5,44.2,38.5,5.7,D,,70.4,44.2,D
 7,2026-10-25,Sunday,CLE@TEN,Spread,CLE -1.5,-2.2,-1.5,-0.7,D,,,-2.2,D
 7,2026-10-25,Sunday,CLE@TEN,Moneyline,CLE,55.9,53.2,2.7,D,,55.9,55.9,D
 7,2026-10-25,Sunday,CLE@TEN,Total,UNDER 37.5,33.5,37.5,-4.0,D,,64.6,33.5,D
 7,2026-10-25,Sunday,DEN@ARI,Spread,DEN -4.5,-10.3,-4.5,-5.8,D,,,-10.3,D
-7,2026-10-25,Sunday,DEN@ARI,Moneyline,DEN,77.9,67.5,10.4,D,,77.9,77.9,D
+7,2026-10-25,Sunday,DEN@ARI,Moneyline,DEN,77.9,66.9,11.0,D,,77.9,77.9,D
 7,2026-10-25,Sunday,DEN@ARI,Total,OVER 43.5,44.9,43.5,1.4,D,,54.9,44.9,D
 7,2026-10-25,Sunday,GB@DET,Spread,DET -3.0,3.9,3.0,0.9,D,,,3.9,D
 7,2026-10-25,Sunday,GB@DET,Moneyline,DET,60.6,59.3,1.3,D,,60.6,60.6,D
 7,2026-10-25,Sunday,GB@DET,Total,UNDER 53.5,53.1,53.5,-0.4,D,,51.8,53.1,D
 7,2026-10-25,Sunday,LA@LV,Spread,LA -4.5,-8.1,-4.5,-3.6,D,,,-8.1,D
-7,2026-10-25,Sunday,LA@LV,Moneyline,LA,70.8,66.4,4.4,D,,70.8,70.8,D
+7,2026-10-25,Sunday,LA@LV,Moneyline,LA,70.8,65.7,5.1,D,,70.8,70.8,D
 7,2026-10-25,Sunday,LA@LV,Total,UNDER 48.5,46.5,48.5,-2.0,D,,56.9,46.5,D
 7,2026-10-25,Sunday,KC@SEA,Spread,KC +2.5,1.4,2.5,-1.1,D,,,1.4,D
 7,2026-10-25,Sunday,KC@SEA,Moneyline,SEA,53.6,57.2,-3.6,D,,53.6,53.6,D
