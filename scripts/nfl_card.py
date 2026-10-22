@@ -2145,7 +2145,7 @@ for _,x in D.sort_values(["date","time"]).iterrows():
     n = NOTES.get(x.gid, {})
     wxs = (f' · {x.wx["t"]:.0f}°F, {x.wx["w"]:.0f} mph wind' + (" — wind flag" if x.wx["w"]>=15 else "")) if x.wx else ""
     dome = " · dome" if x.roof=="dome" else ""
-    divg = " · division game" if x.div else ""
+    divg = " · division game" if x["div"] else ""
     # rest is home minus away, so positive means HOME is better rested.
     if x.rest:
         _rt = x.home if x.rest > 0 else x.away
