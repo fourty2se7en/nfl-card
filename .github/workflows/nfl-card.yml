@@ -103,6 +103,15 @@ jobs:
           cp scripts/newslog.csv site/ 2>/dev/null || true
           echo "published $LATEST"
 
+      # Upload BEFORE the commit step. The upload ships the working tree at
+      # site/, and the commit step pulls with --rebase. If anything was pushed
+      # to main during this run (a notes.json publish, say), that rebase can
+      # write conflict markers into site/index.html, and || true hides it.
+      # Uploading first means Pages always gets exactly what this run rendered.
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
       - name: Commit the card and ledgers
         run: |
           git config user.name  "nfl-card-bot"
@@ -111,10 +120,6 @@ jobs:
           git diff --staged --quiet || git commit -m "card: $(date -u +%Y-%m-%dT%H:%MZ)"
           git pull --rebase --autostash || true
           git push || true
-
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: site
 
   deploy:
     needs: build
