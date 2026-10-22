@@ -1021,7 +1021,7 @@ for _,g in gw.iterrows():
     tot_conf = round(100*max(pover,1-pover),1)
     rows.append(dict(away=a,home=h,gid=f"{a}@{h}",date=str(g.gameday),day=str(g.weekday),
         time=local_kick(g.gameday, g.gametime),venue=str(g.stadium),roof=str(g.roof),surface=str(g.surface),
-        hfa=hfa,rest=rd,div=bool(g.div_game),wx=w,wxt=round(wxt,1),
+        hfa=hfa,rest=rd,div=bool(DIV.get(h) and DIV.get(h) == DIV.get(a)),wx=w,wxt=round(wxt,1),
         rate_gap=round(float(r.loc[h,"rating"]-r.loc[a,"rating"]),1),
         hfa_pts=round(float(hfa),1), rest_pts=round(float(rest_adj),1),
         h_off_rk=int(r.loc[h,"moff_rank"]), a_off_rk=int(r.loc[a,"moff_rank"]),
