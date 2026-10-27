@@ -38,6 +38,6 @@ week,date,day,game,market,pick,our_num,market_num,gap,tier,result,win_pct,opened
 7,2026-10-25,Sunday,KC@SEA,Spread,KC +3.0,1.4,3.0,-1.6,D,L,,1.4,D
 7,2026-10-25,Sunday,KC@SEA,Moneyline,SEA,53.6,57.2,-3.6,D,W,53.6,53.6,D
 7,2026-10-25,Sunday,KC@SEA,Total,UNDER 42.5,39.0,42.5,-3.5,D,W,62.4,40.0,D
-7,2026-10-26,Monday,DAL@PHI,Spread,PHI +4.5,1.1,-4.5,5.6,D,,,1.1,D
-7,2026-10-26,Monday,DAL@PHI,Moneyline,PHI,53.1,34.3,18.8,D,,53.1,53.1,D
-7,2026-10-26,Monday,DAL@PHI,Total,OVER 44.5,50.2,44.5,5.7,D,,70.1,50.2,D
+7,2026-10-26,Monday,DAL@PHI,Spread,PHI +4.5,1.1,-4.5,5.6,D,L,,1.1,D
+7,2026-10-26,Monday,DAL@PHI,Moneyline,PHI,53.1,34.3,18.8,D,L,53.1,53.1,D
+7,2026-10-26,Monday,DAL@PHI,Total,OVER 44.5,50.2,44.5,5.7,D,W,70.1,50.2,D
