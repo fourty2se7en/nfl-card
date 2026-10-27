@@ -1,5 +1,5 @@
 {
- "saved": "2026-10-27T20:48",
+ "saved": "2026-10-27T22:43",
  "notes": {
   "NE@SEA": {
    "returning": [
@@ -5863,6 +5863,730 @@
     "Eagles signed RB Elijah Mitchell to the practice squad and waived RB Jaydon Blue on Tuesday",
     "Cowboys signed DB Juanyeh Thomas to the active roster on Tuesday"
    ]
+  },
+  "CAR@GB": {
+   "returning": [
+    "Panthers RT Taylor Moton was placed on injured reserve Monday after fracturing his fibula in Sunday\u2019s loss to Tampa Bay and will have season-ending ankle surgery",
+    "Panthers QB Bryce Young (knee) was estimated as a full practice participant at both Monday\u2019s and Tuesday\u2019s walkthroughs on the short week",
+    "Packers C Sean Rhyan is believed to have suffered a high ankle sprain in Sunday\u2019s loss to Detroit and did not practise Monday or Tuesday",
+    "Packers LB Zaire Franklin is dealing with a hairline fracture in his leg after being kicked in the shin in practice, and Green Bay believes he will miss minimal time",
+    "Packers OL Jacob Monk was placed on injured reserve after leaving the Detroit game"
+   ],
+   "trades": [
+    "Packers signed OL Mekhi Becton to the active roster off the practice squad",
+    "Panthers signed LB Nick Hampton to the active roster off the practice squad"
+   ],
+   "movement": [
+    "Spread: now GB -3.5, opener not confirmed - Sportsbook Review has GB -3.5 and Bookmakers Review GB -3. Total: now 48.5, opener not confirmed - Sportsbook Review has 47.5 and Bookmakers Review 46. Moneyline: GB now -192, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Doug Ziefel (Action Network)",
+     "record": "430-423-10 (last 30d)",
+     "pick": "Under 48.5",
+     "market": "total",
+     "side": "under",
+     "line": 48.5
+    },
+    {
+     "name": "Chris Vasile (Covers)",
+     "record": "record not published",
+     "pick": "CAR +3.5",
+     "market": "spread",
+     "side": "CAR",
+     "line": 3.5
+    },
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "51-53-3",
+     "pick": "GB -3.5",
+     "market": "spread",
+     "side": "GB",
+     "line": -3.5
+    },
+    {
+     "name": "Mike Spector (Sportsbook Review)",
+     "record": "record not published",
+     "pick": "GB -230",
+     "market": "moneyline",
+     "side": "GB"
+    }
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 3,
+    "confidence": "reported"
+   }
+  },
+  "BAL@BUF": {
+   "returning": [
+    "Ravens QB Lamar Jackson (ankle) is \"working his butt off\" to return after missing three games, and coach Jesse Minter said he expects Jackson to \"be in a decent spot\" ahead of Week 8 with more known Wednesday",
+    "Ravens G Olaivavega Ioane, a 2026 first-round pick who has started every game, suffered an MCL sprain in Sunday\u2019s loss to Cincinnati and will miss a little time"
+   ],
+   "suspensions": [
+    "Bills DB C.J. Gardner-Johnson was placed on the reserve/suspended list after the bye to serve a one-game suspension for spitting on a Raiders player in Week 6, and misses this game"
+   ],
+   "trades": [
+    "Ravens signed G Michael Jordan to the practice squad and released RB Jonathan Ward from it",
+    "Bills signed LB Andre Jones Jr. and DB A.J. Woods to the practice squad"
+   ],
+   "movement": [
+    "Spread: now BUF -3.5, opener not confirmed - Sportsbook Review has BUF -3 and Bookmakers Review BUF -2.5, and both have the line moving toward Buffalo. Total: now 53.5, opener not confirmed - Sportsbook Review has 54 and Bookmakers Review 52.5. Moneyline: BUF now -192, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Brandon Kravitz (Action Network)",
+     "record": "59-60-2 (last 30d)",
+     "pick": "BAL +3.5",
+     "market": "spread",
+     "side": "BAL",
+     "line": 3.5
+    },
+    {
+     "name": "John Feltman (Action Network)",
+     "record": "93-55-1 (last 30d)",
+     "pick": "BAL +3.5",
+     "market": "spread",
+     "side": "BAL",
+     "line": 3.5
+    },
+    {
+     "name": "Chris Vasile (Covers)",
+     "record": "record not published",
+     "pick": "BAL +3.5",
+     "market": "spread",
+     "side": "BAL",
+     "line": 3.5
+    },
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "51-53-3",
+     "pick": "BAL +3.5",
+     "market": "spread",
+     "side": "BAL",
+     "line": 3.5
+    },
+    {
+     "name": "Mike Spector (Sportsbook Review)",
+     "record": "record not published",
+     "pick": "BUF -190",
+     "market": "moneyline",
+     "side": "BUF"
+    }
+   ]
+  },
+  "TEN@CIN": {
+   "returning": [
+    "Bengals TE Erick All was placed on injured reserve and is believed to have torn his ACL in Sunday\u2019s win over Baltimore",
+    "Bengals S Kyle Dugger (quad) will definitely be out this week, coach Zac Taylor said Monday"
+   ],
+   "trades": [
+    "Bengals signed TE Cam Grandy off the Vikings\u2019 practice squad after losing Erick All"
+   ],
+   "movement": [
+    "Spread: now CIN -10.5, opener not confirmed - Sportsbook Review has CIN -10.5 and Bookmakers Review CIN -10. Total: now 46.5, opener not confirmed - Sportsbook Review has 46.5 and Bookmakers Review 46. Moneyline: CIN now -625, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Chris Vasile (Covers)",
+     "record": "record not published",
+     "pick": "CIN -10.5",
+     "market": "spread",
+     "side": "CIN",
+     "line": -10.5
+    },
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "51-53-3",
+     "pick": "CIN -10",
+     "market": "spread",
+     "side": "CIN",
+     "line": -10
+    },
+    {
+     "name": "Mike Spector (Sportsbook Review)",
+     "record": "record not published",
+     "pick": "CIN -600",
+     "market": "moneyline",
+     "side": "CIN"
+    }
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 2,
+    "confidence": "reported"
+   }
+  },
+  "ARI@DAL": {
+   "returning": [
+    "Cardinals WR Jalen Brooks was placed on injured reserve Tuesday after announcing he will undergo season-ending wrist surgery",
+    "Cardinals TE Tip Reiman remains sidelined because his ankle has not responded to treatment as the team hoped, coach Mike LaFleur said"
+   ],
+   "trades": [
+    "Cardinals signed OT Austin Deculus to the practice squad and waived TE Jameson Geers from injured reserve",
+    "Cowboys released RB Emari Demercado and waived TE DJ Rogers from injured reserve"
+   ],
+   "movement": [
+    "Spread: now DAL -6.5, opener not confirmed - Sportsbook Review has DAL -6 and Bookmakers Review DAL -6.5. Total: now 54.5, opener not confirmed - Sportsbook Review has 54.5 and Bookmakers Review 51.5. Moneyline: DAL now -325, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Chris Vasile (Covers)",
+     "record": "record not published",
+     "pick": "ARI +6.5",
+     "market": "spread",
+     "side": "ARI",
+     "line": 6.5
+    },
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "51-53-3",
+     "pick": "Over 54.5",
+     "market": "total",
+     "side": "over",
+     "line": 54.5
+    },
+    {
+     "name": "Mike Spector (Sportsbook Review)",
+     "record": "record not published",
+     "pick": "DAL -285",
+     "market": "moneyline",
+     "side": "DAL"
+    }
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 2,
+    "confidence": "reported"
+   }
+  },
+  "MIN@DET": {
+   "returning": [
+    "Vikings RB Aaron Jones is considered day to day with a knee injury, coach Kevin O\u2019Connell said Monday"
+   ],
+   "trades": [
+    "Lions signed DL Taki Taimani to the practice squad and released WR Lawrence Keys from it"
+   ],
+   "movement": [
+    "Spread: open DET -3, unchanged. Total: now 46.5, opener not confirmed - Sportsbook Review has 46 and Bookmakers Review 48. Moneyline: DET now -170, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Doug Ziefel (Action Network)",
+     "record": "430-423-10 (last 30d)",
+     "pick": "DET -3",
+     "market": "spread",
+     "side": "DET",
+     "line": -3
+    },
+    {
+     "name": "Chris Vasile (Covers)",
+     "record": "record not published",
+     "pick": "MIN +3.5",
+     "market": "spread",
+     "side": "MIN",
+     "line": 3.5
+    },
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "51-53-3",
+     "pick": "DET -3.5",
+     "market": "spread",
+     "side": "DET",
+     "line": -3.5
+    },
+    {
+     "name": "Mike Spector (Sportsbook Review)",
+     "record": "record not published",
+     "pick": "DET -164",
+     "market": "moneyline",
+     "side": "DET"
+    }
+   ]
+  },
+  "IND@JAX": {
+   "returning": [
+    "Jaguars LT Anton Harrison is out for the season with a torn knee ligament, with Walker Little moving to left tackle",
+    "Colts CB Cam Taylor-Britt was placed on injured reserve Tuesday",
+    "Colts WR Alec Pierce (heel) and DE Micheal Clemons (toe) are eligible to come off injured reserve but will not practise this week, coach Shane Steichen said"
+   ],
+   "trades": [
+    "Colts traded G Quenton Nelson to the Seahawks on Tuesday for a 2027 third-round pick and a 2028 fifth-round pick",
+    "Colts traded DT DeForest Buckner on Tuesday for a 2027 fourth-round pick"
+   ],
+   "coaching": [
+    "Colts are not considering a quarterback change, with Daniel Jones the starter and Anthony Richardson behind him, Steichen said"
+   ],
+   "movement": [
+    "Spread: open JAX -7.5, now JAX -9.5. Total: now 46.5, opener not confirmed - Sportsbook Review has 46.5 and Bookmakers Review 47.5. Moneyline: JAX now -470, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Chris Vasile (Covers)",
+     "record": "record not published",
+     "pick": "JAX -7.5",
+     "market": "spread",
+     "side": "JAX",
+     "line": -7.5
+    },
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "51-53-3",
+     "pick": "JAX -7.5",
+     "market": "spread",
+     "side": "JAX",
+     "line": -7.5
+    },
+    {
+     "name": "Mike Spector (Sportsbook Review)",
+     "record": "record not published",
+     "pick": "JAX -375",
+     "market": "moneyline",
+     "side": "JAX"
+    }
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 4,
+    "confidence": "confirmed"
+   }
+  },
+  "LV@NYJ": {
+   "returning": [
+    "Raiders WR Dont\u2019e Thornton Jr. was activated off injured reserve on Tuesday",
+    "Raiders WR Jack Bech (forearm) was designated to return to practice from injured reserve, opening his 21-day window"
+   ],
+   "coaching": [
+    "Raiders coach Klint Kubiak said Kirk Cousins remains the starting quarterback for this game and that No. 1 overall pick Fernando Mendoza is going to play at some point"
+   ],
+   "trades": [
+    "Raiders released DT Jonah Laulu and waived WR Jamari Thrash from the practice squad"
+   ],
+   "movement": [
+    "Spread: now NYJ -1.5, opener not confirmed - Sportsbook Review has NYJ -1 and Bookmakers Review NYJ -1.5. Total: now 45.5, opener not confirmed - Sportsbook Review has 45.5 and Bookmakers Review 43. Moneyline: NYJ now -122, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "John Feltman (Action Network)",
+     "record": "93-55-1 (last 30d)",
+     "pick": "NYJ -120",
+     "market": "moneyline",
+     "side": "NYJ"
+    },
+    {
+     "name": "Chris Vasile (Covers)",
+     "record": "record not published",
+     "pick": "LV +1.5",
+     "market": "spread",
+     "side": "LV",
+     "line": 1.5
+    },
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "51-53-3",
+     "pick": "NYJ -108",
+     "market": "moneyline",
+     "side": "NYJ"
+    },
+    {
+     "name": "Mike Spector (Sportsbook Review)",
+     "record": "record not published",
+     "pick": "LV -108",
+     "market": "moneyline",
+     "side": "LV"
+    }
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 0,
+    "confidence": "confirmed"
+   }
+  },
+  "CLE@PIT": {
+   "returning": [
+    "Browns QB Dillon Gabriel was activated from injured reserve Monday after a back injury that had kept him out all season"
+   ],
+   "trades": [
+    "Browns signed DT Maliek Collins to a two-year contract extension and waived TE Carsen Ryan",
+    "Browns signed DE Nadame Tucker to the practice squad"
+   ],
+   "movement": [
+    "Spread: now PIT -3.5, opener not confirmed - Sportsbook Review has PIT -4 and Bookmakers Review PIT -4.5, and both have the line moving toward Cleveland. Total: now 39.5, opener not confirmed - Sportsbook Review has 39.5 and Bookmakers Review 39. Moneyline: PIT now -175, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Brandon Kravitz (Action Network)",
+     "record": "59-60-2 (last 30d)",
+     "pick": "CLE +3.5",
+     "market": "spread",
+     "side": "CLE",
+     "line": 3.5
+    },
+    {
+     "name": "Chris Vasile (Covers)",
+     "record": "record not published",
+     "pick": "CLE +3.5",
+     "market": "spread",
+     "side": "CLE",
+     "line": 3.5
+    },
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "51-53-3",
+     "pick": "CLE +3.5",
+     "market": "spread",
+     "side": "CLE",
+     "line": 3.5
+    },
+    {
+     "name": "Mike Spector (Sportsbook Review)",
+     "record": "record not published",
+     "pick": "CLE +160",
+     "market": "moneyline",
+     "side": "CLE"
+    }
+   ]
+  },
+  "ATL@TB": {
+   "returning": [
+    "Buccaneers QB Baker Mayfield returned in Week 7 from a dislocated thumb and threw only 11 passes in the win over Carolina, wearing a protective glove"
+   ],
+   "trades": [
+    "Falcons signed TE E.J. Jenkins to the practice squad and released TE Jack Velling from it",
+    "Buccaneers released QB Brett Rypien from the practice squad and signed RB Barika Kpeenu to it"
+   ],
+   "movement": [
+    "Spread: now TB -2.5, opener not confirmed - Sportsbook Review has TB -1 and Bookmakers Review TB -1.5, and both have the line moving toward Tampa Bay. Total: now 46.5, opener not confirmed - Sportsbook Review has 45 and Bookmakers Review 44.5. Moneyline: TB now -135, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Mike McNamara (Action Network)",
+     "record": "75-62-2 (last 30d)",
+     "pick": "TB -2",
+     "market": "spread",
+     "side": "TB",
+     "line": -2
+    },
+    {
+     "name": "Anthony Dabbundo (Action Network)",
+     "record": "52-67-0 (last 30d)",
+     "pick": "TB -1.5",
+     "market": "spread",
+     "side": "TB",
+     "line": -1.5
+    },
+    {
+     "name": "Chris Vasile (Covers)",
+     "record": "record not published",
+     "pick": "ATL +2.5",
+     "market": "spread",
+     "side": "ATL",
+     "line": 2.5
+    },
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "51-53-3",
+     "pick": "TB -1.5",
+     "market": "spread",
+     "side": "TB",
+     "line": -1.5
+    },
+    {
+     "name": "Mike Spector (Sportsbook Review)",
+     "record": "record not published",
+     "pick": "TB -130",
+     "market": "moneyline",
+     "side": "TB"
+    }
+   ]
+  },
+  "LAC@LA": {
+   "returning": [
+    "Rams WR Davante Adams will miss 6 to 10 weeks with a ruptured hamstring, coach Sean McVay said on Oct 19",
+    "Rams DT Poona Ford is out for the season with a ruptured triceps, and DT Kobie Turner went on injured reserve with a groin injury",
+    "Chargers WR Ladd McConkey, who suffered a concussion on Oct 18, and RT Joe Alt, who has missed two games with a neck injury, both returned to practice on Monday coming off the bye"
+   ],
+   "trades": [
+    "Rams signed LB Jon Rhattigan to the practice squad",
+    "Chargers signed WR Tejhaun Palmer to the practice squad"
+   ],
+   "movement": [
+    "Spread: open LA -7.5, now LA -6.5. Total: now 44.5, opener not confirmed - Sportsbook Review has 45 and Bookmakers Review 46. Moneyline: LA now -290, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Doug Ziefel (Action Network)",
+     "record": "430-423-10 (last 30d)",
+     "pick": "Under 44.5",
+     "market": "total",
+     "side": "under",
+     "line": 44.5
+    },
+    {
+     "name": "Sandy Plashkes (Action Network)",
+     "record": "112-111-4 (last 30d)",
+     "pick": "LAC +7.5",
+     "market": "spread",
+     "side": "LAC",
+     "line": 7.5
+    },
+    {
+     "name": "Chris Vasile (Covers)",
+     "record": "record not published",
+     "pick": "LA -6.5",
+     "market": "spread",
+     "side": "LA",
+     "line": -6.5
+    },
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "51-53-3",
+     "pick": "LA -6.5",
+     "market": "spread",
+     "side": "LA",
+     "line": -6.5
+    },
+    {
+     "name": "Mike Spector (Sportsbook Review)",
+     "record": "record not published",
+     "pick": "LA -325",
+     "market": "moneyline",
+     "side": "LA"
+    }
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 3,
+    "confidence": "reported"
+   }
+  },
+  "KC@DEN": {
+   "returning": [
+    "Chiefs LB Nick Bolton had neck spasms in the loss to Seattle and coach Andy Reid expects him to be fine",
+    "Broncos CB Pat Surtain II, who has missed two games with an ankle injury, said only \"possibly\" when asked about this week and still needs to reach full practice",
+    "Broncos OLB Jonah Elliss (ankle) and RB Tyler Badie (thumb) were placed on injured reserve and are not eligible to return until Week 12"
+   ],
+   "trades": [
+    "Broncos signed WR Eli Pancol to the practice squad and released DB Ugo Amadi from it"
+   ],
+   "movement": [
+    "Spread: now KC -1.5, opener not confirmed - Sportsbook Review has KC -2 and Bookmakers Review KC -1.5. Total: now 41.5, opener not confirmed - Sportsbook Review has 41 and Bookmakers Review 42.5. Moneyline: KC now -122, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Matt Moore (Action Network)",
+     "record": "55-54-3 (last 30d)",
+     "pick": "DEN +105",
+     "market": "moneyline",
+     "side": "DEN"
+    },
+    {
+     "name": "Anthony Dabbundo (Action Network)",
+     "record": "52-67-0 (last 30d)",
+     "pick": "Under 41.5",
+     "market": "total",
+     "side": "under",
+     "line": 41.5
+    },
+    {
+     "name": "Brandon Anderson (Action Network)",
+     "record": "39-126-1 (last 30d)",
+     "pick": "Under 42.5",
+     "market": "total",
+     "side": "under",
+     "line": 42.5
+    },
+    {
+     "name": "Chris Vasile (Covers)",
+     "record": "record not published",
+     "pick": "KC -1.5",
+     "market": "spread",
+     "side": "KC",
+     "line": -1.5
+    },
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "51-53-3",
+     "pick": "KC -1.5",
+     "market": "spread",
+     "side": "KC",
+     "line": -1.5
+    },
+    {
+     "name": "Mike Spector (Sportsbook Review)",
+     "record": "record not published",
+     "pick": "DEN +105",
+     "market": "moneyline",
+     "side": "DEN"
+    }
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 2,
+    "confidence": "reported"
+   }
+  },
+  "NE@MIA": {
+   "returning": [
+    "Patriots LG Alijah Vera-Tucker was placed on injured reserve on Oct 21 with a hamstring injury, and coach Mike Vrabel does not believe it is season-ending",
+    "Dolphins WR Caleb Douglas returned in Week 7 after missing three games with an ankle injury and caught two touchdowns in the win over the Jets"
+   ],
+   "trades": [
+    "Patriots signed LB Jose Ramirez to the practice squad, released OL Jacob Rizy from it and released P Bryce Baringer from injured reserve"
+   ],
+   "movement": [
+    "Spread: open NE -7.5, unchanged. Total: open 44.5, unchanged. Moneyline: NE now -395, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Chris Vasile (Covers)",
+     "record": "record not published",
+     "pick": "MIA +7.5",
+     "market": "spread",
+     "side": "MIA",
+     "line": 7.5
+    },
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "51-53-3",
+     "pick": "NE -7.5",
+     "market": "spread",
+     "side": "NE",
+     "line": -7.5
+    },
+    {
+     "name": "Mike Spector (Sportsbook Review)",
+     "record": "record not published",
+     "pick": "MIA +300",
+     "market": "moneyline",
+     "side": "MIA"
+    }
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 1,
+    "confidence": "reported"
+   }
+  },
+  "PHI@WAS": {
+   "returning": [
+    "Eagles QB Jalen Hurts is out for the rest of the season being treated for blood clots, with QB Tanner McKee starting in his place",
+    "Eagles RB Saquon Barkley said his hamstring \"came out great\" in his return from two missed games, but he left Monday night\u2019s game with a back injury after being used on a pitch count",
+    "Commanders WR Terry McLaurin is out for the season with a torn patellar tendon suffered in the first quarter of the Oct 19 loss to San Francisco",
+    "Commanders QB Marcus Mariota (knee) and DE Charles Omenihu (groin) will return to practice this week, coach Dan Quinn said"
+   ],
+   "trades": [
+    "Eagles activated TE Grant Calcaterra, TE Eli Stowers and G Landon Dickerson from injured reserve ahead of Monday night\u2019s game",
+    "Eagles waived RB Carson Steele with an injury settlement"
+   ],
+   "movement": [
+    "Spread: now WAS -5.5, opener not confirmed - Sportsbook Review has WAS -4 and Bookmakers Review WAS -3.5, and both have the line moving further toward Washington. Total: now 40.5, opener not confirmed - Sportsbook Review has 40 and Bookmakers Review 41. Moneyline: WAS now -218, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Anthony Dabbundo (Action Network)",
+     "record": "52-67-0 (last 30d)",
+     "pick": "WAS -195",
+     "market": "moneyline",
+     "side": "WAS"
+    },
+    {
+     "name": "Doug Ziefel (Action Network)",
+     "record": "430-423-10 (last 30d)",
+     "pick": "Over 40",
+     "market": "total",
+     "side": "over",
+     "line": 40
+    },
+    {
+     "name": "Chris Vasile (Covers)",
+     "record": "record not published",
+     "pick": "WAS -3.5",
+     "market": "spread",
+     "side": "WAS",
+     "line": -3.5
+    },
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "51-53-3",
+     "pick": "PHI +4.5",
+     "market": "spread",
+     "side": "PHI",
+     "line": 4.5
+    },
+    {
+     "name": "Mike Spector (Sportsbook Review)",
+     "record": "record not published",
+     "pick": "WAS -190",
+     "market": "moneyline",
+     "side": "WAS"
+    }
+   ],
+   "log": {
+    "qb_out": "away",
+    "starters_out": 2,
+    "confidence": "confirmed"
+   }
+  },
+  "CHI@SEA": {
+   "returning": [
+    "Bears TE Cole Kmet is out for the season with a knee injury suffered in the Oct 22 win over New England",
+    "Bears QB Caleb Williams returned in that game from a three-game hamstring absence and threw for 308 yards",
+    "Seahawks LT Charles Cross suffered a high ankle sprain against Kansas City and Seattle hopes he misses only one to two weeks",
+    "Seahawks RB Jadarian Price (chest), on injured reserve since Oct 3, will have his 21-day practice window opened this week, coach Mike Macdonald said"
+   ],
+   "trades": [
+    "Seahawks acquired G Quenton Nelson from the Colts on Tuesday for a 2027 third-round pick and a 2028 fifth-round pick, waiving G Christian Haynes in the corresponding move",
+    "Bears signed RB Zavier Scott to the active roster off the practice squad and released DB Nick McCloud"
+   ],
+   "movement": [
+    "Spread: open SEA -3, unchanged. Total: now 46.5, opener not confirmed. Moneyline: SEA now -166, opener not confirmed."
+   ],
+   "experts": [
+    {
+     "name": "Mike McNamara (Action Network)",
+     "record": "75-62-2 (last 30d)",
+     "pick": "CHI +3",
+     "market": "spread",
+     "side": "CHI",
+     "line": 3
+    },
+    {
+     "name": "Doug Ziefel (Action Network)",
+     "record": "430-423-10 (last 30d)",
+     "pick": "CHI +3.5",
+     "market": "spread",
+     "side": "CHI",
+     "line": 3.5
+    },
+    {
+     "name": "Chris Vasile (Covers)",
+     "record": "record not published",
+     "pick": "CHI +3.5",
+     "market": "spread",
+     "side": "CHI",
+     "line": 3.5
+    },
+    {
+     "name": "Iain MacMillan (Sports Illustrated)",
+     "record": "51-53-3",
+     "pick": "CHI +148",
+     "market": "moneyline",
+     "side": "CHI"
+    },
+    {
+     "name": "Mike Spector (Sportsbook Review)",
+     "record": "record not published",
+     "pick": "CHI +145",
+     "market": "moneyline",
+     "side": "CHI"
+    }
+   ],
+   "log": {
+    "qb_out": "none",
+    "starters_out": 3,
+    "confidence": "reported"
+   }
   }
  }
 }

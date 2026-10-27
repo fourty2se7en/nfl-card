@@ -528,3 +528,62 @@ first_seen_utc,season,week,game,name,market,side,line,pick
 2026-10-23T22:18:24+00:00,2026,7,LA@LV,Kev Mahserejian (Action Network),spread,LA,-4.5,LA -4.5
 2026-10-23T22:18:24+00:00,2026,7,KC@SEA,Mike McNamara (Action Network),spread,SEA,-2.5,SEA -2.5
 2026-10-23T22:18:24+00:00,2026,7,KC@SEA,Sandy Plashkes (Action Network),spread,SEA,-2.5,SEA -2.5
+2026-10-27T22:43:18+00:00,2026,8,CAR@GB,Doug Ziefel (Action Network),total,under,48.5,Under 48.5
+2026-10-27T22:43:18+00:00,2026,8,CAR@GB,Chris Vasile (Covers),spread,CAR,3.5,CAR +3.5
+2026-10-27T22:43:18+00:00,2026,8,CAR@GB,Iain MacMillan (Sports Illustrated),spread,GB,-3.5,GB -3.5
+2026-10-27T22:43:18+00:00,2026,8,CAR@GB,Mike Spector (Sportsbook Review),moneyline,GB,,GB -230
+2026-10-27T22:43:18+00:00,2026,8,BAL@BUF,Brandon Kravitz (Action Network),spread,BAL,3.5,BAL +3.5
+2026-10-27T22:43:18+00:00,2026,8,BAL@BUF,John Feltman (Action Network),spread,BAL,3.5,BAL +3.5
+2026-10-27T22:43:18+00:00,2026,8,BAL@BUF,Chris Vasile (Covers),spread,BAL,3.5,BAL +3.5
+2026-10-27T22:43:18+00:00,2026,8,BAL@BUF,Iain MacMillan (Sports Illustrated),spread,BAL,3.5,BAL +3.5
+2026-10-27T22:43:18+00:00,2026,8,BAL@BUF,Mike Spector (Sportsbook Review),moneyline,BUF,,BUF -190
+2026-10-27T22:43:18+00:00,2026,8,TEN@CIN,Chris Vasile (Covers),spread,CIN,-10.5,CIN -10.5
+2026-10-27T22:43:18+00:00,2026,8,TEN@CIN,Iain MacMillan (Sports Illustrated),spread,CIN,-10.0,CIN -10
+2026-10-27T22:43:18+00:00,2026,8,TEN@CIN,Mike Spector (Sportsbook Review),moneyline,CIN,,CIN -600
+2026-10-27T22:43:18+00:00,2026,8,ARI@DAL,Chris Vasile (Covers),spread,ARI,6.5,ARI +6.5
+2026-10-27T22:43:18+00:00,2026,8,ARI@DAL,Iain MacMillan (Sports Illustrated),total,over,54.5,Over 54.5
+2026-10-27T22:43:18+00:00,2026,8,ARI@DAL,Mike Spector (Sportsbook Review),moneyline,DAL,,DAL -285
+2026-10-27T22:43:18+00:00,2026,8,MIN@DET,Doug Ziefel (Action Network),spread,DET,-3.0,DET -3
+2026-10-27T22:43:18+00:00,2026,8,MIN@DET,Chris Vasile (Covers),spread,MIN,3.5,MIN +3.5
+2026-10-27T22:43:18+00:00,2026,8,MIN@DET,Iain MacMillan (Sports Illustrated),spread,DET,-3.5,DET -3.5
+2026-10-27T22:43:18+00:00,2026,8,MIN@DET,Mike Spector (Sportsbook Review),moneyline,DET,,DET -164
+2026-10-27T22:43:18+00:00,2026,8,IND@JAX,Chris Vasile (Covers),spread,JAX,-7.5,JAX -7.5
+2026-10-27T22:43:18+00:00,2026,8,IND@JAX,Iain MacMillan (Sports Illustrated),spread,JAX,-7.5,JAX -7.5
+2026-10-27T22:43:18+00:00,2026,8,IND@JAX,Mike Spector (Sportsbook Review),moneyline,JAX,,JAX -375
+2026-10-27T22:43:18+00:00,2026,8,LV@NYJ,John Feltman (Action Network),moneyline,NYJ,,NYJ -120
+2026-10-27T22:43:18+00:00,2026,8,LV@NYJ,Chris Vasile (Covers),spread,LV,1.5,LV +1.5
+2026-10-27T22:43:18+00:00,2026,8,LV@NYJ,Iain MacMillan (Sports Illustrated),moneyline,NYJ,,NYJ -108
+2026-10-27T22:43:18+00:00,2026,8,LV@NYJ,Mike Spector (Sportsbook Review),moneyline,LV,,LV -108
+2026-10-27T22:43:18+00:00,2026,8,CLE@PIT,Brandon Kravitz (Action Network),spread,CLE,3.5,CLE +3.5
+2026-10-27T22:43:18+00:00,2026,8,CLE@PIT,Chris Vasile (Covers),spread,CLE,3.5,CLE +3.5
+2026-10-27T22:43:18+00:00,2026,8,CLE@PIT,Iain MacMillan (Sports Illustrated),spread,CLE,3.5,CLE +3.5
+2026-10-27T22:43:18+00:00,2026,8,CLE@PIT,Mike Spector (Sportsbook Review),moneyline,CLE,,CLE +160
+2026-10-27T22:43:18+00:00,2026,8,ATL@TB,Mike McNamara (Action Network),spread,TB,-2.0,TB -2
+2026-10-27T22:43:18+00:00,2026,8,ATL@TB,Anthony Dabbundo (Action Network),spread,TB,-1.5,TB -1.5
+2026-10-27T22:43:18+00:00,2026,8,ATL@TB,Chris Vasile (Covers),spread,ATL,2.5,ATL +2.5
+2026-10-27T22:43:18+00:00,2026,8,ATL@TB,Iain MacMillan (Sports Illustrated),spread,TB,-1.5,TB -1.5
+2026-10-27T22:43:18+00:00,2026,8,ATL@TB,Mike Spector (Sportsbook Review),moneyline,TB,,TB -130
+2026-10-27T22:43:18+00:00,2026,8,LAC@LA,Doug Ziefel (Action Network),total,under,44.5,Under 44.5
+2026-10-27T22:43:18+00:00,2026,8,LAC@LA,Sandy Plashkes (Action Network),spread,LAC,7.5,LAC +7.5
+2026-10-27T22:43:18+00:00,2026,8,LAC@LA,Chris Vasile (Covers),spread,LA,-6.5,LA -6.5
+2026-10-27T22:43:18+00:00,2026,8,LAC@LA,Iain MacMillan (Sports Illustrated),spread,LA,-6.5,LA -6.5
+2026-10-27T22:43:18+00:00,2026,8,LAC@LA,Mike Spector (Sportsbook Review),moneyline,LA,,LA -325
+2026-10-27T22:43:18+00:00,2026,8,KC@DEN,Matt Moore (Action Network),moneyline,DEN,,DEN +105
+2026-10-27T22:43:18+00:00,2026,8,KC@DEN,Anthony Dabbundo (Action Network),total,under,41.5,Under 41.5
+2026-10-27T22:43:18+00:00,2026,8,KC@DEN,Brandon Anderson (Action Network),total,under,42.5,Under 42.5
+2026-10-27T22:43:18+00:00,2026,8,KC@DEN,Chris Vasile (Covers),spread,KC,-1.5,KC -1.5
+2026-10-27T22:43:18+00:00,2026,8,KC@DEN,Iain MacMillan (Sports Illustrated),spread,KC,-1.5,KC -1.5
+2026-10-27T22:43:18+00:00,2026,8,KC@DEN,Mike Spector (Sportsbook Review),moneyline,DEN,,DEN +105
+2026-10-27T22:43:18+00:00,2026,8,NE@MIA,Chris Vasile (Covers),spread,MIA,7.5,MIA +7.5
+2026-10-27T22:43:18+00:00,2026,8,NE@MIA,Iain MacMillan (Sports Illustrated),spread,NE,-7.5,NE -7.5
+2026-10-27T22:43:18+00:00,2026,8,NE@MIA,Mike Spector (Sportsbook Review),moneyline,MIA,,MIA +300
+2026-10-27T22:43:18+00:00,2026,8,PHI@WAS,Anthony Dabbundo (Action Network),moneyline,WAS,,WAS -195
+2026-10-27T22:43:18+00:00,2026,8,PHI@WAS,Doug Ziefel (Action Network),total,over,40.0,Over 40
+2026-10-27T22:43:18+00:00,2026,8,PHI@WAS,Chris Vasile (Covers),spread,WAS,-3.5,WAS -3.5
+2026-10-27T22:43:18+00:00,2026,8,PHI@WAS,Iain MacMillan (Sports Illustrated),spread,PHI,4.5,PHI +4.5
+2026-10-27T22:43:18+00:00,2026,8,PHI@WAS,Mike Spector (Sportsbook Review),moneyline,WAS,,WAS -190
+2026-10-27T22:43:18+00:00,2026,8,CHI@SEA,Mike McNamara (Action Network),spread,CHI,3.0,CHI +3
+2026-10-27T22:43:18+00:00,2026,8,CHI@SEA,Doug Ziefel (Action Network),spread,CHI,3.5,CHI +3.5
+2026-10-27T22:43:18+00:00,2026,8,CHI@SEA,Chris Vasile (Covers),spread,CHI,3.5,CHI +3.5
+2026-10-27T22:43:18+00:00,2026,8,CHI@SEA,Iain MacMillan (Sports Illustrated),moneyline,CHI,,CHI +148
+2026-10-27T22:43:18+00:00,2026,8,CHI@SEA,Mike Spector (Sportsbook Review),moneyline,CHI,,CHI +145
