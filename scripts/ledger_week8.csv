@@ -1,33 +1,33 @@
 week,date,day,game,market,pick,our_num,market_num,gap,tier,result,win_pct,opened_num,opened_tier
 8,2026-10-29,Thursday,CAR@GB,Spread,GB -3.5,5.6,3.5,2.1,D,,,5.6,D
-8,2026-10-29,Thursday,CAR@GB,Moneyline,GB,65.3,63.1,2.2,D,,65.3,65.3,D
-8,2026-10-29,Thursday,CAR@GB,Total,UNDER 47.5,46.2,47.5,-1.3,D,,54.2,46.2,D
+8,2026-10-29,Thursday,CAR@GB,Moneyline,GB,66.4,63.7,2.7,D,,66.4,65.3,D
+8,2026-10-29,Thursday,CAR@GB,Total,UNDER 46.5,46.2,46.5,-0.3,D,,50.8,46.2,D
 8,2026-11-01,Sunday,BAL@BUF,Spread,BAL +3.0,2.9,3.0,-0.1,D,,,2.9,D
-8,2026-11-01,Sunday,BAL@BUF,Moneyline,BUF,57.7,60.9,-3.2,D,,57.7,57.7,D
-8,2026-11-01,Sunday,BAL@BUF,Total,OVER 54.5,56.6,54.5,2.1,D,,57.4,56.6,D
+8,2026-11-01,Sunday,BAL@BUF,Moneyline,BUF,57.7,60.4,-2.7,D,,57.7,57.7,D
+8,2026-11-01,Sunday,BAL@BUF,Total,OVER 54.5,55.1,54.5,0.6,D,,51.8,56.6,D
 8,2026-11-01,Sunday,TEN@CIN,Spread,CIN -10.0,14.4,10.0,4.4,D,,,14.4,D
-8,2026-11-01,Sunday,TEN@CIN,Moneyline,CIN,85.7,80.4,5.3,D,,85.7,85.7,D
+8,2026-11-01,Sunday,TEN@CIN,Moneyline,CIN,85.7,80.0,5.7,D,,85.7,85.7,D
 8,2026-11-01,Sunday,TEN@CIN,Total,UNDER 46.5,46.2,46.5,-0.3,D,,51.6,46.2,D
 8,2026-11-01,Sunday,ARI@DAL,Spread,DAL -7.0,10.9,7.0,3.9,D,,,10.9,D
-8,2026-11-01,Sunday,ARI@DAL,Moneyline,DAL,77.4,74.8,2.6,D,,77.4,77.4,D
+8,2026-11-01,Sunday,ARI@DAL,Moneyline,DAL,77.4,73.4,4.0,D,,77.4,77.4,D
 8,2026-11-01,Sunday,ARI@DAL,Total,OVER 54.5,59.3,54.5,4.8,D,,67.2,59.3,D
 8,2026-11-01,Sunday,MIN@DET,Spread,DET -3.0,3.1,3.0,0.1,D,,,3.1,D
 8,2026-11-01,Sunday,MIN@DET,Moneyline,DET,59.1,60.4,-1.3,D,,59.1,59.1,D
 8,2026-11-01,Sunday,MIN@DET,Total,UNDER 46.5,38.1,46.5,-8.4,D,,78.9,38.1,D
 8,2026-11-01,Sunday,IND@JAX,Spread,JAX -10.0,11.5,10.0,1.5,D,,,11.5,D
-8,2026-11-01,Sunday,IND@JAX,Moneyline,JAX,80.1,80.0,0.1,D,,80.1,80.1,D
-8,2026-11-01,Sunday,IND@JAX,Total,UNDER 46.5,44.3,46.5,-2.2,D,,57.9,44.3,D
+8,2026-11-01,Sunday,IND@JAX,Moneyline,JAX,80.1,79.6,0.5,D,,80.1,80.1,D
+8,2026-11-01,Sunday,IND@JAX,Total,UNDER 46.5,45.8,46.5,-0.7,D,,52.4,44.3,D
 8,2026-11-01,Sunday,LV@NYJ,Spread,NYJ -1.5,3.0,1.5,1.5,D,,,3.0,D
-8,2026-11-01,Sunday,LV@NYJ,Moneyline,NYJ,58.7,52.6,6.1,D,,58.7,58.7,D
+8,2026-11-01,Sunday,LV@NYJ,Moneyline,NYJ,58.7,53.2,5.5,D,,58.7,58.7,D
 8,2026-11-01,Sunday,LV@NYJ,Total,UNDER 45.5,41.5,45.5,-4.0,D,,65.1,41.5,D
 8,2026-11-01,Sunday,CLE@PIT,Spread,PIT -3.5,6.5,3.5,3.0,D,,,6.5,D
 8,2026-11-01,Sunday,CLE@PIT,Moneyline,PIT,68.4,63.1,5.3,D,,68.4,68.4,D
 8,2026-11-01,Sunday,CLE@PIT,Total,UNDER 39.5,34.7,39.5,-4.8,D,,67.8,34.7,D
 8,2026-11-01,Sunday,ATL@TB,Spread,TB -2.5,2.9,2.5,0.4,D,,,2.9,D
-8,2026-11-01,Sunday,ATL@TB,Moneyline,TB,59.5,55.1,4.4,D,,59.5,59.5,D
+8,2026-11-01,Sunday,ATL@TB,Moneyline,TB,59.5,56.3,3.2,D,,59.5,59.5,D
 8,2026-11-01,Sunday,ATL@TB,Total,UNDER 44.5,38.2,44.5,-6.3,D,,71.8,38.2,D
 8,2026-11-01,Sunday,LAC@LA,Spread,LAC +6.5,5.6,6.5,-0.9,D,,,5.6,D
-8,2026-11-01,Sunday,LAC@LA,Moneyline,LA,65.6,71.8,-6.2,D,,65.6,65.6,D
+8,2026-11-01,Sunday,LAC@LA,Moneyline,LA,65.6,71.0,-5.4,D,,65.6,65.6,D
 8,2026-11-01,Sunday,LAC@LA,Total,UNDER 45.5,39.8,45.5,-5.7,D,,70.6,39.8,D
 8,2026-11-01,Sunday,KC@DEN,Spread,DEN +1.5,1.2,-1.5,2.7,D,,,1.2,D
 8,2026-11-01,Sunday,KC@DEN,Moneyline,DEN,53.2,48.3,4.9,D,,53.2,53.2,D
@@ -35,7 +35,7 @@ week,date,day,game,market,pick,our_num,market_num,gap,tier,result,win_pct,opened
 8,2026-11-01,Sunday,NE@MIA,Spread,NE -7.0,-10.7,-7.0,-3.7,D,,,-10.7,D
 8,2026-11-01,Sunday,NE@MIA,Moneyline,NE,78.3,72.6,5.7,D,,78.3,78.3,D
 8,2026-11-01,Sunday,NE@MIA,Total,OVER 43.5,50.5,43.5,7.0,D,,75.2,49.0,D
-8,2026-11-01,Sunday,PHI@WAS,Spread,PHI +5.5,2.9,5.5,-2.6,D,,,2.9,D
+8,2026-11-01,Sunday,PHI@WAS,Spread,PHI +6.0,2.9,6.0,-3.1,D,,,2.9,D
 8,2026-11-01,Sunday,PHI@WAS,Moneyline,WAS,58.0,66.9,-8.9,D,,58.0,58.0,D
 8,2026-11-01,Sunday,PHI@WAS,Total,OVER 40.5,44.0,40.5,3.5,D,,63.2,44.0,D
 8,2026-11-02,Monday,CHI@SEA,Spread,SEA -3.0,4.4,3.0,1.4,D,,,4.4,D
